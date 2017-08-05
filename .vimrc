@@ -1,46 +1,98 @@
-" Some run keys
-autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
-autocmd FileType javascript nnoremap <buffer> <F9> :exec '!node' shellescape(@%, 1)<cr>
+set nocompatible  " Required
+filetype off      " Required
 
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Better copy & paste
-set pastetoggle=<F2>
+" Let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all your plugins here
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'sickill/vim-monokai'
+Plugin 'jnurmine/Zenburn'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'thinca/vim-quickrun'
+
+" All of your Plugins must be added before the following line
+call vundle#end()          " Required
+filetype plugin indent on  " Required
+
+" Split navigations
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Map leader key to space bar
+nnoremap <Space> <Nop>
+let mapleader = " "
+
+" Enable folding with the spacebar
+nnoremap <Leader>w za
+
+" Removes highlight of last search
+noremap <Leader>q :nohl<CR>
+vnoremap <Leader>q :nohl<CR>
+inoremap <Leader>q :nohl<CR>
+
+" Quicksave commands
+noremap <C-z> :update<CR>
+vnoremap <C-z> <C-c>:update<CR>
+inoremap <C-z> <C-o>:update<CR>
+
+" Make backspace work as normal again
+set bs=2
+
+" Proper PEP8 indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+" Full-stack development indentation
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2
+
+" Flagging unnecessary whitespace
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Set enconding properly
+set encoding=utf-8
+
+" Make code look pretty!
+let python_highlight_all=1
+syntax enable
+
+" System clipboard available
 set clipboard=unnamed
-
-" Mouse and backspace
-set mouse=a " on OSX press ALT and click
-set bs=2    " make backspace work as normal again
-
-" Rebind <Leader> key
-let mapleader = ","
-
-" Bind nohl
-" Removes highlight of your last search
-noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
-
-" Quicksave command
-noremap <C-Z> :update<CR>
-vnoremap <C-Z> <C-C>:update<CR>
-inoremap <C-Z> <C-O>:update<CR>
 
 " Quick quit command
 noremap <Leader>e :quit<CR> " Quit current window
 noremap <Leader>E :qa!<CR>  " Quit all windows
 
-" Bind Ctrl+<movement> keys to move around the windows, instead of using
-" Ctrl+w + <movement>
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
 " Easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
+map <Leader>, <Esc>:tabprevious<CR>
+map <Leader>. <Esc>:tabnext<CR>
 
 " Map sort function to a key
 vnoremap <Leader>s :sort<CR>
@@ -49,34 +101,13 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv " Better indentation
 vnoremap > >gv " Better indentation
 
-" Show whitespace
-" MUST be inserted BEFORE the colorscheme command
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
-
-" Color scheme
-set t_Co=256
-color wombat256mod
-
-" Enable syntax highlighting
-filetype off
-filetype plugin indent on
-syntax on
-
 " Showing line numbers and length
 set number " Show line numbers
-set tw=80  " Width of document (used by gd)
+set tw=79  " Width of document (used by gd)
 set nowrap " Don't automatically wrap on load
 set fo-=t  " Don't automatically wrap text when typing
-set colorcolumn=81
+set colorcolumn=80
 highlight ColorColumn ctermbg=233
-
-" Real programmers don't use TABs but spaces
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set shiftround
-set expandtab
 
 " Make search case insensitive
 set hlsearch
@@ -84,51 +115,23 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Disable stupid backup and swap files - they trigger too many events for file
-" system watchers
+" Disable backup and swap files, they trigger too many events for watchers
 set nobackup
 set nowritebackup
 set noswapfile
 
-" Pathogen load
-call pathogen#infect()
+" =============================================================================
+" Plugin settings
+" =============================================================================
+" SimpylFold ------------------------------------------------------------------
+let g:SimylFold_docstring_preview=1
 
-" ==============================================================================
-" Python IDE Setup
-" ==============================================================================
+" nerdtree --------------------------------------------------------------------
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
-" ctrlp
-let g:ctrlp_max_height = 30
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
+" Zenburn ---------------------------------------------------------------------
+colors zenburn
 
-" Settings for python-mode
-map <Leader>g :call RopeGoToDefinition()<CR>
-let ropevim_enable_shortcuts = 1
-let g:pymode_breakpoint = 0
-let g:pymode_rope_show_doc_bind = 'K'
-let g:pymode_syntax = 1
-let g:pymode_syntax_builtin_funcs = 0
-let g:pymode_syntax_builtin_objs = 0
-
-map <Leader>b iimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
-" Better navigating through omnicomplete option list
-set completeopt=longest,menuone
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
-" Python folding
-set nofoldenable
+" vim-quickrun ----------------------------------------------------------------
+map <Leader>o :QuickRun<CR>

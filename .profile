@@ -85,6 +85,6 @@ alias goserial='screen /dev/cu.usbserial 115200'
 # MacPorts Installer addition on 2017-07-03_at_15:22:44: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export HFS="/Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/houdini"
-export PYTHONPATH="$PYTHONPATH:$HFS/python2.7libs"
+export PYTHONPATH="$PYTHONPATH:$HFS/python2.7libs:/usr/local/lib/python2.7/site-packages"
 # Finished adapting your PATH environment variable for use with MacPorts.
 alias henv="HERE=$(pwd) && cd /Applications/Houdini/Houdini16.0.621/Frameworks/Houdini.framework/Versions/16.0.621/Resources/ && source houdini_setup && cd $HERE"
