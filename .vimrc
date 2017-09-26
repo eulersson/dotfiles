@@ -37,8 +37,8 @@ set foldmethod=indent
 set foldlevel=99
 
 " Map leader key to space bar
-nnoremap <Space> <Nop>
-let mapleader = " "
+nnoremap ',' <Nop>
+let mapleader = ','
 
 " Enable folding with the spacebar
 nnoremap <Leader>w za
@@ -120,6 +120,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Toggle paste mode on and off, specially for pasting code snippets
+set pastetoggle=<F3>
+
 " =============================================================================
 " Plugin settings
 " =============================================================================
@@ -135,3 +138,6 @@ colors zenburn
 
 " vim-quickrun ----------------------------------------------------------------
 map <Leader>o :QuickRun<CR>
+
+" jedi-vim --------------------------------------------------------------------
+let g:jedi#use_tabs_not_buffers=1
