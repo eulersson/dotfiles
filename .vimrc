@@ -17,10 +17,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
-Plugin 'sickill/vim-monokai'
-Plugin 'jnurmine/Zenburn'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'thinca/vim-quickrun'
+Plugin 'pangloss/vim-javascript'
+Plugin 'docwhite/vim-material'
 
 " All of your Plugins must be added before the following line
 call vundle#end()          " Required
@@ -67,10 +67,20 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 " Full-stack development indentation
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
+au BufNewFile,BufRead *.js
+    \  set tabstop=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
+
+au BufNewFile,BufRead *.css
+    \  set tabstop=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
+
+au BufNewFile,BufRead *.html
+    \  set tabstop=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
 
 " Flagging unnecessary whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
@@ -133,11 +143,12 @@ let g:SimylFold_docstring_preview=1
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
-" Zenburn ---------------------------------------------------------------------
-colors zenburn
-
 " vim-quickrun ----------------------------------------------------------------
 map <Leader>o :QuickRun<CR>
 
 " jedi-vim --------------------------------------------------------------------
 let g:jedi#use_tabs_not_buffers=1
+
+" vim-material ----------------------------------------------------------------
+set background=dark
+colorscheme material
