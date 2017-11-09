@@ -20,7 +20,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'thinca/vim-quickrun'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'docwhite/vim-material'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'wavded/vim-stylus'
 
 " All of your Plugins must be added before the following line
 call vundle#end()          " Required
@@ -58,24 +61,31 @@ set bs=2
 
 " Proper PEP8 indentation
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+    \  set tabstop=4
+    \| set softtabstop=4
+    \| set shiftwidth=4
+    \| set textwidth=79
+    \| set expandtab
+    \| set autoindent
+    \| set fileformat=unix
 
-" Full-stack development indentation
-au BufNewFile,BufRead *.js
-    \  set tabstop=2
-    \| set softtabstop=2
-    \| set shiftwidth=2
-
+" Web-evelopment indentation
 au BufNewFile,BufRead *.css
     \  set tabstop=2
     \| set softtabstop=2
     \| set shiftwidth=2
+
+au BufNewFile,BufRead *.js
+    \  set tabstop=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
+    \| set expandtab
+
+au BufNewFile,BufRead *.jsx
+    \  set tabstop=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
+    \| set expandtab
 
 au BufNewFile,BufRead *.html
     \  set tabstop=2
@@ -150,5 +160,17 @@ map <Leader>o :QuickRun<CR>
 let g:jedi#use_tabs_not_buffers=1
 
 " vim-material ----------------------------------------------------------------
+"set background=dark
+"colorscheme material
+"
+" papercolor-theme ------------------------------------------------------------
 set background=dark
-colorscheme material
+colorscheme PaperColor
+
+" vim-jsx ---------------------------------------------------------------------
+noremap <C-j> :set syntax=javascript.jsx tabstop=2 softtabstop=2 shiftwidth=2 et<CR>
+
+" vim-airline -----------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+let g:airline_theme='dark'
+set laststatus=2
