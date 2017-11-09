@@ -72,7 +72,7 @@ function govenv() {
 
 export PS1="\[\e[1;32m\]\u\[\e[m\] \[\e[1;36m\]\W\[\e[m\] \[\e[1;35m\]\`parse_git_branch\`\[\e[m\] "
 export PATH=/Users/ramon/Apps:./node_modules/.bin:/Users/ramon/Qt/5.8/clang_64/bin:/Users/ramon/Qt/Qt\ Creator.app/Contents/MacOS:/Applications/CMake.app/Contents/bin:/Users/ramon/local/bin:$PATH
-export OF_ROOT=/Users/ramon/Apps/of_v0.9.8_osx_release
+export OF_ROOT=/Users/ramon/App/of_v0.9.8_osx_release
 
 export PKG_CONFIG_PATH=/usr/local/Cellar/libffi/3.0.13/lib/pkgconfig/
 
