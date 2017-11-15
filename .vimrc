@@ -24,6 +24,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'docwhite/vim-material'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'wavded/vim-stylus'
+Plugin 'ekalinin/Dockerfile.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()          " Required
@@ -166,9 +167,6 @@ let g:jedi#use_tabs_not_buffers=1
 " papercolor-theme ------------------------------------------------------------
 set background=dark
 colorscheme PaperColor
-
-" vim-jsx ---------------------------------------------------------------------
-noremap <C-j> :set syntax=javascript.jsx tabstop=2 softtabstop=2 shiftwidth=2 et<CR>
 
 " vim-airline -----------------------------------------------------------------
 let g:airline_powerline_fonts = 1

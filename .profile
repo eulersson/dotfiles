@@ -1,7 +1,7 @@
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-# get current branch in git repo
+# Get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
@@ -13,7 +13,7 @@ function parse_git_branch() {
 	fi
 }
 
-# get current status of git repo
+# Get current status of git repo
 function parse_git_dirty {
 	status=`git status 2>&1 | tee`
 	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
@@ -48,43 +48,49 @@ function parse_git_dirty {
 	fi
 }
 
-# git completion
+# Git completion
 source ~/.git-completion.bash
 
-# some more ls aliases
+# Some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 	alias ls='ls --color=auto'
 	alias grep='grep --color=auto'
 fi
 
-# virtualenv stuff
-function govenv() {
-	export WORKON_HOME=$HOME/.virtualenvs
-	export PROJECT_HOME=$HOME/Devel
-	source /usr/local/bin/virtualenvwrapper.sh
-}
+# Virtual environment
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_SCRIPT=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
+source $HOME/Library/Python/2.7/bin/virtualenvwrapper_lazy.sh
 
+# Prompt
 export PS1="\[\e[1;32m\]\u\[\e[m\] \[\e[1;36m\]\W\[\e[m\] \[\e[1;35m\]\`parse_git_branch\`\[\e[m\] "
-export PATH=/Users/ramon/Apps:./node_modules/.bin:/Users/ramon/Qt/5.8/clang_64/bin:/Users/ramon/Qt/Qt\ Creator.app/Contents/MacOS:/Applications/CMake.app/Contents/bin:/Users/ramon/local/bin:$PATH
-export OF_ROOT=/Users/ramon/App/of_v0.9.8_osx_release
 
-export PKG_CONFIG_PATH=/usr/local/Cellar/libffi/3.0.13/lib/pkgconfig/
+# Binary search path.
+export PATH=\
+./node_modules/.bin:\
+$HOME/Library/Python/2.7/bin:\
+$HOME/local/bin:\
+$PATH
 
+# For python modules installed through Homebrew.
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+
+# For PySide to work.
+export DYLD_LIBRARY_PATH=/usr/local/lib/python2.7/site-packages/PySide
+
+# openFrameworks path.
+export OF_ROOT=$HOME/Apps/of_v0.9.8_osx_release
+
+# For Raspberry Pi.
 alias goserial='screen /dev/cu.usbserial 115200'
 
-##
-# Your previous /Users/ramon/.profile file was backed up as /Users/ramon/.profile.macports-saved_2017-07-03_at_15:22:44
-##
-
-# MacPorts Installer addition on 2017-07-03_at_15:22:44: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export HFS="/Applications/Houdini/Current/Frameworks/Houdini.framework/Versions/Current/Resources/houdini"
-export PYTHONPATH="$PYTHONPATH:$HFS/python2.7libs:/usr/local/lib/python2.7/site-packages"
-# Finished adapting your PATH environment variable for use with MacPorts.
-alias henv="HERE=$(pwd) && cd /Applications/Houdini/Houdini16.0.621/Frameworks/Houdini.framework/Versions/16.0.621/Resources/ && source houdini_setup && cd $HERE"
+# Other aliases.
+alias e='exit'
