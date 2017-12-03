@@ -92,5 +92,7 @@ export OF_ROOT=$HOME/Apps/of_v0.9.8_osx_release
 # For Raspberry Pi.
 alias goserial='screen /dev/cu.usbserial 115200'
 
+# Used by weechat
+export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig
 # Other aliases.
 alias e='exit'
