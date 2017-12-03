@@ -25,6 +25,7 @@ Plugin 'docwhite/vim-material'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'wavded/vim-stylus'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()          " Required

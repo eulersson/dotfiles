@@ -96,3 +96,4 @@ alias goserial='screen /dev/cu.usbserial 115200'
 export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig
 # Other aliases.
 alias e='exit'
+alias t='tmux'
