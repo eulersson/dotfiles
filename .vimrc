@@ -156,7 +156,8 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " vim-quickrun ----------------------------------------------------------------
-map <Leader>o :QuickRun<CR>
+map <Leader>o :QuickRun <CR>
+let g:quickrun_config = {'*' : {'outputter/buffer/split': 'below'}}
 
 " jedi-vim --------------------------------------------------------------------
 let g:jedi#use_tabs_not_buffers=1
