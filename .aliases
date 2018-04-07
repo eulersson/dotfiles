@@ -5,7 +5,7 @@ alias l='ls -CF'
 alias e='exit'
 alias t='tmux'
 
-if [ "$(uname)" == "Darwin" ]
+if [[ "$(uname)" == "Darwin" ]]
 then
 	# For python modules installed through Homebrew.
 	alias enableHomebrewPython='export PYTHONPATH=/usr/local/lib/python2.7/site-packages'

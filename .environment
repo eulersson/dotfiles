@@ -2,7 +2,7 @@
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 
-if [ "$(uname)" == "Darwin" ]
+if [[ "$(uname)" == "Darwin" ]]
 then
 	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 	export VIRTUALENVWRAPPER_SCRIPT=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
@@ -10,7 +10,7 @@ then
 fi
 
 # Search path.
-if [ "$(uname)" == "Darwin" ]
+if [[ "$(uname)" == "Darwin" ]]
 then
 	export PATH=$HOME/Library/Python/2.7/bin:$PATH
 	export PATH=$HOME/local/bin:$PATH
@@ -28,7 +28,7 @@ else
 fi
 
 # Used by weechat on OSX.
-if [ "$(uname)" == "Darwin" ]
+if [[ "$(uname)" == "Darwin" ]]
 then
 	export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig
 fi
