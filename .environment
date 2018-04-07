@@ -1,0 +1,34 @@
+# Virtual environment.
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+
+if [ "$(uname)" == "Darwin" ]
+then
+	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+	export VIRTUALENVWRAPPER_SCRIPT=$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
+	source $HOME/Library/Python/2.7/bin/virtualenvwrapper_lazy.sh
+fi
+
+# Search path.
+if [ "$(uname)" == "Darwin" ]
+then
+	export PATH=$HOME/Library/Python/2.7/bin:$PATH
+	export PATH=$HOME/local/bin:$PATH
+	export PATH=/Users/ramon/Apps/of_v0.9.8_osx_release/projectGenerator-osx/projectGenerator.app/Contents/Resources/app/app:$PATH
+else
+	export PATH=/opt/hfs15.5.673:$PATH
+	export PATH=/opt/hfs15.5.673/bin:$PATH
+	export PATH=/home/ramon/Qt/5.8/gcc_64/bin:$PATH
+	export PATH=/opt/processing-3.0.2:$PATH
+	export PATH=/opt/jdk1.8.0_73/bin:$PATH
+	export PATH=/opt/jdk1.8.0_73/jre/bin:$PATH
+	export PATH=/home/ramon/Qt/Tools/QtCreator/bin:$PATH
+	export PATH=/usr/autodesk/maya2017/bin:$PATH
+	export PATH=~/bin:$PATH
+fi
+
+# Used by weechat on OSX.
+if [ "$(uname)" == "Darwin" ]
+then
+	export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig
+fi

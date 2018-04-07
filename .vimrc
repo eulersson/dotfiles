@@ -16,7 +16,6 @@ Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'thinca/vim-quickrun'
 Plugin 'pangloss/vim-javascript'
@@ -25,6 +24,10 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'wavded/vim-stylus'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'rizzatti/dash.vim'
+
+" Bundles
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()          " Required
@@ -70,7 +73,7 @@ au BufNewFile,BufRead *.py
     \| set autoindent
     \| set fileformat=unix
 
-" Web-evelopment indentation
+" Web-development indentation
 au BufNewFile,BufRead *.css
     \  set tabstop=2
     \| set softtabstop=2
@@ -92,10 +95,21 @@ au BufNewFile,BufRead *.html
     \  set tabstop=2
     \| set softtabstop=2
     \| set shiftwidth=2
+    \| set expandtab
+
+" Others
+au BufNewFile,BufRead *.yaml
+    \  set tabstop=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
+    \| set expandtab
 
 " Flagging unnecessary whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" That makes it a bit less choppy on iTerm2
+set lazyredraw
 
 " Set enconding properly
 set encoding=utf-8
@@ -169,7 +183,11 @@ let g:jedi#use_tabs_not_buffers=1
 set background=dark
 colorscheme PaperColor
 
-" vim-airline -----------------------------------------------------------------
-let g:airline_powerline_fonts = 1
-let g:airline_theme='dark'
+" powerline -------------------------------------------------------------------
+"let g:airline_powerline_fonts = 1
+"let g:airline_theme='dark'
 set laststatus=2
+
+" dash.vim --------------------------------------------------------------------
+let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'python'] }
+:nmap <silent> <leader>f <Plug>DashSearch

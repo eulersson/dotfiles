@@ -1,0 +1,19 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias e='exit'
+alias t='tmux'
+
+if [ "$(uname)" == "Darwin" ]
+then
+	# For python modules installed through Homebrew.
+	alias enableHomebrewPython='export PYTHONPATH=/usr/local/lib/python2.7/site-packages'
+
+	# For PySide to work.
+	export DYLD_LIBRARY_PATH=/usr/local/lib/python2.7/site-packages/PySide
+
+	# openFrameworks path.
+	export OF_ROOT=$HOME/Apps/of_v0.9.8_osx_release
+fi
+
