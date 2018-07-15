@@ -173,7 +173,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 let NERDTreeShowHidden=1
 
 " vim-quickrun ----------------------------------------------------------------
-map <Leader>o :QuickRun <CR>
+map <Leader>o :QuickRun<CR>
 let g:quickrun_config = {'*' : {'outputter/buffer/split': 'below'}}
 
 " jedi-vim --------------------------------------------------------------------
@@ -191,8 +191,12 @@ set laststatus=2
 
 " dash.vim --------------------------------------------------------------------
 let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'python'] }
-:nmap <silent> <leader>f <Plug>DashSearch
+nnoremap <silent> <Leader>f <Plug>DashSearch
 
 " ale -------------------------------------------------------------------------
 " Requires: npm install standard --global
+" Requires: yarn global add prettier
 let g:ale_linters = { 'javascript': ['standard'] } 
+let g:ale_fixers = { 'javascript': ['prettier'] }
+let g:ale_javascript_prettier_options = '--no-semi'
+nnoremap <Leader>u :ALEFix<CR>
