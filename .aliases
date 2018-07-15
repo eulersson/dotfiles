@@ -4,6 +4,7 @@ alias l='ls -CF'
 
 alias e='exit'
 alias t='tmux'
+alias ds='docker-compose'
 
 if [[ "$(uname)" == "Darwin" ]]
 then

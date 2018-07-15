@@ -1,14 +1,14 @@
-set nocompatible  " Required
-filetype off      " Required
+set nocompatible
+filetype off
 
-" Set the runtime path to include Vundle and initialize
+" Set the runtime path to include Vundle and initialize.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let Vundle manage Vundle, required
+" Let Vundle manage Vundlde.
 Plugin 'gmarik/Vundle.vim'
 
-" Add all your plugins here
+" All the plugins.
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
@@ -25,45 +25,49 @@ Plugin 'wavded/vim-stylus'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'rizzatti/dash.vim'
+Plugin 'w0rp/ale'
 
-" Bundles
+" Bundles.
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-" All of your Plugins must be added before the following line
-call vundle#end()          " Required
-filetype plugin indent on  " Required
+" All of your Plugins must be added before the following line.
+call vundle#end()
+filetype plugin indent on
 
-" Split navigations
+" Split navigations.
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
-" Enable folding
+" Enable folding.
 set foldmethod=indent
 set foldlevel=99
 
-" Map leader key to space bar
+" Map leader key to comma.
 nnoremap ',' <Nop>
 let mapleader = ','
 
-" Enable folding with the spacebar
+" Enable folding.
 nnoremap <Leader>w za
 
-" Removes highlight of last search
+" Removes highlight of last search.
 noremap <Leader>q :nohl<CR>
 vnoremap <Leader>q :nohl<CR>
 inoremap <Leader>q :nohl<CR>
 
-" Quicksave commands
+" Quicksave commands.
 noremap <C-z> :update<CR>
 vnoremap <C-z> <C-c>:update<CR>
 inoremap <C-z> <C-o>:update<CR>
 
-" Make backspace work as normal again
+" Remap the redo command to be Mac friendly.
+nnoremap <Leader>m <C-r>
+
+" Make backspace work as normal again.
 set bs=2
 
-" Proper PEP8 indentation
+" Filetype specific configurations.
 au BufNewFile,BufRead *.py
     \  set tabstop=4
     \| set softtabstop=4
@@ -73,7 +77,6 @@ au BufNewFile,BufRead *.py
     \| set autoindent
     \| set fileformat=unix
 
-" Web-development indentation
 au BufNewFile,BufRead *.css
     \  set tabstop=2
     \| set softtabstop=2
@@ -97,65 +100,65 @@ au BufNewFile,BufRead *.html
     \| set shiftwidth=2
     \| set expandtab
 
-" Others
 au BufNewFile,BufRead *.yaml
     \  set tabstop=2
     \| set softtabstop=2
     \| set shiftwidth=2
     \| set expandtab
 
-" Flagging unnecessary whitespace
+" Flagging unnecessary whitespace.
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-" That makes it a bit less choppy on iTerm2
+" That makes it a bit less choppy.
 set lazyredraw
+set nocursorline
 
-" Set enconding properly
+" Set enconding properly.
 set encoding=utf-8
 
 " Make code look pretty!
 let python_highlight_all=1
 syntax enable
 
-" System clipboard available
+" System clipboard available.
 set clipboard=unnamed
 
-" Quick quit command
+" Quick quit command.
 noremap <Leader>e :quit<CR> " Quit current window
 noremap <Leader>E :qa!<CR>  " Quit all windows
 
-" Easier moving between tabs
+" Easier moving between tabs.
 map <Leader>, <Esc>:tabprevious<CR>
 map <Leader>. <Esc>:tabnext<CR>
 
-" Map sort function to a key
+" Map sort function to a key.
 vnoremap <Leader>s :sort<CR>
 
-" Easier moving of code blocks
+" Easier moving of code blocks.
 vnoremap < <gv " Better indentation
 vnoremap > >gv " Better indentation
 
-" Showing line numbers and length
-set number " Show line numbers
-set tw=79  " Width of document (used by gd)
-set nowrap " Don't automatically wrap on load
-set fo-=t  " Don't automatically wrap text when typing
+" Showing line numbers and length.
+set number " show line numbers
+set tw=79  " width of document (used by gd)
+set nowrap " don't automatically wrap on load
+set fo-=t  " don't automatically wrap text when typing
 set colorcolumn=80
 highlight ColorColumn ctermbg=233
 
-" Make search case insensitive
+" Make search case insensitive.
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-" Disable backup and swap files, they trigger too many events for watchers
+" Disable backup and swap files, they trigger too many events for watchers.
 set nobackup
 set nowritebackup
 set noswapfile
 
-" Toggle paste mode on and off, specially for pasting code snippets
+" Toggle paste mode on and off, specially for pasting code snippets.
 set pastetoggle=<F3>
 
 " =============================================================================
@@ -167,6 +170,7 @@ let g:SimylFold_docstring_preview=1
 " nerdtree --------------------------------------------------------------------
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
+let NERDTreeShowHidden=1
 
 " vim-quickrun ----------------------------------------------------------------
 map <Leader>o :QuickRun <CR>
@@ -174,11 +178,8 @@ let g:quickrun_config = {'*' : {'outputter/buffer/split': 'below'}}
 
 " jedi-vim --------------------------------------------------------------------
 let g:jedi#use_tabs_not_buffers=1
+let g:jedi#force_py_version = 3
 
-" vim-material ----------------------------------------------------------------
-"set background=dark
-"colorscheme material
-"
 " papercolor-theme ------------------------------------------------------------
 set background=dark
 colorscheme PaperColor
@@ -191,3 +192,7 @@ set laststatus=2
 " dash.vim --------------------------------------------------------------------
 let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'python'] }
 :nmap <silent> <leader>f <Plug>DashSearch
+
+" ale -------------------------------------------------------------------------
+" Requires: npm install standard --global
+let g:ale_linters = { 'javascript': ['standard'] } 
