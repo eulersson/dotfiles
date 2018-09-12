@@ -176,6 +176,9 @@ let NERDTreeShowHidden=1
 map <Leader>o :QuickRun<CR>
 let g:quickrun_config = {'*' : {'outputter/buffer/split': 'below'}}
 
+" syntastic -------------------------------------------------------------------
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+
 " jedi-vim --------------------------------------------------------------------
 let g:jedi#use_tabs_not_buffers=1
 let g:jedi#force_py_version = 3
@@ -194,9 +197,9 @@ let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'pyt
 nnoremap <silent> <Leader>f <Plug>DashSearch
 
 " ale -------------------------------------------------------------------------
-" Requires: npm install standard --global
+" Requires eslint to be installed locally in the project or globally.
 " Requires: yarn global add prettier
-let g:ale_linters = { 'javascript': ['standard'] } 
-let g:ale_fixers = { 'javascript': ['prettier'] }
-let g:ale_javascript_prettier_options = '--no-semi'
+let g:ale_linters = { 'javascript': ['eslint'] } 
+let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
+let g:ale_javascript_prettier_options = '--single-quote --no-semi'
 nnoremap <Leader>u :ALEFix<CR>
