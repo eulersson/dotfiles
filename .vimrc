@@ -172,6 +172,9 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 let NERDTreeShowHidden=1
 
+" ctrlp -----------------------------------------------------------------------
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 " vim-quickrun ----------------------------------------------------------------
 map <Leader>o :QuickRun<CR>
 let g:quickrun_config = {'*' : {'outputter/buffer/split': 'below'}}
