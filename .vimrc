@@ -110,10 +110,6 @@ au BufNewFile,BufRead *.yaml
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-" That makes it a bit less choppy.
-set lazyredraw
-set nocursorline
-
 " Set enconding properly.
 set encoding=utf-8
 
@@ -161,6 +157,14 @@ set noswapfile
 " Toggle paste mode on and off, specially for pasting code snippets.
 set pastetoggle=<F3>
 
+" Trying to speed it up
+set nocursorline        " Don't paint cursor line
+set lazyredraw          " Wait to redraw
+" set noshowmatch         " Don't match parentheses/brackets
+" set nocursorcolumn      " Don't paint cursor column
+" let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
+" let html_no_rendering=1 " Don't render italic, bold, links in HTML
+
 " =============================================================================
 " Plugin settings
 " =============================================================================
@@ -206,3 +210,4 @@ let g:ale_linters = { 'javascript': ['eslint'] }
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
 let g:ale_javascript_prettier_options = '--single-quote --no-semi'
 nnoremap <Leader>u :ALEFix<CR>
+
