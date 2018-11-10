@@ -7,6 +7,8 @@ alias t='tmux'
 alias ds='docker-compose'
 alias dm='docker-machine'
 alias dk='docker'
+alias dkcd='docker rmi $(docker images -aq -f "dangling=true")'
+alias dmspindo='docker-machine create --driver digitalocean --digitalocean-access-token `cat $HOME/.tokens/.do`'
 
 if [[ "$(uname)" == "Darwin" ]]
 then
