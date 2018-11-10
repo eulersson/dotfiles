@@ -1,15 +1,16 @@
 # Virtual environment.
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
 eval "$(pyenv init -)"
+export WORKON_HOME=~/.venvs
+export PROJECT_HOME=~/Devel
 pyenv virtualenvwrapper_lazy
+
+# Make zsh the default shell.
+export SHELL=zsh
 
 # Search path.
 if [[ "$(uname)" == "Darwin" ]]
 then
-	#export PATH=$HOME/Library/Python/2.7/bin:$PATH
-	export PATH=$HOME/local/bin:$PATH
-	#export PATH=/Users/ramon/Apps/of_v0.9.8_osx_release/projectGenerator-osx/projectGenerator.app/Contents/Resources/app/app:$PATH
+	export PATH=$HOME/go/bin:$HOME/.local/bin:$PATH
 else
 	export PATH=/opt/hfs15.5.673:$PATH
 	export PATH=/opt/hfs15.5.673/bin:$PATH
