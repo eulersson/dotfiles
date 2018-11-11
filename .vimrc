@@ -1,3 +1,4 @@
+" Needed configuration for Vundle. Needs to be at top.
 set nocompatible
 filetype off
 
@@ -8,7 +9,9 @@ call vundle#begin()
 " Let Vundle manage Vundlde.
 Plugin 'gmarik/Vundle.vim'
 
-" -- Plugins --
+" =============================================================================
+" Plugin Installs
+" =============================================================================
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docwhite/vim-tmux-navigator'
@@ -23,21 +26,36 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'w0rp/ale'
 Plugin 'wavded/vim-stylus'
 
+" From: https://github.com/Valloric/YouCompleteMe/blob/master/README.md
+"
 " This guy requires to run ./install.py in the folder Vundle clones. If using
 " pyenv to manage your Python installations it requires you to have passed this
 " environment variable when installing it:
 "
 "   env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.7.0
 "
+" For JavaScript completion, Tern has been deprecated, in order to use TSServer
+" simply blast this folder in the root of YCM installation:
+"   
+"   third_party/ycmd/third_party/tern_runtime/node_modules
+"
+" And Make sure typescript has been installed globally:
+"
+"   yarn global add typescript
+"
 Plugin 'Valloric/YouCompleteMe'
 
-" -- Bundles --
+" =============================================================================
+" Bundle Installs
+" =============================================================================
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " All of your Plugins must be added before the following line.
 call vundle#end()
 
-" -- General Configuration --
+" =============================================================================
+" General Configuration
+" =============================================================================
 filetype plugin indent on
 
 " Split navigations.
@@ -83,30 +101,7 @@ au BufNewFile,BufRead *.py
     \| set autoindent
     \| set fileformat=unix
 
-au BufNewFile,BufRead *.css
-    \  set tabstop=2
-    \| set softtabstop=2
-    \| set shiftwidth=2
-
-au BufNewFile,BufRead *.js
-    \  set tabstop=2
-    \| set softtabstop=2
-    \| set shiftwidth=2
-    \| set expandtab
-
-au BufNewFile,BufRead *.jsx
-    \  set tabstop=2
-    \| set softtabstop=2
-    \| set shiftwidth=2
-    \| set expandtab
-
-au BufNewFile,BufRead *.html
-    \  set tabstop=2
-    \| set softtabstop=2
-    \| set shiftwidth=2
-    \| set expandtab
-
-au BufNewFile,BufRead *.yaml
+au BufNewFile,BufRead *.css,*.html,*.js,*.jsx,*.yaml
     \  set tabstop=2
     \| set softtabstop=2
     \| set shiftwidth=2
@@ -120,15 +115,14 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
 
 " Make code look pretty!
-let python_highlight_all=1
 syntax enable
 
 " System clipboard available.
 set clipboard=unnamed
 
 " Quick quit command.
-noremap <Leader>e :quit<CR> " Quit current window
-noremap <Leader>E :qa!<CR>  " Quit all windows
+noremap <Leader>e :quit<CR>  " Quit current window
+noremap <Leader>E :qa!<CR>   " Quit all windows
 
 " Easier moving between tabs.
 map <Leader>, <Esc>:tabprevious<CR>
@@ -163,7 +157,7 @@ set noswapfile
 " Toggle paste mode on and off, specially for pasting code snippets.
 set pastetoggle=<F3>
 
-" Trying to speed it up
+" Trying to speed it up (some are commended out for testing performance).
 set nocursorline           " Don't paint cursor line.
 set lazyredraw             " Wait to redraw.
 " set noshowmatch          " Don't match parentheses/brackets.
@@ -172,7 +166,7 @@ set lazyredraw             " Wait to redraw.
 " let html_no_rendering=1  " Don't render italic, bold, links in HTML.
 
 " =============================================================================
-" Plugin settings
+" Plugin Settings
 " =============================================================================
 " SimpylFold ------------------------------------------------------------------
 let g:SimylFold_docstring_preview=1
