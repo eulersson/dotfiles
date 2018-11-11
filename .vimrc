@@ -120,6 +120,9 @@ syntax enable
 " System clipboard available.
 set clipboard=unnamed
 
+" To exit insert mode.
+imap jj <Esc>
+
 " Quick quit command.
 noremap <Leader>e :quit<CR>  " Quit current window
 noremap <Leader>E :qa!<CR>   " Quit all windows
