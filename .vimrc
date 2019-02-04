@@ -204,6 +204,7 @@ nnoremap <silent> <Leader>f <Plug>DashSearch
 let g:ale_virtualenv_dir_names = ['.venvs']
 let g:ale_linters = { 'javascript': ['eslint'] } 
 let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
+let ale_python_pylint_auto_pipenv = 1
 nnoremap <Leader>u :ALEFix<CR>
 
 " YCM -------------------------------------------------------------------------
