@@ -199,9 +199,27 @@ let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'pyt
 nnoremap <silent> <Leader>f <Plug>DashSearch
 
 " ale -------------------------------------------------------------------------
-" Requires: eslint to be installed locally in the project or globally.
-" Requires: prettier to be installed globally.
-" Requires: black, flake8 and pylint python modules to be visible.
+" - For Javascript -
+" Requires eslint to be installed locally in the project or globally. Also
+" prettier will need to be installed globally.
+"
+" - For Python -
+" Three modules need to be visible: black, flake8 and pylint.
+"
+" When working on projects created with pipenv, since we set
+" ale_python_auto_pipenv to true, we will need to install them as dev
+" dependencies:
+"
+"     pipenv install black flake8 pylint --dev
+"
+" For cases when not working on a project then just make a virtual environment
+" using pypenv and pypenv-virtualenv, install those dependencies, and start vim
+" from an activated shell.
+"
+"     pyenv virtualenv linting  # or pyenv activate linting if exists already.
+"     (linting) pip install black flake8 pylint
+"     (linting) vim file.py
+"
 let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -214,12 +232,18 @@ let g:ale_linters = {
 \    'javascript': ['eslint'],
 \    'python': ['flake8', 'pylint']
 \} 
-let g:ale_python_pylint_auto_pipenv = 1
+let g:ale_python_auto_pipenv = 1
 nnoremap <Leader>u :ALEFix<CR>
 
 " YCM -------------------------------------------------------------------------
-" Start autocompletion after 4 chars
-" let g:ycm_min_num_of_chars_for_completion = 4
+" YCM will need to be built with the Python version you will intend to use. At
+" todays date (10th April 2019) I would follow these steps.
+"
+"     pyenv install 3.7.3  # Install the latest Python version.
+"     pyenv global 3.7.3   # Set it globally so the `python` shim picks 3.7.3.
+"     cd ~/.vim/bundle/YouCompleteMe
+"     python install.py
+"
 
 " Point YCM to the Pipenv created virtualenv, if possible. At first, get the
 " output of 'pipenv --venv' command.
