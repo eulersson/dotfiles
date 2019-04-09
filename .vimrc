@@ -201,10 +201,20 @@ nnoremap <silent> <Leader>f <Plug>DashSearch
 " ale -------------------------------------------------------------------------
 " Requires: eslint to be installed locally in the project or globally.
 " Requires: prettier to be installed globally.
-let g:ale_virtualenv_dir_names = ['.venvs']
-let g:ale_linters = { 'javascript': ['eslint'] } 
-let g:ale_fixers = { 'javascript': ['prettier', 'eslint'] }
-let ale_python_pylint_auto_pipenv = 1
+" Requires: black, flake8 and pylint python modules to be visible.
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_fixers = {
+\    'javascript': ['prettier', 'eslint'],
+\    'python': ['black']
+\}
+let g:ale_linters = {
+\    'javascript': ['eslint'],
+\    'python': ['flake8', 'pylint']
+\} 
+let g:ale_python_pylint_auto_pipenv = 1
 nnoremap <Leader>u :ALEFix<CR>
 
 " YCM -------------------------------------------------------------------------
