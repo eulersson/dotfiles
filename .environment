@@ -1,8 +1,10 @@
-# Virtual environment.
+# Configure pyenv for managing Python installations.
 eval "$(pyenv init -)"
-export WORKON_HOME=~/.venvs
-export PROJECT_HOME=~/Devel
-pyenv virtualenvwrapper_lazy
+eval "$(pyenv virtualenv-init -)"
+
+# This will make Pipenv use pyenv’s active Python version to create virtual
+# environments by default.
+export PIPENV_PYTHON="$(pyenv root)/shims/python"
 
 # Make zsh the default shell.
 export SHELL=zsh
