@@ -59,6 +59,7 @@ call vundle#end()
 " =============================================================================
 filetype plugin indent on
 
+
 " Split navigations.
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
@@ -72,6 +73,12 @@ set foldlevel=99
 " Map leader key to comma.
 nnoremap ',' <Nop>
 let mapleader = ','
+
+" Otherwise on Mac I can't send the <C-w>
+nnoremap <Leader>k <C-w>
+
+" Reload .vimrc file.
+nnoremap <Leader>so :source ~/.vimrc<CR>
 
 " Enable folding.
 nnoremap <Leader>w za
@@ -87,10 +94,16 @@ vnoremap <C-z> <C-c>:update<CR>
 inoremap <C-z> <C-o>:update<CR>
 
 " Remap the redo command to be Mac friendly.
-nnoremap <Leader>m <C-r>
+nnoremap m <C-r>
+
+" Adds new lines to the same indentation after hitting return.
+set autoindent
 
 " Make backspace work as normal again.
-set bs=2
+set backspace=2
+
+" Expand tabs by default unless configured otherwise.
+set expandtab
 
 " Filetype specific configurations.
 au BufNewFile,BufRead *.py
@@ -98,15 +111,17 @@ au BufNewFile,BufRead *.py
     \| set softtabstop=4
     \| set shiftwidth=4
     \| set textwidth=79
-    \| set expandtab
-    \| set autoindent
     \| set fileformat=unix
 
 au BufNewFile,BufRead *.css,*.html,*.js,*.jsx,*.yaml
     \  set tabstop=2
     \| set softtabstop=2
     \| set shiftwidth=2
-    \| set expandtab
+
+au BufNewFile,BufRead Jenkinsfile
+    \  set tabstop=4
+    \| set softtabstop=4
+    \| set shiftwidth=4
 
 " Flagging unnecessary whitespace.
 highlight BadWhitespace ctermbg=red guibg=darkred
@@ -129,8 +144,9 @@ noremap <Leader>e :quit<CR>  " Quit current window
 noremap <Leader>E :qa!<CR>   " Quit all windows
 
 " Easier moving between tabs.
-map <Leader>, <Esc>:tabprevious<CR>
+map <Leader>m <Esc>:tabprevious<CR>
 map <Leader>. <Esc>:tabnext<CR>
+map <Leader>n <Esc>:tabnew<CR>
 
 " Map sort function to a key.
 vnoremap <Leader>s :sort<CR>
@@ -195,8 +211,9 @@ colorscheme PaperColor
 set laststatus=2
 
 " dash.vim --------------------------------------------------------------------
-let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'python'] }
-nnoremap <silent> <Leader>f <Plug>DashSearch
+let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'django', 'python'] }
+nmap <silent> <Leader>f <Plug>DashSearch
+nmap <silent> <Leader>ff <Plug>DashGlobalSearch
 
 " ale -------------------------------------------------------------------------
 " - For Javascript -
@@ -233,6 +250,7 @@ let g:ale_linters = {
 \    'python': ['flake8', 'pylint']
 \} 
 let g:ale_python_auto_pipenv = 1
+let g:ale_python_black_options = '--skip-string-normalization'
 nnoremap <Leader>u :ALEFix<CR>
 
 " YCM -------------------------------------------------------------------------
@@ -259,3 +277,7 @@ if shell_error == 0
 else
   let g:ycm_python_binary_path = 'python'
 endif
+
+" Classic GoTo to jump to definitions.
+nnoremap <Leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_goto_buffer_command = 'split'
