@@ -110,10 +110,10 @@ au BufNewFile,BufRead *.py
     \  set tabstop=4
     \| set softtabstop=4
     \| set shiftwidth=4
-    \| set textwidth=79
+    \| set textwidth=88
     \| set fileformat=unix
 
-au BufNewFile,BufRead *.css,*.html,*.js,*.jsx,*.yaml
+au BufNewFile,BufRead *.css,*.html,*.js,*.jsx,*.yaml,*.yml
     \  set tabstop=2
     \| set softtabstop=2
     \| set shiftwidth=2
@@ -157,10 +157,10 @@ vnoremap > >gv " Better indentation
 
 " Showing line numbers and length.
 set number  " Show line numbers.
-set tw=79   " Width of document (used by gd).
+set tw=88   " Width of document (used by gd).
 set nowrap  " Don't automatically wrap on load.
 set fo-=t   " Don't automatically wrap text when typing.
-set colorcolumn=80
+set colorcolumn=88
 highlight ColorColumn ctermbg=233
 
 " Make search case insensitive.
