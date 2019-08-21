@@ -16,6 +16,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docwhite/vim-tmux-navigator'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'majutsushi/tagbar'    " Requires exuberant ctags installed.
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rizzatti/dash.vim'
@@ -281,3 +282,6 @@ endif
 " Classic GoTo to jump to definitions.
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_goto_buffer_command = 'split'
+
+"Tagbar -------------------------------------------------------------------------------
+nmap <F8> :TagbarToggle<CR>
