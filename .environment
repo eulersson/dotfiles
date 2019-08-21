@@ -1,3 +1,13 @@
+# Make zsh the default shell.
+export SHELL=zsh
+
+# Search path.
+export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+
 # Configure pyenv for managing Python installations.
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -5,25 +15,6 @@ eval "$(pyenv virtualenv-init -)"
 # This will make Pipenv use pyenv’s active Python version to create virtual
 # environments by default.
 export PIPENV_PYTHON="$(pyenv root)/shims/python"
-
-# Make zsh the default shell.
-export SHELL=zsh
-
-# Search path.
-if [[ "$(uname)" == "Darwin" ]]
-then
-	export PATH=$HOME/go/bin:$HOME/.local/bin:$PATH
-else
-	export PATH=/opt/hfs15.5.673:$PATH
-	export PATH=/opt/hfs15.5.673/bin:$PATH
-	export PATH=/home/ramon/Qt/5.8/gcc_64/bin:$PATH
-	export PATH=/opt/processing-3.0.2:$PATH
-	export PATH=/opt/jdk1.8.0_73/bin:$PATH
-	export PATH=/opt/jdk1.8.0_73/jre/bin:$PATH
-	export PATH=/home/ramon/Qt/Tools/QtCreator/bin:$PATH
-	export PATH=/usr/autodesk/maya2017/bin:$PATH
-	export PATH=~/bin:$PATH
-fi
 
 # Used by weechat on OSX.
 if [[ "$(uname)" == "Darwin" ]]
