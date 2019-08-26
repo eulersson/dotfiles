@@ -67,6 +67,10 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
+" Show spaces and tabs.
+set list
+set listchars=eol:¬,trail:·,tab:>-
+
 " Enable folding.
 set foldmethod=indent
 set foldlevel=99
@@ -107,6 +111,11 @@ set backspace=2
 set expandtab
 
 " Filetype specific configurations.
+au BufNewFile,BufRead *.json
+    \  set tabstop=4
+    \| set softtabstop=4
+    \| set shiftwidth=4
+
 au BufNewFile,BufRead *.py
     \  set tabstop=4
     \| set softtabstop=4
