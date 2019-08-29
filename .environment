@@ -1,6 +1,9 @@
 # Make zsh the default shell.
 export SHELL=zsh
 
+# Default editor.
+export EDITOR=vim
+
 # Search path.
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
