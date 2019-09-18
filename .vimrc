@@ -207,7 +207,10 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 let NERDTreeShowHidden=1
 
 " ctrlp -----------------------------------------------------------------------
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = {
+\    'dir': '\v[\/](\.git|\.DS_Store|node_modules)$',
+\    'file': '\v\.(pyc)$',
+\}
 
 " vim-quickrun ----------------------------------------------------------------
 map <Leader>o :QuickRun<CR>
