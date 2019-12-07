@@ -123,7 +123,7 @@ au BufNewFile,BufRead *.py
     \| set textwidth=88
     \| set fileformat=unix
 
-au BufNewFile,BufRead *.css,*.html,*.js,*.jsx,*.yaml,*.yml
+au BufNewFile,BufRead *.css,*.html,*.js,*.jsx,*.ts,*.yaml,*.yml
     \  set tabstop=2
     \| set softtabstop=2
     \| set shiftwidth=2
@@ -264,7 +264,8 @@ let g:ale_fixers = {
 \}
 let g:ale_linters = {
 \    'javascript': ['eslint'],
-\    'python': ['flake8', 'pylint']
+\    'python': ['flake8', 'pylint'],
+\    'typescript': ['tslint']
 \} 
 let g:ale_python_auto_pipenv = 1
 let g:ale_python_black_options = '--skip-string-normalization'
