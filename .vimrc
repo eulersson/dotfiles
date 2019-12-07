@@ -195,6 +195,10 @@ set lazyredraw             " Wait to redraw.
 " let loaded_matchparen=1  " Don't load matchit.vim (paren/bracket matching).
 " let html_no_rendering=1  " Don't render italic, bold, links in HTML.
 
+" Mouse support (works with vim and tmux + vim).
+set mouse=a
+set ttymouse=xterm2
+
 " =============================================================================
 " Plugin Settings
 " =============================================================================

@@ -1,0 +1,2 @@
+#source ~/.environment
+#source ~/.aliases
