@@ -16,6 +16,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docwhite/vim-tmux-navigator'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'majutsushi/tagbar'    " Requires exuberant ctags installed.
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
@@ -38,7 +39,7 @@ Plugin 'wavded/vim-stylus'
 "
 " For JavaScript completion, Tern has been deprecated, in order to use TSServer
 " simply blast this folder in the root of YCM installation:
-"   
+"
 "   third_party/ycmd/third_party/tern_runtime/node_modules
 "
 " And Make sure typescript has been installed globally:
@@ -120,7 +121,6 @@ au BufNewFile,BufRead *.py
     \  set tabstop=4
     \| set softtabstop=4
     \| set shiftwidth=4
-    \| set textwidth=88
     \| set fileformat=unix
 
 au BufNewFile,BufRead *.css,*.html,*.js,*.jsx,*.ts,*.yaml,*.yml
@@ -165,11 +165,12 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv " Better indentation
 vnoremap > >gv " Better indentation
 
-" Showing line numbers and length.
-set number  " Show line numbers.
-set tw=88   " Width of document (used by gd).
-set nowrap  " Don't automatically wrap on load.
-set fo-=t   " Don't automatically wrap text when typing.
+set number             " Show line numbers.
+set textwidth=88       " Width of document (used by gd).
+set nowrap             " Don't automatically wrap on load.
+set formatoptions-=t   " Don't automatically wrap text when typing.
+
+" Highlight a vertical column at this position.
 set colorcolumn=88
 highlight ColorColumn ctermbg=233
 
@@ -258,17 +259,27 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_format = '[%linter%:%code%] %s [%severity%]'
 let g:ale_echo_msg_warning_str = 'W'
+
 let g:ale_fixers = {
 \    'javascript': ['prettier', 'eslint'],
 \    'python': ['black', 'autopep8']
 \}
+
 let g:ale_linters = {
 \    'javascript': ['eslint'],
 \    'python': ['flake8', 'pylint'],
 \    'typescript': ['tslint']
 \} 
+
 let g:ale_python_auto_pipenv = 1
 let g:ale_python_black_options = '--skip-string-normalization'
+
+" Uncomment these options when working for massive files.
+"let g:ale_lint_on_text_changed = 0
+"let g:ale_lint_on_enter = 0
+"let g:ale_lint_on_save = 1
+
+" Easy shortcut for fixing.
 nnoremap <Leader>u :ALEFix<CR>
 
 " YCM -------------------------------------------------------------------------
