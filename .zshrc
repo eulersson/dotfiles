@@ -100,5 +100,23 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.environment
 source $HOME/.aliases
 
-# Requires installation with `brew install zsh-syntax-highlighting`
+# zsh-syntax-highlighting -------------------------------------------------------------
+#
+#   Project:   https://github.com/zsh-users/zsh-syntax-highlighting)
+#   Requires:  brew install zsh-syntax-highlighting
+#
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh-autosuggestions -----------------------------------------------------------------
+#
+#   Project:  https://www.github.com/zsh-users/zsh-autosuggestions
+#   Requires: brew install zsh-autosuggestions
+#
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-completions ---------------------------------------------------------------------
+#
+#   Project: https://github.com/zsh-users/zsh-completions
+#   Requires: brew install zsh-autosuggestions && rm -f ~/.zcompdump; compinit
+#
+fpath=(path/to/zsh-completions/src $fpath)
