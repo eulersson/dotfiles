@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ramon/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,7 +68,52 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git poetry z)
+plugins=(
+  git
+  poetry
+  z
+  zsh-autosuggestions
+  zsh-completions
+  zsh-syntax-highlighting
+)
+# poetry ------------------------------------------------------------------------------
+#
+#   Project:
+#     https://github.com/python-poetry/poetry
+#
+#   Install:
+#
+#     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+#     mkdir -p mkdir -p /home/rblanquer/.oh-my-zsh/plugins/poetry/
+#     poetry completions zsh > $ZSH/plugins/poetry/_poetry
+
+# zsh-syntax-highlighting -------------------------------------------------------------
+#
+#   Project:
+#     https://github.com/zsh-users/zsh-syntax-highlighting)
+#
+#   Install:
+#     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+#
+# zsh-autosuggestions -----------------------------------------------------------------
+#
+#   Project:
+#     https://www.github.com/zsh-users/zsh-autosuggestions
+#
+#   Install:
+#     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-completions ---------------------------------------------------------------------
+#
+#   Project:
+#     https://github.com/zsh-users/zsh-completions
+#
+#   Install:
+#     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#
+# fpath=(path/to/zsh-completions/src $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,24 +144,3 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.environment
 source $HOME/.aliases
-
-# zsh-syntax-highlighting -------------------------------------------------------------
-#
-#   Project:   https://github.com/zsh-users/zsh-syntax-highlighting)
-#   Requires:  brew install zsh-syntax-highlighting
-#
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# zsh-autosuggestions -----------------------------------------------------------------
-#
-#   Project:  https://www.github.com/zsh-users/zsh-autosuggestions
-#   Requires: brew install zsh-autosuggestions
-#
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# zsh-completions ---------------------------------------------------------------------
-#
-#   Project: https://github.com/zsh-users/zsh-completions
-#   Requires: brew install zsh-autosuggestions && rm -f ~/.zcompdump; compinit
-#
-fpath=(path/to/zsh-completions/src $fpath)
