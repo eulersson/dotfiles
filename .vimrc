@@ -36,6 +36,12 @@ Plugin 'wavded/vim-stylus'
 " environment variable when installing it:
 "
 "   env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.7.0
+"   pyenv global 3.8.0   # Set it globally so the `python` shim picks 3.7.3.
+"
+" Then build it:
+"
+"   cd ~/.vim/bundle/YouCompleteMe
+"   python install.py
 "
 " For JavaScript completion, Tern has been deprecated, in order to use TSServer
 " simply blast this folder in the root of YCM installation:
@@ -60,7 +66,6 @@ call vundle#end()
 " General Configuration
 " =============================================================================
 filetype plugin indent on
-
 
 " Split navigations.
 nnoremap <C-j> <C-w><C-j>
@@ -283,29 +288,7 @@ let g:ale_python_black_options = '--skip-string-normalization'
 nnoremap <Leader>u :ALEFix<CR>
 
 " YCM -------------------------------------------------------------------------
-" YCM will need to be built with the Python version you will intend to use. At
-" todays date (10th April 2019) I would follow these steps.
-"
-"     pyenv install 3.7.3  # Install the latest Python version.
-"     pyenv global 3.7.3   # Set it globally so the `python` shim picks 3.7.3.
-"     cd ~/.vim/bundle/YouCompleteMe
-"     python install.py
-"
-
-" Point YCM to the Pipenv created virtualenv, if possible. At first, get the
-" output of 'pipenv --venv' command.
-let pipenv_venv_path = system('pipenv --venv')
-" The above system() call produces a non zero exit code whenever a proper
-" virtual environment has not been found. So, secondly, we only point YCM to
-" the virtual environment when the call to 'pipenv --venv' was successful.
-" Remember, that 'pipenv --venv' only points to the root directory of the
-" virtual environment, so we have to append a full path to the python binary.
-if shell_error == 0
-  let venv_path = substitute(pipenv_venv_path, '\n', '', '')
-  let g:ycm_python_binary_path = venv_path . '/bin/python'
-else
-  let g:ycm_python_binary_path = 'python'
-endif
+let g:ycm_path_to_python_interpreter = $HOME . '/.pyenv/versions/3.8.0/bin/python'
 
 " Classic GoTo to jump to definitions.
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
