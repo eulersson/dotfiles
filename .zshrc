@@ -109,14 +109,20 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-autosuggestions -----------------------------------------------------------------
 #
-#   Project:  https://www.github.com/zsh-users/zsh-autosuggestions
-#   Requires: brew install zsh-autosuggestions
+#   Project:   https://www.github.com/zsh-users/zsh-autosuggestions
+#   Requires:  brew install zsh-autosuggestions
 #
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-completions ---------------------------------------------------------------------
 #
-#   Project: https://github.com/zsh-users/zsh-completions
-#   Requires: brew install zsh-autosuggestions && rm -f ~/.zcompdump; compinit
+#   Project:   https://github.com/zsh-users/zsh-completions
+#   Requires:  brew install zsh-autosuggestions && rm -f ~/.zcompdump; compinit
 #
 fpath=(path/to/zsh-completions/src $fpath)
+
+# HSTR --------------------------------------------------------------------------------
+alias hh=hstr                    # hh to be alias for hstr
+setopt histignorespace           # skip cmds w/ leading space from history
+export HSTR_CONFIG=hicolor       # get more colors
+bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)

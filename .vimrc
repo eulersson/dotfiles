@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin Installs
 " =============================================================================
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'docwhite/vim-tmux-navigator'
 Plugin 'ekalinin/Dockerfile.vim'
@@ -28,6 +29,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'w0rp/ale'
 Plugin 'wavded/vim-stylus'
+Plugin 'tmhedberg/matchit'
 
 " From: https://github.com/Valloric/YouCompleteMe/blob/master/README.md
 "
@@ -262,13 +264,18 @@ let g:ale_echo_msg_warning_str = 'W'
 
 let g:ale_fixers = {
 \    'javascript': ['prettier', 'eslint'],
-\    'python': ['black', 'autopep8']
+\    'python': ['black', 'autopep8'],
+\    'typescript': ['prettier'],
+\    'html': ['prettier'],
+\    'json': ['prettier']
 \}
 
 let g:ale_linters = {
 \    'javascript': ['eslint'],
 \    'python': ['flake8', 'pylint'],
-\    'typescript': ['tslint']
+\    'typescript': ['tslint'],
+\    'html': ['htmlhint'],
+\    'json': ['jsonlint']
 \} 
 
 let g:ale_python_auto_pipenv = 1
