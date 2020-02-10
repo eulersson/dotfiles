@@ -30,30 +30,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'w0rp/ale'
 Plugin 'wavded/vim-stylus'
 Plugin 'tmhedberg/matchit'
-
-" From: https://github.com/Valloric/YouCompleteMe/blob/master/README.md
-"
-" This guy requires to run ./install.py in the folder Vundle clones. If using
-" pyenv to manage your Python installations it requires you to have passed this
-" environment variable when installing it:
-"
-"   env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.7.0
-"   pyenv global 3.8.0   # Set it globally so the `python` shim picks 3.7.3.
-"
-" Then build it:
-"
-"   cd ~/.vim/bundle/YouCompleteMe
-"   python install.py
-"
-" For JavaScript completion, Tern has been deprecated, in order to use TSServer
-" simply blast this folder in the root of YCM installation:
-"
-"   third_party/ycmd/third_party/tern_runtime/node_modules
-"
-" And Make sure typescript has been installed globally:
-"
-"   yarn global add typescript
-"
 Plugin 'Valloric/YouCompleteMe'
 
 " =============================================================================
@@ -283,8 +259,12 @@ let g:ale_linters = {
 \    'json': ['jsonlint']
 \} 
 
-let g:ale_python_auto_pipenv = 1
+let g:ale_python_flake8_executable =  $HOME . '/.pyenv/versions/vim/bin/flake8'
+let g:ale_python_pylint_executable =  $HOME . '/.pyenv/versions/vim/bin/pylint'
+let g:ale_python_blacks_executable =  $HOME . '/.pyenv/versions/vim/bin/blacks'
+
 let g:ale_python_black_options = '--skip-string-normalization'
+
 
 " Uncomment these options when working for massive files.
 "let g:ale_lint_on_text_changed = 0
@@ -295,7 +275,33 @@ let g:ale_python_black_options = '--skip-string-normalization'
 nnoremap <Leader>u :ALEFix<CR>
 
 " YCM -------------------------------------------------------------------------
-let g:ycm_path_to_python_interpreter = $HOME . '/.pyenv/versions/3.8.0/bin/python'
+"
+" Requires compilation. Since I am using pyenv I have to install the latest Python 3
+" version and compile it with it.
+"
+"   env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.8.0
+"
+" Create a virtual environment that uses 3.8.0, that's where we are going to install all
+" the Python linting tools later on: blacks, flake8, pylint...
+"
+"   pyenv virtualenv 3.8.0 vim
+"   pyenv activate vim
+"
+" Then go to the YCM source folder and build it:
+"
+"   cd ~/.vim/bundle/YouCompleteMe
+"   python install.py
+"
+" For JavaScript completion, Tern has been deprecated, in order to use TSServer
+" simply blast this folder in the root of YCM installation:
+"
+"   third_party/ycmd/third_party/tern_runtime/node_modules
+"
+" And Make sure typescript has been installed globally:
+"
+"   yarn global add typescript
+"
+let g:ycm_path_to_python_interpreter = $HOME . '/.pyenv/versions/vim/bin/python'
 
 " Classic GoTo to jump to definitions.
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
