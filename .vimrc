@@ -259,10 +259,6 @@ let g:ale_linters = {
 \    'json': ['jsonlint']
 \} 
 
-let g:ale_python_flake8_executable =  $HOME . '/.pyenv/versions/vim/bin/flake8'
-let g:ale_python_pylint_executable =  $HOME . '/.pyenv/versions/vim/bin/pylint'
-let g:ale_python_blacks_executable =  $HOME . '/.pyenv/versions/vim/bin/blacks'
-
 let g:ale_python_black_options = '--skip-string-normalization'
 
 
@@ -301,7 +297,13 @@ nnoremap <Leader>u :ALEFix<CR>
 "
 "   yarn global add typescript
 "
+
+" https://github.com/ycm-core/YouCompleteMe/issues/380#issuecomment-196297161
+"
 let g:ycm_path_to_python_interpreter = $HOME . '/.pyenv/versions/vim/bin/python'
+
+" Make the preview docstring disappear after completion.
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Classic GoTo to jump to definitions.
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
