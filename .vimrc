@@ -44,6 +44,12 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
+" Simplify resizing splits.
+nnoremap <A-k> <C-w>-
+nnoremap <A-j> <C-w>+
+nnoremap <A-h> <C-w><
+nnoremap <A-l> <C-w>>
+
 " Show spaces and tabs.
 set list
 set listchars=eol:¬,trail:·,tab:>-
@@ -150,12 +156,12 @@ if !has('nvim')
 endif
 
 " Moving lines up and down (on iTerm2 under Profiles > Keys make the Left Option Esc+).
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <A-Down> :m .+1<CR>==
+nnoremap <A-Up> :m .-2<CR>==
+inoremap <A-Down> <Esc>:m .+1<CR>==gi
+inoremap <A-Up> <Esc>:m .-2<CR>==gi
+vnoremap <A-Down> :m '>+1<CR>gv=gv
+vnoremap <A-Up> :m '<-2<CR>gv=gv
 
 " Filetype specific configurations -----------------------------------------------------
 au BufNewFile,BufRead *.json
