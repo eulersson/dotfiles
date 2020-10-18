@@ -12,6 +12,7 @@ Plug 'docwhite/vim-tmux-navigator'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-grepper'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
@@ -37,6 +38,12 @@ call plug#end()
 " ======================================================================================
 "
 filetype plugin indent on
+
+" Remap so coc closes floating windows properly.
+"
+"     https://github.com/neoclide/coc.nvim/issues/531#issuecomment-686841681
+"
+inoremap <C-c> <Esc>
 
 " Split navigations.
 nnoremap <C-j> <C-w><C-j>
@@ -185,6 +192,13 @@ au BufNewFile,BufRead Jenkinsfile
   \| set softtabstop=4
   \| set shiftwidth=4
 
+au BufNewFile,BufRead *.go
+  \  set tabstop=2
+  \| set softtabstop=2
+  \| set shiftwidth=2
+  \| set noet
+  \| set listchars=tab:\ \ 
+
 
 " Theme and colors ---------------------------------------------------------------------
 "
@@ -220,7 +234,8 @@ let g:ale_fixers = {
   \  'python': ['black', 'autopep8'],
   \  'typescript': ['prettier'],
   \  'html': ['prettier'],
-  \  'json': ['prettier']
+  \  'json': ['prettier'],
+  \  'go': ['gofmt']
   \}
 
 let g:ale_linters = {
@@ -250,7 +265,7 @@ nnoremap <Leader>u :ALEFix<CR>
 "
 "   pip install python-language-server
 "   :CocInstall coc-python
-"   :CocInstall coc-angular
+"   :CocInstall coc-go
 "
 
 " TextEdit might fail if hidden is not set.
@@ -401,6 +416,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
+  \ 'coc-python'
   \]
 
 " -- ctrlp.vim -------------------------------------------------------------------------
@@ -425,6 +441,10 @@ let g:SimylFold_docstring_preview=1
 " -- Tagbar ----------------------------------------------------------------------------
 " Requires exchuberant tags.
 nmap <F8> :TagbarToggle<CR>
+
+" -- vim-grepper -----------------------------------------------------------------------
+nnoremap <leader>gt :Grepper<cr>
+let g:grepper = { 'next_tool': '<leader>gt' }
 
 " vim-airline-themes -------------------------------------------------------------------
 let g:airline_theme='deep_space'
