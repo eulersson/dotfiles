@@ -1,15 +1,18 @@
 # Default editor.
 export EDITOR=vim
 
+# Go language.
+export GOPATH=$HOME/go
+export GOROOT=$(brew --prefix golang)/libexec
+test -d $GOPATH || mkdir $GOPATH
+test -d $GOPATH/src/github.com || mkdir -p $GOPATH/src/github.com
+
 # Search path.
-export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/sbin:$PATH
 export PATH=$HOME/Scripts:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
-
-# Go language.
-export GOPATH=$HOME/go
 
 # Initialize pyenv. Put this after all the PATH updates are done.
 eval "$(pyenv init -)"
@@ -20,6 +23,7 @@ eval "$(pyenv virtualenv-init -)"
 # This will make Pipenv use pyenv’s active Python version to create virtual
 # environments by default.
 export PIPENV_PYTHON="$(pyenv root)/shims/python"
+export CLOUDSDK_PYTHON=$PIPENV_PYTHON
 
 # Used by weechat on OSX.
 if [[ "$(uname)" == "Darwin" ]]
