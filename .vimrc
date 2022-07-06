@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 " Plugin Installs
 " **************************************************************************************
 Plug 'airblade/vim-gitgutter'
+Plug 'docwhite/onehalf', { 'rtp': 'vim' }
 Plug 'docwhite/vim-tmux-navigator'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
@@ -220,6 +221,12 @@ highlight ColorColumn guibg=#252a36
 " **************************************************************************************
 " Plugin Settings
 " **************************************************************************************
+" -- onehalf ---------------------------------------------------------------------------
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
+
 " -- Tagbar ----------------------------------------------------------------------------
 " Requires exchuberant tags.
 nmap <F8> :TagbarToggle<CR>
@@ -409,7 +416,7 @@ nnoremap <leader>gt :Grepper<cr>
 let g:grepper = { 'next_tool': '<leader>gt' }
 
 " -- vim-airline-themes ----------------------------------------------------------------
-let g:airline_theme='deep_space'
+let g:airline_theme='onehalfdark'
 
 " vim-ctrlspace ------------------------------------------------------------------------
 set nocompatible
