@@ -9,6 +9,7 @@ alias dm='docker-machine'
 alias dk='docker'
 alias dkcd='docker rmi $(docker images -aq -f "dangling=true")'
 alias dmspindo='docker-machine create --driver digitalocean --digitalocean-access-token `cat $HOME/.tokens/.do`'
+alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 
 # Fixes: pyenv not playing nice with brew "config".
 #

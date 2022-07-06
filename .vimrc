@@ -3,15 +3,15 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" ======================================================================================
+" **************************************************************************************
 " Plugin Installs
-" ======================================================================================
+" **************************************************************************************
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'docwhite/vim-tmux-navigator'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mhinz/vim-grepper'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -19,8 +19,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'thinca/vim-quickrun'
-Plug 'tmhedberg/SimpylFold'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'tyrannicaltoucan/vim-deep-space'
@@ -29,13 +27,19 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'w0rp/ale'
 Plug 'wavded/vim-stylus'
+Plug 'wellle/context.vim'
+
+" https://github.com/nvim-telescope/telescope.nvim
+" https://www.youtube.com/watch?v=2tO2sT7xX2k
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Initialize plugin system.
 call plug#end()
 
-" ======================================================================================
+" **************************************************************************************
 " General Configuration
-" ======================================================================================
+" **************************************************************************************
 "
 filetype plugin indent on
 
@@ -170,7 +174,7 @@ inoremap <A-Up> <Esc>:m .-2<CR>==gi
 vnoremap <A-Down> :m '>+1<CR>gv=gv
 vnoremap <A-Up> :m '<-2<CR>gv=gv
 
-" Filetype specific configurations -----------------------------------------------------
+" -- Filetype specific configurations --------------------------------------------------
 au BufNewFile,BufRead *.json
   \  set tabstop=4
   \| set softtabstop=4
@@ -182,7 +186,7 @@ au BufNewFile,BufRead *.py
   \| set shiftwidth=4
   \| set fileformat=unix
 
-au BufNewFile,BufRead *.css,*.html,*.js,*.jsx,*.ts,*.yaml,*.yml
+au BufNewFile,BufRead *.css,*.scss,*.html,*.js,*.jsx,*.ts,*.yaml,*.yml
   \  set tabstop=2
   \| set softtabstop=2
   \| set shiftwidth=2
@@ -199,8 +203,7 @@ au BufNewFile,BufRead *.go
   \| set noet
   \| set listchars=tab:\ \ 
 
-
-" Theme and colors ---------------------------------------------------------------------
+" --- Theme and colors -----------------------------------------------------------------
 "
 "   https://tomlankhorst.nl/iterm-tmux-vim-true-color/
 "
@@ -214,47 +217,18 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme deep-space
 highlight ColorColumn guibg=#252a36
 
-" ======================================================================================
+" **************************************************************************************
 " Plugin Settings
-" ======================================================================================
-" -- ale -------------------------------------------------------------------------------
-"
-" JavaScript:  Requires `eslint` to be installed locally in the project or globally.
-"              Also `prettier` will need to be installed globally.
-"
-" Python:      Three modules need to be visible: `black`, `flake8` and `pylint`.
-"
-let g:airline#extensions#ale#enabled = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_format = '[%linter%:%code%] %s [%severity%]'
-let g:ale_echo_msg_warning_str = 'W'
+" **************************************************************************************
+" -- Tagbar ----------------------------------------------------------------------------
+" Requires exchuberant tags.
+nmap <F8> :TagbarToggle<CR>
+let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 
-let g:ale_fixers = {
-  \  'javascript': ['prettier', 'eslint'],
-  \  'python': ['black', 'autopep8'],
-  \  'typescript': ['prettier'],
-  \  'html': ['prettier'],
-  \  'json': ['prettier'],
-  \  'go': ['gofmt']
-  \}
-
-let g:ale_linters = {
-  \  'javascript': ['eslint'],
-  \  'python': ['flake8', 'pylint'],
-  \  'typescript': ['tslint'],
-  \  'html': ['htmlhint'],
-  \  'json': ['jsonlint']
-  \}
-
-let g:ale_python_black_options = '--skip-string-normalization'
-
-" Uncomment these options when working for massive files.
-"let g:ale_lint_on_text_changed = 0
-"let g:ale_lint_on_enter = 0
-"let g:ale_lint_on_save = 1
-
-" Easy shortcut for fixing.
-nnoremap <Leader>u :ALEFix<CR>
+" -- vim-visual-multi ------------------------------------------------------------------
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
 
 " -- coc.nvim --------------------------------------------------------------------------
 " For Python to work:
@@ -304,7 +278,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <S-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -416,37 +390,25 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
-  \ 'coc-python'
   \]
-
-" -- ctrlp.vim -------------------------------------------------------------------------
-let g:ctrlp_custom_ignore = {
-  \  'dir': '\v[\/](\.git|\.DS_Store|node_modules)$',
-  \  'file': '\v\.(pyc)$',
-  \}
 
 " -- dash.vim --------------------------------------------------------------------------
 let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'django', 'python'] }
-nmap <silent> <Leader>f <Plug>DashSearch
-nmap <silent> <Leader>ff <Plug>DashGlobalSearch
+nmap <silent> <Leader>w <Plug>DashSearch
+nmap <silent> <Leader>ww <Plug>DashGlobalSearch
 
 " -- NERDTree --------------------------------------------------------------------------
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '\~$']
+" https://superuser.com/questions/195022/vim-how-to-synchronize-nerdtree-with-current-opened-tab-file-path
+map <leader>r :NERDTreeFind<cr>
+let NERDTreeIgnore=['\.pyc$', '\~$', '.DS_Store']
 let NERDTreeShowHidden=1
-
-" -- SimpylFold ------------------------------------------------------------------------
-let g:SimylFold_docstring_preview=1
-
-" -- Tagbar ----------------------------------------------------------------------------
-" Requires exchuberant tags.
-nmap <F8> :TagbarToggle<CR>
 
 " -- vim-grepper -----------------------------------------------------------------------
 nnoremap <leader>gt :Grepper<cr>
 let g:grepper = { 'next_tool': '<leader>gt' }
 
-" vim-airline-themes -------------------------------------------------------------------
+" -- vim-airline-themes ----------------------------------------------------------------
 let g:airline_theme='deep_space'
 
 " vim-ctrlspace ------------------------------------------------------------------------
@@ -456,6 +418,57 @@ set encoding=utf-8
 " set showtabline=0
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 
-" vim-quickrun -------------------------------------------------------------------------
-map <Leader>o :QuickRun<CR>
-let g:quickrun_config = {'*' : {'outputter/buffer/split': 'below'}}
+" vim-fugitive -------------------------------------------------------------------------
+nnoremap <silent> <Leader>gp :Git -c push.default=current push<CR>
+
+" -- telescope.nvim --------------------------------------------------------------------
+" Find files using Telescope command-line sugar.
+lua require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fs <cmd>Telescope grep_string<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" -- vim.context -----------------------------------------------------------------------
+let g:context_enabled = 0
+
+" -- ale -------------------------------------------------------------------------------
+"
+" JavaScript:  Requires `eslint` to be installed locally in the project or globally.
+"              Also `prettier` will need to be installed globally.
+"
+" Python:      Three modules need to be visible: `black`, `flake8` and `pylint`.
+"
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_format = '[%linter%:%code%] %s [%severity%]'
+let g:ale_echo_msg_warning_str = 'W'
+
+let g:ale_fixers = {
+  \  'javascript': ['prettier', 'eslint'],
+  \  'python': ['black', 'autopep8'],
+  \  'typescript': ['prettier'],
+  \  'html': ['prettier'],
+  \  'json': ['prettier'],
+  \  'go': ['gofmt'],
+  \  'scss': ['prettier']
+  \}
+
+let g:ale_linters = {
+  \  'javascript': ['eslint'],
+  \  'python': ['flake8', 'pylint'],
+  \  'typescript': ['tslint'],
+  \  'html': ['htmlhint'],
+  \  'json': ['jsonlint']
+  \}
+
+let g:ale_python_black_options = '--skip-string-normalization'
+
+" Uncomment these options when working for massive files.
+"let g:ale_lint_on_text_changed = 0
+"let g:ale_lint_on_enter = 0
+"let g:ale_lint_on_save = 1
+
+" Easy shortcut for fixing.
+nnoremap <Leader>u :ALEFix<CR>

@@ -71,6 +71,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   poetry
+  pyenv-lazy
   z
   zsh-autosuggestions
   zsh-completions
@@ -143,7 +144,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.environment
 source $HOME/.aliases
 
-# HSTR --------------------------------------------------------------------------------
+# HSTR ---------------------------------------------------------------------------------
 #
 #   Project:
 #     https://github.com/dvorka/hstr
@@ -155,3 +156,13 @@ alias hh=hstr                    # hh to be alias for hstr
 setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor       # get more colors
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+
+# zsh-autosuggestion -------------------------------------------------------------------
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+
+# poetry -------------------------------------------------------------------------------
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# fzf ----------------------------------------------------------------------------------
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

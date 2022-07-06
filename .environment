@@ -1,5 +1,5 @@
 # Default editor.
-export EDITOR=vim
+export EDITOR=nvim
 
 # Go language.
 export GOPATH=$HOME/go
@@ -10,20 +10,25 @@ test -d $GOPATH/src/github.com || mkdir -p $GOPATH/src/github.com
 # Search path.
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/sbin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/Scripts:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
 
+export ZSH_PYENV_LAZY_VIRTUALENV=true
 # Initialize pyenv. Put this after all the PATH updates are done.
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 # Enable auto-activation of virtualenvs.
-eval "$(pyenv virtualenv-init -)"
+# NOTE: Disabled it speeds up new shells.
+# eval "$(pyenv virtualenv-init -)"
 
 # This will make Pipenv use pyenv’s active Python version to create virtual
 # environments by default.
-export PIPENV_PYTHON="$(pyenv root)/shims/python"
-export CLOUDSDK_PYTHON=$PIPENV_PYTHON
+# NOTE: gcloud is supported up to 3.8: https://stackoverflow.com/a/64011263
+# export PIPENV_PYTHON="$(pyenv root)/shims/python"
+# export CLOUDSDK_PYTHON=$PIPENV_PYTHON
+export CLOUDSDK_PYTHON=$HOME/.pyenv/versions/3.8.6/bin/python
 
 # Used by weechat on OSX.
 if [[ "$(uname)" == "Darwin" ]]
@@ -32,8 +37,12 @@ then
 fi
 
 # For nvm, the node version manager.
+# https://github.com/nvm-sh/nvm/issues/539#issuecomment-245791291
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm.
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+# alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+# alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
 # For the Google Cloud SDK installed via brew cask.
 if [[ "$(uname)" == "Darwin" ]]
@@ -42,3 +51,23 @@ then
 	source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 	export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 fi
+
+
+function path_remove () {
+  # Delete path by parts so we can never accidentally remove sub paths
+  PATH=${PATH//":$1:"/":"} # delete any instances in the middle
+  PATH=${PATH/#"$1:"/} # delete any instance at the beginning
+  PATH=${PATH/%":$1"/} # delete any instance in the at the end
+}
+
+path_remove "/Applications/Little Snitch.app/Contents/Components"
+
+# Only run once:
+# # https://www.reddit.com/r/vim/comments/bkz81t/vimdiff_nor_nvim_d_are_working_as_an_external/
+# git config --global diff.tool vimdiff3
+# git config --global difftool.vimdiff3.path nvim
+# git config --global merge.tool vimdiff3
+# git config --global mergetool.vimdiff3.path nvim
+
+# fzf ----------------------------------------------------------------------------------
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'

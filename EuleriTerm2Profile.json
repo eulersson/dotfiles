@@ -13,28 +13,22 @@
     "Blue Component" : 0.12941176470588237,
     "Red Component" : 0.12941176470588237
   },
-  "Normal Font" : "MesloLGSDZForPowerline-Regular 14",
+  "Normal Font" : "MesloLGSDZForPowerline-Regular 15",
   "Bold Color" : {
     "Green Component" : 0,
     "Blue Component" : 0.47843137254901963,
     "Red Component" : 0.98431372549019602
   },
   "Ansi 1 Color" : {
-    "Green Component" : 0.027450980392156862,
+    "Green Component" : 0.027450980392156866,
     "Blue Component" : 0.44313725490196076,
     "Red Component" : 0.76470588235294112
   },
-  "Ansi 2 Color" : {
-    "Green Component" : 0.65490196078431373,
-    "Blue Component" : 0.47058823529411764,
-    "Red Component" : 0.062745098039215685
-  },
-  "Link Color" : {
-    "Red Component" : 0,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.73423302173614502,
-    "Alpha Component" : 1,
-    "Green Component" : 0.35916060209274292
+  "Horizontal Spacing" : 1,
+  "Ansi 3 Color" : {
+    "Green Component" : 0.61176470588235299,
+    "Blue Component" : 0.078431372549019593,
+    "Red Component" : 0.6588235294117647
   },
   "Rows" : 24,
   "Default Bookmark" : "No",
@@ -317,13 +311,19 @@
   },
   "Transparency" : 0,
   "Guid" : "591708E6-743F-4327-90CA-4F1A2D2A5927",
-  "Horizontal Spacing" : 1,
-  "Ansi 3 Color" : {
-    "Green Component" : 0.61176470588235299,
-    "Blue Component" : 0.078431372549019607,
-    "Red Component" : 0.6588235294117647
-  },
   "Custom Directory" : "No",
+  "Ansi 2 Color" : {
+    "Green Component" : 0.65490196078431373,
+    "Blue Component" : 0.47058823529411764,
+    "Red Component" : 0.062745098039215672
+  },
+  "Link Color" : {
+    "Red Component" : 0,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.73423302173614502,
+    "Alpha Component" : 1,
+    "Green Component" : 0.35916060209274292
+  },
   "Right Option Key Sends" : 0,
   "Ansi 6 Color" : {
     "Green Component" : 0.6470588235294118,
