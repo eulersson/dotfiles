@@ -242,12 +242,6 @@ let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
 "
 "   https://github.com/neoclide/coc.nvim/wiki/Language-servers#python
 "
-" Requires you to install:
-"
-"   pip install python-language-server
-"   :CocInstall coc-python
-"   :CocInstall coc-go
-"
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -391,12 +385,16 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-tsserver',
+  \ 'coc-angular',
   \ 'coc-eslint',
-  \ 'coc-prettier',
+  \ 'coc-go',
   \ 'coc-json',
+  \ 'coc-pairs',
+  \ 'coc-prettier',
+  \ 'coc-python',
+  \ 'coc-snippets',
+  \ 'coc-tsserver',
+  \ 'coc-yaml',
   \]
 
 " -- dash.vim --------------------------------------------------------------------------
