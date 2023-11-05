@@ -20,9 +20,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'simrat39/symbols-outline.nvim'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
-Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -33,7 +33,7 @@ Plug 'wellle/context.vim'
 " https://github.com/nvim-telescope/telescope.nvim
 " https://www.youtube.com/watch?v=2tO2sT7xX2k
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim' " Requires ripgrep (rg command): brew install ripgrep
 
 " Initialize plugin system.
 call plug#end()
@@ -175,7 +175,18 @@ inoremap <A-Up> <Esc>:m .-2<CR>==gi
 vnoremap <A-Down> :m '>+1<CR>gv=gv
 vnoremap <A-Up> :m '<-2<CR>gv=gv
 
+" Yanks current relative path.
+"
+"   https://stackoverflow.com/a/17096082
+" 
+nnoremap <leader>cf :let @*=expand("%")<CR>
+
 " -- Filetype specific configurations --------------------------------------------------
+au BufNewFile,BufRead *.cpp,*.h
+  \  set tabstop=4
+  \| set softtabstop=4
+  \| set shiftwidth=4
+
 au BufNewFile,BufRead *.json
   \  set tabstop=4
   \| set softtabstop=4
@@ -187,10 +198,28 @@ au BufNewFile,BufRead *.py
   \| set shiftwidth=4
   \| set fileformat=unix
 
-au BufNewFile,BufRead *.css,*.scss,*.html,*.js,*.jsx,*.ts,*.yaml,*.yml
+au BufNewFile,BufRead *.css,*.scss,*.html,*.js,*.jsx,*.ts
   \  set tabstop=2
   \| set softtabstop=2
   \| set shiftwidth=2
+
+au BufNewFile,BufRead *.yaml,*.yml
+  \  set tabstop=2
+  \| set softtabstop=2
+  \| set shiftwidth=2
+  \| set indentkeys-=0#
+  \| set noautoindent
+  \| set nosmartindent
+
+au BufNewFile,BufRead Dockerfile*
+  \  set tabstop=2
+  \| set softtabstop=2
+  \| set shiftwidth=2
+
+au BufNewFile,BufRead *.cs
+  \  set tabstop=4
+  \| set softtabstop=4
+  \| set shiftwidth=4
 
 au BufNewFile,BufRead Jenkinsfile
   \  set tabstop=4
@@ -215,7 +244,6 @@ set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-colorscheme deep-space
 highlight ColorColumn guibg=#252a36
 
 " **************************************************************************************
@@ -391,16 +419,19 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-pairs',
   \ 'coc-prettier',
-  \ 'coc-python',
+  \ 'coc-pyright',
   \ 'coc-snippets',
   \ 'coc-tsserver',
-  \ 'coc-yaml',
+  \ 'coc-yaml'
   \]
 
 " -- dash.vim --------------------------------------------------------------------------
 let g:dash_map = { 'python': ['matplotlib', 'tensorflow', 'flask', 'numpy', 'django', 'python'] }
 nmap <silent> <Leader>w <Plug>DashSearch
 nmap <silent> <Leader>ww <Plug>DashGlobalSearch
+
+" -- symbols-outline.nvim --------------------------------------------------------------
+lua require("symbols-outline").setup()
 
 " -- NERDTree --------------------------------------------------------------------------
 map <C-n> :NERDTreeToggle<CR>
@@ -428,15 +459,22 @@ nnoremap <silent> <Leader>gp :Git -c push.default=current push<CR>
 
 " -- telescope.nvim --------------------------------------------------------------------
 " Find files using Telescope command-line sugar.
-lua require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
+lua require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules", ".git"} } }
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fs <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" -- vim.airline -----------------------------------------------------------------------
+" Truncate long branch names to a fixed length.
+let g:airline#extensions#branch#displayed_head_limit = 14
+
+" Only show the tail, e.g. a branch 'feature/foo' becomes 'foo'.
+let g:airline#extensions#branch#format = 1
+
 " -- vim.context -----------------------------------------------------------------------
-let g:context_enabled = 0
+let g:context_filetype_blacklist = ['nerdtree', 'help']
 
 " -- ale -------------------------------------------------------------------------------
 "
@@ -450,9 +488,9 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_format = '[%linter%:%code%] %s [%severity%]'
 let g:ale_echo_msg_warning_str = 'W'
 
+" 'python': ['black', 'autopep8'],
 let g:ale_fixers = {
   \  'javascript': ['prettier', 'eslint'],
-  \  'python': ['black', 'autopep8'],
   \  'typescript': ['prettier'],
   \  'html': ['prettier'],
   \  'json': ['prettier'],
@@ -460,15 +498,15 @@ let g:ale_fixers = {
   \  'scss': ['prettier']
   \}
 
+" \  'python': ['flake8', 'pylint'],
 let g:ale_linters = {
   \  'javascript': ['eslint'],
-  \  'python': ['flake8', 'pylint'],
   \  'typescript': ['tslint'],
   \  'html': ['htmlhint'],
   \  'json': ['jsonlint']
   \}
 
-let g:ale_python_black_options = '--skip-string-normalization'
+" let g:ale_python_black_options = '--skip-string-normalization'
 
 " Uncomment these options when working for massive files.
 "let g:ale_lint_on_text_changed = 0

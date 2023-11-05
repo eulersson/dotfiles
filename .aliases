@@ -7,15 +7,17 @@ alias t='tmux'
 alias ds='docker-compose'
 alias dm='docker-machine'
 alias dk='docker'
+alias k='kubectl'
 alias dkcd='docker rmi $(docker images -aq -f "dangling=true")'
 alias dmspindo='docker-machine create --driver digitalocean --digitalocean-access-token `cat $HOME/.tokens/.do`'
 alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 
 # Fixes: pyenv not playing nice with brew "config".
 #
-#     https://github.com/pyenv/pyenv/issues/106
+#   https://github.com/pyenv/pyenv/issues/106
+#   https://github.com/pyenv/pyenv#homebrew-in-macos
 #
-alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # When installing vim plugins like YCM we must install the python versions through pyenv
 # with the --enable-framework flag.
@@ -24,16 +26,3 @@ alias installPythonWithFramework='env PYTHON_CONFIGURE_OPTS="--enable-framework"
 # Those prepend the GNU Unix common tools like 'date' before the Apple ones.
 alias brewGnu='export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH'
 alias brewGetOpt='export PATH=$(dirname $(brew ls gnu-getopt | grep bin)):$PATH'
-
-if [[ "$(uname)" == "Darwin" ]]
-then
-	# For python modules installed through Homebrew.
-	alias enableHomebrewPython='export PYTHONPATH=/usr/local/lib/python2.7/site-packages'
-
-	# For PySide to work.
-	export DYLD_LIBRARY_PATH=/usr/local/lib/python2.7/site-packages/PySide
-
-	# openFrameworks path.
-	export OF_ROOT=$HOME/Apps/of_v0.9.8_osx_release
-fi
-

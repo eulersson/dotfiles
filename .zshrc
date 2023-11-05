@@ -70,50 +70,71 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  poetry
-  pyenv-lazy
+  poetry # TODO: See why it is not working.
+  macos
   z
+  # NOTE: If pyenv causes slow shells, investigate the pyenv-lazy zsh plugin!
+  # zsh-autosuggestions ----------------------------------------------------------------
+  #
+  #   Project:
+  #     https://github.com/zsh-users/zsh-autosuggestions
+  #
+  #   Install:
+  #     1. Clone this repository into $ZSH_CUSTOM/plugins (by default ~/.oh-my-zsh/custom/plugins):
+  #
+  #       git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  #
+  #     2. Add the plugin to the list of plugins for Oh My Zsh to load (inside ~/.zshrc):
+  #
+  #       plugins=( 
+  #         # other plugins...
+  #         zsh-autosuggestions
+  #       )
+  #
   zsh-autosuggestions
-  zsh-completions
+  # zsh-syntax-highlighting ------------------------------------------------------------
+  #
+  #   Project:
+  #     https://github.com/zsh-users/zsh-syntax-highlighting
+  #
+  #   Install:
+  #     brew install zsh-syntax-highlighting
+  #
+  #
+  #   Project:
+  #     https://github.com/zsh-users/zsh-syntax-highlighting)
+  #
+  #   Install:
+  #     1. Clone this repository in oh-my-zsh's plugins directory:
+  #
+  #       git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  #
+  #     2. Activate the plugin in ~/.zshrc:
+  #
+  #       plugins=( [plugins...] zsh-syntax-highlighting)
+  #
   zsh-syntax-highlighting  # Always to be the last.
 )
-# poetry ------------------------------------------------------------------------------
-#
-#   Project:
-#     https://github.com/python-poetry/poetry
-#
-#   Install:
-#     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-#     mkdir -p mkdir -p /home/rblanquer/.oh-my-zsh/plugins/poetry/
-#     poetry completions zsh > $ZSH/plugins/poetry/_poetry
 
-# zsh-syntax-highlighting -------------------------------------------------------------
-#
-#   Project:
-#     https://github.com/zsh-users/zsh-syntax-highlighting)
-#
-#   Install:
-#     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-#
-# zsh-autosuggestions -----------------------------------------------------------------
-#
-#   Project:
-#     https://www.github.com/zsh-users/zsh-autosuggestions
-#
-#   Install:
-#     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-#
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# zsh-completions ---------------------------------------------------------------------
+# zsh-completions --------------------------------------------------------------------
 #
 #   Project:
 #     https://github.com/zsh-users/zsh-completions
 #
 #   Install:
-#     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#     1. Clone the repository inside your oh-my-zsh repo:
+#
+#         git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+#
+#     2. Add it to FPATH in your .zshrc by adding the following line before source "$ZSH/oh-my-zsh.sh":
+#
+#         fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 #
 
+# https://github.com/zsh-users/zsh-completions#oh-my-zsh
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+# Initialize Oh My Zsh!
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -158,11 +179,12 @@ export HSTR_CONFIG=hicolor       # get more colors
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
 # zsh-autosuggestion -------------------------------------------------------------------
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-ZSH_AUTOSUGGEST_USE_ASYNC=true
-
-# poetry -------------------------------------------------------------------------------
-export PATH="$HOME/.poetry/bin:$PATH"
+# ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 # fzf ----------------------------------------------------------------------------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/ramon/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
