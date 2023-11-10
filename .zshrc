@@ -100,10 +100,6 @@ plugins=(
   #   Install:
   #     brew install zsh-syntax-highlighting
   #
-  #
-  #   Project:
-  #     https://github.com/zsh-users/zsh-syntax-highlighting)
-  #
   #   Install:
   #     1. Clone this repository in oh-my-zsh's plugins directory:
   #
@@ -162,8 +158,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.environment
-source $HOME/.aliases
+source $HOME/.environment.zsh
+source $HOME/.aliases.zsh
 
 # HSTR ---------------------------------------------------------------------------------
 #
