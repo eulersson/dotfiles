@@ -46,7 +46,7 @@ formatters.setup {
   { name = "black" },
   {
     name = "prettier",
-    args = { "--print-width", "100" },
+    args = { "--print-width", "88", "--prose-wrap", "always" },
   },
 }
 

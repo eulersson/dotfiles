@@ -24,14 +24,16 @@ git clone git@github.com:eulersson/.dotfiles
 Symlink the configs and dot files:
 
 ```
-mkdir -p ~/.config/alacritty
-ln -s ~/.dotfiles/.config/alacritty/* ~/.config/alacritty/
+cd ~
 
-mkdir -p ~/.config/lvim
-ln -s ~/.dotfiles/.config/lvim/* ~/.config/lvim/
+mkdir -p .config/alacritty
+ln -s .dotfiles/.config/alacritty/* .config/alacritty/
 
-ln -s ~/.dotfiles/.tmux.conf
-ln -s ~/.dotfiles/*.zsh*
+mkdir -p .config/lvim
+ln -s .dotfiles/.config/lvim/* .config/lvim/
+
+ln -s .dotfiles/.tmux.conf
+ln -s .dotfiles/*.zsh*
 ```
 
 ### Zsh
@@ -56,7 +58,8 @@ sudo apt install zsh
 pacman -S zsh
 ```
 
-Now make `zsh` your default shell as explained [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default):
+Now make `zsh` your default shell as explained
+[here](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default):
 
 ```
 chsh -s $(which zsh)
@@ -115,8 +118,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 ### Alacritty
 
-We will use the `JetBrainsMono Nerd Font` from [nerdfonts.com](https://www.nerdfonts.com),
-so make sure you installed it:
+We will use the `JetBrainsMono Nerd Font` from
+[nerdfonts.com](https://www.nerdfonts.com), so make sure you installed it:
 
 ```
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
@@ -130,14 +133,16 @@ Install Alacritty, a replacement for the native Terminal or iTerm2 macOS emulato
 brew install alacritty
 ```
 
-**Arch Linux** (https://github.com/alacritty/alacritty/blob/master/INSTALL.md#arch-linux)
+**Arch Linux**
+(https://github.com/alacritty/alacritty/blob/master/INSTALL.md#arch-linux)
 
 ```
 pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python
 cargo install alacritty
 ```
 
-**Debian / Ubuntu** (https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu)
+**Debian / Ubuntu**
+(https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu)
 
 ```
 apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
@@ -156,7 +161,8 @@ git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/theme
 ### tmux
 
 Now open the newly installed Alacritty terminal emulator app and let's configure `tmux`
-as explained in the [official installation guide](https://github.com/tmux/tmux/wiki/Installing):
+as explained in the
+[official installation guide](https://github.com/tmux/tmux/wiki/Installing):
 
 **macOS**:
 
@@ -204,6 +210,13 @@ sudo apt install neovim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 ```
 
+## C++ Development
+
+https://www.youtube.com/watch?v=BCuyEdDQ5iA https://github.com/rizsotto/Bear
+
+Neovim's LSP for C++ uses a JSON file that has information on how to build the source
+files. This file can be built using **Bear** (or if using CMake, then exporting CMAKE )
+
 ## Most Used Keyboard Shortcuts
 
 ## Alacritty
@@ -235,28 +248,46 @@ https://tmuxcheatsheet.com/
 
 ## LunarVim
 
-| Keys                                                                                           | Action                                    |
-| ---------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| <kbd>Ctrl</kbd> + <kbd>o</kbd>                                                                 | Go to previous mark.                      |
-| <kbd>Ctrl</kbd> + <kbd>i</kbd>                                                                 | Go to next mark.                          |
-| <kbd>Space</kbd> <kbd>/</kbd>                                                                  | Comment current file.                     |
-| <kbd>Space</kbd> <kbd>e</kbd>                                                                  | Toggle explorer.                          |
-| <kbd>Space</kbd> <kbd>f</kbd>                                                                  | Find files by file name.                  |
-| <kbd>Space</kbd> <kbd>s</kbd>                                                                  | Search text across project.               |
-| <kbd>Space</kbd> <kbd>b</kbd> <kbd>b</kbd>                                                     | Go to previous buffer.                    |
-| <kbd>Space</kbd> <kbd>b</kbd> <kbd>n</kbd>                                                     | Go to next                                |
-| <kbd>Space</kbd> <kbd>l</kbd> <kbd>f</kbd>                                                     | Format current file.                      |
-| <kbd>Alt/Option</kbd> + ↑                                                                      | Resize panel                              |
-| <kbd>Alt/Option</kbd> + ↓                                                                      | Resize panel                              |
-| <kbd>Alt/Option</kbd> + ←                                                                      | Resize panel                              |
-| <kbd>Alt/Option</kbd> + →                                                                      | Resize panel                              |
-| <kbd>Ctrl</kbd> + <kbd>n</kbd>, <kbd>n</kbd>, <kbd>n</kbd>, ..., <kbd>d</kbd>                  | `mg979/vim-visual-multi` Multiple cursor. |
-| <kbd>Ctrl</kbd> + <kbd>v</kbd>, <kbd>↓</kbd>, <kbd>↓</kbd>, ..., <kbd>Shift</kbd> <kbd>i</kbd> | Multi-line insert.                        |
+- https://www.lunarvim.org/docs/beginners-guide/keybinds-overview
+
+| Keys                                                                                           | Action                                        |
+| ---------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| <kbd>Ctrl</kbd> + <kbd>o</kbd>                                                                 | Go to previous mark.                          |
+| <kbd>Ctrl</kbd> + <kbd>i</kbd>                                                                 | Go to next mark.                              |
+| <kbd>Space</kbd> <kbd>/</kbd>                                                                  | Comment current file.                         |
+| <kbd>Space</kbd> <kbd>e</kbd>                                                                  | Toggle explorer.                              |
+| <kbd>Space</kbd> <kbd>f</kbd>                                                                  | Find files by file name.                      |
+| <kbd>Space</kbd> <kbd>s</kbd>                                                                  | Search text across project.                   |
+| <kbd>Space</kbd> <kbd>b</kbd> <kbd>b</kbd>                                                     | Go to previous buffer.                        |
+| <kbd>Space</kbd> <kbd>b</kbd> <kbd>n</kbd>                                                     | Go to next                                    |
+| <kbd>Space</kbd> <kbd>l</kbd> <kbd>f</kbd>                                                     | Format current file.                          |
+| <kbd>Alt/Option</kbd> + ↑                                                                      | Resize panel                                  |
+| <kbd>Alt/Option</kbd> + ↓                                                                      | Resize panel                                  |
+| <kbd>Alt/Option</kbd> + ←                                                                      | Resize panel                                  |
+| <kbd>Alt/Option</kbd> + →                                                                      | Resize panel                                  |
+| <kbd>Ctrl</kbd> + <kbd>n</kbd>, <kbd>n</kbd>, <kbd>n</kbd>, ..., <kbd>d</kbd>                  | `mg979/vim-visual-multi` Multiple cursor.     |
+| <kbd>Ctrl</kbd> + <kbd>v</kbd>, <kbd>↓</kbd>, <kbd>↓</kbd>, ..., <kbd>Shift</kbd> <kbd>i</kbd> | Multi-line insert.                            |
+| (in `nvimtree`) <kbd>?</kbd> <kbd>?</kbd>                                                      | Show help on `nvimtree` plugin.               |
+| <kbd>K</kbd>                                                                                   | Hover information (double tap to get inside). |
+| <kbd>K</kbd> <kbd>K</kbd>                                                                      | Move cursor inside K window                   |
+| <kbd>g</kbd> <kbd>d</kbd>                                                                      | Go to definition.                             |
+| <kbd>g</kbd> <kbd>D</kbd>                                                                      | Go to declaration.                            |
+| <kbd>g</kbd> <kbd>r</kbd>                                                                      | Go to references.                             |
+| <kbd>g</kbd> <kbd>I</kbd>                                                                      | Go to implementation.                         |
+| <kbd>g</kbd> <kbd>s</kbd>                                                                      | Show signature help.                          |
+| <kbd>g</kbd> <kbd>l</kbd>                                                                      | Show line diagnostics.                        |
+| <kbd>g</kbd> <kbd>l</kbd> <kbd>g</kbd> <kbd>l</kbd>                                            | Move cursor to line diagnostics.              |
+
+| gd go to definition normal gD go to declaration normal gr go to references normal gI
+go to implementation normal gs show signature help normal gl show line diagnostics
+normal glgl move cursor inside gl diagnostics window normal
 
 **TODO**:
 
 - Make Python DAP and test runner work.
 - Make ready for Node.js and React development.
 - Python testing key bindings.
-- Document how to work on files that might be remote on Raspberry Pi, etc... Distant plugin vs shfs.
-- distant.nvim vs sshfs cooper@neptune.local:/home/cooper /Users/ramon/mnt -o IdentityFile=~/.ssh/raspberry_local
+- Document how to work on files that might be remote on Raspberry Pi, etc... Distant
+  plugin vs shfs.
+- distant.nvim vs sshfs cooper@neptune.local:/home/cooper /Users/ramon/mnt -o
+  IdentityFile=~/.ssh/raspberry_local

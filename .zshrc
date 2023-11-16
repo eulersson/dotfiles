@@ -159,6 +159,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.environment.zsh
+source $HOME/.utils.zsh
 source $HOME/.aliases.zsh
 
 # HSTR ---------------------------------------------------------------------------------

@@ -20,16 +20,6 @@ if [[ $(uname) == "Darwin" ]]; then
   #
   alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
-  # Some On OSX, two different types of Python builds exist: a regular build and a
-  # framework build. In order to interact correctly with OSX through the native GUI
-  # frameworks, you need a framework build of Python.
-  #
-  #   https://matplotlib.org/3.1.0/faq/osx_framework.html
-  #
-  function installPythonWithFramework() {
-    env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install $1
-  }
-
   # Those prepend the GNU Unix common tools like 'date' before the Apple ones.
   alias brewGnu='export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH'
   alias brewGetOpt='export PATH=$(dirname $(brew ls gnu-getopt | grep bin)):$PATH'
