@@ -250,33 +250,50 @@ https://tmuxcheatsheet.com/
 
 - https://www.lunarvim.org/docs/beginners-guide/keybinds-overview
 
-| Keys                                                                                           | Action                                        |
-| ---------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| <kbd>Ctrl</kbd> + <kbd>o</kbd>                                                                 | Go to previous mark.                          |
-| <kbd>Ctrl</kbd> + <kbd>i</kbd>                                                                 | Go to next mark.                              |
-| <kbd>Space</kbd> <kbd>/</kbd>                                                                  | Comment current file.                         |
-| <kbd>Space</kbd> <kbd>e</kbd>                                                                  | Toggle explorer.                              |
-| <kbd>Space</kbd> <kbd>f</kbd>                                                                  | Find files by file name.                      |
-| <kbd>Space</kbd> <kbd>s</kbd>                                                                  | Search text across project.                   |
-| <kbd>Space</kbd> <kbd>b</kbd> <kbd>b</kbd>                                                     | Go to previous buffer.                        |
-| <kbd>Space</kbd> <kbd>b</kbd> <kbd>n</kbd>                                                     | Go to next                                    |
-| <kbd>Space</kbd> <kbd>l</kbd> <kbd>f</kbd>                                                     | Format current file.                          |
-| <kbd>Alt/Option</kbd> + ↑                                                                      | Resize panel                                  |
-| <kbd>Alt/Option</kbd> + ↓                                                                      | Resize panel                                  |
-| <kbd>Alt/Option</kbd> + ←                                                                      | Resize panel                                  |
-| <kbd>Alt/Option</kbd> + →                                                                      | Resize panel                                  |
-| <kbd>Ctrl</kbd> + <kbd>n</kbd>, <kbd>n</kbd>, <kbd>n</kbd>, ..., <kbd>d</kbd>                  | `mg979/vim-visual-multi` Multiple cursor.     |
-| <kbd>Ctrl</kbd> + <kbd>v</kbd>, <kbd>↓</kbd>, <kbd>↓</kbd>, ..., <kbd>Shift</kbd> <kbd>i</kbd> | Multi-line insert.                            |
-| (in `nvimtree`) <kbd>?</kbd> <kbd>?</kbd>                                                      | Show help on `nvimtree` plugin.               |
-| <kbd>K</kbd>                                                                                   | Hover information (double tap to get inside). |
-| <kbd>K</kbd> <kbd>K</kbd>                                                                      | Move cursor inside K window                   |
-| <kbd>g</kbd> <kbd>d</kbd>                                                                      | Go to definition.                             |
-| <kbd>g</kbd> <kbd>D</kbd>                                                                      | Go to declaration.                            |
-| <kbd>g</kbd> <kbd>r</kbd>                                                                      | Go to references.                             |
-| <kbd>g</kbd> <kbd>I</kbd>                                                                      | Go to implementation.                         |
-| <kbd>g</kbd> <kbd>s</kbd>                                                                      | Show signature help.                          |
-| <kbd>g</kbd> <kbd>l</kbd>                                                                      | Show line diagnostics.                        |
-| <kbd>g</kbd> <kbd>l</kbd> <kbd>g</kbd> <kbd>l</kbd>                                            | Move cursor to line diagnostics.              |
+### General
+
+| Keys                                              | Action                                               |
+| ------------------------------------------------- | ---------------------------------------------------- |
+| <kbd>Space</kbd> <kbd>/</kbd>                     | Comment current file.                                |
+| (in `nvimtree`) <kbd>?</kbd> <kbd>?</kbd>         | Show help on `nvimtree` plugin.                      |
+| ???                                               | Show git diff in two panels.                         |
+| ???                                               | Browse all help files.                               |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↑</kbd> | Move line up.                                        |
+| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↓</kbd> | Move line down.                                      |
+| <kbd>Space</kbd> <kbd>s</kbd> <kbd>k</kbd>        | See current mapped keys. (also `:verbose map <TAB>`) |
+
+### Navigation
+
+| Keys                                                                                           | Action                                    |
+| ---------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| <kbd>Ctrl</kbd> + <kbd>o</kbd>                                                                 | Go to previous mark.                      |
+| <kbd>Ctrl</kbd> + <kbd>i</kbd>                                                                 | Go to next mark.                          |
+| <kbd>Space</kbd> <kbd>e</kbd>                                                                  | Toggle explorer.                          |
+| <kbd>Space</kbd> <kbd>f</kbd>                                                                  | Find files by file name.                  |
+| <kbd>Space</kbd> <kbd>s</kbd>                                                                  | Search text across project.               |
+| <kbd>Space</kbd> <kbd>b</kbd> <kbd>b</kbd>                                                     | Go to previous buffer.                    |
+| <kbd>Space</kbd> <kbd>b</kbd> <kbd>n</kbd>                                                     | Go to next                                |
+| <kbd>Space</kbd> <kbd>l</kbd> <kbd>f</kbd>                                                     | Format current file.                      |
+| <kbd>Alt/Option</kbd> + <kbd>↑</kbd>                                                           | Resize panel                              |
+| <kbd>Alt/Option</kbd> + <kbd>↓</kbd>                                                           | Resize panel                              |
+| <kbd>Alt/Option</kbd> + <kbd>←</kbd>                                                           | Resize panel                              |
+| <kbd>Alt/Option</kbd> + <kbd>→</kbd>                                                           | Resize panel                              |
+| <kbd>Ctrl</kbd> + <kbd>n</kbd>, <kbd>n</kbd>, <kbd>n</kbd>, ..., <kbd>d</kbd>                  | `mg979/vim-visual-multi` Multiple cursor. |
+| <kbd>Ctrl</kbd> + <kbd>v</kbd>, <kbd>↓</kbd>, <kbd>↓</kbd>, ..., <kbd>Shift</kbd> <kbd>i</kbd> | Multi-line insert.                        |
+
+## LSP
+
+| Keys                                                | Action                                        |
+| --------------------------------------------------- | --------------------------------------------- |
+| <kbd>K</kbd>                                        | Hover information (double tap to get inside). |
+| <kbd>K</kbd> <kbd>K</kbd>                           | Move cursor inside K window                   |
+| <kbd>g</kbd> <kbd>d</kbd>                           | Go to definition.                             |
+| <kbd>g</kbd> <kbd>D</kbd>                           | Go to declaration.                            |
+| <kbd>g</kbd> <kbd>r</kbd>                           | Go to references.                             |
+| <kbd>g</kbd> <kbd>I</kbd>                           | Go to implementation.                         |
+| <kbd>g</kbd> <kbd>s</kbd>                           | Show signature help.                          |
+| <kbd>g</kbd> <kbd>l</kbd>                           | Show line diagnostics.                        |
+| <kbd>g</kbd> <kbd>l</kbd> <kbd>g</kbd> <kbd>l</kbd> | Move cursor to line diagnostics.              |
 
 | gd go to definition normal gD go to declaration normal gr go to references normal gI
 go to implementation normal gs show signature help normal gl show line diagnostics
