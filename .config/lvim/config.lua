@@ -3,7 +3,7 @@
 --   https://github.com/LunarVim/starter.lvim/blob/python-ide/config.lua
 --   https://www.lunarvim.org/docs/configuration/language-features/linting-and-formatting
 --
--- 
+--
 lvim.plugins = {
   "catppuccin/nvim",
   "AckslD/swenv.nvim",
@@ -27,7 +27,13 @@ lvim.plugins = {
     'chipsenkbeil/distant.nvim',
     branch = 'v0.3',
     config = function()
-        require('distant'):setup()
+      require('distant'):setup()
+    end
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require('symbols-outline').setup()
     end
   },
 }
@@ -155,3 +161,5 @@ lvim.builtin.which_key.mappings["lx"] = {
   end,
   "Toggle Inline Diagnostics"
 }
+
+lvim.builtin.which_key.mappings["ly"] = { "<cmd>:SymbolsOutline<cr>", "Symbols Outline" }
