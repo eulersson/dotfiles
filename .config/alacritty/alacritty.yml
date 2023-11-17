@@ -46,6 +46,10 @@ scrolling:
   # Maximum number of lines in the scrollback buffer. Specifying '0' will disable
   # scrolling. Align it with `tmux.conf` `history-limit`.
   history: 50000
+# When we change window.opacity some backgrounds like the tmux bar or the vertical
+# column in Neovim would not be really transparent otherwise.
+colors:
+  transparent_background_colors: true
 key_bindings:
   - { key: M, mods: Control|Shift, action: ToggleSimpleFullscreen }
   - { key: N, mods: Control|Shift, action: CreateNewWindow }
