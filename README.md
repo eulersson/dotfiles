@@ -210,6 +210,51 @@ sudo apt install neovim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 ```
 
+## Python Development
+
+## The poetic way (`poetry`)
+
+For Python I use the [poetry](https://python-poetry.org/) for an organized way to manage
+and resolve dependencies.
+
+When installing packages with poetry it is all encapsulated in a virtual environment
+managed by poetry.
+
+```
+❯ poetry env info
+
+Virtualenv
+Python:         3.11.5
+Implementation: CPython
+Path:           /Users/ramon/Library/Caches/pypoetry/virtualenvs/sound-detector-oq1WgInS-py3.11
+Executable:     /Users/ramon/Library/Caches/pypoetry/virtualenvs/sound-detector-oq1WgInS-py3.11/bin/python
+Valid:          True
+
+System
+Platform:   darwin
+OS:         posix
+Python:     3.11.5
+Path:       /Users/ramon/.pyenv/versions/3.11.5/Library/Frameworks/Python.framework/Versions/3.11
+Executable: /Users/ramon/.pyenv/versions/3.11.5/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11
+```
+
+To develop with `Neovim` having the Python LSP available these are the requirements:
+
+- To have `pynvim` as a dev dependency in the poetry project `poetry add --dev pynvim`.
+- To have a `pyrightconfig.json` pointing to the poetry virtualenv.
+
+After having the information with `poetry env show` you can craft the
+`pyrightconfig.json` at the root of the python project.
+
+```
+{
+   "venv" : "sound-detector-oq1WgInS-py3.11",
+   "venvPath" : "/Users/ramon/Library/Caches/pypoetry/virtualenvs"
+}
+```
+
+You can now open up `Neovim`.
+
 ## C++ Development
 
 https://www.youtube.com/watch?v=BCuyEdDQ5iA https://github.com/rizsotto/Bear
@@ -298,13 +343,3 @@ https://tmuxcheatsheet.com/
 | gd go to definition normal gD go to declaration normal gr go to references normal gI
 go to implementation normal gs show signature help normal gl show line diagnostics
 normal glgl move cursor inside gl diagnostics window normal
-
-**TODO**:
-
-- Make Python DAP and test runner work.
-- Make ready for Node.js and React development.
-- Python testing key bindings.
-- Document how to work on files that might be remote on Raspberry Pi, etc... Distant
-  plugin vs shfs.
-- distant.nvim vs sshfs cooper@neptune.local:/home/cooper /Users/ramon/mnt -o
-  IdentityFile=~/.ssh/raspberry_local
