@@ -136,3 +136,22 @@ lvim.transparent_window = true
 
 -- Set a vertical line on 88.
 vim.opt.colorcolumn = "88"
+
+-- Toggle line diagnostics (the linting errors that show on the same line).
+-- TODO: Is this the correct way of keeping state?
+local diagnostics_active = true;
+lvim.builtin.which_key.mappings["lx"] = {
+  function()
+    diagnostics_active = not diagnostics_active
+    if diagnostics_active then
+      vim.diagnostic.config({
+        virtual_text = true,
+      })
+    else
+      vim.diagnostic.config({
+        virtual_text = false,
+      })
+    end
+  end,
+  "Toggle Inline Diagnostics"
+}
