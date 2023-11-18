@@ -214,6 +214,13 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 
 ## The poetic way (`poetry`)
 
+It's useful to have the zsh completions:
+
+```
+mkdir -p ~/.zfunc
+poetry completions zsh > ~/.zfunc/_poetry
+```
+
 For Python I use the [poetry](https://python-poetry.org/) for an organized way to manage
 and resolve dependencies.
 
