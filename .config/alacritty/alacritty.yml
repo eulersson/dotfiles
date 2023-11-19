@@ -17,6 +17,11 @@ window:
     x: 75
     y: 100
   padding:
+    # TODO: I cannot set at the time padding to only the top. Only top is needed because
+    # there are the red, yellow and green button from macOS.
+    #
+    #   https://github.com/alacritty/alacritty/issues/1671
+    #
     x: 15
     y: 35
   dimensions:
