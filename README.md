@@ -214,6 +214,9 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 
 ## The poetic way (`poetry`)
 
+I usually install poetry on all `pyenv` distributions I have, otherwise if you install
+poetry using the bash script they offer it will be tied to a particular python version.
+
 It's useful to have the zsh completions:
 
 ```
@@ -326,12 +329,15 @@ https://tmuxcheatsheet.com/
 | <kbd>Space</kbd> <kbd>b</kbd> <kbd>b</kbd>                                                     | Go to previous buffer.                    |
 | <kbd>Space</kbd> <kbd>b</kbd> <kbd>n</kbd>                                                     | Go to next                                |
 | <kbd>Space</kbd> <kbd>l</kbd> <kbd>f</kbd>                                                     | Format current file.                      |
+| <kbd>Space</kbd> <kbd>l</kbd> <kbd>x</kbd>                                                     | Open symbols outline.                     |
 | <kbd>Alt/Option</kbd> + <kbd>↑</kbd>                                                           | Resize panel                              |
 | <kbd>Alt/Option</kbd> + <kbd>↓</kbd>                                                           | Resize panel                              |
 | <kbd>Alt/Option</kbd> + <kbd>←</kbd>                                                           | Resize panel                              |
 | <kbd>Alt/Option</kbd> + <kbd>→</kbd>                                                           | Resize panel                              |
 | <kbd>Ctrl</kbd> + <kbd>n</kbd>, <kbd>n</kbd>, <kbd>n</kbd>, ..., <kbd>d</kbd>                  | `mg979/vim-visual-multi` Multiple cursor. |
 | <kbd>Ctrl</kbd> + <kbd>v</kbd>, <kbd>↓</kbd>, <kbd>↓</kbd>, ..., <kbd>Shift</kbd> <kbd>i</kbd> | Multi-line insert.                        |
+| (in symbols outline) <kbd>l</kbd>                                                              | Unfold lower hierarchy.                   |
+| (in symbols outline) <kbd>h</kbd>                                                              | Fold lower hierarchy.                     |
 
 ## LSP
 
