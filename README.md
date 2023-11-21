@@ -32,9 +32,6 @@ ln -s .dotfiles/.config/alacritty/* .config/alacritty/
 mkdir -p .config/lvim
 ln -s .dotfiles/.config/lvim/* .config/lvim/
 
-mkdir -p .config/lvim
-ln -s .dotfiles/.config/lazygit/* .config/lazygit/
-
 ln -s .dotfiles/.tmux.conf
 ln -s .dotfiles/*.zsh*
 ```
