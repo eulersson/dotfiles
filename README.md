@@ -311,7 +311,7 @@ https://tmuxcheatsheet.com/
 | ------------------------------------------------- | ---------------------------------------------------- |
 | <kbd>Space</kbd> <kbd>/</kbd>                     | Comment current file.                                |
 | (in `nvimtree`) <kbd>?</kbd> <kbd>?</kbd>         | Show help on `nvimtree` plugin.                      |
-| ???                                               | Show git diff in two panels.                         |
+| <kbd>Space</kbd> <kbd>g</kbd> <kbd>d</kbd>        | Show git diff in two panels.                         |
 | ???                                               | Browse all help files.                               |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↑</kbd> | Move line up.                                        |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↓</kbd> | Move line down.                                      |
