@@ -43,6 +43,9 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
+  -- TODO: Remove after https://github.com/LunarVim/LunarVim/issues/4242 is resolved.
+  "MunifTanjim/exrc.nvim",
+  "MunifTanjim/nui.nvim",
 }
 
 -- Set theme.
@@ -53,6 +56,48 @@ lvim.builtin.treesitter.ensure_installed = {
   "python",
 }
 
+-- -- Add this on a project's /project-root-folder/.nvim.lua to run pyright within a
+-- -- container that you built previously with your libraries and pyright.
+-- -- -- Working with remote containers
+-- -- -- https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
+-- require("lvim.lsp.manager").setup("pyright", {
+--   -- TODO: I still haven't figured out yet is how to switch the cmd out on a per project
+--   -- basis. I'd like to only use this weird pyright setup in my main dev project, but
+--   -- then use regular (Mason installed) pyright outside of docker in general.
+--   -- cmd = {
+--   --   "docker",
+--   --   "exec",
+--   --   "-i",
+--   --   "anesowa-pyright-dev-container",
+--   --   "pyright-langserver",
+--   --   "--stdio",
+--   -- },
+--   single_file_support = true,
+--   settings = {
+--     pyright = {
+--       disableLanguageServices = false,
+--       disableOrganizeImports = false
+--     },
+--     python = {
+--       analysis = {
+--         autoImportCompletions = true,
+--         autoSearchPaths = true,
+--         diagnosticMode = "workspace", -- openFilesOnly, workspace
+--         typeCheckingMode = "basic",   -- off, basic, strict
+--         useLibraryCodeForTypes = true
+--       }
+--     }
+--   },
+--   -- before_init = function(params)
+--   --   -- LSP spec has a default flag that will cause you some trouble; if an LSP server
+--   --   -- can't find its parent's processId, it will shut itself down after a second or so.
+--   --   -- You need to tell it to ignore the processId shutdown behaviour (or start your
+--   --   -- docker container to share the process space with your host).
+--   --   -- https://github.com/lspcontainers/lspcontainers.nvim#process-id
+--   --   params.processId = vim.NIL
+--   -- end,
+-- })
+
 -- Setup formatting.
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
@@ -62,9 +107,6 @@ formatters.setup {
     args = { "--print-width", "88", "--prose-wrap", "always" },
   },
 }
-
--- lvim.format_on_save.enabled = true
--- lvim.format_on_save.pattern = { "*.py" }
 
 -- Setup linting.
 local linters = require "lvim.lsp.null-ls.linters"
@@ -149,6 +191,22 @@ lvim.transparent_window = true
 
 -- Set a vertical line on 88.
 vim.opt.colorcolumn = "88"
+
+
+-- TODO: When Neovim native exrc works with LunarVim, remove this 'MunifTanjim/exrc.nvim'
+-- configuration-specific part.
+
+-- Ability to run .exrc, .nvimrc and .nvim.lua on per-project basis.
+vim.o.exrc = false
+require("exrc").setup({
+  files = {
+    ".nvim.lua",
+    ".nvimrc.lua",
+    ".nvimrc",
+    ".exrc.lua",
+    ".exrc",
+  },
+})
 
 -- Toggle line diagnostics (the linting errors that show on the same line).
 -- TODO: Is this the correct way of keeping state?

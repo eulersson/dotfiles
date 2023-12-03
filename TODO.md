@@ -1,3 +1,4 @@
+- [ ] Pyright container https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
 - [ ] Explore
       https://www.lunarvim.org/docs/configuration/plugins/example-configurations#symbols-outlinenvim
 - [ ] Make Python DAP and test runner work.

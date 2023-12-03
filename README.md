@@ -210,6 +210,10 @@ sudo apt install neovim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 ```
 
+## Markdown
+
+https://github.com/joeyespo/grip
+
 ## Python Development
 
 ## The poetic way (`poetry`)
@@ -325,7 +329,8 @@ https://tmuxcheatsheet.com/
 | <kbd>Ctrl</kbd> + <kbd>i</kbd>                                                                 | Go to next mark.                          |
 | <kbd>Space</kbd> <kbd>e</kbd>                                                                  | Toggle explorer.                          |
 | <kbd>Space</kbd> <kbd>f</kbd>                                                                  | Find files by file name.                  |
-| <kbd>Space</kbd> <kbd>s</kbd>                                                                  | Search text across project.               |
+| <kbd>Space</kbd> <kbd>s</kbd> <kbd>t</kbd>                                                     | Search text across project.               |
+| <kbd>Space</kbd> <kbd>s</kbd> <kbd>h</kbd>                                                     | Search text across help.                  |
 | <kbd>Space</kbd> <kbd>b</kbd> <kbd>b</kbd>                                                     | Go to previous buffer.                    |
 | <kbd>Space</kbd> <kbd>b</kbd> <kbd>n</kbd>                                                     | Go to next                                |
 | <kbd>Space</kbd> <kbd>l</kbd> <kbd>f</kbd>                                                     | Format current file.                      |
@@ -341,17 +346,18 @@ https://tmuxcheatsheet.com/
 
 ## LSP
 
-| Keys                                                | Action                                        |
-| --------------------------------------------------- | --------------------------------------------- |
-| <kbd>K</kbd>                                        | Hover information (double tap to get inside). |
-| <kbd>K</kbd> <kbd>K</kbd>                           | Move cursor inside K window                   |
-| <kbd>g</kbd> <kbd>d</kbd>                           | Go to definition.                             |
-| <kbd>g</kbd> <kbd>D</kbd>                           | Go to declaration.                            |
-| <kbd>g</kbd> <kbd>r</kbd>                           | Go to references.                             |
-| <kbd>g</kbd> <kbd>I</kbd>                           | Go to implementation.                         |
-| <kbd>g</kbd> <kbd>s</kbd>                           | Show signature help.                          |
-| <kbd>g</kbd> <kbd>l</kbd>                           | Show line diagnostics.                        |
-| <kbd>g</kbd> <kbd>l</kbd> <kbd>g</kbd> <kbd>l</kbd> | Move cursor to line diagnostics.              |
+| Keys                                                | Action                                            |
+| --------------------------------------------------- | ------------------------------------------------- |
+| <kbd>K</kbd>                                        | Hover information (double tap to get inside).     |
+| <kbd>K</kbd> <kbd>K</kbd>                           | Move cursor inside K window                       |
+| <kbd>g</kbd> <kbd>d</kbd>                           | Go to definition.                                 |
+| <kbd>g</kbd> <kbd>D</kbd>                           | Go to declaration.                                |
+| <kbd>g</kbd> <kbd>r</kbd>                           | Go to references.                                 |
+| <kbd>g</kbd> <kbd>I</kbd>                           | Go to implementation.                             |
+| <kbd>q</kbd>                                        | Close the panel that opens up on "Go to" actions. |
+| <kbd>g</kbd> <kbd>s</kbd>                           | Show signature help.                              |
+| <kbd>g</kbd> <kbd>l</kbd>                           | Show line diagnostics.                            |
+| <kbd>g</kbd> <kbd>l</kbd> <kbd>g</kbd> <kbd>l</kbd> | Move cursor to line diagnostics.                  |
 
 | gd go to definition normal gD go to declaration normal gr go to references normal gI
 go to implementation normal gs show signature help normal gl show line diagnostics
