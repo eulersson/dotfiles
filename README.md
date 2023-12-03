@@ -293,17 +293,18 @@ files. This file can be built using **Bear** (or if using CMake, then exporting 
 
 https://tmuxcheatsheet.com/
 
-| Keys                                           | Action                 |
-| ---------------------------------------------- | ---------------------- |
-| <kbd>Control</kbd> <kbd>y</kbd>                | Clear history.         |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>↑</kbd> | Resize panel.          |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>↓</kbd> | Resize panel.          |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>←</kbd> | Resize panel.          |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>→</kbd> | Resize panel.          |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>q</kbd> | See panel numbers.     |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>"</kbd> | Split vertically.      |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>%</kbd> | Split horizontally.    |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>w</kbd> | List windows visually. |
+| Keys                                           | Action                                                         |
+| ---------------------------------------------- | -------------------------------------------------------------- |
+| <kbd>Control</kbd> <kbd>y</kbd>                | Clear history.                                                 |
+| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>↑</kbd> | Resize panel.                                                  |
+| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>↓</kbd> | Resize panel.                                                  |
+| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>←</kbd> | Resize panel.                                                  |
+| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>→</kbd> | Resize panel.                                                  |
+| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>q</kbd> | See panel numbers.                                             |
+| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>"</kbd> | Split vertically.                                              |
+| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>%</kbd> | Split horizontally.                                            |
+| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>w</kbd> | List windows visually.                                         |
+| <kbd>Shift</kbd> + Click-drag, <kbd>⌘</kbd> C  | Select and copy (useful over vim sessions on remote machines). |
 
 ## LunarVim
 
