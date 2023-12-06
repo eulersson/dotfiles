@@ -58,7 +58,7 @@ path_remove "/Applications/Little Snitch.app/Contents/Components"
 # git config --global merge.tool vimdiff3
 # git config --global mergetool.vimdiff3.path nvim
 
-# fzf ----------------------------------------------------------------------------------
+# fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 
 # For interaction with a Google Kubernetes Cluster.

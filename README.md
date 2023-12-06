@@ -289,6 +289,7 @@ files. This file can be built using **Bear** (or if using CMake, then exporting 
 | <kbd>Control</kbd> <kbd>Shift</kbd> <kbd>n</kbd> | Create new window.            |
 | <kbd>Control</kbd> <kbd>Shift</kbd> <kbd>h</kbd> | Minimize window.              |
 | <kbd>Control</kbd> <kbd>f</kbd> <kbd>h</kbd>     | Search across window.         |
+| <kbd>Shift</kbd> <kbd>Left Mouse Click</kbd>     | Open a link.                  |
 
 ## tmux
 
