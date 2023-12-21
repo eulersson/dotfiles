@@ -230,3 +230,10 @@ lvim.builtin.which_key.mappings["lx"] = {
 }
 
 lvim.builtin.which_key.mappings["ly"] = { "<cmd>:SymbolsOutline<cr>", "Symbols Outline" }
+
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Terminal",
+  f = { "<cmd>1ToggleTerm<cr>", "Floating terminal" },
+  v = { "<cmd>2ToggleTerm size=30 direction=vertical<cr>", "Split vertical" },
+  h = { "<cmd>3ToggleTerm size=10 direction=horizontal<cr>", "Split horizontal" },
+}
