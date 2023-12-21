@@ -8,7 +8,7 @@ Collection of configuration files for the following environment:
 | [Zsh](https://zsh.org/)                 | UNIX shell.                       |
 | [Oh My Zsh](https://ohmyz.sh/)          | Zsh framework.                    |
 | [tmux](https://github.com/tmux/tmux)    | Terminal multiplexer.             |
-| [LunarVim]()                            | Text editor, Neovim distribution. |
+| [LunarVim](https://www.lunarvim.org/)   | Text editor, Neovim distribution. |
 | [pyenv](https://github.com/pyenv/pyenv) | Python version management.        |
 | [nvm](https://github.com/nvm-sh/nvm)    | Node.js version management.       |
 
@@ -312,12 +312,20 @@ https://tmuxcheatsheet.com/
 
 - https://www.lunarvim.org/docs/beginners-guide/keybinds-overview
 
+Explore the help pages:
+
+- Browse help tags: <kbd>Space</kbd> <kbd>s</kbd> <kbd>h</kbd>.
+- An index of help files: `:help` and pressing return key.
+- For guides: e.g. `:help various-motions`
+- For key combinations: e.g. `:help CTRL-W_t`
+- For commands: e.g. `:help :NvimTreeOpen`
+- For NeoVim functions: e.g. `:help `
+
 ### General
 
 | Keys                                              | Action                                               |
 | ------------------------------------------------- | ---------------------------------------------------- |
 | <kbd>Space</kbd> <kbd>/</kbd>                     | Comment current file.                                |
-| (in `nvimtree`) <kbd>?</kbd> <kbd>?</kbd>         | Show help on `nvimtree` plugin.                      |
 | <kbd>Space</kbd> <kbd>g</kbd> <kbd>d</kbd>        | Show git diff in two panels.                         |
 | ???                                               | Browse all help files.                               |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↑</kbd> | Move line up.                                        |
@@ -346,6 +354,24 @@ https://tmuxcheatsheet.com/
 | <kbd>Ctrl</kbd> + <kbd>v</kbd>, <kbd>↓</kbd>, <kbd>↓</kbd>, ..., <kbd>Shift</kbd> <kbd>i</kbd> | Multi-line insert.                        |
 | (in symbols outline) <kbd>l</kbd>                                                              | Unfold lower hierarchy.                   |
 | (in symbols outline) <kbd>h</kbd>                                                              | Fold lower hierarchy.                     |
+| (in NvimTree) <kbd>g</kbd> <kbd>?</kbd>                                                        | Get help.                                 |
+| (in NvimTree) <kbd>Ctrl</kbd> <kbd>V</kbd>                                                     | Open file in vertical split.              |
+| (in NvimTree) <kbd>Ctrl</kbd> <kbd>Y</kbd>                                                     | Copy current file relative path.          |
+| (on help page link) <kbd>Ctrl</kbd> <kbd>]</kbd>                                               | Follow link.                              |
+| <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>\_</kbd>                                                  | Maximize split within the current window. |
+| <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>=</kbd>                                                   | Resizes all windows to equal size         |
+| <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>T</kbd>                                                   | Move split into a separate tab maximized. |
+
+#### Telescope
+
+https://github.com/nvim-telescope/telescope.nvim#default-mappings
+
+| Keys                                         | Action                                        |
+| -------------------------------------------- | --------------------------------------------- |
+| (in telescope)<kbd>Ctrl</kbd> + <kbd>t</kbd> | Open result in a new tab.                     |
+| (in telescope)<kbd>Ctrl</kbd> + <kbd>v</kbd> | Open result in a vertical split.              |
+| (in telescope)<kbd>Ctrl</kbd> + <kbd>h</kbd> | Open result in a horizontal split.            |
+| (in telescope)<kbd>Ctrl</kbd> + <kbd>q</kbd> | Open in new pane a selector of all the files. |
 
 ## LSP
 
@@ -362,6 +388,17 @@ https://tmuxcheatsheet.com/
 | <kbd>g</kbd> <kbd>l</kbd>                           | Show line diagnostics.                            |
 | <kbd>g</kbd> <kbd>l</kbd> <kbd>g</kbd> <kbd>l</kbd> | Move cursor to line diagnostics.                  |
 
-| gd go to definition normal gD go to declaration normal gr go to references normal gI
-go to implementation normal gs show signature help normal gl show line diagnostics
-normal glgl move cursor inside gl diagnostics window normal
+## TODO
+
+- How to see what's bound to a `which_key` combination.
+- How to see what's bound to a regular key binding.
+- See how many neovim windows and how many splits.
+- See exactly what happens with CTRL-W_t, it seems it's not really a tab.
+- Navigate markers back and forward CTRL-O
+- Explain keys used to navigate lazy git: Shift + \_, Shift + +, editing hunks,
+  Escape-Escape...
+- When you are in git diff mode `gd` in a LunarVim file, can we stage hunks?
+- How do we exit git diff mode?
+
+perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL =
+(unset), LC_CTYPE = "UTF-8", LANG = "en_US.UTF-8"

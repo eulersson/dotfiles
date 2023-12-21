@@ -1,15 +1,18 @@
 # Default editor.
 export EDITOR=lvim
 
-# Go language.
-export GOPATH=$HOME/go
-export GOROOT=$(brew --prefix golang)/libexec
-test -d $GOPATH || mkdir $GOPATH
-test -d $GOPATH/src/github.com || mkdir -p $GOPATH/src/github.com
+# TODO: Is this needed?
+# # Go language.
+# export GOPATH=$HOME/go
+# export GOROOT=$(brew --prefix golang)/libexec
+# test -d $GOPATH || mkdir $GOPATH
+# test -d $GOPATH/src/github.com || mkdir -p $GOPATH/src/github.com
+export PATH=$HOME/go/bin:$PATH
 
 # Search path.
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/sbin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/Scripts:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
