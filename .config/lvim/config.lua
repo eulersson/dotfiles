@@ -18,7 +18,7 @@ lvim.plugins = {
     config = function()
       require('mason-tool-installer').setup {
         ensure_installed = {
-          'pyright', 'black', 'ruff', 'prettier', 'debugpy'
+          'pyright', 'black', 'isort', 'ruff', 'prettier', 'debugpy', 'shfmt'
         }
       }
     end
@@ -102,6 +102,8 @@ lvim.builtin.treesitter.ensure_installed = {
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { name = "black" },
+  { name = "isort" },
+  { name = "shfmt" },
   {
     name = "prettier",
     args = { "--print-width", "88", "--prose-wrap", "always" },
