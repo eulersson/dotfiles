@@ -331,6 +331,7 @@ Explore the help pages:
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↑</kbd> | Move line up.                                        |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↓</kbd> | Move line down.                                      |
 | <kbd>Space</kbd> <kbd>s</kbd> <kbd>k</kbd>        | See current mapped keys. (also `:verbose map <TAB>`) |
+| <kbd>Ctrl</kbd> + G                               | Print current file path.                             |
 
 ### Navigation
 
@@ -361,6 +362,9 @@ Explore the help pages:
 | <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>\_</kbd>                                                  | Maximize split within the current window. |
 | <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>=</kbd>                                                   | Resizes all windows to equal size         |
 | <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>T</kbd>                                                   | Move split into a separate tab maximized. |
+| <kbd>g</kbd> <kbd>t</kbd>                                                                      | Move to next tab (not buffer).            |
+| <kbd>g</kbd> <kbd>T</kbd>                                                                      | Move to next tab (not buffer).            |
+| <kbd>3</kbd> <kbd>g</kbd> <kbd>T</kbd>                                                         | Move to tab number 3.                     |
 
 #### Telescope
 
@@ -399,6 +403,7 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
   Escape-Escape...
 - When you are in git diff mode `gd` in a LunarVim file, can we stage hunks?
 - How do we exit git diff mode?
+- Change tab order.
 
 perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL =
 (unset), LC_CTYPE = "UTF-8", LANG = "en_US.UTF-8"
