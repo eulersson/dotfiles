@@ -280,33 +280,33 @@ files. This file can be built using **Bear** (or if using CMake, then exporting 
 
 ## Alacritty
 
-| Keys                                             | Action                        |
-| ------------------------------------------------ | ----------------------------- |
-| <kbd>Control</kbd> <kbd>y</kbd>                  | Clear history                 |
-| <kbd>Control</kbd> <kbd>Shift</kbd> <kbd>o</kbd> | Make window semi-transparent. |
-| <kbd>Control</kbd> <kbd>Shift</kbd> <kbd>p</kbd> | Make window opaque.           |
-| <kbd>Control</kbd> <kbd>Shift</kbd> <kbd>m</kbd> | Toggle window full screen.    |
-| <kbd>Control</kbd> <kbd>Shift</kbd> <kbd>n</kbd> | Create new window.            |
-| <kbd>Control</kbd> <kbd>Shift</kbd> <kbd>h</kbd> | Minimize window.              |
-| <kbd>Control</kbd> <kbd>f</kbd> <kbd>h</kbd>     | Search across window.         |
-| <kbd>Shift</kbd> <kbd>Left Mouse Click</kbd>     | Open a link.                  |
+| Keys                   | Action                        |
+| ---------------------- | ----------------------------- |
+| Control y              | Clear history                 |
+| Control Shift o        | Make window semi-transparent. |
+| Control Shift p        | Make window opaque.           |
+| Control Shift m        | Toggle window full screen.    |
+| Control Shift n        | Create new window.            |
+| Control Shift h        | Minimize window.              |
+| Control f h            | Search across window.         |
+| Shift Left Mouse Click | Open a link.                  |
 
 ## tmux
 
 https://tmuxcheatsheet.com/
 
-| Keys                                           | Action                                                         |
-| ---------------------------------------------- | -------------------------------------------------------------- |
-| <kbd>Control</kbd> <kbd>y</kbd>                | Clear history.                                                 |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>↑</kbd> | Resize panel.                                                  |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>↓</kbd> | Resize panel.                                                  |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>←</kbd> | Resize panel.                                                  |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>→</kbd> | Resize panel.                                                  |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>q</kbd> | See panel numbers.                                             |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>"</kbd> | Split vertically.                                              |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>%</kbd> | Split horizontally.                                            |
-| <kbd>Control</kbd> + <kbd>b</kbd> <kbd>w</kbd> | List windows visually.                                         |
-| <kbd>Shift</kbd> + Click-drag, <kbd>⌘</kbd> C  | Select and copy (useful over vim sessions on remote machines). |
+| Keys                    | Action                                                         |
+| ----------------------- | -------------------------------------------------------------- |
+| Control y               | Clear history.                                                 |
+| Control + b ↑           | Resize panel.                                                  |
+| Control + b ↓           | Resize panel.                                                  |
+| Control + b ←           | Resize panel.                                                  |
+| Control + b →           | Resize panel.                                                  |
+| Control + b q           | See panel numbers.                                             |
+| Control + b "           | Split vertically.                                              |
+| Control + b %           | Split horizontally.                                            |
+| Control + b w           | List windows visually.                                         |
+| Shift + Click-drag, ⌘ C | Select and copy (useful over vim sessions on remote machines). |
 
 ## LunarVim
 
@@ -314,83 +314,83 @@ https://tmuxcheatsheet.com/
 
 Explore the help pages:
 
-- Browse help tags: <kbd>Space</kbd> <kbd>s</kbd> <kbd>h</kbd>.
-- An index of help files: `:help` and pressing return key.
-- For guides: e.g. `:help various-motions`
-- For key combinations: e.g. `:help CTRL-W_t`
 - For commands: e.g. `:help :NvimTreeOpen`
 - For NeoVim functions: e.g. `:help `
 
 ### General
 
-| Keys                                              | Action                                               |
-| ------------------------------------------------- | ---------------------------------------------------- |
-| <kbd>Space</kbd> <kbd>/</kbd>                     | Comment current file.                                |
-| <kbd>Space</kbd> <kbd>g</kbd> <kbd>d</kbd>        | Show git diff in two panels.                         |
-| ???                                               | Browse all help files.                               |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↑</kbd> | Move line up.                                        |
-| <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>↓</kbd> | Move line down.                                      |
-| <kbd>Space</kbd> <kbd>s</kbd> <kbd>k</kbd>        | See current mapped keys. (also `:verbose map <TAB>`) |
-| <kbd>Ctrl</kbd> + G                               | Print current file path.                             |
+| Keys                                  | Action                                               |
+| ------------------------------------- | ---------------------------------------------------- |
+| Space /                               | Comment current file.                                |
+| Space g d                             | Show git diff in two panels.                         |
+| Ctrl + Shift + ↑                      | Move line up.                                        |
+| Ctrl + Shift + ↓                      | Move line down.                                      |
+| Space s k                             | See current mapped keys. (also `:verbose map <TAB>`) |
+| Ctrl + G                              | Print current file path.                             |
+| :help                                 | Index of help files.                                 |
+| :help CTRL-W_t                        | Help about a key combination.                        |
+| :help :NvimTreeOpen                   | Help about a command.                                |
+| :help telescope.actions.open_qflist() | Help about an nvim function.                         |
 
 ### Navigation
 
-| Keys                                                                                           | Action                                    |
-| ---------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| <kbd>Ctrl</kbd> + <kbd>o</kbd>                                                                 | Go to previous mark.                      |
-| <kbd>Ctrl</kbd> + <kbd>i</kbd>                                                                 | Go to next mark.                          |
-| <kbd>Space</kbd> <kbd>e</kbd>                                                                  | Toggle explorer.                          |
-| <kbd>Space</kbd> <kbd>f</kbd>                                                                  | Find files by file name.                  |
-| <kbd>Space</kbd> <kbd>s</kbd> <kbd>t</kbd>                                                     | Search text across project.               |
-| <kbd>Space</kbd> <kbd>s</kbd> <kbd>h</kbd>                                                     | Search text across help.                  |
-| <kbd>Space</kbd> <kbd>b</kbd> <kbd>b</kbd>                                                     | Go to previous buffer.                    |
-| <kbd>Space</kbd> <kbd>b</kbd> <kbd>n</kbd>                                                     | Go to next                                |
-| <kbd>Space</kbd> <kbd>l</kbd> <kbd>f</kbd>                                                     | Format current file.                      |
-| <kbd>Space</kbd> <kbd>l</kbd> <kbd>x</kbd>                                                     | Open symbols outline.                     |
-| <kbd>Alt/Option</kbd> + <kbd>↑</kbd>                                                           | Resize panel                              |
-| <kbd>Alt/Option</kbd> + <kbd>↓</kbd>                                                           | Resize panel                              |
-| <kbd>Alt/Option</kbd> + <kbd>←</kbd>                                                           | Resize panel                              |
-| <kbd>Alt/Option</kbd> + <kbd>→</kbd>                                                           | Resize panel                              |
-| <kbd>Ctrl</kbd> + <kbd>n</kbd>, <kbd>n</kbd>, <kbd>n</kbd>, ..., <kbd>d</kbd>                  | `mg979/vim-visual-multi` Multiple cursor. |
-| <kbd>Ctrl</kbd> + <kbd>v</kbd>, <kbd>↓</kbd>, <kbd>↓</kbd>, ..., <kbd>Shift</kbd> <kbd>i</kbd> | Multi-line insert.                        |
-| (in symbols outline) <kbd>l</kbd>                                                              | Unfold lower hierarchy.                   |
-| (in symbols outline) <kbd>h</kbd>                                                              | Fold lower hierarchy.                     |
-| (in NvimTree) <kbd>g</kbd> <kbd>?</kbd>                                                        | Get help.                                 |
-| (in NvimTree) <kbd>Ctrl</kbd> <kbd>V</kbd>                                                     | Open file in vertical split.              |
-| (in NvimTree) <kbd>Ctrl</kbd> <kbd>Y</kbd>                                                     | Copy current file relative path.          |
-| (on help page link) <kbd>Ctrl</kbd> <kbd>]</kbd>                                               | Follow link.                              |
-| <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>\_</kbd>                                                  | Maximize split within the current window. |
-| <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>=</kbd>                                                   | Resizes all windows to equal size         |
-| <kbd>Ctrl</kbd> + <kbd>W</kbd>, <kbd>T</kbd>                                                   | Move split into a separate tab maximized. |
-| <kbd>g</kbd> <kbd>t</kbd>                                                                      | Move to next tab (not buffer).            |
-| <kbd>g</kbd> <kbd>T</kbd>                                                                      | Move to next tab (not buffer).            |
-| <kbd>3</kbd> <kbd>g</kbd> <kbd>T</kbd>                                                         | Move to tab number 3.                     |
+| Keys                         | Action                                    |
+| ---------------------------- | ----------------------------------------- |
+| :help various-motions        | Useful keys to navigate around vim.       |
+| Ctrl + o                     | Go to previous mark.                      |
+| Ctrl + i                     | Go to next mark.                          |
+| Space e                      | Toggle explorer.                          |
+| Space f                      | Find files by file name.                  |
+| Space s t                    | Search text across project.               |
+| Space s h                    | Search text across help.                  |
+| Space b b                    | Go to previous buffer.                    |
+| Space b n                    | Go to next                                |
+| Space l f                    | Format current file.                      |
+| Space l x                    | Open symbols outline.                     |
+| Alt/Option + ↑               | Resize panel.                             |
+| Alt/Option + ↓               | Resize panel.                             |
+| Alt/Option + ←               | Resize panel.                             |
+| Alt/Option + →               | Resize panel.                             |
+| Ctrl + n, n, n, ..., d       | `mg979/vim-visual-multi` Multiple cursor. |
+| Ctrl + v, ↓, ↓, ..., Shift i | Multi-line insert.                        |
+| Ctrl + W, \_                 | Maximize split within the current window. |
+| Ctrl + W, =                  | Resizes all windows to equal size         |
+| Ctrl + W, T                  | Move split into a separate tab maximized. |
+| g t                          | Move to next tab (not buffer).            |
+| g T                          | Move to next tab (not buffer).            |
+| 3 g T                        | Move to tab number 3.                     |
+| (on help page link) Ctrl ]   | Follow link.                              |
+| (in NvimTree) g ?            | Get help.                                 |
+| (in NvimTree) Ctrl V         | Open file in vertical split.              |
+| (in NvimTree) Ctrl Y         | Copy current file relative path.          |
+| (in symbols outline) l       | Unfold lower hierarchy.                   |
+| (in symbols outline) h       | Fold lower hierarchy.                     |
 
 #### Telescope
 
 https://github.com/nvim-telescope/telescope.nvim#default-mappings
 
-| Keys                                         | Action                                        |
-| -------------------------------------------- | --------------------------------------------- |
-| (in telescope)<kbd>Ctrl</kbd> + <kbd>t</kbd> | Open result in a new tab.                     |
-| (in telescope)<kbd>Ctrl</kbd> + <kbd>v</kbd> | Open result in a vertical split.              |
-| (in telescope)<kbd>Ctrl</kbd> + <kbd>h</kbd> | Open result in a horizontal split.            |
-| (in telescope)<kbd>Ctrl</kbd> + <kbd>q</kbd> | Open in new pane a selector of all the files. |
+| Keys                    | Action                                        |
+| ----------------------- | --------------------------------------------- |
+| (in telescope) Ctrl + t | Open result in a new tab.                     |
+| (in telescope) Ctrl + v | Open result in a vertical split.              |
+| (in telescope) Ctrl + h | Open result in a horizontal split.            |
+| (in telescope) Ctrl + q | Open in new pane a selector of all the files. |
 
 ## LSP
 
-| Keys                                                | Action                                            |
-| --------------------------------------------------- | ------------------------------------------------- |
-| <kbd>K</kbd>                                        | Hover information (double tap to get inside).     |
-| <kbd>K</kbd> <kbd>K</kbd>                           | Move cursor inside K window                       |
-| <kbd>g</kbd> <kbd>d</kbd>                           | Go to definition.                                 |
-| <kbd>g</kbd> <kbd>D</kbd>                           | Go to declaration.                                |
-| <kbd>g</kbd> <kbd>r</kbd>                           | Go to references.                                 |
-| <kbd>g</kbd> <kbd>I</kbd>                           | Go to implementation.                             |
-| <kbd>q</kbd>                                        | Close the panel that opens up on "Go to" actions. |
-| <kbd>g</kbd> <kbd>s</kbd>                           | Show signature help.                              |
-| <kbd>g</kbd> <kbd>l</kbd>                           | Show line diagnostics.                            |
-| <kbd>g</kbd> <kbd>l</kbd> <kbd>g</kbd> <kbd>l</kbd> | Move cursor to line diagnostics.                  |
+| Keys    | Action                                            |
+| ------- | ------------------------------------------------- |
+| K       | Hover information (double tap to get inside).     |
+| K K     | Move cursor inside K window                       |
+| g d     | Go to definition.                                 |
+| g D     | Go to declaration.                                |
+| g r     | Go to references.                                 |
+| g I     | Go to implementation.                             |
+| q       | Close the panel that opens up on "Go to" actions. |
+| g s     | Show signature help.                              |
+| g l     | Show line diagnostics.                            |
+| g l g l | Move cursor to line diagnostics.                  |
 
 ## TODO
 
