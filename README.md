@@ -401,9 +401,11 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 - Navigate markers back and forward CTRL-O
 - Explain keys used to navigate lazy git: Shift + \_, Shift + +, editing hunks,
   Escape-Escape...
+- Document opening git changed files.
 - When you are in git diff mode `gd` in a LunarVim file, can we stage hunks?
 - How do we exit git diff mode?
 - Change tab order.
+- Buffer browsing.
 
 perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL =
 (unset), LC_CTYPE = "UTF-8", LANG = "en_US.UTF-8"
