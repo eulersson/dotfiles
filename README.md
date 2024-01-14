@@ -405,6 +405,7 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 - When you are in git diff mode `gd` in a LunarVim file, can we stage hunks?
 - How do we exit git diff mode?
 - Change tab order.
+- Sorting a-z
 - Buffer browsing.
 
 perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL =
