@@ -27,6 +27,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# Initialize rbenv
+eval "$(rbenv init - zsh)"
+
 # TODO: Review.
 # # Used by weechat on OSX.
 # if [[ "$(uname)" == "Darwin" ]]
