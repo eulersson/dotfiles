@@ -3,7 +3,7 @@
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
@@ -35,5 +35,14 @@
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
-  }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.eol": "\n"
+  },
+  "cmake.showOptionsMovedNotification": false
 }
