@@ -393,6 +393,7 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | ⌥ + F5 // Alt + F5              | Jump to the next git change.                      |
 | ⌥ + F5 // Alt + F5              | Jump to the next git change.                      |
 | ⇧ + ⌥ + F5 // ⇧ + Alt + F5      | Jump to the next git change.                      |
+| ⇧ + ⌥ + F // ⇧ + Alt + F        | Format current file.                              |
 
 ## LSP
 

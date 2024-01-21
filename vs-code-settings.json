@@ -46,5 +46,6 @@
   "cmake.showOptionsMovedNotification": false,
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
-  "workbench.preferredHighContrastColorTheme": "GitHub Light"
+  "workbench.preferredHighContrastColorTheme": "GitHub Light",
+  "window.zoomLevel": 1
 }
