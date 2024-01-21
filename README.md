@@ -377,6 +377,23 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | (in telescope) Ctrl + h | Open result in a horizontal split.            |
 | (in telescope) Ctrl + q | Open in new pane a selector of all the files. |
 
+## Visual Studio Code
+
+| Keys                            | Action                                            |
+| ------------------------------- | ------------------------------------------------- |
+| Ctrl + m                        | Maximize current panel                            |
+| Ctrl + h                        | Navigate to the upper panel.                      |
+| Ctrl + j                        | Navigate to the lower panel.                      |
+| Ctrl + h                        | Navigate to the left panel.                       |
+| Ctrl + l                        | Navigate to the right panel.                      |
+| ⌘ + <number> // Ctrl + <number> | Go to the nth tab.                                |
+| ⌘ + B // Ctrl + B               | Show/hide left sidebar.                           |
+| ⌘ + J // Ctrl + J               | Show/hide lower panel.                            |
+| Ctrl + Space                    | Force suggested autocompletion on current symbol. |
+| ⌥ + F5 // Alt + F5              | Jump to the next git change.                      |
+| ⌥ + F5 // Alt + F5              | Jump to the next git change.                      |
+| ⇧ + ⌥ + F5 // ⇧ + Alt + F5      | Jump to the next git change.                      |
+
 ## LSP
 
 | Keys    | Action                                            |
