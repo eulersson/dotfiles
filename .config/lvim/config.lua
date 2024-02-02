@@ -67,10 +67,35 @@ lvim.plugins = {
   -- TODO: Remove after https://github.com/LunarVim/LunarVim/issues/4242 is resolved.
   "MunifTanjim/exrc.nvim",
   "MunifTanjim/nui.nvim",
+  'projekt0n/github-nvim-theme',
+  {
+    "cormacrelf/dark-notify",
+    config = function()
+      require('dark_notify').run({
+        schemes = {
+          dark = "catppuccin-mocha",
+          light = {
+            colorscheme = "github_light",
+            background = "dark"
+          },
+        }
+      })
+    end
+  },
+  {
+    'jackMort/ChatGPT.nvim',
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = "echo $OPENAI_API_KEY"
+      })
+    end
+
+  }
 }
 
--- Set theme.
-lvim.colorscheme = "catppuccin"
+-- NOTE: Theming is handled by the dark-notify plugin.
+-- -- Set theme. 
+-- -- lvim.colorscheme = "github_light"
 
 -- Automatically install python syntax highlighting.
 lvim.builtin.treesitter.ensure_installed = {
