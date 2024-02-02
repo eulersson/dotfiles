@@ -33,8 +33,14 @@ mkdir -p .config/lvim
 ln -s .dotfiles/.config/lvim/* .config/lvim/
 
 ln -s .dotfiles/.tmux.conf
+ln -s .dotfiles/.wezterm.lua
 ln -s .dotfiles/*.zsh*
 ```
+
+### Environment Files
+
+I have an environment file `~/.env` which has sensitive information for the tools to
+work, for instance `OPENAI_API_TOKEN` so the `ChatGPT.nvim` plugin works well.
 
 ### Zsh
 
