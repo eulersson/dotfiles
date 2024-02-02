@@ -158,6 +158,18 @@ mkdir -p ~/.config/alacritty/themes
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 ```
 
+### wezterm
+
+**macOS**:
+
+```
+brew install --cask wezterm
+```
+
+**Linux**:
+
+https://wezfurlong.org/wezterm/install/linux.html
+
 ### tmux
 
 Now open the newly installed Alacritty terminal emulator app and let's configure `tmux`
