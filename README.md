@@ -317,7 +317,13 @@ files. This file can be built using **Bear** (or if using CMake, then exporting 
 | ----- | -------------------- |
 | ⌘ + U | Toggle transparency. |
 
-Configuring iTerm
+
+
+### Configuring iTerm
+
+You can use the `.itermexport` file in this repository and load the preferences from it
+(Settings > General > Preferences > Load preferences ...) instead of having to do it
+manually as explained as follows.
 
 - [ ] General
   - [ ] Selection
