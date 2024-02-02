@@ -2,15 +2,17 @@
 
 Collection of configuration files for the following environment:
 
-| Tool                                    | Purpose                           |
-| --------------------------------------- | --------------------------------- |
-| [Alacritty](https://alacritty.org/)     | Terminal emulator.                |
-| [Zsh](https://zsh.org/)                 | UNIX shell.                       |
-| [Oh My Zsh](https://ohmyz.sh/)          | Zsh framework.                    |
-| [tmux](https://github.com/tmux/tmux)    | Terminal multiplexer.             |
-| [LunarVim](https://www.lunarvim.org/)   | Text editor, Neovim distribution. |
-| [pyenv](https://github.com/pyenv/pyenv) | Python version management.        |
-| [nvm](https://github.com/nvm-sh/nvm)    | Node.js version management.       |
+| Tool                                    | Purpose                             |
+| --------------------------------------- | ----------------------------------- |
+| [iTerm](https://iterm2.com/)            | macOS terminal emulator.            |
+| [Alacritty](https://alacritty.org/)     | Terminal emulator (cross-platform). |
+| [wezterm](https://wezfurlong.org)       | Terminal emulator (cross-platform). |
+| [Zsh](https://zsh.org/)                 | UNIX shell.                         |
+| [Oh My Zsh](https://ohmyz.sh/)          | Zsh framework.                      |
+| [tmux](https://github.com/tmux/tmux)    | Terminal multiplexer.               |
+| [LunarVim](https://www.lunarvim.org/)   | Text editor, Neovim distribution.   |
+| [pyenv](https://github.com/pyenv/pyenv) | Python version management.          |
+| [nvm](https://github.com/nvm-sh/nvm)    | Node.js version management.         |
 
 ## Installation
 
@@ -136,7 +138,7 @@ Install Alacritty, a replacement for the native Terminal or iTerm2 macOS emulato
 **macOS**:
 
 ```
-brew install alacritty
+brew install --cask alacritty
 ```
 
 **Arch Linux**
@@ -309,6 +311,54 @@ files. This file can be built using **Bear** (or if using CMake, then exporting 
 | Control f h            | Search across window.         |
 | Shift Left Mouse Click | Open a link.                  |
 
+## iTerm
+
+| Keys  | Action               |
+| ----- | -------------------- |
+| ⌘ + U | Toggle transparency. |
+
+Configuring iTerm
+
+- [ ] General
+  - [ ] Selection
+    - [ ] Applications in terminal may access clipboard: ON
+- [ ] Configure thems:
+  - [ ] Dark: Catppuccin Mocha
+  - [ ] Light: Github Light Default
+- [ ] Font: JetBrains Nerd Font
+- [ ] Appearance
+  - [ ] General
+    - [ ] Theme: Minimal
+  - [ ] Windows
+    - [ ] Show window number in title bar: OFF
+  - [ ] Pane
+    - [ ] Side margin: 10
+    - [ ] Top and bottom margins: 10
+- [ ] Profiles
+  - [ ] Window
+    - [ ] Custom window title: (leave empty!)
+  - Terminal
+    - Environment: Use custom locale...
+      - Change...
+      - English (United States) UTF-8
+  - [ ] Terminal
+    - [ ] Show mark indicators: OFF
+- [ ] Advanced
+  - [ ]
+
+Now duplicate the profile and call it “Hotkey Profile”. Go to
+
+- [ ] Profiles
+  - [ ] General
+    - [ ] Basics
+      - [ ] Name: Hotkey Profile
+  - [ ] Keys
+    - [ ] A hotkey opens a dedicated window with this profile: ON
+      - [ ] Option + Space
+  - [ ] Window
+    - [ ] Transparency: 15
+    - [ ] Style: Full Screen
+
 ## tmux
 
 https://tmuxcheatsheet.com/
@@ -349,6 +399,7 @@ Explore the help pages:
 | :help CTRL-W_t                        | Help about a key combination.                        |
 | :help :NvimTreeOpen                   | Help about a command.                                |
 | :help telescope.actions.open_qflist() | Help about an nvim function.                         |
+| (visual mode) :sort                   | Sort lines in visual mode.                           |
 
 ### Navigation
 
@@ -432,19 +483,4 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 
 ## TODO
 
-- How to see what's bound to a `which_key` combination.
-- How to see what's bound to a regular key binding.
-- See how many neovim windows and how many splits.
-- See exactly what happens with CTRL-W_t, it seems it's not really a tab.
-- Navigate markers back and forward CTRL-O
-- Explain keys used to navigate lazy git: Shift + \_, Shift + +, editing hunks,
-  Escape-Escape...
-- Document opening git changed files.
-- When you are in git diff mode `gd` in a LunarVim file, can we stage hunks?
-- How do we exit git diff mode?
-- Change tab order.
-- Sorting a-z
-- Buffer browsing.
-
-perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL =
-(unset), LC_CTYPE = "UTF-8", LANG = "en_US.UTF-8"
+See the [TODOs](TODO.md) document.
