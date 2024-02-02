@@ -260,16 +260,16 @@ managed by poetry.
 Virtualenv
 Python:         3.11.5
 Implementation: CPython
-Path:           /Users/ramon/Library/Caches/pypoetry/virtualenvs/sound-detector-oq1WgInS-py3.11
-Executable:     /Users/ramon/Library/Caches/pypoetry/virtualenvs/sound-detector-oq1WgInS-py3.11/bin/python
+Path:           /Users/eulersson/Library/Caches/pypoetry/virtualenvs/sound-detector-oq1WgInS-py3.11
+Executable:     /Users/eulersson/Library/Caches/pypoetry/virtualenvs/sound-detector-oq1WgInS-py3.11/bin/python
 Valid:          True
 
 System
 Platform:   darwin
 OS:         posix
 Python:     3.11.5
-Path:       /Users/ramon/.pyenv/versions/3.11.5/Library/Frameworks/Python.framework/Versions/3.11
-Executable: /Users/ramon/.pyenv/versions/3.11.5/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11
+Path:       /Users/eulersson/.pyenv/versions/3.11.5/Library/Frameworks/Python.framework/Versions/3.11
+Executable: /Users/eulersson/.pyenv/versions/3.11.5/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11
 ```
 
 To develop with `Neovim` having the Python LSP available these are the requirements:
@@ -283,7 +283,7 @@ After having the information with `poetry env show` you can craft the
 ```
 {
    "venv" : "sound-detector-oq1WgInS-py3.11",
-   "venvPath" : "/Users/ramon/Library/Caches/pypoetry/virtualenvs"
+   "venvPath" : "/Users/eulersson/Library/Caches/pypoetry/virtualenvs"
 }
 ```
 
@@ -324,6 +324,20 @@ files. This file can be built using **Bear** (or if using CMake, then exporting 
 You can use the `.itermexport` file in this repository and load the preferences from it
 (Settings > General > Preferences > Load preferences ...) instead of having to do it
 manually as explained as follows.
+
+> [!NOTE]
+>  Importing the .itermexport file does not seem to work very well (it's in beta, I
+>  filed an [issue](https://gitlab.com/gnachman/iterm2/-/issues/11343) for it)...
+>  Another possible way to load the preferences is as explained in [this
+>  article](https://shyr.io/blog/sync-iterm2-configs), running on your shell:
+
+```
+# Specify the preferences directory
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm"
+
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+```
 
 - [ ] General
   - [ ] Selection
