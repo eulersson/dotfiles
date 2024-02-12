@@ -74,4 +74,10 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "vim.useSystemClipboard": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.defaultProfile.osx": "tmux",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": true
 }
