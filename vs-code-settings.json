@@ -36,7 +36,14 @@
     "*.ipynb": "jupyter-notebook"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[jsonl]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
   },
   "[shellscript]": {
     "editor.tabSize": 2,
@@ -57,5 +64,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.insertSpaces": true,
     "editor.tabSize": 2
-  }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[proto]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
 }
