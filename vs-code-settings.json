@@ -79,4 +79,6 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "tmux",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "remote.autoForwardPortsSource": "hybrid",
+  "window.customTitleBarVisibility": "windowed",
 }
