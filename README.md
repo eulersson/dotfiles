@@ -95,6 +95,18 @@ brew install zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 ```
 
+### Secrets
+
+Oh My Zsh has a [dotenv plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv)
+which allows sourcing the environment variables defined in `.env` files on the folder
+tree. If you protect those files with read-write access only to yourself it is a
+secure-ish way to store API tokens and such.
+
+Alternatives:
+
+- Using `gpg --encrypt` and `gpg --decrypt`
+- Using `keepassxc-cli show -sa password ~/Nuvi/MetalRose.kdbx "/Internet/OpenAI ChatGPT.nvim API Key"`
+
 ### pyenv
 
 **macOS** (https://github.com/pyenv/pyenv#homebrew-in-macos)
