@@ -150,6 +150,7 @@ formatters.setup {
   { name = "black" },
   { name = "isort" },
   { name = "shfmt" },
+  { name = "gofmt" },
   {
     name = "prettier",
     args = { "--print-width", "88", "--prose-wrap", "always" },
@@ -240,7 +241,6 @@ lvim.transparent_window = true
 -- Set a vertical line on 88.
 vim.opt.colorcolumn = "88"
 
-
 -- TODO: When Neovim native exrc works with LunarVim, remove this 'MunifTanjim/exrc.nvim'
 -- configuration-specific part.
 
@@ -257,18 +257,24 @@ require("exrc").setup({
 })
 
 -- Toggle line diagnostics (the linting errors that show on the same line).
--- TODO: Is this the correct way of keeping state?
-local diagnostics_active = true;
+lvim.keys.normal_mode["<S-J>"] = "<CMD>lua vim.diagnostic.open_float()<CR>"
+-- TODO: This does not work! How do I set the default! I asked on LunarVim: https://github.com/LunarVim/LunarVim/discussions/4549
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+})
 lvim.builtin.which_key.mappings["lx"] = {
   function()
-    diagnostics_active = not diagnostics_active
-    if diagnostics_active then
+    if vim.diagnostic.config().virtual_text then
       vim.diagnostic.config({
-        virtual_text = true,
+        virtual_text = false,
+        signs = true,
+        underline = true,
       })
     else
       vim.diagnostic.config({
-        virtual_text = false,
+        virtual_text = true,
       })
     end
   end,
@@ -283,3 +289,20 @@ lvim.builtin.which_key.mappings["t"] = {
   v = { "<cmd>2ToggleTerm size=30 direction=vertical<cr>", "Split vertical" },
   h = { "<cmd>3ToggleTerm size=10 direction=horizontal<cr>", "Split horizontal" },
 }
+
+-- Define a function to toggle colorcolumn
+  function toggle_transparency()
+    if vim.wo.colorcolumn == '88' then
+      vim.wo.colorcolumn = ''
+      vim.wo.cursorline = false
+      lvim.transparent_window = true
+    else
+      vim.wo.colorcolumn = '88'
+      vim.wo.cursorline = true
+      lvim.transparent_window = false
+    end
+  end
+
+
+-- Set a key mapping to call the command
+lvim.builtin.which_key.mappings["o"] = { toggle_transparency, "Toggle colorcolumn" }
