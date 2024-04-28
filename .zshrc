@@ -111,9 +111,29 @@ plugins=(
   #       plugins=( [plugins...] zsh-syntax-highlighting)
   #
   zsh-syntax-highlighting  # Always to be the last.
+  # zsh-vi-mode ------------------------------------------------------------------------
+  #
+  #   Project:
+  #     https://github.com/jeffreytse/zsh-vi-mode
+  #
+  #   Install:
+  #   As an Oh My Zsh! custom plugin
+  #
+  #   Clone zsh-vi-mode into your custom plugins repo
+  #   
+  #     git clone https://github.com/jeffreytse/zsh-vi-mode \
+  #       $ZSH_CUSTOM/plugins/zsh-vi-mode
+  #
+  #   Then load as a plugin in your .zshrc
+  #   
+  #     plugins+=(zsh-vi-mode)
+  #
+  #   Keep in mind that plugins need to be added before oh-my-zsh.sh is sourced.
+  # 
+  zsh-vi-mode
 )
 
-# zsh-completions --------------------------------------------------------------------
+# zsh-completions ----------------------------------------------------------------------
 #
 #   Project:
 #     https://github.com/zsh-users/zsh-completions
@@ -182,6 +202,22 @@ bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode che
 
 # fzf ----------------------------------------------------------------------------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zsh-vi-mode ------------------------------------------------------------------------
+# 
+# Until this issue is not merged...
+#
+#   - Yank to system clipboard #192
+#     https://github.com/jeffreytse/zsh-vi-mode/pull/192 isn't merged ()
+#
+# ... we can work around it by redefining the `zvm_vi_yank` used by `zsh-vi-mode` as
+# explained in https://github.com/jeffreytse/zsh-vi-mode/issues/19#issuecomment-1009256071
+#
+function zvm_vi_yank() {
+	zvm_yank
+	echo ${CUTBUFFER} | pbcopy
+	zvm_exit_visual_mode
+}
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/ramon/.rd/bin:$PATH"
