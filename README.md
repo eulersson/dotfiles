@@ -430,6 +430,7 @@ Explore the help pages:
 | :help :NvimTreeOpen                   | Help about a command.                                |
 | :help telescope.actions.open_qflist() | Help about an nvim function.                         |
 | (visual mode) :sort                   | Sort lines in visual mode.                           |
+| (visual mode) gw                      | Hard wrap or reflow selected text                    |
 
 ### Navigation
 

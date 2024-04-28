@@ -247,6 +247,9 @@ lvim.transparent_window = true
 -- Set a vertical line on 88.
 vim.opt.colorcolumn = "88"
 
+-- By default the text width is 88. You can hard wrap a selection with `gw`.
+vim.opt.textwidth = 88
+
 -- TODO: When Neovim native exrc works with LunarVim, remove this 'MunifTanjim/exrc.nvim'
 -- configuration-specific part.
 
