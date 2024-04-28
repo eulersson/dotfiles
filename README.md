@@ -313,11 +313,10 @@ files. This file can be built using **Bear** (or if using CMake, then exporting 
 
 ## iTerm
 
-| Keys  | Action               |
-| ----- | -------------------- |
-| ⌘ + U | Toggle transparency. |
-
-
+| Keys  | Action                                         |
+| ----- | ---------------------------------------------- |
+| ⌘ + U | Toggle transparency.                           |
+| ⌘ + / | Show position of cursor. Hold to make it stay. |
 
 ### Configuring iTerm
 
@@ -325,11 +324,10 @@ You can use the `.itermexport` file in this repository and load the preferences 
 (Settings > General > Preferences > Load preferences ...) instead of having to do it
 manually as explained as follows.
 
-> [!NOTE]
->  Importing the .itermexport file does not seem to work very well (it's in beta, I
->  filed an [issue](https://gitlab.com/gnachman/iterm2/-/issues/11343) for it)...
->  Another possible way to load the preferences is as explained in [this
->  article](https://shyr.io/blog/sync-iterm2-configs), running on your shell:
+> [!NOTE] Importing the .itermexport file does not seem to work very well (it's in beta,
+> I filed an [issue](https://gitlab.com/gnachman/iterm2/-/issues/11343) for it)...
+> Another possible way to load the preferences is as explained in
+> [this article](https://shyr.io/blog/sync-iterm2-configs), running on your shell:
 
 ```
 # Specify the preferences directory

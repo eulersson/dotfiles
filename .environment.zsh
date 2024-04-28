@@ -1,7 +1,7 @@
 # Default editor.
 export EDITOR=lvim
 
-# TODO: Is this needed?
+# TODO: Is this needed? I think those are the defaults.
 # # Go language.
 # export GOPATH=$HOME/go
 # export GOROOT=$(brew --prefix golang)/libexec

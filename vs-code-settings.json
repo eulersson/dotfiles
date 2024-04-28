@@ -81,4 +81,10 @@
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "remote.autoForwardPortsSource": "hybrid",
   "window.customTitleBarVisibility": "windowed",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
 }
