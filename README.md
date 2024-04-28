@@ -488,8 +488,7 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 
 | Keys    | Action                                            |
 | ------- | ------------------------------------------------- |
-| K       | Hover information (double tap to get inside).     |
-| K K     | Move cursor inside K window                       |
+| K       | Hover information (double K to get inside).       |
 | g d     | Go to definition.                                 |
 | g D     | Go to declaration.                                |
 | g r     | Go to references.                                 |
