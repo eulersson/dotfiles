@@ -300,18 +300,17 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 
 -- Define a function to toggle colorcolumn
-  function toggle_transparency()
-    if vim.wo.colorcolumn == '88' then
-      vim.wo.colorcolumn = ''
-      vim.wo.cursorline = false
-      lvim.transparent_window = true
-    else
-      vim.wo.colorcolumn = '88'
-      vim.wo.cursorline = true
-      lvim.transparent_window = false
-    end
+function toggle_transparency()
+  if vim.wo.colorcolumn == '88' then
+    vim.wo.colorcolumn = ''
+    vim.wo.cursorline = false
+    lvim.transparent_window = true
+  else
+    vim.wo.colorcolumn = '88'
+    vim.wo.cursorline = true
+    lvim.transparent_window = false
   end
-
+end
 
 -- Set a key mapping to call the command
 lvim.builtin.which_key.mappings["o"] = { toggle_transparency, "Toggle colorcolumn" }
