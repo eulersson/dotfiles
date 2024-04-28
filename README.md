@@ -499,17 +499,18 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 
 ## LSP
 
-| Keys    | Action                                            |
-| ------- | ------------------------------------------------- |
-| K       | Hover information (double K to get inside).       |
-| g d     | Go to definition.                                 |
-| g D     | Go to declaration.                                |
-| g r     | Go to references.                                 |
-| g I     | Go to implementation.                             |
-| q       | Close the panel that opens up on "Go to" actions. |
-| g s     | Show signature help.                              |
-| g l     | Show line diagnostics.                            |
-| g l g l | Move cursor to line diagnostics.                  |
+| Keys     | Action                                            |
+| -------- | ------------------------------------------------- |
+| K        | Hover information (double K to get inside).       |
+| g d      | Go to definition.                                 |
+| g D      | Go to declaration.                                |
+| g r      | Go to references.                                 |
+| g I      | Go to implementation.                             |
+| q        | Close the panel that opens up on "Go to" actions. |
+| g s      | Show signature help.                              |
+| g l      | Show line diagnostics.                            |
+| g l g l  | Move cursor to line diagnostics.                  |
+| :SnipRun | Run snippet of code.                              |
 
 ## TODO
 
