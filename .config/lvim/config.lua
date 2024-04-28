@@ -150,6 +150,9 @@ lvim.builtin.treesitter.ensure_installed = {
 --   -- end,
 -- })
 
+-- Default theme (upon dark/light system change it gets changed, see `dark-notify` setup).
+lvim.colorscheme = "catppuccin-mocha"
+
 -- Setup formatting.
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
