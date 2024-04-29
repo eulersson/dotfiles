@@ -23,6 +23,20 @@ lvim.plugins = {
     end
   },
   {
+    "cormacrelf/dark-notify",
+    config = function()
+      require('dark_notify').run({
+        schemes = {
+          dark = "catppuccin-mocha",
+          light = {
+            colorscheme = "github_light",
+            background = "dark"
+          },
+        }
+      })
+    end
+  },
+  {
     "folke/todo-comments.nvim",
     event = "BufRead",
     config = function()
@@ -41,8 +55,6 @@ lvim.plugins = {
     end,
     dependencies = { "MunifTanjim/nui.nvim" }
   },
-  "mfussenegger/nvim-dap-python",
-  "mg979/vim-visual-multi",
   {
     "michaelb/sniprun",
     branch = "master",
@@ -80,11 +92,36 @@ lvim.plugins = {
       })
     end
   },
+  "mg979/vim-visual-multi",
+  {
+    "michaelb/sniprun",
+    branch = "master",
+    build = "sh install.sh",
+    config = function()
+      require("sniprun").setup({
+        -- https://michaelb.github.io/sniprun/sources/README.html#configuration
+        display = {
+          "Classic",       --# display results in the command-line  area
+          "VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
+          -- "VirtualText",             --# display results as virtual text
+          -- "TempFloatingWindow",      --# display results in a floating window
+          -- "LongTempFloatingWindow",  --# same as above, but only long results. To use with VirtualText[Ok/Err]
+          -- "Terminal",                --# display results in a vertical split
+          -- "TerminalWithCode",        --# display results and code history in a vertical split
+          -- "NvimNotify",              --# display with the nvim-notify plugin
+          -- "Api"                      --# return output to a programming interface
+        }
+      })
+    end,
+  },
   {
     "nvim-neotest/neotest",
     dependencies = { "nvim-neotest/nvim-nio" },
   },
-  "nvim-neotest/neotest-python",
+  {
+    "nvim-neotest/neotest-python",
+    dependencies = { "mfussenegger/nvim-dap-python" }
+  },
   'projekt0n/github-nvim-theme',
   {
     'ray-x/lsp_signature.nvim',
