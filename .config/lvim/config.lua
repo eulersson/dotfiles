@@ -1,39 +1,25 @@
--- Written from:
---
---   https://github.com/LunarVim/starter.lvim/blob/python-ide/config.lua
---   https://www.lunarvim.org/docs/configuration/language-features/linting-and-formatting
---
---
 lvim.plugins = {
-  "catppuccin/nvim",
   "AckslD/swenv.nvim",
-  "stevearc/dressing.nvim",
-  "mfussenegger/nvim-dap-python",
-  "nvim-neotest/neotest",
-  "nvim-neotest/neotest-python",
+  {
+    "andrewferrier/wrapping.nvim",
+    config = function()
+      require("wrapping").setup()
+    end
+  },
+  "catppuccin/nvim",
   "christoomey/vim-tmux-navigator",
-  "mg979/vim-visual-multi",
   {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "cormacrelf/dark-notify",
     config = function()
-      require('mason-tool-installer').setup {
-        ensure_installed = {
-          'pyright', 'black', 'isort', 'ruff', 'prettier', 'debugpy', 'shfmt'
+      require('dark_notify').run({
+        schemes = {
+          dark = "catppuccin-mocha",
+          light = {
+            colorscheme = "github_light",
+            background = "dark"
+          },
         }
-      }
-    end
-  },
-  {
-    'chipsenkbeil/distant.nvim',
-    branch = 'v0.3',
-    config = function()
-      require('distant'):setup()
-    end
-  },
-  {
-    "simrat39/symbols-outline.nvim",
-    config = function()
-      require('symbols-outline').setup()
+      })
     end
   },
   {
@@ -43,6 +29,20 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
+  {
+    'jackMort/ChatGPT.nvim',
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = "echo $OPENAI_API_KEY",
+        openai_params = {
+          model = "gpt-3.5-turbo"
+        }
+      })
+    end,
+    dependencies = { "MunifTanjim/nui.nvim" }
+  },
+  "mfussenegger/nvim-dap-python",
+  "mg979/vim-visual-multi",
   {
     "michaelb/sniprun",
     branch = "master",
@@ -65,93 +65,56 @@ lvim.plugins = {
     end,
   },
   -- TODO: Remove after https://github.com/LunarVim/LunarVim/issues/4242 is resolved.
-  "MunifTanjim/exrc.nvim",
-  "MunifTanjim/nui.nvim",
+  {
+    "MunifTanjim/exrc.nvim",
+    config = function()
+      vim.o.exrc = false
+      require("exrc").setup({
+        files = {
+          ".nvim.lua",
+          ".nvimrc.lua",
+          ".nvimrc",
+          ".exrc.lua",
+          ".exrc",
+        },
+      })
+    end
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = { "nvim-neotest/nvim-nio" },
+  },
+  "nvim-neotest/neotest-python",
   'projekt0n/github-nvim-theme',
-  {
-    "cormacrelf/dark-notify",
-    config = function()
-      require('dark_notify').run({
-        schemes = {
-          dark = "catppuccin-mocha",
-          light = {
-            colorscheme = "github_light",
-            background = "dark"
-          },
-        }
-      })
-    end
-  },
-  {
-    'jackMort/ChatGPT.nvim',
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = "echo $OPENAI_API_KEY",
-        openai_params = {
-          model = "gpt-3.5-turbo"
-        }
-      })
-    end
-
-  },
   {
     'ray-x/lsp_signature.nvim',
     config = function()
       require("lsp_signature").setup()
     end
-  }
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require('symbols-outline').setup()
+    end
+  },
+  "stevearc/dressing.nvim",
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    config = function()
+      require('mason-tool-installer').setup {
+        ensure_installed = {
+          'pyright', 'black', 'isort', 'ruff', 'prettier', 'debugpy', 'shfmt'
+        }
+      }
+    end
+  },
 }
-
--- NOTE: Theming is handled by the dark-notify plugin.
--- -- Set theme. 
--- -- lvim.colorscheme = "github_light"
 
 -- Automatically install python syntax highlighting.
 lvim.builtin.treesitter.ensure_installed = {
   "python",
 }
-
--- -- Add this on a project's /project-root-folder/.nvim.lua to run pyright within a
--- -- container that you built previously with your libraries and pyright.
--- -- -- Working with remote containers
--- -- -- https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
--- require("lvim.lsp.manager").setup("pyright", {
---   -- TODO: I still haven't figured out yet is how to switch the cmd out on a per project
---   -- basis. I'd like to only use this weird pyright setup in my main dev project, but
---   -- then use regular (Mason installed) pyright outside of docker in general.
---   -- cmd = {
---   --   "docker",
---   --   "exec",
---   --   "-i",
---   --   "anesowa-pyright-dev-container",
---   --   "pyright-langserver",
---   --   "--stdio",
---   -- },
---   single_file_support = true,
---   settings = {
---     pyright = {
---       disableLanguageServices = false,
---       disableOrganizeImports = false
---     },
---     python = {
---       analysis = {
---         autoImportCompletions = true,
---         autoSearchPaths = true,
---         diagnosticMode = "workspace", -- openFilesOnly, workspace
---         typeCheckingMode = "basic",   -- off, basic, strict
---         useLibraryCodeForTypes = true
---       }
---     }
---   },
---   -- before_init = function(params)
---   --   -- LSP spec has a default flag that will cause you some trouble; if an LSP server
---   --   -- can't find its parent's processId, it will shut itself down after a second or so.
---   --   -- You need to tell it to ignore the processId shutdown behaviour (or start your
---   --   -- docker container to share the process space with your host).
---   --   -- https://github.com/lspcontainers/lspcontainers.nvim#process-id
---   --   params.processId = vim.NIL
---   -- end,
--- })
 
 -- Default theme (upon dark/light system change it gets changed, see `dark-notify` setup).
 lvim.colorscheme = "catppuccin-mocha"
@@ -228,10 +191,12 @@ lvim.builtin.which_key.mappings["C"] = {
 }
 
 -- Prevent strange bug within tmux + lvim where pressing ESC followed by j/k would move line up/down.
---   https://github.com/LunarVim/LunarVim/issues/1857#issuecomment-1013641928
---   https://www.reddit.com/r/lunarvim/comments/1334htt/comment/ji90g9v/?utm_source=share&utm_medium=web2x&context=3
---   https://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
---   https://unix.stackexchange.com/a/608179
+--
+--   - https://github.com/LunarVim/LunarVim/issues/1857#issuecomment-1013641928
+--   - https://www.reddit.com/r/lunarvim/comments/1334htt/comment/ji90g9v/?utm_source=share&utm_medium=web2x&context=3
+--   - https://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
+--   - https://unix.stackexchange.com/a/608179
+--
 lvim.keys.normal_mode["<A-j>"] = false
 lvim.keys.normal_mode["<A-k>"] = false
 lvim.keys.insert_mode["<A-j>"] = false
@@ -257,28 +222,12 @@ vim.opt.colorcolumn = "88"
 vim.opt.textwidth = 88
 
 -- TODO: When Neovim native exrc works with LunarVim, remove this 'MunifTanjim/exrc.nvim'
--- configuration-specific part.
-
--- Ability to run .exrc, .nvimrc and .nvim.lua on per-project basis.
-vim.o.exrc = false
-require("exrc").setup({
-  files = {
-    ".nvim.lua",
-    ".nvimrc.lua",
-    ".nvimrc",
-    ".exrc.lua",
-    ".exrc",
-  },
-})
+-- configuration-specific part. Keep an eye on https://github.com/LunarVim/LunarVim/issues/4242.
 
 -- Toggle line diagnostics (the linting errors that show on the same line).
 lvim.keys.normal_mode["<S-J>"] = "<CMD>lua vim.diagnostic.open_float()<CR>"
 -- TODO: This does not work! How do I set the default! I asked on LunarVim: https://github.com/LunarVim/LunarVim/discussions/4549
-vim.diagnostic.config({
-  virtual_text = false,
-  signs = true,
-  underline = true,
-})
+vim.diagnostic.config({ virtual_text = true })
 lvim.builtin.which_key.mappings["lx"] = {
   function()
     if vim.diagnostic.config().virtual_text then
@@ -308,7 +257,7 @@ lvim.builtin.which_key.mappings["t"] = {
 -- ChatGPT.nvim
 lvim.builtin.which_key.mappings["z"] = {
   name = "+ChatGPT",
-  mode = { "n", "v"},
+  mode = { "n", "v" },
   c = { "<cmd>ChatGPT<CR>", "ChatGPT" },
   e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
   g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
@@ -339,3 +288,46 @@ end
 
 -- Set a key mapping to call the command
 lvim.builtin.which_key.mappings["o"] = { toggle_transparency, "Toggle colorcolumn" }
+
+-- TODO: Explore running Neovim for container development.
+-- -- Add this on a project's /project-root-folder/.nvim.lua to run pyright within a
+-- -- container that you built previously with your libraries and pyright.
+-- -- -- Working with remote containers
+-- -- -- https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
+-- require("lvim.lsp.manager").setup("pyright", {
+--   -- TODO: I still haven't figured out yet is how to switch the cmd out on a per project
+--   -- basis. I'd like to only use this weird pyright setup in my main dev project, but
+--   -- then use regular (Mason installed) pyright outside of docker in general.
+--   -- cmd = {
+--   --   "docker",
+--   --   "exec",
+--   --   "-i",
+--   --   "anesowa-pyright-dev-container",
+--   --   "pyright-langserver",
+--   --   "--stdio",
+--   -- },
+--   single_file_support = true,
+--   settings = {
+--     pyright = {
+--       disableLanguageServices = false,
+--       disableOrganizeImports = false
+--     },
+--     python = {
+--       analysis = {
+--         autoImportCompletions = true,
+--         autoSearchPaths = true,
+--         diagnosticMode = "workspace", -- openFilesOnly, workspace
+--         typeCheckingMode = "basic",   -- off, basic, strict
+--         useLibraryCodeForTypes = true
+--       }
+--     }
+--   },
+--   -- before_init = function(params)
+--   --   -- LSP spec has a default flag that will cause you some trouble; if an LSP server
+--   --   -- can't find its parent's processId, it will shut itself down after a second or so.
+--   --   -- You need to tell it to ignore the processId shutdown behaviour (or start your
+--   --   -- docker container to share the process space with your host).
+--   --   -- https://github.com/lspcontainers/lspcontainers.nvim#process-id
+--   --   params.processId = vim.NIL
+--   -- end,
+-- })
