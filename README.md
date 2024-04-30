@@ -441,6 +441,7 @@ Explore the help pages:
 | :help various-motions        | Useful keys to navigate around vim.       |
 | Ctrl + o                     | Go to previous mark.                      |
 | Ctrl + i                     | Go to next mark.                          |
+| Ctrl + t                     | Go to previous tag from tag stack.        |
 | Space e                      | Toggle explorer.                          |
 | Space f                      | Find files by file name.                  |
 | Space s t                    | Search text across project.               |
@@ -505,6 +506,8 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | -------- | ------------------------------------------------- |
 | K        | Hover information (double K to get inside).       |
 | gd       | Go to definition.                                 |
+| gt       | Go to type definition.                            |
+| Ctrl + t | Go to previous tag from tag stack.                |
 | gD       | Go to declaration.                                |
 | gr       | Go to references.                                 |
 | gI       | Go to implementation.                             |
