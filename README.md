@@ -97,15 +97,17 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.o
 
 ### Secrets
 
-Oh My Zsh has a [dotenv plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv)
-which allows sourcing the environment variables defined in `.env` files on the folder
-tree. If you protect those files with read-write access only to yourself it is a
-secure-ish way to store API tokens and such.
+Oh My Zsh has a
+[dotenv plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv) which
+allows sourcing the environment variables defined in `.env` files on the folder tree. If
+you protect those files with read-write access only to yourself it is a secure-ish way
+to store API tokens and such.
 
 Alternatives:
 
 - Using `gpg --encrypt` and `gpg --decrypt`
-- Using `keepassxc-cli show -sa password ~/Nuvi/MetalRose.kdbx "/Internet/OpenAI ChatGPT.nvim API Key"`
+- Using
+  `keepassxc-cli show -sa password ~/Nuvi/MetalRose.kdbx "/Internet/OpenAI ChatGPT.nvim API Key"`
 
 ### pyenv
 
@@ -502,14 +504,14 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | Keys     | Action                                            |
 | -------- | ------------------------------------------------- |
 | K        | Hover information (double K to get inside).       |
-| g d      | Go to definition.                                 |
-| g D      | Go to declaration.                                |
-| g r      | Go to references.                                 |
-| g I      | Go to implementation.                             |
+| gd       | Go to definition.                                 |
+| gD       | Go to declaration.                                |
+| gr       | Go to references.                                 |
+| gI       | Go to implementation.                             |
 | q        | Close the panel that opens up on "Go to" actions. |
-| g s      | Show signature help.                              |
-| g l      | Show line diagnostics.                            |
-| g l g l  | Move cursor to line diagnostics.                  |
+| gs       | Show signature help.                              |
+| gl       | Show line diagnostics.                            |
+| gl gl    | Move cursor to line diagnostics.                  |
 | :SnipRun | Run snippet of code.                              |
 
 ## TODO

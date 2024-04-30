@@ -262,7 +262,6 @@ vim.opt.textwidth = 88
 -- configuration-specific part. Keep an eye on https://github.com/LunarVim/LunarVim/issues/4242.
 
 -- Toggle line diagnostics (the linting errors that show on the same line).
-lvim.keys.normal_mode["<S-J>"] = "<CMD>lua vim.diagnostic.open_float()<CR>"
 -- TODO: This does not work! How do I set the default! I asked on LunarVim: https://github.com/LunarVim/LunarVim/discussions/4549
 vim.diagnostic.config({ virtual_text = true })
 lvim.builtin.which_key.mappings["lx"] = {
