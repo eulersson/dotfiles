@@ -433,6 +433,7 @@ Explore the help pages:
 | :help telescope.actions.open_qflist() | Help about an nvim function.                         |
 | (visual mode) :sort                   | Sort lines in visual mode.                           |
 | (visual mode) gw                      | Hard wrap or reflow selected text                    |
+| :SnipRun                              | Run snippet of code.                                 |
 
 ### Navigation
 
@@ -469,7 +470,7 @@ Explore the help pages:
 | (in symbols outline) l       | Unfold lower hierarchy.                   |
 | (in symbols outline) h       | Fold lower hierarchy.                     |
 
-#### Telescope
+### Telescope
 
 https://github.com/nvim-telescope/telescope.nvim#default-mappings
 
@@ -479,6 +480,26 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | (in telescope) Ctrl + v | Open result in a vertical split.              |
 | (in telescope) Ctrl + h | Open result in a horizontal split.            |
 | (in telescope) Ctrl + q | Open in new pane a selector of all the files. |
+
+### LSP
+
+| Keys                                | Action                                            |
+| ----------------------------------- | ------------------------------------------------- |
+| K                                   | Hover information (double K to get inside).       |
+| gd                                  | Go to definition.                                 |
+| gt                                  | Go to type definition.                            |
+| Ctrl + t                            | Go to previous tag from tag stack.                |
+| gD                                  | Go to declaration.                                |
+| gr                                  | Go to references.                                 |
+| gI                                  | Go to implementation.                             |
+| q                                   | Close the panel that opens up on "Go to" actions. |
+| gs                                  | Show signature help.                              |
+| gl                                  | Show line diagnostics.                            |
+| Space l w                           | Show all diagnostics (telescope).                 |
+| (in telescope diagnostics) Ctrl + q | Go to quickfix view.                              |
+| Space l 1                           | Show all diagnostics (quickfix).                  |
+| gl gl                               | Move cursor to line diagnostics.                  |
+| Space l a                           | Code action.                                      |
 
 ## Visual Studio Code
 
@@ -499,23 +520,6 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | ⇧ + ⌥ + F // ⇧ + Alt + F        | Format current file.                              |
 | ⇧ + ⌘ + [ // ⇧ + Ctrl + [       | Switch to previous terminal group.                |
 | ⇧ + ⌘ + ] // ⇧ + Ctrl + ]       | Switch to next terminal group.                    |
-
-## LSP
-
-| Keys     | Action                                            |
-| -------- | ------------------------------------------------- |
-| K        | Hover information (double K to get inside).       |
-| gd       | Go to definition.                                 |
-| gt       | Go to type definition.                            |
-| Ctrl + t | Go to previous tag from tag stack.                |
-| gD       | Go to declaration.                                |
-| gr       | Go to references.                                 |
-| gI       | Go to implementation.                             |
-| q        | Close the panel that opens up on "Go to" actions. |
-| gs       | Show signature help.                              |
-| gl       | Show line diagnostics.                            |
-| gl gl    | Move cursor to line diagnostics.                  |
-| :SnipRun | Run snippet of code.                              |
 
 ## TODO
 
