@@ -156,7 +156,7 @@ lvim.builtin.treesitter.ensure_installed = {
 -- Default theme (upon dark/light system change it gets changed, see `dark-notify` setup).
 lvim.colorscheme = "catppuccin-mocha"
 
-vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { desc="Goto rype definition" })
+vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer=0, desc="Goto rype definition" })
 
 -- Setup formatting.
 local formatters = require "lvim.lsp.null-ls.formatters"
