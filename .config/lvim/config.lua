@@ -43,18 +43,18 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
-  {
-    'jackMort/ChatGPT.nvim',
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = "echo $OPENAI_API_KEY",
-        openai_params = {
-          model = "gpt-3.5-turbo"
-        }
-      })
-    end,
-    dependencies = { "MunifTanjim/nui.nvim" }
-  },
+  -- {
+  --   'jackMort/ChatGPT.nvim',
+  --   config = function()
+  --     require("chatgpt").setup({
+  --       api_key_cmd = "echo $OPENAI_API_KEY",
+  --       openai_params = {
+  --         model = "gpt-3.5-turbo"
+  --       }
+  --     })
+  --   end,
+  --   dependencies = { "MunifTanjim/nui.nvim" }
+  -- },
   {
     "michaelb/sniprun",
     branch = "master",
@@ -123,6 +123,15 @@ lvim.plugins = {
     dependencies = { "mfussenegger/nvim-dap-python" }
   },
   'projekt0n/github-nvim-theme',
+  -- {
+  --   "ray-x/go.nvim",
+  --   config = function()
+  --     require("go").setup()
+  --   end,
+  --   event = { "CmdlineEnter" },
+  --   ft = { "go", 'gomod' },
+  --   build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  -- },
   {
     'ray-x/lsp_signature.nvim',
     config = function()
@@ -148,6 +157,14 @@ lvim.plugins = {
   },
 }
 
+-- Enable folding using Treesitter.
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- If this option is true and fold method option is other than normal, every time a
+-- document is opened everything will be folded.
+vim.opt.foldenable = false
+
 -- Automatically install python syntax highlighting.
 lvim.builtin.treesitter.ensure_installed = {
   "python",
@@ -156,7 +173,7 @@ lvim.builtin.treesitter.ensure_installed = {
 -- Default theme (upon dark/light system change it gets changed, see `dark-notify` setup).
 lvim.colorscheme = "catppuccin-mocha"
 
-vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer=0, desc="Goto rype definition" })
+vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = 0, desc = "Goto type definition" })
 
 -- Setup formatting.
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -164,7 +181,6 @@ formatters.setup {
   { name = "black" },
   { name = "isort" },
   { name = "shfmt" },
-  { name = "gofmt" },
   {
     name = "prettier",
     args = { "--print-width", "88", "--prose-wrap", "always" },

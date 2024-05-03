@@ -480,6 +480,7 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | (in telescope) Ctrl + v | Open result in a vertical split.              |
 | (in telescope) Ctrl + h | Open result in a horizontal split.            |
 | (in telescope) Ctrl + q | Open in new pane a selector of all the files. |
+| (in telescope) Ctrl + / | Open available actions within picker          |
 
 ### LSP
 
