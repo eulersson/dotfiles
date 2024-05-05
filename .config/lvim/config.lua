@@ -23,20 +23,6 @@ lvim.plugins = {
     end
   },
   {
-    "cormacrelf/dark-notify",
-    config = function()
-      require('dark_notify').run({
-        schemes = {
-          dark = "catppuccin-mocha",
-          light = {
-            colorscheme = "github_light",
-            background = "dark"
-          },
-        }
-      })
-    end
-  },
-  {
     "folke/todo-comments.nvim",
     event = "BufRead",
     config = function()

@@ -1,6 +1,6 @@
 # Dotfiles
 
-Collection of configuration files for the following environment:
+Collection of configuration files.
 
 | Tool                                    | Purpose                             |
 | --------------------------------------- | ----------------------------------- |
@@ -14,9 +14,14 @@ Collection of configuration files for the following environment:
 | [pyenv](https://github.com/pyenv/pyenv) | Python version management.          |
 | [nvm](https://github.com/nvm-sh/nvm)    | Node.js version management.         |
 
+## Requirements
+
+- dark-notify `brew install dark-notify`
+- JetBrainsMono Nerd Font `wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip`
+
 ## Installation
 
-With your current terminal emulator and shell clone the repository at your home:
+Clone the dotfiles at home:
 
 ```
 cd ~
@@ -28,42 +33,33 @@ Symlink the configs and dot files:
 ```
 cd ~
 
-mkdir -p .config/alacritty
-ln -s .dotfiles/.config/alacritty/* .config/alacritty/
+mkdir -p $HOME/.config/themes
+cd $HOME/.config
+ln -s ../.dotfiles/.config/themes
 
-mkdir -p .config/lvim
-ln -s .dotfiles/.config/lvim/* .config/lvim/
+mkdir -p $HOME/.config/alacritty
+cd $HOME/.config/alacritty
+ln -s ../../.dotfiles/.config/alacritty/*
+
+mkdir -p $HOME/.config/lvim
+cd $HOME/.config/lvim
+ln -s ../../.dotfiles/.config/lvim/*
+
+cd $HOME/.config
+ln -s ../.dotfiles/tmux
 
 ln -s .dotfiles/.tmux.conf
+ln -s .dotfiles/tokyonight_storm.tmux
 ln -s .dotfiles/.wezterm.lua
 ln -s .dotfiles/*.zsh*
 ```
-
-### Environment Files
-
-I have an environment file `~/.env` which has sensitive information for the tools to
-work, for instance `OPENAI_API_TOKEN` so the `ChatGPT.nvim` plugin works well.
 
 ### Zsh
 
 https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 
-**macOS**
-
 ```
 brew install zsh
-```
-
-**Debian / Ubuntu**
-
-```
-sudo apt install zsh
-```
-
-**Arch Linux**
-
-```
-pacman -S zsh
 ```
 
 Now make `zsh` your default shell as explained
@@ -75,7 +71,7 @@ chsh -s $(which zsh)
 
 ### Zsh Addons
 
-Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh#basic-installation):
+https://github.com/ohmyzsh/ohmyzsh#basic-installation
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -95,7 +91,7 @@ brew install zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 ```
 
-### Secrets
+### Secrets (dotenv)
 
 Oh My Zsh has a
 [dotenv plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv) which
@@ -109,18 +105,29 @@ Alternatives:
 - Using
   `keepassxc-cli show -sa password ~/Nuvi/MetalRose.kdbx "/Internet/OpenAI ChatGPT.nvim API Key"`
 
+### tmux
+
+https://github.com/tmux/tmux/wiki/Installing
+
+```
+brew install tmux
+```
+
+Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm):
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Now install all the tpm plugins within `tmux` with: `<C-b> I`.
+
+
 ### pyenv
 
-**macOS** (https://github.com/pyenv/pyenv#homebrew-in-macos)
+https://github.com/pyenv/pyenv#installation
 
 ```
 brew install pyenv
-```
-
-**Arch Linux / Debian / Ubuntu** (https://github.com/pyenv/pyenv#automatic-installer)
-
-```
-curl https://pyenv.run | bash
 ```
 
 Now you can install the latest Python version and set it as default system-wide:
@@ -138,37 +145,104 @@ https://github.com/nvm-sh/nvm#installing-and-updating
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 ```
 
+### go
+
+```
+brew install go
+```
+
+### Neovim
+
+https://github.com/neovim/neovim/wiki/Installing-Neovim
+
+```
+brew install neovim
+```
+
+### LunarVim
+
+https://www.lunarvim.org/docs/installation
+
+```
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+```
+
+### Visual Studio Code
+
+https://code.visualstudio.com/
+
+### iTerm
+
+Use the test release (beta) (> 3.5.0beta24):
+
+https://iterm2.com/downloads.html
+
+You can use the `.itermexport` file in this repository and load the preferences from it
+(Settings > General > Preferences > Load preferences ...) instead of having to do it
+manually as explained as follows.
+
+```
+# Specify the preferences directory
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm"
+
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+```
+
+> [!NOTE]
+> I explained loading from the `iTerm2 State.itermexport` but there seems to be another
+> mechanism to export and import the settings by serializing them into `.plist` files,
+> hence the existence of it in `iTerm/com.googlecode.iterm2.plist`
+> [I asked which one is best to the developer](https://gitlab.com/gnachman/iterm2/-/issues/11448)
+
+You should review that those settings are reflected:
+
+- [ ] General
+  - [ ] Selection
+    - [ ] Applications in terminal may access clipboard: ON
+- [ ] Configure thems:
+  - [ ] Dark: Catppuccin Mocha
+  - [ ] Light: Github Light Default
+- [ ] Font: JetBrains Nerd Font
+- [ ] Appearance
+  - [ ] General
+    - [ ] Theme: Minimal
+  - [ ] Windows
+    - [ ] Show window number in title bar: OFF
+  - [ ] Pane
+    - [ ] Side margin: 10
+    - [ ] Top and bottom margins: 10
+- [ ] Profiles
+  - [ ] Window
+    - [ ] Custom window title: (leave empty!)
+  - Terminal
+    - Environment: Use custom locale...
+      - Change...
+      - English (United States) UTF-8
+  - [ ] Terminal
+    - [ ] Show mark indicators: OFF
+- [ ] Advanced
+  - [ ]
+
+Now duplicate the profile and call it “Hotkey Profile”. Go to
+
+- [ ] Profiles
+  - [ ] General
+    - [ ] Basics
+      - [ ] Name: Hotkey Profile
+  - [ ] Keys
+    - [ ] A hotkey opens a dedicated window with this profile: ON
+      - [ ] Option + Space
+  - [ ] Window
+    - [ ] Transparency: 15
+    - [ ] Style: Full Screen
+
 ### Alacritty
 
-We will use the `JetBrainsMono Nerd Font` from
-[nerdfonts.com](https://www.nerdfonts.com), so make sure you installed it:
-
-```
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
-```
-
-Install Alacritty, a replacement for the native Terminal or iTerm2 macOS emulators.
-
-**macOS**:
+https://github.com/alacritty/alacritty?tab=readme-ov-file#installation
 
 ```
 brew install --cask alacritty
-```
-
-**Arch Linux**
-(https://github.com/alacritty/alacritty/blob/master/INSTALL.md#arch-linux)
-
-```
-pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python
-cargo install alacritty
-```
-
-**Debian / Ubuntu**
-(https://github.com/alacritty/alacritty/blob/master/INSTALL.md#debianubuntu)
-
-```
-apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
-cargo install alacritty
 ```
 
 ### Alacritty Theme
@@ -182,69 +256,11 @@ git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/theme
 
 ### wezterm
 
-**macOS**:
-
 ```
 brew install --cask wezterm
 ```
 
-**Linux**:
-
-https://wezfurlong.org/wezterm/install/linux.html
-
-### tmux
-
-Now open the newly installed Alacritty terminal emulator app and let's configure `tmux`
-as explained in the
-[official installation guide](https://github.com/tmux/tmux/wiki/Installing):
-
-**macOS**:
-
-```
-brew install tmux
-```
-
-**Arch Linux**:
-
-```
-pacman -S tmux
-```
-
-**Debian / Ubuntu**:
-
-```
-apt install tmux
-```
-
-### Lunar Vim
-
-First install Neovim and then Lunar Vim.
-
-- [Installing NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-- [Installing LunarVim](https://www.lunarvim.org/docs/installation)
-
-**macOS**
-
-```
-brew install neovim
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-```
-
-**Arch Linux**
-
-```
-sudo pacman -S neovim
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-```
-
-**Ubuntu**
-
-```
-sudo apt install neovim
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-```
-
-## Markdown
+## Markdown Preview
 
 https://github.com/joeyespo/grip
 
@@ -305,93 +321,19 @@ You can now open up `Neovim`.
 
 ## C++ Development
 
-https://www.youtube.com/watch?v=BCuyEdDQ5iA https://github.com/rizsotto/Bear
-
 Neovim's LSP for C++ uses a JSON file that has information on how to build the source
-files. This file can be built using **Bear** (or if using CMake, then exporting CMAKE )
+files. This file can be built using **Bear** (or if using CMake, then exporting
+`CMAKE_EXPORT_COMPILE_COMMANDS` )
 
-## Most Used Keyboard Shortcuts
+## Cheat Sheet
 
-## Alacritty
+### zsh
 
-| Keys                   | Action                        |
-| ---------------------- | ----------------------------- |
-| Control y              | Clear history                 |
-| Control Shift o        | Make window semi-transparent. |
-| Control Shift p        | Make window opaque.           |
-| Control Shift m        | Toggle window full screen.    |
-| Control Shift n        | Create new window.            |
-| Control Shift h        | Minimize window.              |
-| Control f h            | Search across window.         |
-| Shift Left Mouse Click | Open a link.                  |
+| Alias                                       | Description                                                          |
+| ------------------------------------------- | -------------------------------------------------------------------- |
+| installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file |
 
-## iTerm
-
-| Keys  | Action                                         |
-| ----- | ---------------------------------------------- |
-| ⌘ + U | Toggle transparency.                           |
-| ⌘ + / | Show position of cursor. Hold to make it stay. |
-
-### Configuring iTerm
-
-You can use the `.itermexport` file in this repository and load the preferences from it
-(Settings > General > Preferences > Load preferences ...) instead of having to do it
-manually as explained as follows.
-
-> [!NOTE] Importing the .itermexport file does not seem to work very well (it's in beta,
-> I filed an [issue](https://gitlab.com/gnachman/iterm2/-/issues/11343) for it)...
-> Another possible way to load the preferences is as explained in
-> [this article](https://shyr.io/blog/sync-iterm2-configs), running on your shell:
-
-```
-# Specify the preferences directory
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm"
-
-# Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-```
-
-- [ ] General
-  - [ ] Selection
-    - [ ] Applications in terminal may access clipboard: ON
-- [ ] Configure thems:
-  - [ ] Dark: Catppuccin Mocha
-  - [ ] Light: Github Light Default
-- [ ] Font: JetBrains Nerd Font
-- [ ] Appearance
-  - [ ] General
-    - [ ] Theme: Minimal
-  - [ ] Windows
-    - [ ] Show window number in title bar: OFF
-  - [ ] Pane
-    - [ ] Side margin: 10
-    - [ ] Top and bottom margins: 10
-- [ ] Profiles
-  - [ ] Window
-    - [ ] Custom window title: (leave empty!)
-  - Terminal
-    - Environment: Use custom locale...
-      - Change...
-      - English (United States) UTF-8
-  - [ ] Terminal
-    - [ ] Show mark indicators: OFF
-- [ ] Advanced
-  - [ ]
-
-Now duplicate the profile and call it “Hotkey Profile”. Go to
-
-- [ ] Profiles
-  - [ ] General
-    - [ ] Basics
-      - [ ] Name: Hotkey Profile
-  - [ ] Keys
-    - [ ] A hotkey opens a dedicated window with this profile: ON
-      - [ ] Option + Space
-  - [ ] Window
-    - [ ] Transparency: 15
-    - [ ] Style: Full Screen
-
-## tmux
+### tmux
 
 https://tmuxcheatsheet.com/
 
@@ -408,7 +350,27 @@ https://tmuxcheatsheet.com/
 | Control + b w           | List windows visually.                                         |
 | Shift + Click-drag, ⌘ C | Select and copy (useful over vim sessions on remote machines). |
 
-## LunarVim
+### iTerm
+
+| Keys  | Action                                         |
+| ----- | ---------------------------------------------- |
+| ⌘ + U | Toggle transparency.                           |
+| ⌘ + / | Show position of cursor. Hold to make it stay. |
+
+### Alacritty
+
+| Keys                   | Action                        |
+| ---------------------- | ----------------------------- |
+| Control y              | Clear history                 |
+| Control Shift o        | Make window semi-transparent. |
+| Control Shift p        | Make window opaque.           |
+| Control Shift m        | Toggle window full screen.    |
+| Control Shift n        | Create new window.            |
+| Control Shift h        | Minimize window.              |
+| Control f h            | Search across window.         |
+| Shift Left Mouse Click | Open a link.                  |
+
+### LunarVim
 
 - https://www.lunarvim.org/docs/beginners-guide/keybinds-overview
 
@@ -417,7 +379,7 @@ Explore the help pages:
 - For commands: e.g. `:help :NvimTreeOpen`
 - For NeoVim functions: e.g. `:help `
 
-### General
+#### General
 
 | Keys                                  | Action                                               |
 | ------------------------------------- | ---------------------------------------------------- |
@@ -434,8 +396,9 @@ Explore the help pages:
 | (visual mode) :sort                   | Sort lines in visual mode.                           |
 | (visual mode) gw                      | Hard wrap or reflow selected text                    |
 | :SnipRun                              | Run snippet of code.                                 |
+| :E                                    | Open file system navigator.                          |
 
-### Navigation
+#### Navigation
 
 | Keys                         | Action                                    |
 | ---------------------------- | ----------------------------------------- |
@@ -470,7 +433,7 @@ Explore the help pages:
 | (in symbols outline) l       | Unfold lower hierarchy.                   |
 | (in symbols outline) h       | Fold lower hierarchy.                     |
 
-### Telescope
+#### Telescope
 
 https://github.com/nvim-telescope/telescope.nvim#default-mappings
 
@@ -482,7 +445,7 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | (in telescope) Ctrl + q | Open in new pane a selector of all the files. |
 | (in telescope) Ctrl + / | Open available actions within picker          |
 
-### LSP
+#### LSP
 
 | Keys                                | Action                                            |
 | ----------------------------------- | ------------------------------------------------- |
@@ -502,7 +465,7 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 | gl gl                               | Move cursor to line diagnostics.                  |
 | Space l a                           | Code action.                                      |
 
-## Visual Studio Code
+### Visual Studio Code
 
 | Keys                            | Action                                            |
 | ------------------------------- | ------------------------------------------------- |

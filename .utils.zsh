@@ -29,3 +29,14 @@ function list_files_installed_by_pkg() {
 function who_provides() {
   echo todo
 }
+
+# fkill - kill process
+fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}

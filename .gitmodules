@@ -1,0 +1,3 @@
+[submodule "themes/tokyo-night"]
+	path = themes/tokyo-night
+	url = git@github.com:folke/tokyonight.nvim.git
