@@ -1,3 +1,4 @@
+- Write TODOs as GitHub tasks and issues on a GitHub project instead of using this file.
 - Better vim splitting skills and panel resizing.
 - Pyright container https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
 - https://www.lunarvim.org/docs/configuration/plugins/example-configurations#symbols-outlinenvim
