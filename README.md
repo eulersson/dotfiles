@@ -52,7 +52,55 @@ youtube-dl
 zsh-syntax-highlighting
 ```
 
+## Terminal Emulators
 
+### iTerm
+
+Use the test release (beta) (> 3.5.0beta24):
+
+https://iterm2.com/downloads.html
+
+You can use the `.itermexport` file in this repository and load the preferences from it
+(Settings > General > Preferences > Load preferences ...) instead of having to do it
+manually as explained as follows.
+
+```
+# Specify the preferences directory
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm"
+
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+```
+
+> [!NOTE]
+> I explained loading from the `iTerm2 State.itermexport` but there seems to be another
+> mechanism to export and import the settings by serializing them into `.plist` files,
+> hence the existence of it in `iTerm/com.googlecode.iterm2.plist` > [I asked which one is best to the developer](https://gitlab.com/gnachman/iterm2/-/issues/11448)
+
+You should review that those settings are reflected: [iTerm Settings](iTerm-settings.md).
+
+### Alacritty
+
+https://github.com/alacritty/alacritty?tab=readme-ov-file#installation
+
+```
+brew install --cask alacritty
+```
+
+### Alacritty Theme
+
+https://github.com/alacritty/alacritty-theme#installation
+
+```
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+```
+
+### wezterm
+
+```
+brew install --cask wezterm
+```
 
 ## Installation
 
@@ -63,6 +111,8 @@ cd ~
 git clone git@github.com:eulersson/.dotfiles
 ```
 
+First install iTerm
+
 Symlink the configs and dot files:
 
 ```
@@ -70,23 +120,28 @@ cd ~
 
 mkdir -p $HOME/.config/themes
 cd $HOME/.config
-ln -s ../.dotfiles/.config/themes
+ln -s $HOME/.dotfiles/.config/themes
 
 mkdir -p $HOME/.config/alacritty
 cd $HOME/.config/alacritty
-ln -s ../../.dotfiles/.config/alacritty/*
+ln -s $HOME/.dotfiles/.config/alacritty/*
 
 mkdir -p $HOME/.config/lvim
 cd $HOME/.config/lvim
-ln -s ../../.dotfiles/.config/lvim/*
+ln -s $HOME/.dotfiles/.config/lvim/* .
 
 cd $HOME/.config
-ln -s ../.dotfiles/tmux
+ln -s $HOME/.dotfiles/tmux .
 
-ln -s .dotfiles/.tmux.conf
-ln -s .dotfiles/tokyonight_storm.tmux
-ln -s .dotfiles/.wezterm.lua
-ln -s .dotfiles/*.zsh*
+cd $HOME
+ln -s .dotfiles/.tmux.conf .
+ln -s .dotfiles/tokyonight_storm.tmux .
+ln -s .dotfiles/.wezterm.lua .
+ln -s .dotfiles/*.zsh* .
+
+mkdir ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch
+cd ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch
+ln -s $HOME/.dotfiles/iTerm/Scripts/AutoLaunch/*.py .
 ```
 
 ### Zsh
@@ -204,94 +259,6 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 ### Visual Studio Code
 
 https://code.visualstudio.com/
-
-### iTerm
-
-Use the test release (beta) (> 3.5.0beta24):
-
-https://iterm2.com/downloads.html
-
-You can use the `.itermexport` file in this repository and load the preferences from it
-(Settings > General > Preferences > Load preferences ...) instead of having to do it
-manually as explained as follows.
-
-```
-# Specify the preferences directory
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm"
-
-# Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-```
-
-> [!NOTE]
-> I explained loading from the `iTerm2 State.itermexport` but there seems to be another
-> mechanism to export and import the settings by serializing them into `.plist` files,
-> hence the existence of it in `iTerm/com.googlecode.iterm2.plist` > [I asked which one is best to the developer](https://gitlab.com/gnachman/iterm2/-/issues/11448)
-
-You should review that those settings are reflected:
-
-- [ ] General
-  - [ ] Selection
-    - [ ] Applications in terminal may access clipboard: ON
-- [ ] Configure thems:
-  - [ ] Dark: Catppuccin Mocha
-  - [ ] Light: Github Light Default
-- [ ] Font: JetBrains Nerd Font
-- [ ] Appearance
-  - [ ] General
-    - [ ] Theme: Minimal
-  - [ ] Windows
-    - [ ] Show window number in title bar: OFF
-  - [ ] Pane
-    - [ ] Side margin: 10
-    - [ ] Top and bottom margins: 10
-- [ ] Profiles
-  - [ ] Window
-    - [ ] Custom window title: (leave empty!)
-  - Terminal
-    - Environment: Use custom locale...
-      - Change...
-      - English (United States) UTF-8
-  - [ ] Terminal
-    - [ ] Show mark indicators: OFF
-- [ ] Advanced
-  - [ ]
-
-Now duplicate the profile and call it “Hotkey Profile”. Go to
-
-- [ ] Profiles
-  - [ ] General
-    - [ ] Basics
-      - [ ] Name: Hotkey Profile
-  - [ ] Keys
-    - [ ] A hotkey opens a dedicated window with this profile: ON
-      - [ ] Option + Space
-  - [ ] Window
-    - [ ] Transparency: 15
-    - [ ] Style: Full Screen
-
-### Alacritty
-
-https://github.com/alacritty/alacritty?tab=readme-ov-file#installation
-
-```
-brew install --cask alacritty
-```
-
-### Alacritty Theme
-
-https://github.com/alacritty/alacritty-theme#installation
-
-```
-mkdir -p ~/.config/alacritty/themes
-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-```
-
-### wezterm
-
-```
-brew install --cask wezterm
-```
 
 ## Markdown Preview
 

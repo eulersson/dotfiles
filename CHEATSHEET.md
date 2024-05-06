@@ -1,5 +1,13 @@
 ## Cheat Sheet
 
+### iTerm
+
+| Keys  | Action                                                                                                                                                 |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ⌘ + u | Cycle between background transparency values: opaque, translucid, clear.                                                                               |
+| ⌘ + y | Cycle between background blur: small, medium, large (you might need window refocus (⌘ + Tab, and ⌘ + Tab again). |
+| ⌘ + / | Show position of cursor. Hold to make it stay.                                                                                                         |
+
 ### zsh
 
 | Alias                                       | Description                                                          |
@@ -23,13 +31,6 @@ https://tmuxcheatsheet.com/
 | Control + b %           | Split horizontally.                                            |
 | Control + b w           | List windows visually.                                         |
 | Shift + Click-drag, ⌘ C | Select and copy (useful over vim sessions on remote machines). |
-
-### iTerm
-
-| Keys  | Action                                         |
-| ----- | ---------------------------------------------- |
-| ⌘ + U | Toggle transparency.                           |
-| ⌘ + / | Show position of cursor. Hold to make it stay. |
 
 ### Alacritty
 

@@ -1,0 +1,39 @@
+- [ ] General
+  - [ ] Selection
+    - [ ] Applications in terminal may access clipboard: ON
+- [ ] Configure thems:
+  - [ ] Dark: Catppuccin Mocha
+  - [ ] Light: Github Light Default
+- [ ] Font: JetBrains Nerd Font
+- [ ] Appearance
+  - [ ] General
+    - [ ] Theme: Minimal
+  - [ ] Windows
+    - [ ] Show window number in title bar: OFF
+  - [ ] Pane
+    - [ ] Side margin: 10
+    - [ ] Top and bottom margins: 10
+- [ ] Profiles
+  - [ ] Window
+    - [ ] Custom window title: (leave empty!)
+  - Terminal
+    - Environment: Use custom locale...
+      - Change...
+      - English (United States) UTF-8
+  - [ ] Terminal
+    - [ ] Show mark indicators: OFF
+- [ ] Advanced
+  - [ ]
+
+Now duplicate the profile and call it “Hotkey Profile”. Go to
+
+- [ ] Profiles
+  - [ ] General
+    - [ ] Basics
+      - [ ] Name: Hotkey Profile
+  - [ ] Keys
+    - [ ] A hotkey opens a dedicated window with this profile: ON
+      - [ ] Option + Space
+  - [ ] Window
+    - [ ] Transparency: 15
+    - [ ] Style: Full Screen
