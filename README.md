@@ -25,6 +25,7 @@ Install those packages with `brew install <name>`:
 ```
 ansible
 awscli
+cakebrew
 cmake
 cormacrelf/tap/dark-notify
 eksctl
@@ -50,6 +51,8 @@ wget
 youtube-dl
 zsh-syntax-highlighting
 ```
+
+
 
 ## Installation
 
