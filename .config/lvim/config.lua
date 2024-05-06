@@ -6,20 +6,11 @@ lvim.plugins = {
       require("wrapping").setup()
     end
   },
-  "catppuccin/nvim",
   "christoomey/vim-tmux-navigator",
   {
     "cormacrelf/dark-notify",
     config = function()
-      require('dark_notify').run({
-        schemes = {
-          dark = "catppuccin-mocha",
-          light = {
-            colorscheme = "github_light",
-            background = "dark"
-          },
-        }
-      })
+      require('dark_notify').run()
     end
   },
   {
@@ -29,18 +20,24 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
-  -- {
-  --   'jackMort/ChatGPT.nvim',
-  --   config = function()
-  --     require("chatgpt").setup({
-  --       api_key_cmd = "echo $OPENAI_API_KEY",
-  --       openai_params = {
-  --         model = "gpt-3.5-turbo"
-  --       }
-  --     })
-  --   end,
-  --   dependencies = { "MunifTanjim/nui.nvim" }
-  -- },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("tokyonight").setup({
+        style = "storm",
+        light_style = "storm",
+        transparent = true,
+      })
+    end,
+    init = function()
+      lvim.colorscheme = "tokyonight"
+    end
+  },
+  {
+    "github/copilot.vim"
+  },
   {
     "michaelb/sniprun",
     branch = "master",
@@ -108,7 +105,6 @@ lvim.plugins = {
     "nvim-neotest/neotest-python",
     dependencies = { "mfussenegger/nvim-dap-python" }
   },
-  'projekt0n/github-nvim-theme',
   -- {
   --   "ray-x/go.nvim",
   --   config = function()
@@ -150,14 +146,6 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- If this option is true and fold method option is other than normal, every time a
 -- document is opened everything will be folded.
 vim.opt.foldenable = false
-
--- Automatically install python syntax highlighting.
-lvim.builtin.treesitter.ensure_installed = {
-  "python",
-}
-
--- Default theme (upon dark/light system change it gets changed, see `dark-notify` setup).
-lvim.colorscheme = "catppuccin-mocha"
 
 vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = 0, desc = "Goto type definition" })
 
@@ -328,46 +316,3 @@ end
 
 -- Set a key mapping to call the command
 lvim.builtin.which_key.mappings["o"] = { toggle_transparency, "Toggle colorcolumn" }
-
--- TODO: Explore running Neovim for container development.
--- -- Add this on a project's /project-root-folder/.nvim.lua to run pyright within a
--- -- container that you built previously with your libraries and pyright.
--- -- -- Working with remote containers
--- -- -- https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
--- require("lvim.lsp.manager").setup("pyright", {
---   -- TODO: I still haven't figured out yet is how to switch the cmd out on a per project
---   -- basis. I'd like to only use this weird pyright setup in my main dev project, but
---   -- then use regular (Mason installed) pyright outside of docker in general.
---   -- cmd = {
---   --   "docker",
---   --   "exec",
---   --   "-i",
---   --   "anesowa-pyright-dev-container",
---   --   "pyright-langserver",
---   --   "--stdio",
---   -- },
---   single_file_support = true,
---   settings = {
---     pyright = {
---       disableLanguageServices = false,
---       disableOrganizeImports = false
---     },
---     python = {
---       analysis = {
---         autoImportCompletions = true,
---         autoSearchPaths = true,
---         diagnosticMode = "workspace", -- openFilesOnly, workspace
---         typeCheckingMode = "basic",   -- off, basic, strict
---         useLibraryCodeForTypes = true
---       }
---     }
---   },
---   -- before_init = function(params)
---   --   -- LSP spec has a default flag that will cause you some trouble; if an LSP server
---   --   -- can't find its parent's processId, it will shut itself down after a second or so.
---   --   -- You need to tell it to ignore the processId shutdown behaviour (or start your
---   --   -- docker container to share the process space with your host).
---   --   -- https://github.com/lspcontainers/lspcontainers.nvim#process-id
---   --   params.processId = vim.NIL
---   -- end,
--- })
