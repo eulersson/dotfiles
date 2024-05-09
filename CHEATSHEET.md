@@ -21,45 +21,46 @@ https://tmuxcheatsheet.com/
 
 | Keys                    | Action                                                         |
 | ----------------------- | -------------------------------------------------------------- |
-| Control y               | Clear history.                                                 |
-| Control + b ↑           | Resize panel.                                                  |
-| Control + b ↓           | Resize panel.                                                  |
-| Control + b ←           | Resize panel.                                                  |
-| Control + b →           | Resize panel.                                                  |
-| Control + b q           | See panel numbers.                                             |
-| Control + b "           | Split vertically.                                              |
-| Control + b %           | Split horizontally.                                            |
-| Control + b w           | List windows visually.                                         |
+| Ctrl y                  | Clear history.                                                 |
+| Ctrl + b ↑              | Resize panel.                                                  |
+| Ctrl + b ↓              | Resize panel.                                                  |
+| Ctrl + b ←              | Resize panel.                                                  |
+| Ctrl + b →              | Resize panel.                                                  |
+| Ctrl + b q              | See panel numbers.                                             |
+| Ctrl + b "              | Split vertically.                                              |
+| Ctrl + b %              | Split horizontally.                                            |
+| Ctrl + b w              | List windows visually.                                         |
 | Shift + Click-drag, ⌘ C | Select and copy (useful over vim sessions on remote machines). |
 
 ## WezTerm
 
-| Keys      | Action                      |
-| --------- | --------------------------- |
-| ⌥ + `     | Toggle centered window.     |
-| ⌥ + Space | Toggle fulls screen window. |
+| Keys        | Action                      |
+| ----------- | --------------------------- |
+| Alt + `     | Toggle centered window.     |
+| Alt + Space | Toggle fulls screen window. |
 
 ## Alacritty
 
 | Keys                   | Action                        |
 | ---------------------- | ----------------------------- |
-| Control y              | Clear history                 |
-| Control Shift o        | Make window semi-transparent. |
-| Control Shift p        | Make window opaque.           |
-| Control Shift m        | Toggle window full screen.    |
-| Control Shift n        | Create new window.            |
-| Control Shift h        | Minimize window.              |
-| Control f h            | Search across window.         |
+| Ctrl y                 | Clear history                 |
+| Ctrl Shift o           | Make window semi-transparent. |
+| Ctrl Shift p           | Make window opaque.           |
+| Ctrl Shift m           | Toggle window full screen.    |
+| Ctrl Shift n           | Create new window.            |
+| Ctrl Shift h           | Minimize window.              |
+| Ctrl f h               | Search across window.         |
 | Shift Left Mouse Click | Open a link.                  |
 
 ## Kitty
 
-| Keys                | Action            |
-| ------------------- | ----------------- |
-| Ctrl+Shfit+F5       | Reload config.    |
-| Ctrl + Shift + f10  | Toggle maximized. |
-| Ctrl + Shift + a, l | Less opacity      |
-| Ctrl + Shift + a, m | More opacity      |
+| Keys              | Action                 |
+| ----------------- | ---------------------- |
+| Ctrl + ⌥/Alt + F5 | Reload config.         |
+| ⌥/Alt + Space     | Full screen.           |
+| ⌥/Alt + `         | Centered window large. |
+| ⌥/Alt + 1         | Centered window small. |
+| ⌘ + h             | Hide.                  |
 
 ## LazyVim
 
@@ -126,10 +127,10 @@ Explore the help pages:
 | Space b n                    | Go to next                                |
 | Space l f                    | Format current file.                      |
 | Space l x                    | Open symbols outline.                     |
-| Alt/Option + ↑               | Resize panel.                             |
-| Alt/Option + ↓               | Resize panel.                             |
-| Alt/Option + ←               | Resize panel.                             |
-| Alt/Option + →               | Resize panel.                             |
+| ⌥/Alt + ↑                    | Resize panel.                             |
+| ⌥/Alt + ↓                    | Resize panel.                             |
+| ⌥/Alt + ←                    | Resize panel.                             |
+| ⌥/Alt + →                    | Resize panel.                             |
 | Ctrl + n, n, n, ..., d       | `mg979/vim-visual-multi` Multiple cursor. |
 | Ctrl + v, ↓, ↓, ..., Shift i | Multi-line insert.                        |
 | Ctrl + W, \_                 | Maximize split within the current window. |
@@ -179,20 +180,20 @@ https://github.com/nvim-telescope/telescope.nvim#default-mappings
 
 ### Visual Studio Code
 
-| Keys                            | Action                                            |
-| ------------------------------- | ------------------------------------------------- |
-| Ctrl + m                        | Maximize current panel                            |
-| Ctrl + h                        | Navigate to the upper panel.                      |
-| Ctrl + j                        | Navigate to the lower panel.                      |
-| Ctrl + h                        | Navigate to the left panel.                       |
-| Ctrl + l                        | Navigate to the right panel.                      |
-| ⌘ + <number> // Ctrl + <number> | Go to the nth tab.                                |
-| ⌘ + B // Ctrl + B               | Show/hide left sidebar.                           |
-| ⌘ + J // Ctrl + J               | Show/hide lower panel.                            |
-| Ctrl + Space                    | Force suggested autocompletion on current symbol. |
-| ⌥ + F5 // Alt + F5              | Jump to the next git change.                      |
-| ⌥ + F5 // Alt + F5              | Jump to the next git change.                      |
-| ⇧ + ⌥ + F5 // ⇧ + Alt + F5      | Jump to the next git change.                      |
-| ⇧ + ⌥ + F // ⇧ + Alt + F        | Format current file.                              |
-| ⇧ + ⌘ + [ // ⇧ + Ctrl + [       | Switch to previous terminal group.                |
-| ⇧ + ⌘ + ] // ⇧ + Ctrl + ]       | Switch to next terminal group.                    |
+| Keys               | Action                                            |
+| ------------------ | ------------------------------------------------- |
+| Ctrl + m           | Maximize current panel                            |
+| Ctrl + h           | Navigate to the upper panel.                      |
+| Ctrl + j           | Navigate to the lower panel.                      |
+| Ctrl + h           | Navigate to the left panel.                       |
+| Ctrl + l           | Navigate to the right panel.                      |
+| ⌘/Ctrl + <number>  | Go to the nth tab.                                |
+| ⌘/Ctrl + B         | Show/hide left sidebar.                           |
+| ⌘/Ctrl + J         | Show/hide lower panel.                            |
+| Ctrl + Space       | Force suggested autocompletion on current symbol. |
+| ⌥/Alt + F5         | Jump to the next git change.                      |
+| ⌥ + F5 // Alt + F5 | Jump to the next git change.                      |
+| ⇧ + ⌥/Alt + F5     | Jump to the next git change.                      |
+| ⇧ + ⌥/Alt + F      | Format current file.                              |
+| ⇧ + ⌘/Ctrl + [     | Switch to previous terminal group.                |
+| ⇧ + ⌘/Ctrl + ]     | Switch to next terminal group.                    |
