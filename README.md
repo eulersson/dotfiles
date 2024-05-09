@@ -28,11 +28,13 @@ awscli
 cakebrew
 cmake
 cormacrelf/tap/dark-notify
+dark-notify
 eksctl
 ffmpeg
 fzf
 gh
 go
+hammerspoon
 helm
 hstr
 htop
@@ -41,6 +43,7 @@ jq
 k3d
 kubernetes-cli
 lazygit
+middleclick
 neovim
 nmap
 ripgrep
