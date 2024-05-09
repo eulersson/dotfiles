@@ -2,17 +2,15 @@
 
 Collection of configuration files.
 
-| Tool                                    | Purpose                             |
-| --------------------------------------- | ----------------------------------- |
-| [iTerm](https://iterm2.com/)            | macOS terminal emulator.            |
-| [Alacritty](https://alacritty.org/)     | Terminal emulator (cross-platform). |
-| [wezterm](https://wezfurlong.org)       | Terminal emulator (cross-platform). |
-| [Zsh](https://zsh.org/)                 | UNIX shell.                         |
-| [Oh My Zsh](https://ohmyz.sh/)          | Zsh framework.                      |
-| [tmux](https://github.com/tmux/tmux)    | Terminal multiplexer.               |
-| [LunarVim](https://www.lunarvim.org/)   | Text editor, Neovim distribution.   |
-| [pyenv](https://github.com/pyenv/pyenv) | Python version management.          |
-| [nvm](https://github.com/nvm-sh/nvm)    | Node.js version management.         |
+| Tool                                      | Purpose                           |
+| ----------------------------------------- | --------------------------------- |
+| [kitty](https://sw.kovidgoyal.net/kitty/) | Cross-platform terminal emulator. |
+| [Zsh](https://zsh.org/)                   | UNIX shell.                       |
+| [Oh My Zsh](https://ohmyz.sh/)            | Zsh framework.                    |
+| [tmux](https://github.com/tmux/tmux)      | Terminal multiplexer.             |
+| [LunarVim](https://www.lunarvim.org/)     | Text editor, Neovim distribution. |
+| [pyenv](https://github.com/pyenv/pyenv)   | Python version management.        |
+| [nvm](https://github.com/nvm-sh/nvm)      | Node.js version management.       |
 
 ## Requirements
 
@@ -28,6 +26,7 @@ awscli
 cakebrew
 cmake
 cormacrelf/tap/dark-notify
+gnu-sed
 dark-notify
 eksctl
 ffmpeg
@@ -46,10 +45,12 @@ lazygit
 middleclick
 neovim
 nmap
+rancher
 ripgrep
 skaffold
 tmux
 tree
+vlc
 wget
 youtube-dl
 zsh-syntax-highlighting
@@ -82,29 +83,6 @@ defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
 You should review that those settings are reflected: [iTerm Settings](iTerm-settings.md).
 
-### Alacritty
-
-https://github.com/alacritty/alacritty?tab=readme-ov-file#installation
-
-```
-brew install --cask alacritty
-```
-
-### Alacritty Theme
-
-https://github.com/alacritty/alacritty-theme#installation
-
-```
-mkdir -p ~/.config/alacritty/themes
-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-```
-
-### wezterm
-
-```
-brew install --cask wezterm
-```
-
 ## Installation
 
 Clone the dotfiles at home:
@@ -113,8 +91,6 @@ Clone the dotfiles at home:
 cd ~
 git clone git@github.com:eulersson/.dotfiles
 ```
-
-First install iTerm
 
 Symlink the configs and dot files:
 
@@ -125,19 +101,12 @@ mkdir -p $HOME/.config
 cd $HOME/.config
 
 ln -s $HOME/.dotfiles/.config/themes .
-ln -s $HOME/.dotfiles/.config/alacritty .
 ln -s $HOME/.dotfiles/.config/kitty .
-ln -s $HOME/.dotfiles/.config/lvim .
 
 cd $HOME
 ln -s .dotfiles/.tmux.conf .
-ln -s .dotfiles/.wezterm.lua .
 ln -s .dotfiles/.hammerspoon .
 ln -s .dotfiles/*.zsh* .
-
-mkdir ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch
-cd ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch
-ln -s $HOME/.dotfiles/iTerm/Scripts/AutoLaunch/*.py .
 ```
 
 ### Zsh
