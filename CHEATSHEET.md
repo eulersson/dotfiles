@@ -1,21 +1,21 @@
-## Cheat Sheet
+# Cheat Sheet
 
-### iTerm
+## iTerm
 
-| Keys  | Action                                                                                                                                                 |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ⌘ + u | Cycle between background transparency values: opaque, translucid, clear.                                                                               |
+| Keys  | Action                                                                                                           |
+| ----- | ---------------------------------------------------------------------------------------------------------------- |
+| ⌘ + u | Cycle between background transparency values: opaque, translucid, clear.                                         |
 | ⌘ + y | Cycle between background blur: small, medium, large (you might need window refocus (⌘ + Tab, and ⌘ + Tab again). |
-| ⌘ + / | Show position of cursor. Hold to make it stay.                                                                                                         |
+| ⌘ + / | Show position of cursor. Hold to make it stay.                                                                   |
 
-### zsh
+## zsh
 
 | Alias                                       | Description                                                          |
 | ------------------------------------------- | -------------------------------------------------------------------- |
 | installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file |
 | gh                                          | GitHub Copilot                                                       |
 
-### tmux
+## tmux
 
 https://tmuxcheatsheet.com/
 
@@ -32,7 +32,14 @@ https://tmuxcheatsheet.com/
 | Control + b w           | List windows visually.                                         |
 | Shift + Click-drag, ⌘ C | Select and copy (useful over vim sessions on remote machines). |
 
-### Alacritty
+## WezTerm
+
+| Keys      | Action                      |
+| --------- | --------------------------- |
+| ⌥ + `     | Toggle centered window.     |
+| ⌥ + Space | Toggle fulls screen window. |
+
+## Alacritty
 
 | Keys                   | Action                        |
 | ---------------------- | ----------------------------- |
@@ -45,7 +52,37 @@ https://tmuxcheatsheet.com/
 | Control f h            | Search across window.         |
 | Shift Left Mouse Click | Open a link.                  |
 
-### LunarVim
+## Kitty
+
+| Keys                | Action            |
+| ------------------- | ----------------- |
+| Ctrl+Shfit+F5       | Reload config.    |
+| Ctrl + Shift + f10  | Toggle maximized. |
+| Ctrl + Shift + a, l | Less opacity      |
+| Ctrl + Shift + a, m | More opacity      |
+
+## LazyVim
+
+https://www.lazyvim.org/keymaps
+
+#### General
+
+| Keys         | Action                                      |
+| ------------ | ------------------------------------------- |
+| H            | Go to left buffer.                          |
+| L            | Go to right buffer.                         |
+| Space ,      | List open buffers.                          |
+| Space b d    | Close buffer.                               |
+| Space s s    | Navigate to open symbols in current buffer. |
+| Ctrl + i     | Go to previous mark.                        |
+| Ctrl + o     | Go to next mark.                            |
+| g c c        | Comment current line.                       |
+| (visual) g c | Comment block.                              |
+| (NeoTree) ?  | Show help.                                  |
+| (NeoTree) H  | Show hidden files.                          |
+| a            | A                                           |
+
+## LunarVim
 
 - https://www.lunarvim.org/docs/beginners-guide/keybinds-overview
 
@@ -54,11 +91,11 @@ Explore the help pages:
 - For commands: e.g. `:help :NvimTreeOpen`
 - For NeoVim functions: e.g. `:help `
 
-#### General
+### General
 
 | Keys                                  | Action                                               |
 | ------------------------------------- | ---------------------------------------------------- |
-| Space /                               | Comment current file.                                |
+| Space /                               | Comment current line.                                |
 | Space g d                             | Show git diff in two panels.                         |
 | Ctrl + Shift + ↑                      | Move line up.                                        |
 | Ctrl + Shift + ↓                      | Move line down.                                      |
@@ -73,7 +110,7 @@ Explore the help pages:
 | :SnipRun                              | Run snippet of code.                                 |
 | :E                                    | Open file system navigator.                          |
 
-#### Navigation
+### Navigation
 
 | Keys                         | Action                                    |
 | ---------------------------- | ----------------------------------------- |
@@ -108,7 +145,7 @@ Explore the help pages:
 | (in symbols outline) l       | Unfold lower hierarchy.                   |
 | (in symbols outline) h       | Fold lower hierarchy.                     |
 
-#### Telescope
+### Telescope
 
 https://github.com/nvim-telescope/telescope.nvim#default-mappings
 

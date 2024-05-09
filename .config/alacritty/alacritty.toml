@@ -1,4 +1,4 @@
-import = ["/Users/ramon/.config/alacritty/themes/themes/catppuccin_mocha.toml"]
+import = ["~/.config/themes/tokyo-night/extras/alacritty/tokyonight_storm.toml"]
 
 # TODO: See if visual bell.
 
@@ -77,6 +77,9 @@ decorations = "transparent"
 # won't work.
 option_as_alt = "OnlyLeft"
 startup_mode = "Windowed"
+
+# TODO: See if blur size can be controlled.
+# blur = true
 
 [window.dimensions]
 columns = 177

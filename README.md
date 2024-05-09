@@ -118,25 +118,18 @@ Symlink the configs and dot files:
 ```
 cd ~
 
-mkdir -p $HOME/.config/themes
+mkdir -p $HOME/.config
 cd $HOME/.config
-ln -s $HOME/.dotfiles/.config/themes
 
-mkdir -p $HOME/.config/alacritty
-cd $HOME/.config/alacritty
-ln -s $HOME/.dotfiles/.config/alacritty/*
-
-mkdir -p $HOME/.config/lvim
-cd $HOME/.config/lvim
-ln -s $HOME/.dotfiles/.config/lvim/* .
-
-cd $HOME/.config
-ln -s $HOME/.dotfiles/tmux .
+ln -s $HOME/.dotfiles/.config/themes .
+ln -s $HOME/.dotfiles/.config/alacritty .
+ln -s $HOME/.dotfiles/.config/kitty .
+ln -s $HOME/.dotfiles/.config/lvim .
 
 cd $HOME
 ln -s .dotfiles/.tmux.conf .
-ln -s .dotfiles/tokyonight_storm.tmux .
 ln -s .dotfiles/.wezterm.lua .
+ln -s .dotfiles/.hammerspoon .
 ln -s .dotfiles/*.zsh* .
 
 mkdir ~/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch
@@ -246,6 +239,19 @@ https://github.com/neovim/neovim/wiki/Installing-Neovim
 
 ```
 brew install neovim
+```
+
+### LazyVim
+
+https://www.lazyvim.org/
+
+```
+mv ~/.config/nvim{,.bak}
+mv ~/.local/share/nvim{,.bak}
+mv ~/.local/state/nvim{,.bak}
+mv ~/.cache/nvim{,.bak}
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
 ```
 
 ### LunarVim

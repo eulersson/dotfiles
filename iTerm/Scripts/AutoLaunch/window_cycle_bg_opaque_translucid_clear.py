@@ -12,9 +12,11 @@ async def main(connection):
             profile = await window.current_tab.current_session.async_get_profile()
 
             if profile.transparency == 0.0:
-                await profile.async_set_transparency(0.35)
+                await profile.async_set_transparency(0.15)
                 await profile.async_set_blur(False)
                 await profile.async_set_blur_radius(0)
+            elif profile.transparency == 0.15:
+                await profile.async_set_transparency(0.35)
             elif profile.transparency == 0.35:
                 await profile.async_set_transparency(1.0)
             elif profile.transparency == 1.0:
