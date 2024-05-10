@@ -34,7 +34,7 @@ https://tmuxcheatsheet.com/
 | Ctrl + b w              | List windows visually.                                         |
 | Shift + Click-drag, ⌘ C | Select and copy (useful over vim sessions on remote machines). |
 
-## LazyVim
+## Neovim (LazyVim)
 
 https://www.lazyvim.org/keymaps
 
@@ -53,7 +53,10 @@ https://www.lazyvim.org/keymaps
 | (visual) g c | Comment block.                              |
 | (NeoTree) ?  | Show help.                                  |
 | (NeoTree) H  | Show hidden files.                          |
-| a            | A                                           |
+| Ctrl + ↑     | Resize panel.                               |
+| Ctrl + ↓     | Resize panel.                               |
+| Ctrl + ←     | Resize panel.                               |
+| Ctrl + →     | Resize panel.                               |
 
 ## Visual Studio Code
 

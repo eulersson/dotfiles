@@ -10,7 +10,7 @@ hs.hotkey.bind({ "Alt" }, "Space", function()
 		else
 			local nowspace = hs.spaces.focusedSpace()
 			local screen = hs.screen.mainScreen()
-			term_window = term:mainWindow()
+			local term_window = term:mainWindow()
 			hs.spaces.moveWindowToSpace(term_window, nowspace)
 			local max = screen:fullFrame()
 			local f = term_window:frame()
@@ -31,7 +31,7 @@ hs.hotkey.bind({ "Alt" }, "1", function()
 	if term then
 		local nowspace = hs.spaces.focusedSpace()
 		local screen = hs.screen.mainScreen()
-		term_window = term:mainWindow()
+		local term_window = term:mainWindow()
 		hs.spaces.moveWindowToSpace(term_window, nowspace)
 		local max = screen:fullFrame()
 		local f = term_window:frame()
@@ -65,33 +65,29 @@ hs.hotkey.bind({ "Alt" }, "`", function()
 	end
 end)
 
-hs.hotkey.bind(
-	{ "command" },
-	"escape",
-	function() -- change your own hotkey combo here, available keys could be found here:https://www.hammerspoon.org/docs/hs.hotkey.html#bind
-		local BUNDLE_ID = "net.kovidgoyal.kitty" -- more accurate to avoid mismatching on browser titles
-
-		function getMainWindow(app)
-			-- get main window from app
-			local win = nil
-			while win == nil do
-				win = app:mainWindow()
-			end
-			return win
-		end
-
-		local kitty = hs.application.get(BUNDLE_ID)
-		if kitty == nil and hs.application.launchOrFocusByBundleID(BUNDLE_ID) then
-			local appWatcher = nil
-			appWatcher = hs.application.watcher.new(function(name, event, app)
-				if event == hs.application.watcher.launched and app:bundleID() == BUNDLE_ID then
-					getMainWindow(app):move(hs.geometry({ x = 0.2, y = 0.25, w = 0.6, h = 0.5 }))
+hs.hotkey.bind({ "command" }, "escape", function()
+	local BUNDLE_ID = "net.kovidgoyal.kitty"
+	local kitty = hs.application.get(BUNDLE_ID)
+	if kitty == nil and hs.application.launchOrFocusByBundleID(BUNDLE_ID) then
+		local appWatcher = nil
+		appWatcher = hs.application.watcher.new(function(name, event, app)
+			if event == hs.application.watcher.launched and app:bundleID() == BUNDLE_ID then
+				local term_window = app:mainWindow()
+				hs.timer.doAfter(1, function()
+					local screen = hs.screen.mainScreen()
+					local max = screen:fullFrame()
+					local f = term_window:frame()
+					f.x = max.x + (max.w - 1024) / 2
+					f.y = max.y + (max.h - 576) / 2
+					f.w = 1024
+					f.h = 576
 					hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, term)
 					hs.eventtap.keyStroke({}, "f1", 0, term)
+					term_window:setFrame(f)
 					appWatcher:stop()
-				end
-			end)
-			appWatcher:start()
-		end
+				end)
+			end
+		end)
+		appWatcher:start()
 	end
-)
+end)
