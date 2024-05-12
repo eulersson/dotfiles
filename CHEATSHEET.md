@@ -57,6 +57,9 @@ https://www.lazyvim.org/keymaps
 | Ctrl + ↓     | Resize panel.                               |
 | Ctrl + ←     | Resize panel.                               |
 | Ctrl + →     | Resize panel.                               |
+| Ctrl + Space | Stimulate autocompletion for a candidate.   |
+| g d          | Go to definition.                           |
+| g r          | Show references.                            |
 
 ## Visual Studio Code
 
