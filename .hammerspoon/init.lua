@@ -20,7 +20,7 @@ hs.hotkey.bind({ "Alt" }, "Space", function()
 			f.h = max.h
 			term_window:setFrame(f)
 			term_window:focus()
-			hs.eventtap.keyStroke({}, "f2", 0, term)
+			hs.eventtap.keyStroke({ "alt" }, "9", 0, term)
 			hs.eventtap.keyStroke({ "cmd", "alt" }, "f", 0, term)
 		end
 	end
@@ -40,7 +40,6 @@ hs.hotkey.bind({ "Alt" }, "1", function()
 		f.w = 1024
 		f.h = 576
 		hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, term)
-		hs.eventtap.keyStroke({}, "f1", 0, term)
 		term_window:setFrame(f)
 	end
 end)
@@ -60,7 +59,6 @@ hs.hotkey.bind({ "Alt" }, "`", function()
 		f.h = max.h * 0.9
 		term_window:setFrame(f)
 		hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, term)
-		hs.eventtap.keyStroke({}, "f1", 0, term)
 		term_window:focus()
 	end
 end)

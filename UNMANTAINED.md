@@ -59,6 +59,23 @@ brew install --cask alacritty
 | Ctrl f h               | Search across window.         |
 | Shift Left Mouse Click | Open a link.                  |
 
+## tmux
+
+https://tmuxcheatsheet.com/
+
+| Keys                    | Action                                                         |
+| ----------------------- | -------------------------------------------------------------- |
+| Ctrl y                  | Clear history.                                                 |
+| Ctrl + b ↑              | Resize panel.                                                  |
+| Ctrl + b ↓              | Resize panel.                                                  |
+| Ctrl + b ←              | Resize panel.                                                  |
+| Ctrl + b →              | Resize panel.                                                  |
+| Ctrl + b q              | See panel numbers.                                             |
+| Ctrl + b "              | Split vertically.                                              |
+| Ctrl + b %              | Split horizontally.                                            |
+| Ctrl + b w              | List windows visually.                                         |
+| Shift + Click-drag, ⌘ C | Select and copy (useful over vim sessions on remote machines). |
+
 ## LunarVim
 
 - https://www.lunarvim.org/docs/beginners-guide/keybinds-overview
