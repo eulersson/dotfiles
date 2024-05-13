@@ -226,6 +226,15 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 ```
 
+Now start `nvim` to install all the plugins.
+
+After the plugins have been installed follow these steps:
+
+```
+cd ~/.config/kitty
+ln -s ~/.local/share/nvim/lazy/vim-kitty-navigator/{get_layout,pass_keys}.py .
+```
+
 ### LunarVim
 
 https://www.lunarvim.org/docs/installation

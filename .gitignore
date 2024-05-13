@@ -1,0 +1,3 @@
+# Those are symlinks from ~/.local/share/nvim/lazy/vim-kitty-navigator
+.config/kitty/get_layout.py
+.config/kitty/pass_keys.py

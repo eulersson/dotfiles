@@ -1,6 +1,9 @@
 return {
+  -- NOTE: Do not mix kitty layouts and tmux layouts, choose either one or the other.
+  { "knubie/vim-kitty-navigator" },
   {
     "christoomey/vim-tmux-navigator",
+    enabled = false,
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",

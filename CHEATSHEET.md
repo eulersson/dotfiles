@@ -2,13 +2,19 @@
 
 ## Kitty
 
-| Keys              | Action                 |
-| ----------------- | ---------------------- |
-| Ctrl + ⌥/Alt + F5 | Reload config.         |
-| ⌥/Alt + Space     | Full screen.           |
-| ⌥/Alt + `         | Centered window large. |
-| ⌥/Alt + 1         | Centered window small. |
-| ⌘ + h             | Hide.                  |
+| Keys                 | Action                                                  |
+| -------------------- | ------------------------------------------------------- |
+| Ctrl + ⌥/Alt + F5    | Reload config.                                          |
+| ⌥/Alt + Space        | Full screen.                                            |
+| ⌥/Alt + `            | Centered window large.                                  |
+| ⌥/Alt + 1            | Centered window small.                                  |
+| ⌘ + h                | Hide.                                                   |
+| Ctrl + Shift + Enter | Create another window split.                            |
+| Ctrl + Shift + l     | Cycle through available window layouts.                 |
+| Ctrl + Sift + z      | Toggle current panel maximize.                          |
+| Ctrl + h/j/k/l       | Jump cursor to window next in the left/top/bottom/right |
+| Ctrl + ←/↓/↑/→       | Resize window in the given direction.                   |
+| ⌘ + r                | Enter window resizing mode.                             |
 
 ## zsh
 
@@ -60,6 +66,8 @@ https://www.lazyvim.org/keymaps
 | Ctrl + Space | Stimulate autocompletion for a candidate.   |
 | g d          | Go to definition.                           |
 | g r          | Show references.                            |
+| K            | Show documentation.                         |
+| K K          | Enter documentation box.                    |
 
 ## Visual Studio Code
 
