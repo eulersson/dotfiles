@@ -7,8 +7,6 @@ Collection of configuration files.
 | [kitty](https://sw.kovidgoyal.net/kitty/) | Cross-platform terminal emulator. |
 | [Zsh](https://zsh.org/)                   | UNIX shell.                       |
 | [Oh My Zsh](https://ohmyz.sh/)            | Zsh framework.                    |
-| [tmux](https://github.com/tmux/tmux)      | Terminal multiplexer.             |
-| [LunarVim](https://www.lunarvim.org/)     | Text editor, Neovim distribution. |
 | [pyenv](https://github.com/pyenv/pyenv)   | Python version management.        |
 | [nvm](https://github.com/nvm-sh/nvm)      | Node.js version management.       |
 
@@ -56,33 +54,6 @@ youtube-dl
 zsh-syntax-highlighting
 ```
 
-## Terminal Emulators
-
-### iTerm
-
-Use the test release (beta) (> 3.5.0beta24):
-
-https://iterm2.com/downloads.html
-
-You can use the `.itermexport` file in this repository and load the preferences from it
-(Settings > General > Preferences > Load preferences ...) instead of having to do it
-manually as explained as follows.
-
-```
-# Specify the preferences directory
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm"
-
-# Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-```
-
-> [!NOTE]
-> I explained loading from the `iTerm2 State.itermexport` but there seems to be another
-> mechanism to export and import the settings by serializing them into `.plist` files,
-> hence the existence of it in `iTerm/com.googlecode.iterm2.plist` > [I asked which one is best to the developer](https://gitlab.com/gnachman/iterm2/-/issues/11448)
-
-You should review that those settings are reflected: [iTerm Settings](iTerm-settings.md).
-
 ## Installation
 
 Clone the dotfiles at home:
@@ -104,9 +75,27 @@ ln -s $HOME/.dotfiles/.config/themes .
 ln -s $HOME/.dotfiles/.config/kitty .
 
 cd $HOME
-ln -s .dotfiles/.tmux.conf .
 ln -s .dotfiles/.hammerspoon .
 ln -s .dotfiles/*.zsh* .
+```
+
+### hammerspoon
+
+https://www.hammerspoon.org/
+
+```
+brew install --cask hammerspoon
+```
+
+I use hammerspoon for pressing <kbd>⌘</kbd> + <kbd>Esc</kbd> and have a kitty shell
+on screen in the same fashion iTerm's hotkey window does it.
+
+### kitty
+
+https://sw.kovidgoyal.net/kitty/
+
+```
+brew install --cask kitty
 ```
 
 ### Zsh
@@ -160,22 +149,6 @@ Alternatives:
 - Using
   `keepassxc-cli show -sa password ~/Nuvi/MetalRose.kdbx "/Internet/OpenAI ChatGPT.nvim API Key"`
 
-### tmux
-
-https://github.com/tmux/tmux/wiki/Installing
-
-```
-brew install tmux
-```
-
-Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm):
-
-```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-Now install all the tpm plugins within `tmux` with: `<C-b> I`.
-
 ### pyenv
 
 https://github.com/pyenv/pyenv#installation
@@ -227,21 +200,6 @@ rm -rf ~/.config/nvim/.git
 ```
 
 Now start `nvim` to install all the plugins.
-
-After the plugins have been installed follow these steps:
-
-```
-cd ~/.config/kitty
-ln -s ~/.local/share/nvim/lazy/vim-kitty-navigator/{get_layout,pass_keys}.py .
-```
-
-### LunarVim
-
-https://www.lunarvim.org/docs/installation
-
-```
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-```
 
 ### Visual Studio Code
 

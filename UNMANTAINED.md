@@ -21,9 +21,28 @@ ln -s $HOME/.dotfiles/unmantained/iTerm/Scripts/AutoLaunch/*.py .
 
 ## iTerm
 
+Use the test release (beta) (> 3.5.0beta24):
+
+https://iterm2.com/downloads.html
+
+You can use the `.itermexport` file in this repository and load the preferences from it
+(Settings > General > Preferences > Load preferences ...) instead of having to do it
+manually as explained as follows.
+
 ```
-brew install --cask iterm
+# Specify the preferences directory
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iTerm"
+
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 ```
+
+> [!NOTE]
+> I explained loading from the `iTerm2 State.itermexport` but there seems to be another
+> mechanism to export and import the settings by serializing them into `.plist` files,
+> hence the existence of it in `iTerm/com.googlecode.iterm2.plist` > [I asked which one is best to the developer](https://gitlab.com/gnachman/iterm2/-/issues/11448)
+
+You should review that those settings are reflected: [iTerm Settings](iTerm-settings.md).
 
 | Keys  | Action                                                                                                           |
 | ----- | ---------------------------------------------------------------------------------------------------------------- |
@@ -61,6 +80,25 @@ brew install --cask alacritty
 
 ## tmux
 
+https://github.com/tmux/tmux/wiki/Installing
+
+```
+brew install tmux
+```
+
+```
+cd $HOME
+ln -s .dotfiles/.tmux.conf .
+```
+
+Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm):
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Now install all the tpm plugins within `tmux` with: `<C-b> I`.
+
 https://tmuxcheatsheet.com/
 
 | Keys                    | Action                                                         |
@@ -77,6 +115,12 @@ https://tmuxcheatsheet.com/
 | Shift + Click-drag, ⌘ C | Select and copy (useful over vim sessions on remote machines). |
 
 ## LunarVim
+
+https://www.lunarvim.org/docs/installation
+
+```
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+```
 
 - https://www.lunarvim.org/docs/beginners-guide/keybinds-overview
 
