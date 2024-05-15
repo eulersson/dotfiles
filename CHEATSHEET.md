@@ -2,22 +2,25 @@
 
 ## Kitty
 
-| Keys                      | Action                                                        |
-| ------------------------- | ------------------------------------------------------------- |
-| Ctrl/⌃ + ⌥/Alt + F5       | Reload config.                                                |
-| ⌥/Alt + Space             | Full screen.                                                  |
-| ⌥/Alt + `                 | Centered window large.                                        |
-| ⌥/Alt + 1                 | Centered window small.                                        |
-| ⌘/Super + h               | Hide.                                                         |
-| Ctrl/⌃ + ⇧ + Enter        | Create another pane within the current tab.                   |
-| Ctrl/⌃ + ⇧ + z            | Toggle current panel maximize.                                |
-| Ctrl/⌃ + h/j/k/l          | Jump cursor to window next in the left/top/bottom/right       |
-| ⌘/Super + ⌥/Alt + ←/↓/↑/→ | Resize window in the given direction.                         |
-| ⌘/Super + r               | Enter window resizing mode.                                   |
-| ⌃/Ctrl + ⇧ + ←/→          | Navigate tabs.                                                |
-| ⌥/Alt + 0/9/8/7/6/5/4     | Change the opacity and blur of the terminal background.       |
-| ⌃/Ctrl + ⇧ + [number]     | Places focus on the panel on <number> position in the layout. |
-| ⌃/Ctrl + ⇧ + U            | Special character and emoji picker.                           |
+| Keys                      | Action                                                         |
+| ------------------------- | -------------------------------------------------------------- |
+| Ctrl/⌃ + ⌥/Alt + F5       | Reload config.                                                 |
+| ⌥/Alt + Space             | Full screen.                                                   |
+| ⌥/Alt + `                 | Centered window large.                                         |
+| ⌥/Alt + 1                 | Centered window small.                                         |
+| ⌘/Super + h               | Hide.                                                          |
+| Ctrl/⌃ + ⇧ + Enter        | Create another pane within the current tab.                    |
+| ⌘/Super + ⌥/Alt + u       | Create another pane (horizontal split) within the current tab. |
+| ⌘/Super + ⌥/Alt + i       | Create another pane (vertical split) within the current tab.   |
+| Ctrl/⌃ + ⇧ + z            | Toggle current panel maximize.                                 |
+| Ctrl/⌃ + h/j/k/l          | Jump cursor to window next in the left/top/bottom/right        |
+| ⌘/Super + ⌥/Alt + ←/↓/↑/→ | Resize window in the given direction.                          |
+| Ctrl/⌃ + ⌥/Alt + ←/↓/↑/→  | Move window in the given direction.                            |
+| ⌘/Super + r               | Enter window resizing mode.                                    |
+| ⌃/Ctrl + ⇧ + ←/→          | Navigate tabs.                                                 |
+| ⌥/Alt + 0/9/8/7/6/5/4     | Change the opacity and blur of the terminal background.        |
+| ⌃/Ctrl + ⇧ + [number]     | Places focus on the panel on <number> position in the layout.  |
+| ⌃/Ctrl + ⇧ + U            | Special character and emoji picker.                            |
 
 ## zsh
 
