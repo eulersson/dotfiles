@@ -1,31 +1,19 @@
-- Write TODOs as GitHub tasks and issues on a GitHub project instead of using this file.
-- Better vim splitting skills and panel resizing.
-- Pyright container https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
-- https://www.lunarvim.org/docs/configuration/plugins/example-configurations#symbols-outlinenvim
-- Make Python DAP and test runner work.
-- Make ready for Node.js and React development.
-- Python testing key bindings.
-- Document how to work on docker.
-- Document remote development (distant plugin, files served by NFS, etc...)
-- How to see what's bound to a `which_key` combination.
-- How to see what's bound to a regular key binding.
-- See exactly what happens with CTRL-W_t, it seems it's not really a tab.
-- Navigate markers back and forward CTRL-O
-- Explain keys used to navigate lazy git: Shift + \_, Shift + +, editing hunks, Escape-Escape...
-- Document opening git changed files.
-- When you are in git diff mode `gd` in a LunarVim file, can we stage hunks?
-- How do we exit git diff mode?
-- Change tab order.
-- Sorting a-z
-- Buffer browsing.
-- https://github.com/catppuccin/iterm
-- https://github.com/cdalvaro/github-vscode-theme-iterm
-- brew install cormacrelf/tap/dark-notify
-- https://github.com/cormacrelf/dark-notify
-- https://github.com/erikw/tmux-dark-notify
-- Document how cool is right clicking a line number and vs code and clicking "open remote file", where it shows the exact line on github on your web browser.
-- Explore fzf - https://github.com/junegunn/fzf/wiki/examples
-- https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
-- Get wezterm and alacritty up to speed with the rest of terminal emulators.
-- See a way to drive Catppuccin theme instead of Tokyo Night through environment variable and have it propagate to iTerm, tmux, Neovim...
-- Fix theming on LunarVim.
+- (kitty) Ability to use keyboard to select text from output.
+- (kitty) Document how to change window numerically.
+- (kitty) Keyboard shortcuts to reset and clear history of shell.
+- (kitty) Command similar to `{prefix} q` in tmux.
+- (kitty) Command similar to `{prefix} w` in tmux.
+- (nvim) A nice way to search and replace across a file.
+- (nvim) (which_key) How to list root mappings, that is, the ones that you type directly like `gd`.
+- (nvim) Pyright container https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
+- (nvim) Prepare for React development.
+- (nvim) Prepare for Python development.
+- (nvim) Explore Docker containers.
+- (nvim) How to see what's bound to a `which_key` combination.
+- (nvim) How to How to see what's bound to a regular key binding.
+- (nvim) (git) Jumping to next hunk.
+- (nvim) (git) Exiting git diff mode.
+- (nvim) Shortcuts to navigate tabs.
+- (nvim) Sorting a-z
+- (nvim) VS Code equivalent of going to that same line in GitHub from a local repo.
+- (zsh) (fzf) Leverage the tool a bit more.
