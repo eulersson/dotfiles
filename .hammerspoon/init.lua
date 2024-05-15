@@ -20,8 +20,10 @@ hs.hotkey.bind({ "Alt" }, "Space", function()
 			f.h = max.h
 			term_window:setFrame(f)
 			term_window:focus()
-			hs.eventtap.keyStroke({ "alt" }, "9", 0, term)
 			hs.eventtap.keyStroke({ "cmd", "alt" }, "f", 0, term)
+
+			-- TODO: Only set the opacity with Alt+9 on the first run.
+			hs.eventtap.keyStroke({ "alt" }, "9", 0, term)
 		end
 	end
 end)
