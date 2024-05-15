@@ -13,9 +13,9 @@
 | ⌘/Super + ⌥/Alt + i       | Create another pane (vertical split) within the current tab.   |
 | Ctrl/⌃ + ⇧ + z            | Toggle current panel maximize.                                 |
 | Ctrl/⌃ + h/j/k/l          | Jump cursor to window next in the left/top/bottom/right        |
-| ⌘/Super + ⌥/Alt + ←/↓/↑/→ | Resize window in the given direction.                          |
+| Ctrl/⌃ + ⌥/Alt + ←/↓/↑/→  | Resize window in the given direction.                          |
 | ⌘/Super + ⌥/Alt + q       | Reset window resizings.                                        |
-| Ctrl/⌃ + ⌥/Alt + ←/↓/↑/→  | Move window in the given direction.                            |
+| ⌘/Super + ⌥/Alt + ←/↓/↑/→ | Move window in the given direction.                            |
 | ⌃/Ctrl + ⇧ + ←/→          | Navigate tabs.                                                 |
 | ⌥/Alt + 0/9/8/7/6/5/4     | Change the opacity and blur of the terminal background.        |
 | ⌃/Ctrl + ⇧ + U            | Special character and emoji picker.                            |
