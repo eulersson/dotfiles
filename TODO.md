@@ -3,6 +3,10 @@
 - (kitty) Keyboard shortcuts to reset and clear history of shell.
 - (kitty) Command similar to `{prefix} q` in tmux.
 - (kitty) Command similar to `{prefix} w` in tmux.
+- (kitty) Highlight current cursor like iTerm.
+- (nvim) Reload LSP.
+- (nvim) Way to reset window split resizings.
+- (nvim) Shortcut to close buffer.
 - (nvim) A nice way to search and replace across a file.
 - (nvim) (which_key) How to list root mappings, that is, the ones that you type directly like `gd`.
 - (nvim) Pyright container https://www.reddit.com/r/neovim/comments/y1hryr/comment/iry6c0q/
@@ -16,4 +20,5 @@
 - (nvim) Shortcuts to navigate tabs.
 - (nvim) Sorting a-z
 - (nvim) VS Code equivalent of going to that same line in GitHub from a local repo.
+- (nvim) Digest https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 - (zsh) (fzf) Leverage the tool a bit more.
