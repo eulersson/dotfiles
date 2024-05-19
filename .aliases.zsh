@@ -7,7 +7,7 @@ alias l='ls -CF'
 alias dkcd='docker rmi $(docker images -aq -f "dangling=true")'
 alias dmspindo='docker-machine create --driver digitalocean --digitalocean-access-token `cat $HOME/.tokens/.do`'
 alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
-
+alias yt-dl-audio='yt-dlp --ignore-errors --output "%(title)s.%(ext)s" --extract-audio --audio-format mp3'
 
 # We might need to build some tools against our version of Python, for that we need
 # to install the Python.framework which provides the header
