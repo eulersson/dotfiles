@@ -51,6 +51,7 @@ tree
 vlc
 wget
 youtube-dl
+yt-dlp
 zsh-syntax-highlighting
 ```
 
