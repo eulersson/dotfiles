@@ -38,7 +38,7 @@
 
 https://www.lazyvim.org/keymaps
 
-### General
+### Navigation
 
 | Keys                  | Action                                      |
 | --------------------- | ------------------------------------------- |
@@ -57,16 +57,36 @@ https://www.lazyvim.org/keymaps
 | Ctrl + ↓              | Resize panel.                               |
 | Ctrl + ←              | Resize panel.                               |
 | Ctrl + →              | Resize panel.                               |
-| Ctrl + Space          | Stimulate autocompletion for a candidate.   |
-| g d                   | Go to definition.                           |
-| g r                   | Show references.                            |
-| K                     | Show documentation.                         |
-| K K                   | Enter documentation box.                    |
-| Ctrl + f              | Scroll forward.                             |
-| Ctrl + b              | Scroll backward.                            |
-| x                     | Delete character under cursor.              |
-| Space c s             | Open symbols outline                        |
+| Ctrl + f              | Scroll forward floating box.                |
+| Ctrl + b              | Scroll backward floatin gbox.               |
 | (symbols outline) h/l | Expand/collapse symbol child items.         |
+| Space b l/r           | Delete buffers on the `l`eft or `r`ight.    |
+
+### Help
+
+| Keys      | Action             |
+| --------- | ------------------ |
+| Space s h | Search help pages. |
+| Space s M | Search man pages.  |
+| Space s o | Search options.    |
+
+### Editor
+
+| Keys | Action                         |
+| ---- | ------------------------------ |
+| x    | Delete character under cursor. |
+
+### LSP
+
+| Keys         | Action                                    |
+| ------------ | ----------------------------------------- |
+| Space c s    | Open symbols outline                      |
+| Ctrl + Space | Stimulate autocompletion for a candidate. |
+| g d          | Go to definition.                         |
+| g r          | Show references.                          |
+| K            | Show documentation.                       |
+| K K          | Enter documentation box.                  |
+| Space c s    | Open symbols outline                      |
 
 ## zsh
 
