@@ -6,6 +6,8 @@
 - (kitty) Command similar to `{prefix} w` in tmux.
 - (kitty) Highlight current cursor like iTerm.
 - (kitty) When splitting vertically, place the panel on the bottom, not at the top.
+- (kitty) React to changing system theme dark/light (macOS).
+- (lazygit) Follow dark/light preference when using the pager.
 - (nvim) Document how to explore the existing bindings that are not prefixed with `<leader>`
 - (nvim) Reload LSP.
 - (nvim) Way to reset window split resizings.

@@ -59,14 +59,14 @@ zsh-syntax-highlighting
 
 Clone the dotfiles at home:
 
-```
+```sh
 cd ~
 git clone git@github.com:eulersson/.dotfiles
 ```
 
 Symlink the configs and dot files:
 
-```
+```sh
 cd ~
 
 mkdir -p $HOME/.config
@@ -74,6 +74,7 @@ cd $HOME/.config
 
 ln -s $HOME/.dotfiles/.config/themes .
 ln -s $HOME/.dotfiles/.config/kitty .
+ln -s $HOME/.dotfiles/.config/lazygit .
 
 cd $HOME
 ln -s .dotfiles/.hammerspoon .
@@ -84,7 +85,7 @@ ln -s .dotfiles/*.zsh* .
 
 https://www.hammerspoon.org/
 
-```
+```sh
 brew install --cask hammerspoon
 ```
 
@@ -95,7 +96,7 @@ on screen in the same fashion iTerm's hotkey window does it.
 
 https://sw.kovidgoyal.net/kitty/
 
-```
+```sh
 brew install --cask kitty
 ```
 
@@ -103,14 +104,14 @@ brew install --cask kitty
 
 https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 
-```
+```sh
 brew install zsh
 ```
 
 Now make `zsh` your default shell as explained
 [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default):
 
-```
+```sh
 chsh -s $(which zsh)
 ```
 
@@ -118,14 +119,14 @@ chsh -s $(which zsh)
 
 https://github.com/ohmyzsh/ohmyzsh#basic-installation
 
-```
+```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Now open a Zsh session by running `zsh` and install `zsh-syntax-highlighting` and
 `zsh-completions`:
 
-```
+```sh
 # Install: https://github.com/zsh-users/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -154,13 +155,13 @@ Alternatives:
 
 https://github.com/pyenv/pyenv#installation
 
-```
+```sh
 brew install pyenv
 ```
 
 Now you can install the latest Python version and set it as default system-wide:
 
-```
+```sh
 env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.12.2
 pyenv global 3.12.2
 pyenv virtualenv shell
@@ -169,7 +170,7 @@ pyenv global shell
 
 Some tools I use with my shell have to be installed with pip:
 
-```
+```sh
 pip install shell-gpt
 ```
 
@@ -177,13 +178,13 @@ pip install shell-gpt
 
 https://github.com/nvm-sh/nvm#installing-and-updating
 
-```
+```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 ```
 
 ### go
 
-```
+```sh
 brew install go
 ```
 
@@ -191,7 +192,7 @@ brew install go
 
 https://github.com/neovim/neovim/wiki/Installing-Neovim
 
-```
+```sh
 brew install neovim
 ```
 
@@ -199,7 +200,7 @@ brew install neovim
 
 https://www.lazyvim.org/
 
-```
+```sh
 mv ~/.config/nvim{,.bak}
 mv ~/.local/share/nvim{,.bak}
 mv ~/.local/state/nvim{,.bak}
@@ -227,7 +228,7 @@ poetry using the bash script they offer it will be tied to a particular python v
 
 It's useful to have the zsh completions:
 
-```
+```sh
 mkdir -p ~/.zfunc
 poetry completions zsh > ~/.zfunc/_poetry
 ```
@@ -238,7 +239,7 @@ and resolve dependencies.
 When installing packages with poetry it is all encapsulated in a virtual environment
 managed by poetry.
 
-```
+```sh
 ❯ poetry env info
 
 Virtualenv
@@ -264,7 +265,7 @@ To develop with `Neovim` having the Python LSP available these are the requireme
 After having the information with `poetry env show` you can craft the
 `pyrightconfig.json` at the root of the python project.
 
-```
+```json
 {
    "venv" : "sound-detector-oq1WgInS-py3.11",
    "venvPath" : "/Users/eulersson/Library/Caches/pypoetry/virtualenvs"
