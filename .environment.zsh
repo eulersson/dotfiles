@@ -1,22 +1,17 @@
 # Default editor.
-export EDITOR=lvim
-
-# TODO: Is this needed? I think those are the defaults.
-# # Go language.
-# export GOPATH=$HOME/go
-# export GOROOT=$(brew --prefix golang)/libexec
-# test -d $GOPATH || mkdir $GOPATH
-# test -d $GOPATH/src/github.com || mkdir -p $GOPATH/src/github.com
-export PATH=$HOME/go/bin:$PATH
+export EDITOR=nvim
 
 # Search path.
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/sbin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/Scripts:$PATH
-export PATH=$HOME/.pyenv/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
+
+# TODO Is this needed?
+export PATH=$HOME/.pyenv/bin:$PATH
 
 # TODO: Review.
 # Consider using pyenv-lazy (zsh plugin) if things get slow.
@@ -27,7 +22,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# Initialize rbenv
+# Google Cloud SDK (gcloud).
+# export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.11.9/bin/python3.11"
+
+# Initialize rbenv.
 eval "$(rbenv init - zsh)"
 
 # TODO: Review.
@@ -67,12 +65,23 @@ path_remove "/Applications/Little Snitch.app/Contents/Components"
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 
+# Google Cloud SDK.
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
 # For interaction with a Google Kubernetes Cluster.
 #
 #  https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
 #
-export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+# TODO: Check if it's still needed.
+#
+# export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Since many scripts from my company rely on AWS CLI commands, I don't want to be
 # stopped every time an AWS CLI command runs with a paginator in place.
 export AWS_PAGER=
+
+# If there's a `.environment.work.zsh` source it too.
+if [[ -f ~/.environment.work.zsh ]]; then
+    source ~/.environment.work.zsh
+fi
