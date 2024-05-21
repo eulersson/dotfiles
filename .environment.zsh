@@ -43,11 +43,11 @@ export NVM_DIR="$HOME/.nvm"
 # alias node='unalias node ; unalias npm ; nvm use default ; node $@'
 # alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
-function path_remove () {
-  # Delete path by parts so we can never accidentally remove sub paths
-  PATH=${PATH//":$1:"/":"} # delete any instances in the middle
-  PATH=${PATH/#"$1:"/} # delete any instance at the beginning
-  PATH=${PATH/%":$1"/} # delete any instance in the at the end
+function path_remove() {
+	# Delete path by parts so we can never accidentally remove sub paths
+	PATH=${PATH//":$1:"/":"} # delete any instances in the middle
+	PATH=${PATH/#"$1:"/}     # delete any instance at the beginning
+	PATH=${PATH/%":$1"/}     # delete any instance in the at the end
 }
 
 # TODO: Document what this is for!
@@ -81,7 +81,11 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 # stopped every time an AWS CLI command runs with a paginator in place.
 export AWS_PAGER=
 
+if [[ $(uname) == "Darwin" ]]; then
+	export XDG_CONFIG_HOME="$HOME/.config"
+fi
+
 # If there's a `.environment.work.zsh` source it too.
 if [[ -f ~/.environment.work.zsh ]]; then
-    source ~/.environment.work.zsh
+	source ~/.environment.work.zsh
 fi
