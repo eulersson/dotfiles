@@ -5,6 +5,8 @@
 - (kitty) Command similar to `{prefix} q` in tmux.
 - (kitty) Command similar to `{prefix} w` in tmux.
 - (kitty) Highlight current cursor like iTerm.
+- (kitty) When splitting vertically, place the panel on the bottom, not at the top.
+- (nvim) Document how to explore the existing bindings that are not prefixed with `<leader>`
 - (nvim) Reload LSP.
 - (nvim) Way to reset window split resizings.
 - (nvim) Shortcut to close buffer.

@@ -161,8 +161,16 @@ brew install pyenv
 Now you can install the latest Python version and set it as default system-wide:
 
 ```
-env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.11.5
-pyenv global 3.11.5
+env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.12.2
+pyenv global 3.12.2
+pyenv virtualenv shell
+pyenv global shell
+```
+
+Some tools I use with my shell have to be installed with pip:
+
+```
+pip install shell-gpt
 ```
 
 ### nvm
