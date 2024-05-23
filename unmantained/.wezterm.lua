@@ -146,12 +146,30 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.EmitEvent("reset-opacity-blur"),
 	},
+	{
+		key = "g",
+		mods = "CMD",
+		action = wezterm.action.EmitEvent("gray-background"),
+	},
 }
 
 -- wezterm.on("gui-startup", function(cmd)
 -- 	local tab, pane, window = mux.spawn_window(cmd or {})
 -- 	window:gui_window():set_position(65, 100)
 -- end)
+
+wezterm.on("gray-background", function(window, pane)
+	local gray_backgroud_theme = wezterm.color.get_builtin_schemes()[scheme_for_appearance("Dark")]
+	gray_backgroud_theme.background = "#1e1e1e"
+
+	local overrides = window:get_config_overrides() or {}
+	overrides.color_schemes = {
+		["gray_backgroud_theme"] = gray_backgroud_theme,
+	}
+
+	overrides.color_scheme = "gray_backgroud_theme"
+	window:set_config_overrides(overrides)
+end)
 
 wezterm.on("window-config-reloaded", function(window, pane)
 	-- approximately identify this gui window, by using the associated mux id
