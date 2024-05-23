@@ -1,4 +1,5 @@
 - (hammerspoon) Run `Alt + 9` only if started kitty, not when toggling front and hidden with `Alt + Space`.
+- (hammerspoon) `Alt + Space` would reset the text side of the terminal, it should keep it.
 - (kitty) Ability to use keyboard to select text from output.
 - (kitty) Document how to change window numerically.
 - (kitty) Keyboard shortcuts to reset and clear history of shell.
