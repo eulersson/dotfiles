@@ -38,6 +38,12 @@
 
 https://www.lazyvim.org/keymaps
 
+### Commands
+
+| Command            | Action                                              |
+| ------------------ | --------------------------------------------------- |
+| `:.,$s/foo/bar/gc` | From the current line onwards replace foo with bar. |
+
 ### Navigation
 
 | Keys                  | Action                                      |
