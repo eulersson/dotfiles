@@ -2,15 +2,16 @@
 -- - kitty  : https://github.com/kovidgoyal/kitty/issues/45.
 -- - WezTerm: https://github.com/wez/wezterm/issues/1751
 -- TODO: Explore this solution: https://gist.github.com/truebit/d79b8018666d65e95970f208d8f5d149
+-- TODO: There is a lot of code repetition, refactor into reusable code.
 hs.hotkey.bind({ "Alt" }, "Space", function()
-	term = hs.application.find("kitty")
-	if term then
-		if term:isFrontmost() then
-			term:hide()
+	app = hs.application.find("kitty")
+	if app then
+		if app:isFrontmost() then
+			app:hide()
 		else
 			local nowspace = hs.spaces.focusedSpace()
 			local screen = hs.screen.mainScreen()
-			local term_window = term:mainWindow()
+			local term_window = app:mainWindow()
 			hs.spaces.moveWindowToSpace(term_window, nowspace)
 			local max = screen:fullFrame()
 			local f = term_window:frame()
@@ -20,20 +21,20 @@ hs.hotkey.bind({ "Alt" }, "Space", function()
 			f.h = max.h
 			term_window:setFrame(f)
 			term_window:focus()
-			hs.eventtap.keyStroke({ "cmd", "alt" }, "f", 0, term)
+			hs.eventtap.keyStroke({ "cmd", "alt" }, "f", 0, app)
 
 			-- TODO: Only set the opacity with Alt+9 on the first run.
-			-- hs.eventtap.keyStroke({ "alt" }, "9", 0, term)
+			-- hs.eventtap.keyStroke({ "alt" }, "9", 0, app)
 		end
 	end
 end)
 
 hs.hotkey.bind({ "Alt" }, "1", function()
-	term = hs.application.find("kitty")
-	if term then
+	app = hs.application.find("kitty")
+	if app then
 		local nowspace = hs.spaces.focusedSpace()
 		local screen = hs.screen.mainScreen()
-		local term_window = term:mainWindow()
+		local term_window = app:mainWindow()
 		hs.spaces.moveWindowToSpace(term_window, nowspace)
 		local max = screen:fullFrame()
 		local f = term_window:frame()
@@ -41,17 +42,17 @@ hs.hotkey.bind({ "Alt" }, "1", function()
 		f.y = max.y + (max.h - 576) / 2
 		f.w = 1024
 		f.h = 576
-		hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, term)
+		hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, app)
 		term_window:setFrame(f)
 	end
 end)
 
 hs.hotkey.bind({ "Alt" }, "`", function()
-	local term = hs.application.find("kitty")
-	if term then
+	local app = hs.application.find("kitty")
+	if app then
 		local nowspace = hs.spaces.focusedSpace()
 		local screen = hs.screen.mainScreen()
-		local term_window = term:mainWindow()
+		local term_window = app:mainWindow()
 		hs.spaces.moveWindowToSpace(term_window, nowspace)
 		local max = screen:fullFrame()
 		local f = term_window:frame()
@@ -60,20 +61,20 @@ hs.hotkey.bind({ "Alt" }, "`", function()
 		f.w = max.w * 0.95
 		f.h = max.h * 0.9
 		term_window:setFrame(f)
-		hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, term)
+		hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, app)
 		term_window:focus()
 	end
 end)
 
 hs.hotkey.bind({ "command" }, "escape", function()
-	local BUNDLE_ID = "net.kovidgoyal.kitty"
-	local kitty = hs.application.get(BUNDLE_ID)
-	if kitty == nil and hs.application.launchOrFocusByBundleID(BUNDLE_ID) then
+	local BUNDLE_ID = "net.kovidgoyal.kitty" -- osascript -e 'id of app "kitty"'
+	local app = hs.application.get(BUNDLE_ID)
+	if app == nil and hs.application.launchOrFocusByBundleID(BUNDLE_ID) then
 		local appWatcher = nil
 		appWatcher = hs.application.watcher.new(function(name, event, app)
 			if event == hs.application.watcher.launched and app:bundleID() == BUNDLE_ID then
-				local term_window = app:mainWindow()
 				hs.timer.doAfter(1, function()
+					local term_window = app:mainWindow()
 					local screen = hs.screen.mainScreen()
 					local max = screen:fullFrame()
 					local f = term_window:frame()
@@ -81,9 +82,37 @@ hs.hotkey.bind({ "command" }, "escape", function()
 					f.y = max.y + (max.h - 576) / 2
 					f.w = 1024
 					f.h = 576
-					hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, term)
-					hs.eventtap.keyStroke({}, "f1", 0, term)
+					hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, app)
+					hs.eventtap.keyStroke({}, "f1", 0, app)
 					term_window:setFrame(f)
+					appWatcher:stop()
+				end)
+			end
+		end)
+		appWatcher:start()
+	end
+end)
+
+hs.hotkey.bind({ "command", "alt" }, "o", function()
+	local BUNDLE_ID = "com.github.wez.wezterm" -- osascript -e 'id of app "WezTerm"'
+	local app = hs.application.get(BUNDLE_ID)
+	if app == nil and hs.application.launchOrFocusByBundleID(BUNDLE_ID) then
+		local appWatcher = nil
+		appWatcher = hs.application.watcher.new(function(name, event, app)
+			if event == hs.application.watcher.launched and app:bundleID() == BUNDLE_ID then
+				hs.timer.doAfter(1, function()
+					local term_window = app:mainWindow()
+					local screen = hs.screen.mainScreen()
+					local max = screen:fullFrame()
+					local f = term_window:frame()
+					f.x = max.x + (max.w - 1324) / 2
+					f.y = max.y + (max.h - 756) / 2
+					f.w = 1324
+					f.h = 756
+					term_window:setFrame(f)
+					hs.eventtap.keyStroke({ "cmd" }, "g", 0, app)
+					hs.eventtap.keyStrokes("ox", app)
+					hs.eventtap.keyStroke({}, "return", 0, app)
 					appWatcher:stop()
 				end)
 			end
