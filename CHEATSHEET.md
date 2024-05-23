@@ -61,14 +61,17 @@ https://www.lazyvim.org/keymaps
 | Ctrl + b              | Scroll backward floatin gbox.               |
 | (symbols outline) h/l | Expand/collapse symbol child items.         |
 | Space b l/r           | Delete buffers on the `l`eft or `r`ight.    |
+| Control /             | Toggle terminal.                            |
 
 ### Help
 
-| Keys      | Action             |
-| --------- | ------------------ |
-| Space s h | Search help pages. |
-| Space s M | Search man pages.  |
-| Space s o | Search options.    |
+| Keys      | Action                                                                   |
+| --------- | ------------------------------------------------------------------------ |
+| Space     | Get `which_key` plugin to show help on key maps starting with Space key. |
+| Space ⌫   | Get `which_key` plugin to show help on maps starting without prefix.     |
+| Space s h | Search help pages.                                                       |
+| Space s M | Search man pages.                                                        |
+| Space s o | Search options.                                                          |
 
 ### Editor
 
@@ -87,6 +90,13 @@ https://www.lazyvim.org/keymaps
 | K            | Show documentation.                       |
 | K K          | Enter documentation box.                  |
 | Space c s    | Open symbols outline                      |
+| Space u f    | Disable autoformat.                       |
+| Space x x    | Show diagnostics in bottom pane.          |
+| Space u w    | Toggle word wrap.                         |
+| ]d           | Next diagnostic.                          |
+| [d           | Previous diagnostic.                      |
+| ]e           | Next error.                               |
+| [e           | Previous error.                           |
 
 ## zsh
 
