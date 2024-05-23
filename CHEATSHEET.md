@@ -38,12 +38,6 @@
 
 https://www.lazyvim.org/keymaps
 
-### Commands
-
-| Command            | Action                                              |
-| ------------------ | --------------------------------------------------- |
-| `:.,$s/foo/bar/gc` | From the current line onwards replace foo with bar. |
-
 ### Navigation
 
 | Keys                  | Action                                      |
@@ -75,6 +69,7 @@ https://www.lazyvim.org/keymaps
 | --------- | ------------------------------------------------------------------------ |
 | Space     | Get `which_key` plugin to show help on key maps starting with Space key. |
 | Space ⌫   | Get `which_key` plugin to show help on maps starting without prefix.     |
+| Ctrl + r  | Get `which_key` plugin to show vim registers and what's in each one.     |
 | Space s h | Search help pages.                                                       |
 | Space s M | Search man pages.                                                        |
 | Space s o | Search options.                                                          |
@@ -103,6 +98,23 @@ https://www.lazyvim.org/keymaps
 | [d           | Previous diagnostic.                      |
 | ]e           | Next error.                               |
 | [e           | Previous error.                           |
+
+### Commands
+
+| Command            | Action                                              |
+| ------------------ | --------------------------------------------------- |
+| `:.,$s/foo/bar/gc` | From the current line onwards replace foo with bar. |
+
+#### Search Replace Visual
+
+1. Visually select the text with `v` and then movement commands.
+2. Yank the selected text with `y`. That puts it on register `"`.
+3. Enter command-line mode with `:`.
+4. Type `.,$s/`.
+5. Press Ctrl-R followed by " to insert the yanked text (in insert mode Ctrl-R allows to insert from register).
+6. Type `/bar/gc` and press Enter.
+
+https://vi.stackexchange.com/a/6694
 
 ## zsh
 
