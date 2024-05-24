@@ -100,6 +100,25 @@ https://sw.kovidgoyal.net/kitty/
 brew install --cask kitty
 ```
 
+To follow dark/light system preference use [bouk/dark-mode-notify](https://github.com/bouk/dark-mode-notify):
+
+```
+# Build dark-mode-notify and install binary to ~/.local
+cd ~/.dotfiles/dark-mode-notify
+make
+make install --prefix=$HOME/.local
+
+# Symlink the `.plist` (service) to `~/Library/LaunchAgents` and start it.
+cd ~/Library/LaunchAgents
+ln -s ~/.dotfiles/.config/kitty/ke.bou.dark-mode-notify.plist
+
+# Load the service.
+launchctl load -w ~/Library/LaunchAgents/ke.bou.dark-mode-notify.plist
+
+# Logs are in /tmp/dark-mode-notify-std(out|err).log
+tail /tmp/dark-mode-notify-stdout.log /tmp/dark-mode-notify-stderr.log
+```
+
 ### Zsh
 
 https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
@@ -267,8 +286,8 @@ After having the information with `poetry env show` you can craft the
 
 ```json
 {
-   "venv" : "sound-detector-oq1WgInS-py3.11",
-   "venvPath" : "/Users/eulersson/Library/Caches/pypoetry/virtualenvs"
+  "venv": "sound-detector-oq1WgInS-py3.11",
+  "venvPath": "/Users/eulersson/Library/Caches/pypoetry/virtualenvs"
 }
 ```
 

@@ -22,7 +22,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.typescript" },
     -- import/override with your plugins
     { import = "plugins" },
-    { import = "work" }, -- TODO: Import only if I am coding for my job.
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
