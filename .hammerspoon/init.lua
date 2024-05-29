@@ -48,7 +48,7 @@ hs.hotkey.bind({ "Alt" }, "1", function()
 end)
 
 hs.hotkey.bind({ "Alt" }, "`", function()
-	local app = hs.application.find("kitty")
+	app = hs.application.find("kitty")
 	if app then
 		local nowspace = hs.spaces.focusedSpace()
 		local screen = hs.screen.mainScreen()
@@ -60,9 +60,8 @@ hs.hotkey.bind({ "Alt" }, "`", function()
 		f.y = max.y + max.h * 0.05
 		f.w = max.w * 0.95
 		f.h = max.h * 0.9
-		term_window:setFrame(f)
 		hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, app)
-		term_window:focus()
+		term_window:setFrame(f)
 	end
 end)
 
