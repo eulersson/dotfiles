@@ -62,6 +62,8 @@ https://www.lazyvim.org/keymaps
 | (symbols outline) h/l | Expand/collapse symbol child items.         |
 | Space b l/r           | Delete buffers on the `l`eft or `r`ight.    |
 | Control /             | Toggle terminal.                            |
+| ]h                    | Jump to the next git hunk.                  |
+| [h                    | Jump to the previous git hunk.              |
 
 ### Help
 
@@ -104,6 +106,14 @@ https://www.lazyvim.org/keymaps
 | Command            | Action                                              |
 | ------------------ | --------------------------------------------------- |
 | `:.,$s/foo/bar/gc` | From the current line onwards replace foo with bar. |
+
+### Search
+
+| Command                 | Action                                                                                                                      |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| \* cw newWord . n . n . | Search and replace the current word across the entire document.                                                             |
+| Space /                 | Live grep with args (see [telescope-live-grep-args.nvim](https://github.com/nvim-telescope/telescope-live-grep-args.nvim)). |
+| Space Spacee            | Find files.                                                                                                                 |
 
 #### Search Replace Visual
 

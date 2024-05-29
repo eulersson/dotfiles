@@ -3,7 +3,7 @@
 Collection of configuration files.
 
 | Tool                                      | Purpose                           |
-| ----------------------------------------- | --------------------------------- |
+| ---------------------------------------------- | --------------------------------- |
 | [kitty](https://sw.kovidgoyal.net/kitty/) | Cross-platform terminal emulator. |
 | [Zsh](https://zsh.org/)                   | UNIX shell.                       |
 | [Oh My Zsh](https://ohmyz.sh/)            | Zsh framework.                    |
