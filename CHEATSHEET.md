@@ -17,14 +17,19 @@
 | ⌘/Super + ⌥/Alt + q       | Reset window resizings.                                        |
 | Ctrl/⌃ + ⌥/Alt + ←/↓/↑/→  | Move window in the given direction.                            |
 | ⌃/Ctrl + ⇧ + ←/→          | Navigate tabs.                                                 |
+| ⌃/Ctrl + ⇧ + ./,          | Move tab forward/backward.                                     |
 | ⌥/Alt + 0/9/8/7/6/5/4     | Change the opacity and blur of the terminal background.        |
-| ⌃/Ctrl + ⇧ + U            | Special character and emoji picker.                            |
+| Ctrl/⌃ + ⇧ + ⌥/Alt + t    | Set tab title.                                                 |
+| ⇧ + ⌘/Super + i           | Set tab title.                                                 |
+| ⌃/Ctrl + ⇧ + u            | Special character and emoji picker.                            |
 
-| Keys                  | Action                                                        |
-| --------------------- | ------------------------------------------------------------- |
-| Ctrl/⌃ + ⇧ + Enter    | Create another pane within the current tab.                   |
-| ⌘/Super + r           | Enter window resizing mode.                                   |
-| ⌃/Ctrl + ⇧ + {number} | Places focus on the panel on <number> position in the layout. |
+| Keys                  | Action                                                               |
+| --------------------- | -------------------------------------------------------------------- |
+| Ctrl/⌃ + ⇧ + Enter    | Create another pane within the current tab.                          |
+| ⌘/Super + ⌥/Alt + u   | Create another pane (splitting horizontally) within the current tab. |
+| ⌘/Super + ⌥/Alt + i   | Create another pane (splitting vertically) within the current tab.   |
+| ⌘/Super + r           | Enter window resizing mode.                                          |
+| ⌃/Ctrl + ⇧ + {number} | Places focus on the panel on <number> position in the layout.        |
 
 ### Telescope
 
@@ -40,30 +45,34 @@ https://www.lazyvim.org/keymaps
 
 ### Navigation
 
-| Keys                  | Action                                      |
-| --------------------- | ------------------------------------------- |
-| H                     | Go to left buffer.                          |
-| L                     | Go to right buffer.                         |
-| Space ,               | List open buffers.                          |
-| Space b d             | Close buffer.                               |
-| Space s s             | Navigate to open symbols in current buffer. |
-| Ctrl + i              | Go to previous mark.                        |
-| Ctrl + o              | Go to next mark.                            |
-| g c c                 | Comment current line.                       |
-| (visual) g c          | Comment block.                              |
-| (NeoTree) ?           | Show help.                                  |
-| (NeoTree) H           | Show hidden files.                          |
-| Ctrl + ↑              | Resize panel.                               |
-| Ctrl + ↓              | Resize panel.                               |
-| Ctrl + ←              | Resize panel.                               |
-| Ctrl + →              | Resize panel.                               |
-| Ctrl + f              | Scroll forward floating box.                |
-| Ctrl + b              | Scroll backward floatin gbox.               |
-| (symbols outline) h/l | Expand/collapse symbol child items.         |
-| Space b l/r           | Delete buffers on the `l`eft or `r`ight.    |
-| Control /             | Toggle terminal.                            |
-| ]h                    | Jump to the next git hunk.                  |
-| [h                    | Jump to the previous git hunk.              |
+| Keys                  | Action                                                                |
+| --------------------- | --------------------------------------------------------------------- |
+| H                     | Go to left buffer.                                                    |
+| L                     | Go to right buffer.                                                   |
+| Space ,               | List open buffers.                                                    |
+| Space b d             | Close buffer.                                                         |
+| Space s s             | Navigate to open symbols in current buffer.                           |
+| Ctrl + i              | Go to newer cursor position in jump list (see `:help jump-motions`).. |
+| Ctrl + o              | Go to older cursor position in jump list (see `:help jump-motions`).  |
+| g c c                 | Comment current line.                                                 |
+| (visual) g c          | Comment block.                                                        |
+| (NeoTree) ?           | Show help.                                                            |
+| (NeoTree) H           | Show hidden files.                                                    |
+| Ctrl + ↑              | Resize panel.                                                         |
+| Ctrl + ↓              | Resize panel.                                                         |
+| Ctrl + ←              | Resize panel.                                                         |
+| Ctrl + →              | Resize panel.                                                         |
+| Ctrl + f              | Scroll forward floating box.                                          |
+| Ctrl + b              | Scroll backward floatin gbox.                                         |
+| (symbols outline) h/l | Expand/collapse symbol child items.                                   |
+| Space b l/r           | Delete buffers on the `l`eft or `r`ight.                              |
+| Control /             | Toggle terminal.                                                      |
+| ]h                    | Jump to the next git hunk.                                            |
+| [h                    | Jump to the previous git hunk.                                        |
+| m{a-zA-Z}             | Set mark (uppercase is global) (see `:help mark-motions`).            |
+| `{a-zA-Z}             | Navigate to mark (uppercase is global) (see `:help mark-motions`).    |
+| Space s m             | (telescope) Select jump mark where to jump to.                        |
+| "                     | Show registers.                                                       |
 
 ### Help
 
