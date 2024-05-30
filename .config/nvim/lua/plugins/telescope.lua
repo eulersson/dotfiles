@@ -32,7 +32,7 @@ return {
       {
         "<leader>/",
         "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-        desc = "Grep (root dir)",
+        desc = "Grep Live Args (root dir)",
       },
     },
     config = function(_, opts)
