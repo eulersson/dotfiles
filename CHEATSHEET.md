@@ -30,6 +30,8 @@
 | ⌘/Super + ⌥/Alt + i   | Create another pane (splitting vertically) within the current tab.   |
 | ⌘/Super + r           | Enter window resizing mode.                                          |
 | ⌃/Ctrl + ⇧ + {number} | Places focus on the panel on <number> position in the layout.        |
+| ⌘/Super + w           | Close window.                                                        |
+| ⌃/Ctrl + ⇧ + w        | Close pane.                                                          |
 
 ### Telescope
 
