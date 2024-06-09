@@ -110,6 +110,43 @@ https://www.lazyvim.org/keymaps
 | ]e           | Next error.                               |
 | [e           | Previous error.                           |
 
+### Tests
+
+| Keys                                         | Action                                      |
+| -------------------------------------------- | ------------------------------------------- |
+| Space t r                                    | Run nearest test.                           |
+| Space t d                                    | Debug nearest test.                         |
+| Space t s                                    | Toggle summary sidebar.                     |
+| Space t O                                    | Show test results in permanent split below. |
+| Space t o (after floating test result shows) | Jumps to floating test result window.       |
+
+### Git
+
+| Keys      | Action            |
+| --------- | ----------------- |
+| Space g G | Open up Lazy Git. |
+
+### LazyGit
+
+| Keys              | Action                                                                                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ?                 | Show keyboard shortcuts for running commands.                                                                                                |
+| Tab               | Move across panes.                                                                                                                           |
+| Enter             | Move through hunks to stage/reset them.                                                                                                      |
+| Space             | Stage/unstage hunk/line/file.                                                                                                                |
+| ⇧ + +/-           | Expand/contract current pane/section.                                                                                                        |
+| d                 | Discard (reset) change.                                                                                                                      |
+| p                 | Pull.                                                                                                                                        |
+| c                 | Write commit message, if you want to keep adding files press ESC and come back to it with `c`. If you close lazy git these changes are lost. |
+| P                 | Push.                                                                                                                                        |
+| s                 | Stash.                                                                                                                                       |
+| e                 | Edit file using `$EDITOR` (Neovim in my case); finish with `:q` to get back to Lazy Git                                                      |
+| o                 | Open file.                                                                                                                                   |
+| Ctrl + c          | Exit.                                                                                                                                        |
+| fn + ↓/↑          | Scroll buffer vertically.                                                                                                                    |
+| (on branch) M     | Merge that branch into current branch.                                                                                                       |
+| (on branch) Space | Check out branch.                                                                                                                            |
+
 ### Commands
 
 | Command            | Action                                              |
@@ -144,20 +181,19 @@ https://vi.stackexchange.com/a/6694
 
 ## Visual Studio Code
 
-| Keys               | Action                                            |
-| ------------------ | ------------------------------------------------- |
-| Ctrl + m           | Maximize current panel                            |
-| Ctrl + h           | Navigate to the upper panel.                      |
-| Ctrl + j           | Navigate to the lower panel.                      |
-| Ctrl + h           | Navigate to the left panel.                       |
-| Ctrl + l           | Navigate to the right panel.                      |
-| ⌘/Ctrl + <number>  | Go to the nth tab.                                |
-| ⌘/Ctrl + B         | Show/hide left sidebar.                           |
-| ⌘/Ctrl + J         | Show/hide lower panel.                            |
-| Ctrl + Space       | Force suggested autocompletion on current symbol. |
-| ⌥/Alt + F5         | Jump to the next git change.                      |
-| ⌥ + F5 // Alt + F5 | Jump to the next git change.                      |
-| ⇧ + ⌥/Alt + F5     | Jump to the next git change.                      |
-| ⇧ + ⌥/Alt + F      | Format current file.                              |
-| ⇧ + ⌘/Ctrl + [     | Switch to previous terminal group.                |
-| ⇧ + ⌘/Ctrl + ]     | Switch to next terminal group.                    |
+| Keys              | Action                                            |
+| ----------------- | ------------------------------------------------- |
+| Ctrl + m          | Maximize current panel                            |
+| Ctrl + h          | Navigate to the upper panel.                      |
+| Ctrl + j          | Navigate to the lower panel.                      |
+| Ctrl + h          | Navigate to the left panel.                       |
+| Ctrl + l          | Navigate to the right panel.                      |
+| ⌘/Ctrl + <number> | Go to the nth tab.                                |
+| ⌘/Ctrl + B        | Show/hide left sidebar.                           |
+| ⌘/Ctrl + J        | Show/hide lower panel.                            |
+| Ctrl + Space      | Force suggested autocompletion on current symbol. |
+| ⌥/Alt + F5        | Jump to the next git change.                      |
+| ⇧ + ⌥/Alt + F5    | Jump to the prev git change.                      |
+| ⇧ + ⌥/Alt + F     | Format current file.                              |
+| ⇧ + ⌘/Ctrl + [    | Switch to previous terminal group.                |
+| ⇧ + ⌘/Ctrl + ]    | Switch to next terminal group.                    |
