@@ -3,12 +3,22 @@
 -- - WezTerm: https://github.com/wez/wezterm/issues/1751
 -- TODO: Explore this solution: https://gist.github.com/truebit/d79b8018666d65e95970f208d8f5d149
 -- TODO: There is a lot of code repetition, refactor into reusable code.
+TERM_APP_BUNDLE_ID = "net.kovidgoyal.kitty"
 hs.hotkey.bind({ "ctrl", "alt" }, "space", function()
-	app = hs.application.find("kitty")
-	if app then
-		if app:isFrontmost() then
-			app:hide()
-		else
+	local launchedApp = false
+	local app = hs.application.find(TERM_APP_BUNDLE_ID)
+	if not app then
+		app = hs.application.open(TERM_APP_BUNDLE_ID)
+		launchedApp = true
+	end
+	if app:isFrontmost() then
+		app:hide()
+	else
+		local doAfterTime = 0
+		if launchedApp then
+			doAfterTime = 1
+		end
+		hs.timer.doAfter(doAfterTime, function()
 			local nowspace = hs.spaces.focusedSpace()
 			local screen = hs.screen.mainScreen()
 			local term_window = app:mainWindow()
@@ -21,11 +31,15 @@ hs.hotkey.bind({ "ctrl", "alt" }, "space", function()
 			f.h = max.h
 			term_window:setFrame(f)
 			term_window:focus()
+
+			-- Disables rounding of window edges.
 			hs.eventtap.keyStroke({ "cmd", "alt" }, "f", 0, app)
 
-			-- TODO: Only set the opacity with Alt+9 on the first run.
-			-- hs.eventtap.keyStroke({ "alt" }, "9", 0, app)
-		end
+			-- Adds some transparency.
+			if launchedApp then
+				hs.eventtap.keyStroke({ "alt" }, "9", 0, app)
+			end
+		end)
 	end
 end)
 
