@@ -9,4 +9,9 @@ map("n", "<C-Up>", "<cmd>resize +1<cr>", { desc = "Increase Window Height" })
 map("n", "<C-Down>", "<cmd>resize -1<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-Left>", "<cmd>vertical resize -1<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-Right>", "<cmd>vertical resize +1<cr>", { desc = "Increase Window Width" })
+
+-- Live grep with args (so we can exclude or exclude patterns and files).
 map("n", "<leader>fl", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+
+-- Select all.
+map("n", "<C-a>", "gg<S-v>G")
