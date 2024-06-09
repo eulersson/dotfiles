@@ -3,7 +3,7 @@
 -- - WezTerm: https://github.com/wez/wezterm/issues/1751
 -- TODO: Explore this solution: https://gist.github.com/truebit/d79b8018666d65e95970f208d8f5d149
 -- TODO: There is a lot of code repetition, refactor into reusable code.
-hs.hotkey.bind({ "Alt" }, "Space", function()
+hs.hotkey.bind({ "ctrl", "alt" }, "space", function()
 	app = hs.application.find("kitty")
 	if app then
 		if app:isFrontmost() then
@@ -29,7 +29,7 @@ hs.hotkey.bind({ "Alt" }, "Space", function()
 	end
 end)
 
-hs.hotkey.bind({ "Alt" }, "1", function()
+hs.hotkey.bind({ "alt" }, "1", function()
 	app = hs.application.find("kitty")
 	if app then
 		local nowspace = hs.spaces.focusedSpace()
@@ -47,7 +47,7 @@ hs.hotkey.bind({ "Alt" }, "1", function()
 	end
 end)
 
-hs.hotkey.bind({ "Alt" }, "`", function()
+hs.hotkey.bind({ "alt" }, "`", function()
 	app = hs.application.find("kitty")
 	if app then
 		local nowspace = hs.spaces.focusedSpace()
