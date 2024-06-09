@@ -79,33 +79,6 @@ hs.hotkey.bind({ "alt" }, "`", function()
 	end
 end)
 
-hs.hotkey.bind({ "command" }, "escape", function()
-	local BUNDLE_ID = "net.kovidgoyal.kitty" -- osascript -e 'id of app "kitty"'
-	local app = hs.application.get(BUNDLE_ID)
-	if app == nil and hs.application.launchOrFocusByBundleID(BUNDLE_ID) then
-		local appWatcher = nil
-		appWatcher = hs.application.watcher.new(function(name, event, app)
-			if event == hs.application.watcher.launched and app:bundleID() == BUNDLE_ID then
-				hs.timer.doAfter(1, function()
-					local term_window = app:mainWindow()
-					local screen = hs.screen.mainScreen()
-					local max = screen:fullFrame()
-					local f = term_window:frame()
-					f.x = max.x + (max.w - 1024) / 2
-					f.y = max.y + (max.h - 576) / 2
-					f.w = 1024
-					f.h = 576
-					hs.eventtap.keyStroke({ "alt", "cmd" }, "w", 0, app)
-					hs.eventtap.keyStroke({}, "f1", 0, app)
-					term_window:setFrame(f)
-					appWatcher:stop()
-				end)
-			end
-		end)
-		appWatcher:start()
-	end
-end)
-
 hs.hotkey.bind({ "command", "alt" }, "o", function()
 	local BUNDLE_ID = "com.github.wez.wezterm" -- osascript -e 'id of app "WezTerm"'
 	local app = hs.application.get(BUNDLE_ID)
