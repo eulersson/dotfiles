@@ -9,7 +9,7 @@
 | ⌃ + ⌥ + ⌘ + Space         | Toggle show/hide or launch fulled-size terminal.        |
 | ⌥ + 1                     | Make terminal small and centered.                       |
 | ⌥ + `                     | Make terminal larger and centered.                      |
-| ⌥ + 0/9/8/7/6/5/4         | Change the opacity and blur of the terminal background. |
+| ⌥ + 0/9/8/7/6/5/4/3       | Change the opacity and blur of the terminal background. |
 
 ## Kitty
 
