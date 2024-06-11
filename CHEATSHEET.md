@@ -32,6 +32,7 @@
 | ⌃ + ⇧ + ⌥ + t   | Set tab title.                                                 |
 | ⇧ + ⌘ + i       | Set tab title.                                                 |
 | ⌃ + ⇧ + u       | Special character and emoji picker.                            |
+| ⌥ + ⌘ + l       | Clear contents of the terminal.                                |
 
 | Keys             | Action                                                               |
 | ---------------- | -------------------------------------------------------------------- |
@@ -190,6 +191,7 @@ https://vi.stackexchange.com/a/6694
 | ------------------------------------------- | -------------------------------------------------------------------- |
 | installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file |
 | gh                                          | GitHub Copilot                                                       |
+| ⌃ + r                                       | Browse terminal history.                                             |
 
 ## Visual Studio Code
 
