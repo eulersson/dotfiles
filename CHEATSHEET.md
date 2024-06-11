@@ -76,7 +76,9 @@ https://www.lazyvim.org/keymaps
 | ⌃ + ←                 | Resize panel.                                                         |
 | ⌃ + →                 | Resize panel.                                                         |
 | ⌃ + f                 | Scroll forward floating box.                                          |
-| ⌃ + b                 | Scroll backward floatin gbox.                                         |
+| ⌃ + b                 | Scroll backward floatin box.                                          |
+| ⌃ + e                 | Scroll text buffer down.                                              |
+| ⌃ + y                 | Scroll text buffer up.                                                |
 | (symbols outline) h/l | Expand/collapse symbol child items.                                   |
 | Space b l/r           | Delete buffers on the `l`eft or `r`ight.                              |
 | Control /             | Toggle terminal.                                                      |
