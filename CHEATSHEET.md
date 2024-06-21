@@ -6,7 +6,7 @@
 | ------------------------- | ------------------------------------------------------- |
 | `fn`                      | Change input language.                                  |
 | Double-tap three fingers. | Accessability zoom.                                     |
-| ⌃ + ⌥ + ⌘ + Space         | Toggle show/hide or launch fulled-size terminal.        |
+| ⌃ +⌥ + Space              | Toggle show/hide or launch fulled-size terminal.        |
 | ⌥ + 1                     | Make terminal small and centered.                       |
 | ⌥ + `                     | Make terminal larger and centered.                      |
 | ⌥ + 0/9/8/7/6/5/4/3       | Change the opacity and blur of the terminal background. |
@@ -88,6 +88,8 @@ https://www.lazyvim.org/keymaps
 | `{a-zA-Z}             | Navigate to mark (uppercase is global) (see `:help mark-motions`).    |
 | Space s m             | (telescope) Select jump mark where to jump to.                        |
 | "                     | Show registers.                                                       |
+| ⌃ + /                 | Toggle floating terminal.                                             |
+| (normal) s            | Search.                                                               |
 
 ### Help
 
@@ -156,7 +158,7 @@ https://www.lazyvim.org/keymaps
 | P                 | Push.                                                                                                                                        |
 | s                 | Stash.                                                                                                                                       |
 | e                 | Edit file using `$EDITOR` (Neovim in my case); finish with `:q` to get back to Lazy Git                                                      |
-| o                 | Open file.                                                                                                                                   |
+| o                 | Open file in new tab.                                                                                                                        |
 | ⌃ + c             | Exit.                                                                                                                                        |
 | fn + ↓/↑          | Scroll buffer vertically.                                                                                                                    |
 | (on branch) M     | Merge that branch into current branch.                                                                                                       |
