@@ -4,7 +4,7 @@
 -- TODO: Explore this solution: https://gist.github.com/truebit/d79b8018666d65e95970f208d8f5d149
 -- TODO: There is a lot of code repetition, refactor into reusable code.
 TERM_APP_BUNDLE_ID = "net.kovidgoyal.kitty"
-hs.hotkey.bind({ "ctrl", "alt", "cmd" }, "space", function()
+hs.hotkey.bind({ "ctrl", "alt" }, "space", function()
 	local launchedApp = false
 	local app = hs.application.find(TERM_APP_BUNDLE_ID)
 	if not app then
