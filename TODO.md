@@ -28,3 +28,4 @@
 - (nvim) VS Code equivalent of going to that same line in GitHub from a local repo.
 - (nvim) Digest https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 - (zsh) (fzf) Leverage the tool a bit more.
+- (nvim) https://github.com/echasnovski/mini.surround

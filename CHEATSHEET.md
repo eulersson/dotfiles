@@ -104,9 +104,11 @@ https://www.lazyvim.org/keymaps
 
 ### Editor
 
-| Keys | Action                         |
-| ---- | ------------------------------ |
-| x    | Delete character under cursor. |
+| Keys       | Action                         |
+| ---------- | ------------------------------ |
+| x          | Delete character under cursor. |
+| (visual) U | Convert to uppercase.          |
+| (visual) u | Convert to lowercase.          |
 
 ### LSP
 
@@ -115,7 +117,8 @@ https://www.lazyvim.org/keymaps
 | Space c s | Open symbols outline                      |
 | ⌃ + Space | Stimulate autocompletion for a candidate. |
 | g d       | Go to definition.                         |
-| g r       | Show references.                          |
+| g r       | Go to references.                         |
+| g I       | Go to implementations.                    |
 | K         | Show documentation.                       |
 | K K       | Enter documentation box.                  |
 | Space c s | Open symbols outline                      |
