@@ -90,6 +90,10 @@ https://www.lazyvim.org/keymaps
 | "                     | Show registers.                                                       |
 | ⌃ + /                 | Toggle floating terminal.                                             |
 | (normal) s            | Search.                                                               |
+| Space Tab Tab         | Create a new tab.                                                     |
+| Space Tab ]           | Move to right tab.                                                    |
+| Space Tab [           | Move to left tab.                                                     |
+| Space Tab d           | Close current tab.                                                    |
 
 ### Help
 
@@ -142,9 +146,27 @@ https://www.lazyvim.org/keymaps
 
 ### Git
 
-| Keys      | Action            |
-| --------- | ----------------- |
-| Space g G | Open up Lazy Git. |
+| Keys      | Action                                                      |
+| --------- | ----------------------------------------------------------- |
+| ]h        | Jump to the next git hunk.                                  |
+| [h        | Jump to the previous git hunk.                              |
+| Space g G | Open up Lazy Git.                                           |
+| Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim). |
+
+#### Diffview
+
+Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`Tab`)
+
+| Keys      | Action                                 |
+| --------- | -------------------------------------- |
+| g ?       | Keymap overview.                       |
+| g, ⌃ + x  | Cycle layouts.                         |
+| Space, b  | Toggle sidebar.                        |
+| Space c o | (in conflict) Choose ours.             |
+| Space c t | (in conflict) Choose theirs.           |
+| ]x        | Jump to the next conflict.             |
+| [x        | Jump to the previous conflict.         |
+| g f       | Open the file in the previous tabpage. |
 
 ### LazyGit
 
