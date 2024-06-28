@@ -2,14 +2,16 @@
 
 ## macOS
 
-| Keys                      | Action                                                  |
-| ------------------------- | ------------------------------------------------------- |
-| `fn`                      | Change input language.                                  |
-| Double-tap three fingers. | Accessability zoom.                                     |
-| ⌃ +⌥ + Space              | Toggle show/hide or launch fulled-size terminal.        |
-| ⌥ + 1                     | Make terminal small and centered.                       |
-| ⌥ + `                     | Make terminal larger and centered.                      |
-| ⌥ + 0/9/8/7/6/5/4/3       | Change the opacity and blur of the terminal background. |
+| Keys                      | Action                                                              |
+| ------------------------- | ------------------------------------------------------------------- |
+| `fn`                      | Change input language.                                              |
+| Double-tap three fingers. | Accessibility zoom.                                                 |
+| ⌘ + ⇧ + ←/→               | Resize and move the foused window to the left or right screen half. |
+| ⌘ + ⇧ + f                 | Expand the current window to fill screen.                           |
+| ⌃ +⌥ + Space              | Toggle show/hide or launch fulled-size terminal.                    |
+| ⌥ + 1                     | Make terminal small and centered.                                   |
+| ⌥ + `                     | Make terminal larger and centered.                                  |
+| ⌥ + 0/9/8/7/6/5/4/3       | Change the opacity and blur of the terminal background.             |
 
 ## Kitty
 
@@ -94,6 +96,7 @@ https://www.lazyvim.org/keymaps
 | Space Tab ]           | Move to right tab.                                                    |
 | Space Tab [           | Move to left tab.                                                     |
 | Space Tab d           | Close current tab.                                                    |
+| (Neo-tree) O          | Opens file or folder using Finder.                                    |
 
 ### Help
 

@@ -3,7 +3,9 @@
 -- - WezTerm: https://github.com/wez/wezterm/issues/1751
 -- TODO: Explore this solution: https://gist.github.com/truebit/d79b8018666d65e95970f208d8f5d149
 -- TODO: There is a lot of code repetition, refactor into reusable code.
+
 TERM_APP_BUNDLE_ID = "net.kovidgoyal.kitty"
+
 hs.hotkey.bind({ "ctrl", "alt" }, "space", function()
 	local launchedApp = false
 	local app = hs.application.find(TERM_APP_BUNDLE_ID)
@@ -105,4 +107,35 @@ hs.hotkey.bind({ "command", "alt" }, "o", function()
 		end)
 		appWatcher:start()
 	end
+end)
+
+hs.hotkey.bind({ "cmd", "shift" }, "left", function()
+	local screen = hs.screen.mainScreen()
+	local win = hs.window.focusedWindow()
+	local max = screen:fullFrame()
+	local f = win:frame()
+	f.x = 0
+	f.y = 0
+	f.w = max.w / 2
+	f.h = max.h
+	win:setFrame(f)
+end)
+
+hs.hotkey.bind({ "cmd", "shift" }, "right", function()
+	local screen = hs.screen.mainScreen()
+	local win = hs.window.focusedWindow()
+	local max = screen:fullFrame()
+	local f = win:frame()
+	f.x = max.w / 2
+	f.y = 0
+	f.w = max.w / 2
+	f.h = max.h
+	win:setFrame(f)
+end)
+
+hs.hotkey.bind({ "cmd", "shift" }, "f", function()
+	local screen = hs.screen.mainScreen()
+	local win = hs.window.focusedWindow()
+	local max = screen:fullFrame()
+	win:setFrame(max)
 end)
