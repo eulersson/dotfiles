@@ -56,7 +56,7 @@
 
 ## Neovim (LazyVim)
 
-https://www.lazyvim.org/keymaps
+<https://www.lazyvim.org/keymaps>
 
 ### Navigation
 
@@ -97,6 +97,7 @@ https://www.lazyvim.org/keymaps
 | Space Tab [           | Move to left tab.                                                     |
 | Space Tab d           | Close current tab.                                                    |
 | (Neo-tree) O          | Opens file or folder using Finder.                                    |
+| g f                   | Go to file under cursor.                                              |
 
 ### Help
 
@@ -132,6 +133,7 @@ https://www.lazyvim.org/keymaps
 | Space u f | Disable autoformat.                       |
 | Space x x | Show diagnostics in bottom pane.          |
 | Space u w | Toggle word wrap.                         |
+| Space u h | Toggle inline hints.                      |
 | ]d        | Next diagnostic.                          |
 | [d        | Previous diagnostic.                      |
 | ]e        | Next error.                               |
@@ -215,7 +217,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 5. Press ⌃-R followed by " to insert the yanked text (in insert mode ⌃-R allows to insert from register).
 6. Type `/bar/gc` and press Enter.
 
-https://vi.stackexchange.com/a/6694
+<https://vi.stackexchange.com/a/6694>
 
 ## zsh
 
@@ -224,6 +226,16 @@ https://vi.stackexchange.com/a/6694
 | installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file |
 | gh                                          | GitHub Copilot                                                       |
 | ⌃ + r                                       | Browse terminal history.                                             |
+
+## lnav
+
+| Keys | Action                              |
+| ---- | ----------------------------------- |
+| e/E  | Jump to previous and next error.    |
+| m    | Mark log line.                      |
+| c    | Copy marked log lines.              |
+| TAB  | Move to files and filters sections. |
+| /    | Search.                             |
 
 ## Visual Studio Code
 
