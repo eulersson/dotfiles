@@ -8,6 +8,7 @@
 | Double-tap three fingers. | Accessibility zoom.                                                 |
 | ⌘ + ⇧ + ←/→               | Resize and move the foused window to the left or right screen half. |
 | ⌘ + ⇧ + f                 | Expand the current window to fill screen.                           |
+| ⌘ + ⇧ + .                 | Toggle show/hide hidden files..                                     |
 | ⌃ +⌥ + Space              | Toggle show/hide or launch fulled-size terminal.                    |
 | ⌥ + 1                     | Make terminal small and centered.                                   |
 | ⌥ + `                     | Make terminal larger and centered.                                  |

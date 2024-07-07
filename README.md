@@ -3,7 +3,7 @@
 Collection of configuration files.
 
 | Tool                                      | Purpose                           |
-| ---------------------------------------------- | --------------------------------- |
+| ----------------------------------------- | --------------------------------- |
 | [kitty](https://sw.kovidgoyal.net/kitty/) | Cross-platform terminal emulator. |
 | [Zsh](https://zsh.org/)                   | UNIX shell.                       |
 | [Oh My Zsh](https://ohmyz.sh/)            | Zsh framework.                    |
@@ -20,6 +20,7 @@ Install those packages with `brew install <name>`:
 
 ```
 ansible
+atomicparsley
 awscli
 cakebrew
 cmake
@@ -83,7 +84,7 @@ ln -s .dotfiles/*.zsh* .
 
 ### hammerspoon
 
-https://www.hammerspoon.org/
+<https://www.hammerspoon.org/>
 
 ```sh
 brew install --cask hammerspoon
@@ -94,7 +95,7 @@ on screen in the same fashion iTerm's hotkey window does it.
 
 ### kitty
 
-https://sw.kovidgoyal.net/kitty/
+<https://sw.kovidgoyal.net/kitty/>
 
 ```sh
 brew install --cask kitty
@@ -121,7 +122,7 @@ tail /tmp/dark-mode-notify-stdout.log /tmp/dark-mode-notify-stderr.log
 
 ### Zsh
 
-https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+<https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH>
 
 ```sh
 brew install zsh
@@ -136,7 +137,7 @@ chsh -s $(which zsh)
 
 ### Zsh Addons
 
-https://github.com/ohmyzsh/ohmyzsh#basic-installation
+<https://github.com/ohmyzsh/ohmyzsh#basic-installation>
 
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -172,7 +173,7 @@ Alternatives:
 
 ### pyenv
 
-https://github.com/pyenv/pyenv#installation
+<https://github.com/pyenv/pyenv#installation>
 
 ```sh
 brew install pyenv
@@ -195,7 +196,7 @@ pip install shell-gpt
 
 ### nvm
 
-https://github.com/nvm-sh/nvm#installing-and-updating
+<https://github.com/nvm-sh/nvm#installing-and-updating>
 
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
@@ -209,7 +210,7 @@ brew install go
 
 ### Neovim
 
-https://github.com/neovim/neovim/wiki/Installing-Neovim
+<https://github.com/neovim/neovim/wiki/Installing-Neovim>
 
 ```sh
 brew install neovim
@@ -217,7 +218,7 @@ brew install neovim
 
 ### LazyVim
 
-https://www.lazyvim.org/
+<https://www.lazyvim.org/>
 
 ```sh
 mv ~/.config/nvim{,.bak}
@@ -232,11 +233,11 @@ Now start `nvim` to install all the plugins.
 
 ### Visual Studio Code
 
-https://code.visualstudio.com/
+<https://code.visualstudio.com/>
 
 ## Markdown Preview
 
-https://github.com/joeyespo/grip
+<https://github.com/joeyespo/grip>
 
 ## Python Development
 
