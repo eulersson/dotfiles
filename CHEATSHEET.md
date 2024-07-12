@@ -118,6 +118,9 @@
 | x          | Delete character under cursor. |
 | (visual) U | Convert to uppercase.          |
 | (visual) u | Convert to lowercase.          |
+| ~          | Toggle case char under cursor. |
+| g u Space  | Lowercase char under cursor.   |
+| g U Space  | uppercase char under cursor.   |
 
 ### LSP
 
@@ -163,16 +166,17 @@
 
 Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`Tab`)
 
-| Keys      | Action                                 |
-| --------- | -------------------------------------- |
-| g ?       | Keymap overview.                       |
-| g, ⌃ + x  | Cycle layouts.                         |
-| Space, b  | Toggle sidebar.                        |
-| Space c o | (in conflict) Choose ours.             |
-| Space c t | (in conflict) Choose theirs.           |
-| ]x        | Jump to the next conflict.             |
-| [x        | Jump to the previous conflict.         |
-| g f       | Open the file in the previous tabpage. |
+| Keys      | Action                                                             |
+| --------- | ------------------------------------------------------------------ |
+| g ?       | Keymap overview.                                                   |
+| g, ⌃ + x  | Cycle layouts.                                                     |
+| Space, b  | Toggle sidebar.                                                    |
+| Space c o | (in conflict) Choose ours.                                         |
+| Space c t | (in conflict) Choose theirs.                                       |
+| ]x        | Jump to the next conflict.                                         |
+| [x        | Jump to the previous conflict.                                     |
+| g f       | Open the file in the previous tabpage.                             |
+| ⌃ + f/b   | Scroll code forward/backward (useful to do it from files sidebar). |
 
 ### LazyGit
 
