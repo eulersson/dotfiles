@@ -56,6 +56,11 @@ yt-dlp
 zsh-syntax-highlighting
 ```
 
+Other macOS apps:
+
+- [OneMenu](https://www.withmarko.com/one-menu)
+- [KodeLife](https://hexler.net/kodelife)
+
 ## Installation
 
 Clone the dotfiles at home:
