@@ -25,6 +25,7 @@
 | ⌘ + h           | Hide.                                                          |
 | ⌘ + ⌥ + u       | Create another pane (horizontal split) within the current tab. |
 | ⌘ + ⌥ + i       | Create another pane (vertical split) within the current tab.   |
+| ⌘ + ⇧ + d       | Close window (split).                                          |
 | ⌃ + ⇧ + z       | Toggle current panel maximize.                                 |
 | ⌃ + h/j/k/l     | Jump cursor to window next in the left/top/bottom/right        |
 | ⌘ + ⌥ + ←/↓/↑/→ | Resize window in the given direction.                          |
