@@ -188,6 +188,8 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | Enter             | Move through hunks to stage/reset them.                                                                                                      |
 | Space             | Stage/unstage hunk/line/file.                                                                                                                |
 | ⇧ + +/-           | Expand/contract current pane/section.                                                                                                        |
+| ⇧ + 2             | Show/hide or focus command output log.                                                                                                       |
+| 0-5               | Move cursor to particular pane.                                                                                                              |
 | d                 | Discard (reset) change.                                                                                                                      |
 | p                 | Pull.                                                                                                                                        |
 | c                 | Write commit message, if you want to keep adding files press ESC and come back to it with `c`. If you close lazy git these changes are lost. |
