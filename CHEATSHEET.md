@@ -13,6 +13,7 @@
 | ⌥ + 1                     | Make terminal small and centered.                                   |
 | ⌥ + `                     | Make terminal larger and centered.                                  |
 | ⌥ + 0/9/8/7/6/5/4/3       | Change the opacity and blur of the terminal background.             |
+| fn + h                    | Spread windows to see desktop.                                      |
 
 ## Kitty
 
@@ -181,26 +182,27 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 ### LazyGit
 
-| Keys              | Action                                                                                                                                       |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| ?                 | Show keyboard shortcuts for running commands.                                                                                                |
-| Tab               | Move across panes.                                                                                                                           |
-| Enter             | Move through hunks to stage/reset them.                                                                                                      |
-| Space             | Stage/unstage hunk/line/file.                                                                                                                |
-| ⇧ + +/-           | Expand/contract current pane/section.                                                                                                        |
-| ⇧ + 2             | Show/hide or focus command output log.                                                                                                       |
-| 0-5               | Move cursor to particular pane.                                                                                                              |
-| d                 | Discard (reset) change.                                                                                                                      |
-| p                 | Pull.                                                                                                                                        |
-| c                 | Write commit message, if you want to keep adding files press ESC and come back to it with `c`. If you close lazy git these changes are lost. |
-| P                 | Push.                                                                                                                                        |
-| s                 | Stash.                                                                                                                                       |
-| e                 | Edit file using `$EDITOR` (Neovim in my case); finish with `:q` to get back to Lazy Git                                                      |
-| o                 | Open file in new tab.                                                                                                                        |
-| ⌃ + c             | Exit.                                                                                                                                        |
-| fn + ↓/↑          | Scroll buffer vertically.                                                                                                                    |
-| (on branch) M     | Merge that branch into current branch.                                                                                                       |
-| (on branch) Space | Check out branch.                                                                                                                            |
+| Keys                | Action                                                                                                                                       |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ?                   | Show keyboard shortcuts for running commands.                                                                                                |
+| Tab                 | Move across panes.                                                                                                                           |
+| Enter               | Move through hunks to stage/reset them.                                                                                                      |
+| Space               | Stage/unstage hunk/line/file.                                                                                                                |
+| ⇧ + +/-             | Expand/contract current pane/section.                                                                                                        |
+| ⇧ + 2               | Show/hide or focus command output log.                                                                                                       |
+| 0-5                 | Move cursor to particular pane.                                                                                                              |
+| d                   | Discard (reset) change.                                                                                                                      |
+| p                   | Pull.                                                                                                                                        |
+| c                   | Write commit message, if you want to keep adding files press ESC and come back to it with `c`. If you close lazy git these changes are lost. |
+| P                   | Push.                                                                                                                                        |
+| s                   | Stash.                                                                                                                                       |
+| e                   | Edit file using `$EDITOR` (Neovim in my case); finish with `:q` to get back to Lazy Git                                                      |
+| o                   | Open file in new tab.                                                                                                                        |
+| ⌃ + c               | Exit.                                                                                                                                        |
+| (on commit) ⌃ + j/k | Rebase and shift that commit up/down. Exit.                                                                                                  |
+| fn + ↓/↑            | Scroll buffer vertically.                                                                                                                    |
+| (on branch) M       | Merge that branch into current branch.                                                                                                       |
+| (on branch) Space   | Check out branch.                                                                                                                            |
 
 ### Commands
 
