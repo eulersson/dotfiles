@@ -154,6 +154,13 @@
 | Space t s                                    | Toggle summary sidebar.                     |
 | Space t O                                    | Show test results in permanent split below. |
 | Space t o (after floating test result shows) | Jumps to floating test result window.       |
+| (in summary sidebar) ?                       | Show help.                                  |
+| (in summary sidebar) r                       | Run test.                                   |
+| (in summary sidebar) d                       | Debug test.                                 |
+| (in summary sidebar) i                       | Jump into test.                             |
+| (in summary sidebar) o                       | See output.                                 |
+| (in summary sidebar) 1                       | Watch test.                                 |
+| (in summary sidebar) m                       | Mark test.                                  |
 
 ### Git
 
