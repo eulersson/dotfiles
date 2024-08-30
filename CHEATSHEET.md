@@ -1,53 +1,62 @@
 # Cheat Sheet
 
-## macOS
+## System Wide
 
-| Keys                      | Action                                                              |
-| ------------------------- | ------------------------------------------------------------------- |
-| `fn`                      | Change input language.                                              |
-| Double-tap three fingers. | Accessibility zoom.                                                 |
-| ⌘ + ⇧ + ←/→               | Resize and move the foused window to the left or right screen half. |
-| ⌘ + ⇧ + f                 | Expand the current window to fill screen.                           |
-| ⌘ + ⇧ + .                 | Toggle show/hide hidden files..                                     |
-| ⌃ +⌥ + Space              | Toggle show/hide or launch fulled-size terminal.                    |
-| ⌥ + 1                     | Make terminal small and centered.                                   |
-| ⌥ + `                     | Make terminal larger and centered.                                  |
-| ⌥ + 0/9/8/7/6/5/4/3       | Change the opacity and blur of the terminal background.             |
-| fn + h                    | Spread windows to see desktop.                                      |
+Using macOS's key bindings and expanding them with
+[Hammerspoon](https://www.hammerspoon.org/) automation.
+
+| Keys                     | Action                                                              |
+| ------------------------ | ------------------------------------------------------------------- |
+| `fn`                     | Change input language.                                              |
+| Double-tap three fingers | Accessibility zoom.                                                 |
+| ⌘ + ⇧ + ←/→              | Resize and move the foused window to the left or right screen half. |
+| ⌘ + ⇧ + ↑                | Expand the current window to fill screen.                           |
+| ⌃ +⌥ + Space             | Toggle show/hide or launch fulled-size terminal.                    |
+| ⌘ + h                    | Hide.                                                               |
+| fn + h                   | Spread windows to see desktop.                                      |
+
+## Finder
+
+| Keys      | Action                         |
+| --------- | ------------------------------ |
+| ⌥ + Space | Full screen.                   |
+| ⌘ + ⇧ + . | Toggle show/hide hidden files. |
 
 ## Kitty
 
-| Keys            | Action                                                         |
-| --------------- | -------------------------------------------------------------- |
-| ⌃ + ⌥ + F5      | Reload config.                                                 |
-| ⌥ + Space       | Full screen.                                                   |
-| ⌥ + `           | Centered window large.                                         |
-| ⌥ + 1           | Centered window small.                                         |
-| ⌘ + h           | Hide.                                                          |
-| ⌘ + ⌥ + u       | Create another pane (horizontal split) within the current tab. |
-| ⌘ + ⌥ + i       | Create another pane (vertical split) within the current tab.   |
-| ⌘ + ⇧ + d       | Close window (split).                                          |
-| ⌃ + ⇧ + z       | Toggle current panel maximize.                                 |
-| ⌃ + h/j/k/l     | Jump cursor to window next in the left/top/bottom/right        |
-| ⌘ + ⌥ + ←/↓/↑/→ | Resize window in the given direction.                          |
-| ⌘ + ⌥ + q       | Reset window resizings.                                        |
-| ⌃ + ⌥ + ←/↓/↑/→ | Move window in the given direction.                            |
-| ⌃ + ⇧ + ←/→     | Navigate tabs.                                                 |
-| ⌃ + ⇧ + ./,     | Move tab forward/backward.                                     |
-| ⌃ + ⇧ + ⌥ + t   | Set tab title.                                                 |
-| ⇧ + ⌘ + i       | Set tab title.                                                 |
-| ⌃ + ⇧ + u       | Special character and emoji picker.                            |
-| ⌥ + ⌘ + l       | Clear contents of the terminal.                                |
+From [kitty's keys](https://sw.kovidgoyal.net/kitty/overview/) as base and
+expanding in [kitty config](.config/kitty/kitty.conf) and [Hammerspoon
+config](.hammerspoon/init.lua).
 
-| Keys             | Action                                                               |
-| ---------------- | -------------------------------------------------------------------- |
-| ⌃ + ⇧ + Enter    | Create another pane within the current tab.                          |
-| ⌘ + ⌥ + u        | Create another pane (splitting horizontally) within the current tab. |
-| ⌘ + ⌥ + i        | Create another pane (splitting vertically) within the current tab.   |
-| ⌘ + r            | Enter window resizing mode.                                          |
-| ⌃ + ⇧ + {number} | Places focus on the panel on <number> position in the layout.        |
-| ⌘ + w            | Close window.                                                        |
-| ⌃ + ⇧ + w        | Close pane.                                                          |
+| Keys                | Action                                                  |
+| ------------------- | ------------------------------------------------------- |
+| ⌥ + `               | Make terminal larger and centered.                      |
+| ⌥ + 1               | Make terminal small and centered.                       |
+| ⌥ + 0/9/8/7/6/5/4/3 | Change the opacity and blur of the terminal background. |
+
+| Keys            | Action                                            |
+| --------------- | ------------------------------------------------- |
+| ⌃ + ⌘ + ,       | Reload config.                                    |
+| ⌘ + t           | New tab.                                          |
+| ⇧ + ⌃ + ←/→     | Navigate tabs.                                    |
+| ⌘ + ⌥ + u       | New window (horizontal split) within current tab. |
+| ⌘ + ⌥ + i       | New window (vertical split) within current tab.   |
+| ⌘ + ↩          | New window within current tab.                    |
+| ⌃ + h/j/k/l     | Navigate window left/top/bottom/right.            |
+| ⌘ + ⌥ + ←/↓/↑/→ | Resize window in the given direction.             |
+| ⌃ + ⌥ + ←/↓/↑/→ | Move window in the given direction.               |
+| ⌘ + ⌥ + q       | Reset window resizings.                           |
+| ⌃ + ⇧ + ./,     | Move tab forward/backward.                        |
+| ⌃ + ⇧ + z       | Toggle current panel maximize.                    |
+| ⌘ + w           | Close tab.                                        |
+| ⌘ + ⇧ + d       | Close window.                                     |
+| ⌘ + r           | Enter window resizing mode.                       |
+| ⇧ + ⌘ + i       | Set tab title.                                    |
+
+| Keys      | Action                              |
+| --------- | ----------------------------------- |
+| ⌃ + ⇧ + u | Special character and emoji picker. |
+| ⌥ + ⌘ + l | Clear contents of the terminal.     |
 
 ### Telescope
 
