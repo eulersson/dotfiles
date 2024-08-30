@@ -11,7 +11,7 @@ if [[ $(uname) == "Darwin" ]]; then
     env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install $1
   }
 fi
- 
+
 function list_files_installed_by_pkg() {
   if [ $# -ne 1 ]; then
     echo "Usage:"
@@ -35,8 +35,31 @@ fkill() {
   local pid
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
-  if [ "x$pid" != "x" ]
-  then
+  if [ "x$pid" != "x" ]; then
     echo $pid | xargs kill -${1:-9}
   fi
+}
+
+# Instagram Processors:
+#
+# Assumes an output of aspect ratio 3:2, which is the shape that most cameras
+# shoot at. The first instagram image of the caroussel determines the shape.
+#
+processVerticalVideoForInstagram() {
+  cmd="ffmpeg -i \"$1\" -lavfi \"\
+    [0:v]scale=1620:-1[bg];\
+    [0:v]scale=-1:1080[ov];\
+    [bg][ov]overlay=(W-w)/2:(H-h)/2,crop=w=1620:h=1080\
+  \" \"${1%.mov}ig.mp4\""
+  echo $cmd
+  eval $cmd
+}
+processHorizontalVideoForInstagram() {
+  cmd="ffmpeg -i \"$1\" -lavfi \"\
+    [0:v]scale=-1:1080[bg];\
+    [0:v]scale=1620:-1[ov];\
+    [bg][ov]overlay=(W-w)/2:(H-h)/2,crop=w=1620:h=1080\
+  \" \"${1%.mov}ig.mp4\""
+  echo $cmd
+  eval $cmd
 }
