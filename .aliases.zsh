@@ -9,6 +9,11 @@ alias dmspindo='docker-machine create --driver digitalocean --digitalocean-acces
 alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias yt-dl-audio='yt-dlp --ignore-errors --output "%(title)s.%(ext)s" --extract-audio --audio-format mp3'
 
+alias lesssixcrash='less $(ls -t six_crash_report_* | head -n 1)'
+alias lessoxcrash='less $(ls -t ~/.ox/ox_crash_report_* | head -n 1)'
+
+alias oxbuildinstall='make app -j8 && sudo rm -rf /Applications/Ox.app && mv target/darwin_app/Ox.app /Applications/'
+
 # We might need to build some tools against our version of Python, for that we need
 # to install the Python.framework which provides the header
 
