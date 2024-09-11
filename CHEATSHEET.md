@@ -110,6 +110,7 @@ config](.hammerspoon/init.lua).
 | Space Tab d           | Close current tab.                                                    |
 | (Neo-tree) O          | Opens file or folder using Finder.                                    |
 | g f                   | Go to file under cursor.                                              |
+| Space :               | (telescope) Show command history.                                     |
 
 ### Help
 
@@ -177,6 +178,10 @@ config](.hammerspoon/init.lua).
 | --------- | ----------------------------------------------------------- |
 | ]h        | Jump to the next git hunk.                                  |
 | [h        | Jump to the previous git hunk.                              |
+| ghgh      | Applies hunk range under cursor.                            |
+| gHgh      | Reset hunk range under cursor.                              |
+| gh\_      | Apply current line (even if it's not a full hunk).          |
+| gH\_      | Reset current line (even if it's not a full hunk).          |
 | Space g G | Open up Lazy Git.                                           |
 | Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim). |
 
