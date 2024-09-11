@@ -32,6 +32,7 @@ eksctl
 ffmpeg
 fzf
 gh
+glow
 git-delta
 git-gui
 gnu-getopt
