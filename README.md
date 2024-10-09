@@ -82,6 +82,7 @@ sfcgal
 skaffold
 tmux
 tree
+ulimit
 vlc
 wget
 youtube-dl

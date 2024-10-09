@@ -9,8 +9,10 @@ alias dmspindo='docker-machine create --driver digitalocean --digitalocean-acces
 alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias yt-dl-audio='yt-dlp --ignore-errors --output "%(title)s.%(ext)s" --extract-audio --audio-format mp3'
 
-alias lesssixcrash='less $(ls -t six_crash_report_* | head -n 1)'
-alias lessoxcrash='less $(ls -t ~/.ox/ox_crash_report_* | head -n 1)'
+alias lastsixcrash='ls -t ~/.six/six_crash_report_* | head -n 1'
+alias visixcrash='vi $(lastsixcrash)'
+alias lastoxcrash='ls -t ~/.ox/ox_crash_report_* | head -n 1'
+alias vioxcrash='vi $(lastoxcrash)'
 
 alias oxbuildinstall='make app -j8 && sudo rm -rf /Applications/Ox.app && mv target/darwin_app/Ox.app /Applications/'
 

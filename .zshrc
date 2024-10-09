@@ -73,6 +73,8 @@ plugins=(
   git
   poetry # TODO: See why it is not working.
   macos
+  vi-mode # TODO: Evaluating it in place of zsh-vi-mode
+  web-search
   z
   # NOTE: If pyenv causes slow shells, investigate the pyenv-lazy zsh plugin!
   # zsh-autosuggestions ----------------------------------------------------------------
@@ -87,7 +89,7 @@ plugins=(
   #
   #     2. Add the plugin to the list of plugins for Oh My Zsh to load (inside ~/.zshrc):
   #
-  #       plugins=( 
+  #       plugins=(
   #         # other plugins...
   #         zsh-autosuggestions
   #       )
@@ -110,7 +112,7 @@ plugins=(
   #
   #       plugins=( [plugins...] zsh-syntax-highlighting)
   #
-  zsh-syntax-highlighting  # Always to be the last.
+  zsh-syntax-highlighting # Always to be the last.
   # zsh-vi-mode ------------------------------------------------------------------------
   #
   #   Project:
@@ -120,17 +122,19 @@ plugins=(
   #   As an Oh My Zsh! custom plugin
   #
   #   Clone zsh-vi-mode into your custom plugins repo
-  #   
+  #
   #     git clone https://github.com/jeffreytse/zsh-vi-mode \
   #       $ZSH_CUSTOM/plugins/zsh-vi-mode
   #
   #   Then load as a plugin in your .zshrc
-  #   
+  #
   #     plugins+=(zsh-vi-mode)
   #
   #   Keep in mind that plugins need to be added before oh-my-zsh.sh is sourced.
-  # 
-  zsh-vi-mode
+  #
+  # TODO: Evaluate if it's really much better than `bindkey -v` + omz's vi-mode
+  #zsh-vi-mode
+  #
 )
 
 # zsh-completions ----------------------------------------------------------------------
@@ -191,10 +195,11 @@ source $HOME/.aliases.zsh
 #   Install:
 #     brew install hstr
 #
-alias hh=hstr                    # hh to be alias for hstr
-setopt histignorespace           # skip cmds w/ leading space from history
-export HSTR_CONFIG=hicolor       # get more colors
-bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+alias hh=hstr                         # hh to be alias for hstr
+setopt histignorespace                # skip cmds w/ leading space from history
+export HSTR_CONFIG=hicolor            # get more colors
+bindkey -s "\C-r" "\C-a hstr -- \C-j" # bind hstr to Ctrl-r (for Vi mode check doc)
+bindkey -v
 
 # zsh-autosuggestion -------------------------------------------------------------------
 # ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -204,7 +209,7 @@ bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode che
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zsh-vi-mode ------------------------------------------------------------------------
-# 
+#
 # Until this issue is not merged...
 #
 #   - Yank to system clipboard #192
@@ -214,9 +219,9 @@ bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode che
 # explained in https://github.com/jeffreytse/zsh-vi-mode/issues/19#issuecomment-1009256071
 #
 function zvm_vi_yank() {
-	zvm_yank
-	echo ${CUTBUFFER} | pbcopy
-	zvm_exit_visual_mode
+  zvm_yank
+  echo ${CUTBUFFER} | pbcopy
+  zvm_exit_visual_mode
 }
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)

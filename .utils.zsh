@@ -63,3 +63,15 @@ processHorizontalVideoForInstagram() {
   echo $cmd
   eval $cmd
 }
+
+# Running tests upon file changes.
+watchRunTest() {
+ cmd="ulimit -n 10240 && \
+   find . -name \*.go | \
+   entr sh -c ' \
+     echo \">>>>>>>>>>>>>>>>>>>\" && \
+     go test -run=\"$2\" ./$1 && \
+     echo \">>>>>>>>>>>>>>>>>>>\"'"
+  echo $cmd
+  eval $cmd
+}

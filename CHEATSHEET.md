@@ -32,6 +32,7 @@ config](.hammerspoon/init.lua).
 | ------------------- | ------------------------------------------------------- |
 | ⌥ + `               | Make terminal larger and centered.                      |
 | ⌥ + 1               | Make terminal small and centered.                       |
+| ⌘ + ⌥ + f           | Makes terminal full screen without round edges.         |
 | ⌥ + 0/9/8/7/6/5/4/3 | Change the opacity and blur of the terminal background. |
 
 | Keys            | Action                                            |
