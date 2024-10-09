@@ -6,7 +6,10 @@ Collection of configuration files.
 | ----------------------------------------- | --------------------------------- |
 | [kitty](https://sw.kovidgoyal.net/kitty/) | Cross-platform terminal emulator. |
 | [Zsh](https://zsh.org/)                   | UNIX shell.                       |
-| [Oh My Zsh](https://ohmyz.sh/)            | Zsh framework.                    |
+| [Antigen](https://antigen.sharats.me)     | Package manager for zsh.          |
+| [Starship](https://starship.rs/)          | Shell prompt.                     |
+| [Neovim](https://neovim.io/)              | Vim-based text editor.            |
+| [LazyVim](https://www.lazyvim.org/)       | Neovim setup.                     |
 | [pyenv](https://github.com/pyenv/pyenv)   | Python version management.        |
 | [nvm](https://github.com/nvm-sh/nvm)      | Node.js version management.       |
 
@@ -21,6 +24,7 @@ Install those packages with `brew install <name>`:
 ```
 ansible
 atomicparsley
+antigen
 awscli
 cakebrew
 cmake
@@ -80,6 +84,7 @@ rsync
 rust
 sfcgal
 skaffold
+spaceship
 tmux
 tree
 ulimit
@@ -176,12 +181,6 @@ chsh -s $(which zsh)
 
 ### Zsh Addons
 
-<https://github.com/ohmyzsh/ohmyzsh#basic-installation>
-
-```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
 Now open a Zsh session by running `zsh` and install `zsh-syntax-highlighting` and
 `zsh-completions`:
 
@@ -196,15 +195,7 @@ brew install zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 ```
 
-### Secrets (dotenv)
-
-Oh My Zsh has a
-[dotenv plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dotenv) which
-allows sourcing the environment variables defined in `.env` files on the folder tree. If
-you protect those files with read-write access only to yourself it is a secure-ish way
-to store API tokens and such.
-
-Alternatives:
+### Secrets
 
 - Using `gpg --encrypt` and `gpg --decrypt`
 - Using
