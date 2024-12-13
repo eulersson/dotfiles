@@ -30,6 +30,7 @@ cakebrew
 cmake
 cormacrelf/tap/dark-notify
 cunit
+difftastic
 docutils
 drone/drone/drone
 eksctl

@@ -1,5 +1,5 @@
 # Default editor.
-export EDITOR=vi
+export EDITOR=nvim
 
 # Search path.
 export PATH=$HOME/.local/bin:$PATH
@@ -25,8 +25,9 @@ eval "$(pyenv init -)"
 # Google Cloud SDK (gcloud).
 # export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.11.9/bin/python3.11"
 
+# TODO: Review.
 # Initialize rbenv.
-eval "$(rbenv init - zsh)"
+# eval "$(rbenv init - zsh)"
 
 # TODO: Review.
 # # Used by weechat on OSX.

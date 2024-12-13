@@ -217,6 +217,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | p                   | Pull.                                                                                                                                        |
 | c                   | Write commit message, if you want to keep adding files press ESC and come back to it with `c`. If you close lazy git these changes are lost. |
 | P                   | Push.                                                                                                                                        |
+| W                   | View diffing options...                                                                                                                      |
 | s                   | Stash.                                                                                                                                       |
 | e                   | Edit file using `$EDITOR` (Neovim in my case); finish with `:q` to get back to Lazy Git                                                      |
 | o                   | Open file in new tab.                                                                                                                        |
@@ -257,7 +258,8 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | ------------------------------------------- | -------------------------------------------------------------------- |
 | installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file |
 | gh                                          | GitHub Copilot                                                       |
-| ⌃ + r                                       | Browse terminal history.                                             |
+| ⌃ + r                                       | Browse terminal history using fuzzy search fzf.                                             |
+| cd **TAB                                       | Use fzf to fuzzy search directory to jump to.                                             |
 
 ## lnav
 
