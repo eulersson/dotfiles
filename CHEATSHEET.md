@@ -258,8 +258,9 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | ------------------------------------------- | -------------------------------------------------------------------- |
 | installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file |
 | gh                                          | GitHub Copilot                                                       |
-| ⌃ + r                                       | Browse terminal history using fuzzy search fzf.                                             |
-| cd **TAB                                       | Use fzf to fuzzy search directory to jump to.                                             |
+| ⌃ + r                                       | Browse terminal history using fuzzy search fzf.                      |
+| cd **TAB                                    | Use fzf to fuzzy search directory to jump to.                        |
+| fc -AI                                      | Save history of current Zsh session                                  |
 
 ## lnav
 

@@ -48,9 +48,14 @@ function zvm_after_init() {
   # Set up fzf key bindings and fuzzy completion.
   source <(fzf --zsh)
 
-  # Bind UP and DOWN arrows to search through history based on the typed prefix.
-  bindkey "^[[A" history-search-backward # Arrow Up
-  bindkey "^[[B" history-search-forward  # Arrow Down
+  # zsh: Better history searching with arrow keys
+  # https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+  autoload -U up-line-or-beginning-search
+  autoload -U down-line-or-beginning-search
+  zle -N up-line-or-beginning-search
+  zle -N down-line-or-beginning-search
+  bindkey "^[[A" up-line-or-beginning-search   # Up
+  bindkey "^[[B" down-line-or-beginning-search # Down
 }
 
 # -- starship -------------------------------------------------------------------------
