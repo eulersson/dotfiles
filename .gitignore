@@ -1,0 +1,10 @@
+*.oxrc*
+
+.config/kitty/kitty.conf.bak
+.config/tmux/plugins
+.config/lazygit/state.yml
+
+# Those are symlinks from ~/.local/share/nvim/lazy/vim-kitty-navigator
+.config/kitty/navigate_kitty.py
+.config/kitty/pass_keys.py
+

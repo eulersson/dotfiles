@@ -1,0 +1,7 @@
+gui:
+  sidePanelWidth: 0.23
+git:
+  paging:
+    colorArg: always
+    # TODO: Follow system preference dark light.
+    pager: delta --dark --side-by-side --line-numbers-left-format="" --line-numbers-right-format="| " --paging=never

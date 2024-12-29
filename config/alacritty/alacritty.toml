@@ -1,0 +1,122 @@
+[general]
+import = ["~/.config/themes/tokyonight.nvim/extras/alacritty/tokyonight_storm.toml"]
+
+# Start tmux automatically
+#
+#   https://github.com/alacritty/alacritty/issues/2956
+#
+[terminal]
+shell = { program = "zsh", args = ["-l", "-c", "tmux new-session"] }
+
+[colors]
+transparent_background_colors = true
+
+[env]
+# https://unix.stackexchange.com/questions/597445/why-would-i-set-term-to-xterm-256color-when-using-alacritty
+TERM = "xterm-256color"
+
+[font]
+size = 16
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[scrolling]
+history = 50000
+
+[window]
+opacity = 0.75
+decorations = "transparent"
+startup_mode = "Windowed"
+
+# TPM (tmux package manager) command "remove/uninstall plugins not on the plugin list"
+# is issued with <prefix> + alt + u. If we don't set the option key (macOS) as alt it
+# won't work.
+option_as_alt = "OnlyLeft"
+
+blur = true
+
+[window.dimensions]
+columns = 177
+lines = 45
+
+# TODO: I cannot set at the time padding to only the top. Only top is needed because
+# there are the red, yellow and green button from macOS.
+#
+#   https://github.com/alacritty/alacritty/issues/1671
+#
+[window.padding]
+x = 15
+y = 35
+
+# Open up the window positioned in the center of the MacBook Pro 16-inch 2019.
+# TODO: Make it an override only applied if using a MacBook!
+[window.position]
+x = 75
+y = 100
+
+[[keyboard.bindings]]
+action = "ToggleSimpleFullscreen"
+key = "M"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ClearHistory"
+key = "Y"
+mods = "Super|Control|Shift|Alt"
+
+# Opacity 100%
+[[keyboard.bindings]]
+key = "1"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=1"] }
+
+# Opacity 80%
+[[keyboard.bindings]]
+key = "2"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.8"] }
+
+# Opacity 60%
+[[keyboard.bindings]]
+key = "3"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.6"] }
+
+# Opacity 40%
+[[keyboard.bindings]]
+key = "4"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.4"] }
+
+# Opacity 20%
+[[keyboard.bindings]]
+key = "5"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.2"] }
+
+# Blur on
+[[keyboard.bindings]]
+key = "9"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.blur=true"] }
+
+# Blur off
+[[keyboard.bindings]]
+key = "0"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.blur=false"] }
+

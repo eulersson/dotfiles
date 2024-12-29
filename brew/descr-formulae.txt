@@ -1,0 +1,67 @@
+agg: Asciicast to GIF converter
+ansible: Automate deployment, configuration, and upgrading
+antigen: Plugin manager for zsh, inspired by oh-my-zsh and vundle
+asciinema: Record and share terminal sessions
+awscli: Official Amazon AWS command-line interface
+cmake: Cross-platform make
+cmatrix: Console Matrix
+dark-notify: Watcher for macOS 10.14+ light/dark mode changes
+cunit: Lightweight unit testing framework for C
+difftastic: Diff that understands syntax
+docutils: Text processing system for reStructuredText
+drone: [no description]
+eksctl: Simple command-line tool for creating clusters on Amazon EKS
+entr: Run arbitrary commands when files change
+fzf: Command-line fuzzy finder written in Go
+get_iplayer: Utility for downloading TV and radio programmes from BBC iPlayer
+gh: GitHub command-line tool
+git-delta: Syntax-highlighting pager for git and diff output
+glow: Render markdown on the CLI
+gnu-getopt: Command-line option parsing utility
+gnu-sed: GNU implementation of the famous stream editor
+golangci-lint: Fast linters runner for Go
+grip: GitHub Markdown previewer
+groff: GNU troff text-formatting system
+helm: Kubernetes package manager
+hstr: Bash and zsh history suggest box
+htop: Improved top (interactive process viewer)
+imagemagick: Tools and libraries to manipulate images in many formats
+horcrux: A program for splitting your files into encrypted fragments
+jpeg: Image manipulation library
+jq: Lightweight and flexible command-line JSON processor
+json-c: JSON parser for C
+k3d: Little helper to run CNCF's k3s in Docker
+kubernetes-cli: Kubernetes command-line interface
+lazygit: Simple terminal UI for git commands
+libdap: Framework for scientific data networking
+lnav: Curses-based tool for viewing and analyzing log files
+mas: Mac App Store command-line interface
+mat2: Metadata anonymization toolkit
+neovim: Ambitious Vim-fork focused on extensibility and agility
+nmap: Port scanning utility for large networks
+numpy: Package for scientific computing with Python
+podman: Tool for managing OCI containers and pods
+portaudio: Cross-platform library for audio I/O
+postgresql@16: Object-relational database system
+pre-commit: Framework for managing multi-language pre-commit hooks
+protobuf@21: Protocol buffers (Google's data interchange format)
+protoc-gen-go: Go support for Google's protocol buffers
+protoc-gen-go-grpc: Protoc plugin that generates code for gRPC-Go clients
+pulseaudio: Sound system for POSIX OSes
+pyenv-virtualenv: Pyenv plugin to manage virtualenv
+qemu: Generic machine emulator and virtualizer
+qpdf: Tools for and transforming and inspecting PDF files
+rbenv: Ruby version manager
+rcs: GNU revision control system
+redis: Persistent key-value database, with built-in net interface
+ripgrep: Search tool like grep and The Silver Searcher
+rsync: Utility that provides fast incremental file transfer
+rust: Safe, concurrent, practical language
+sfcgal: C++ wrapper library around CGAL
+skaffold: Easy and Repeatable Kubernetes Development
+starship: Cross-shell prompt for astronauts
+tmux: Terminal multiplexer
+tree: Display directories as trees (with optional color/HTML output)
+wget: Internet file retriever
+yt-dlp: Feature-rich command-line audio/video downloader
+zsh-syntax-highlighting: Fish shell like syntax highlighting for zsh

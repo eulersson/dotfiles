@@ -1,0 +1,90 @@
+{
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.cursorStyle": "line",
+  "editor.fontSize": 13,
+  "editor.largeFileOptimizations": false,
+  "editor.lineNumbers": "on",
+  "editor.maxTokenizationLineLength": 90000,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    88
+  ],
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "git.enableSmartCommit": true,
+  "gitlens.views.contributors.showAllBranches": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "nxConsole.showNodeVersionOnStartup": false,
+  "redhat.telemetry.enabled": false,
+  "terminal.integrated.scrollback": 5000,
+  "vim.textwidth": 88,
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[jsonl]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[shellscript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.eol": "\n"
+  },
+  "cmake.showOptionsMovedNotification": false,
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
+  "workbench.preferredHighContrastColorTheme": "GitHub Light",
+  "window.zoomLevel": 1,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[proto]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "vim.useSystemClipboard": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.defaultProfile.osx": "tmux",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "remote.autoForwardPortsSource": "hybrid",
+  "window.customTitleBarVisibility": "windowed",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+}

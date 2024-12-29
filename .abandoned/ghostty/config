@@ -1,0 +1,5 @@
+font-size = 16
+theme = dark:tokyonight-storm,light:tokyonight-day
+
+quick-terminal-position = top
+keybind = global:cmd+ctrl+shift+alt+space=toggle_quick_terminal

@@ -1,0 +1,25 @@
+alacritty: (Alacritty) GPU-accelerated terminal emulator
+anki: (Anki) Memory training application
+audacity: (Audacity) Multi-track audio editor and recorder
+calibre: (calibre) E-books management software
+drawio: (draw.io Desktop) Online diagram software
+foxit-pdf-editor: (Foxit PDF Editor) PDF Editor
+google-cloud-sdk: (Google Cloud SDK) Set of tools to manage resources and applications hosted on Google Cloud
+jdownloader: (JDownloader) Download manager
+karabiner-elements: (Karabiner Elements) Keyboard customiser
+keepassxc: (KeePassXC) Password manager app
+keycastr: (KeyCastr) Open-source keystroke visualiser
+macfuse: (macFUSE) File system integration
+musescore: (MuseScore) Open-source music notation software
+obsidian: (Obsidian) Knowledge base that works on top of a local folder of plain text Markdown files
+ocenaudio: (ocenaudio) Audio editor
+pearcleaner: (Pearcleaner) Utility to uninstall apps and remove leftover files from old/uninstalled apps
+qbittorrent: (qBittorrent) Peer to peer Bitorrent client
+rancher: (Rancher Desktop) Kubernetes and container management on the desktop
+raycast: (Raycast) Control your tools with a few keystrokes
+tor-browser: (Tor Browser) Web browser focusing on security
+veracrypt: (VeraCrypt) Disk encryption software focusing on security based on TrueCrypt
+virtualbox: (Oracle VirtualBox) Virtualiser for x86 hardware
+visual-studio-code: (Microsoft Visual Studio Code, VS Code) Open-source code editor
+vlc: (VLC media player) Multimedia player
+wezterm: (WezTerm) GPU-accelerated cross-platform terminal emulator and multiplexer

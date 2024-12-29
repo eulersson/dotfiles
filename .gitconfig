@@ -1,0 +1,51 @@
+# This is Git's per-user configuration file.
+# https://vi.stackexchange.com/questions/625/how-do-i-use-vim-as-a-diff-tool
+# https://vi.stackexchange.com/a/24407
+[user]
+# Please adapt and uncomment the following lines:
+	name = Ramon Blanquer
+	email = blanquer.ramon@gmail.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	# https://stackoverflow.com/a/44529712
+	recentb = "!r() { refbranch=$1 count=$2; git for-each-ref --sort=-committerdate refs/remotes --format='%(refname:short)|%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | while read line; do branch=$(echo \"$line\" | awk 'BEGIN { FS = \"|\" }; { print $1 }' | tr -d '*'); ahead=$(git rev-list --count \"${refbranch:-origin/master}..${branch}\"); behind=$(git rev-list --count \"${branch}..${refbranch:-origin/master}\"); colorline=$(echo \"$line\" | sed 's/^[^|]*|//'); echo \"$ahead|$behind|$colorline\" | awk -F'|' -vOFS='|' '{$5=substr($5,1,70)}1' ; done | ( echo \"ahead|behind||branch|lastcommit|message|author\\n\" && cat) | column -ts'|';}; r"        
+[core]
+	excludesfile = /Users/ramon/.gitignore_global
+	editor = nvim
+	pager = less -F -X
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/ramon/.stCommitMsg
+[merge]
+	tool = nvim
+[diff]
+#	guitool = nvim
+#	tool = nvim
+  external = difft
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[oh-my-zsh]
+	hide-status = 0
+[mergetool "vimdiff3"]
+	path = nvim
+[difftool "vimdiff3"]
+	path = nvim
+[mergetool]
+	keepBackup = false
+[mergetool "nvim"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[push]
+	autoSetupRemote = true
+[includeIf "gitdir:~/Shadow/"]
+    path = ~/Shadow/.gitconfig
