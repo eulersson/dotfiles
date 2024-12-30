@@ -43,7 +43,11 @@ Find a description of all the casks and packages installed in:
 - [brew/descr-casks.txt](./brew/descr-casks.txt)
   - (generated with `brew ls --casks | xargs brew desc --eval-all | tee descr-casks.txt`)
 
-Install **JetBrainsMono Nerd Font** from [fonts/JetBrainsMono](fonts).
+Install **JetBrainsMono Nerd Font** from [fonts/JetBrainsMono/fonts/ttf](fonts):
+
+```sh
+cp ./fonts/JetBrainsMono/fonts/ttf/*.ttf ~/Library/Fonts
+```
 
 ## Tools
 
@@ -87,6 +91,7 @@ Symlink the configuration folders:
 
 ```sh
 cd ~
+ln -s $HOME/.dotfiles/.markdownlint-cli2.yaml .
 
 mkdir -p $HOME/.config
 cd $HOME/.config
@@ -103,7 +108,7 @@ ln -s .dotfiles/*.zsh* .
 
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm):
 
-```
+```sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
