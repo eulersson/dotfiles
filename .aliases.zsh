@@ -19,7 +19,8 @@ alias vioxcrash='vi $(lastoxcrash)'
 alias lastoxextcrash='ls -t ~/.ox/.extension/ox_crash_report_* | head -n 1'
 alias vilastoxextcrash='vi $(lastoxextcrash)'
 
-alias oxbuildinstall='make app -j8 && sudo rm -rf /Applications/Ox.app && mv target/darwin_app/Ox.app /Applications/'
+# Does not leave history trace. If you want to follow a conversation pass `--chat <id>`
+alias sgptask='echo -n "> " && read question && sgpt "$(echo $question)"'
 
 # Misc
 alias dlytaudio='yt-dlp --ignore-errors --output "%(title)s.%(ext)s" --extract-audio --audio-format mp3'
