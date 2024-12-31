@@ -152,16 +152,17 @@ Have a look at System Preferences > Keyboard > Shortcuts.
 
 ### Git
 
-| Keys      | Action                                                      |
-| --------- | ----------------------------------------------------------- |
-| ]h        | Jump to the next git hunk.                                  |
-| [h        | Jump to the previous git hunk.                              |
-| ghgh      | Applies hunk range under cursor.                            |
-| gHgh      | Reset hunk range under cursor.                              |
-| gh\_      | Apply current line (even if it's not a full hunk).          |
-| gH\_      | Reset current line (even if it's not a full hunk).          |
-| Space g G | Open up Lazy Git.                                           |
-| Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim). |
+| Keys      | Action                                                       |
+| --------- | ------------------------------------------------------------ |
+| ]h        | Jump to the next git hunk.                                   |
+| [h        | Jump to the previous git hunk.                               |
+| ghgh      | Applies hunk range under cursor.                             |
+| gHgh      | Reset hunk range under cursor.                               |
+| gh\_      | Apply current line (even if it's not a full hunk).           |
+| gH\_      | Reset current line (even if it's not a full hunk).           |
+| Space g g | Open up Lazy Git on the first folder upward that has a repo. |
+| Space g G | Open up Lazy Git from the root where you run nvim from.      |
+| Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim).  |
 
 ### Diffview
 
