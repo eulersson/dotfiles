@@ -304,6 +304,52 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | cd \*\*TAB                                  | Use fzf to fuzzy search directory to jump to.                        |
 | fc -AI                                      | Save history of current Zsh session                                  |
 
+### Shell GPT
+
+<https://github.com/TheR1D/shell_gpt>
+
+| Command                                                                                |
+| -------------------------------------------------------------------------------------- |
+| sgpt "What is the fibonacci sequence"                                                  |
+| git diff \| sgpt "Generate git commit message, for my changes"                         |
+| docker logs -n 20 my_app \| sgpt "check logs, find errors, provide possible solutions" |
+| sgpt --shell "find all json files in current folder"                                   |
+| sgpt --code "solve fizz buzz problem using python"                                     |
+| sgpt --code "solve classic fizz buzz problem using Python" > fizz_buzz.py              |
+| cat fizz_buzz.py \| sgpt --code "Generate comments for each line of my code"           |
+
+With the `sgptask` alias you don't leave trace in history:
+
+```sh
+$ sgptask
+> what is 1 + 1?
+# 1 + 1 equals 2
+$ sgptask --chat conversation1
+> remember my number: 4
+# Got it! I'll remember that your number is 4. If you need me to recall it later, just let me know.
+$ sgptask --chat conversation1
+> what is my number?
+# Your number is 4.
+$ history | tail -n 3
+# 1004  sgptask
+# 1005  sgptask --chat conv1
+# 1006  sgptask --chat conv1
+```
+
+You can also use all kind of redirection operators to pass input:
+
+```sh
+sgpt "summarise" < document.txt
+# -> The document discusses the impact...
+sgpt << EOF
+What is the best way to lear Golang?
+Provide simple hello world example.
+EOF
+# -> The best way to learn Golang...
+sgpt <<< "What is the best way to learn shell redirects?"
+# -> The best way to learn shell redirects is through...
+```
+
 ## lnav
 
 | Keys                  | Action                              |
