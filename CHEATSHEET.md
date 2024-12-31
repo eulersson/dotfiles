@@ -269,20 +269,20 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 | Keys                    | Action                                           |
 | ----------------------- | ------------------------------------------------ |
+| ⌃ + ↑/↓/←/→             | Navigate panels.                                 |
 | ⌃ + b, "                | Split vertically.                                |
 | ⌃ + b, %                | Split horizontally.                              |
-| ⌃ + ↑/↓/←/→             | Navigate panels.                                 |
 | ⌃ + b, z                | Toggle zoom on current panel.                    |
 | ⌃ + b, {/}              | Swap panels.                                     |
 | ⌃ + b, q                | See panel numbers.                               |
 | ⌃ + b ↑/↓/←/→           | Resize panel.                                    |
 | ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout.             |
-| ⌃ + b, w                | List windows visually.                           |
-| ⌘ + v                   | Paste copied text.                               |
 | ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits.  |
 | ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page |
 | ⌃ + b, ⌃ + l            | Clear screen.                                    |
-| ⌃ y                     | Clear output buffer.                             |
+| ⌃ + b, y                | Clear output buffer.                             |
+| ⌃ + b, w                | List windows visually.                           |
+| ⌘ + v                   | Paste copied text.                               |
 | (copy mode) v           | Start visual selection.                          |
 | (copy mode) y           | Copy.                                            |
 | (copy mode) q           | Exit copy mode.                                  |
