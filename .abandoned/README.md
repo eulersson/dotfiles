@@ -25,7 +25,6 @@ ln -s $HOME/.dotfiles/.config/kitty .
 | fn + f           | Full screen.                             |
 | ⌘ + ⇧ + ,        | Reload config.                           |
 | fn + ⌃ + ↑/↓/←/→ | Move to half portion up/down/left/right. |
-| fn + ⌃ + ↑/↓/←/→ | Move to half portion up/down/left/right. |
 | fn + ⌃ + ⇧ + ←/→ | Arrange last two windows left and right. |
 | fn + ⌃ + ⇧ + ↑/↓ | Arrange last two windows up and down.    |
 | fn + ⌃ + f       | Fill screen.                             |
