@@ -45,8 +45,14 @@ option_as_alt = "OnlyLeft"
 blur = true
 
 [window.dimensions]
-columns = 177
-lines = 45
+columns = 160
+lines = 41
+
+# Open up the window positioned in the center of the MacBook Pro 16-inch 2019.
+# TODO: Make it an override only applied if using a MacBook!
+[window.position]
+x = 250
+y = 160
 
 # TODO: I cannot set at the time padding to only the top. Only top is needed because
 # there are the red, yellow and green button from macOS.
@@ -56,12 +62,6 @@ lines = 45
 [window.padding]
 x = 15
 y = 35
-
-# Open up the window positioned in the center of the MacBook Pro 16-inch 2019.
-# TODO: Make it an override only applied if using a MacBook!
-[window.position]
-x = 75
-y = 100
 
 [[keyboard.bindings]]
 action = "ToggleSimpleFullscreen"
