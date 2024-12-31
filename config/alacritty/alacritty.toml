@@ -1,12 +1,7 @@
 [general]
 import = ["~/.config/themes/tokyonight.nvim/extras/alacritty/tokyonight_storm.toml"]
 
-# Start tmux automatically
-#
-#   https://github.com/alacritty/alacritty/issues/2956
-#
-[terminal]
-shell = { program = "zsh", args = ["-l", "-c", "tmux new-session"] }
+# TODO: https://www.reddit.com/r/swaywm/comments/ojxikq/launching_tmux_with_a_new_window_in_alacritty/
 
 [colors]
 transparent_background_colors = true
