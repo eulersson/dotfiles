@@ -19,12 +19,28 @@ Have a look at System Preferences > Keyboard > Shortcuts.
 
 ## Raycast
 
+Raycast doesn't read config files so those shortcuts have to be set after
+installing Raycast under _Raycast settings > Extensions_: _Window Management_
+and _Applications_
+
 | Key             | Action                                          |
 | --------------- | ----------------------------------------------- |
 | Hyper + h/j/k/l | Move window to left/bottom/top/right of screen. |
+| Hyper + ←/→     | Move window to desktop (space) left-right.      |
 | Hyper + f       | Make window full centered.                      |
 | Hyper + o       | Make window medium size centered.               |
 | Hyper + u       | Make window medium large centered.              |
+
+| Key       | Open app             |
+| --------- | -------------------- |
+| Hyper + t | Terminal (Alacritty) |
+| Hyper + a | Arc                  |
+| Hyper + i | Finder               |
+| Hyper + p | KeePassX             |
+| Hyper + m | Mail                 |
+| Hyper + x | Obsidian             |
+| Hyper + r | Reminders            |
+| Hyper + s | Spotify              |
 
 ## Alacritty
 
