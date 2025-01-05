@@ -80,8 +80,9 @@ and _Applications_
 | ⌃ + o                 | Go to older cursor position in jump list (see `:help jump-motions`).  |
 | g c c                 | Comment current line.                                                 |
 | (visual) g c          | Comment block.                                                        |
-| (NeoTree) ?           | Show help.                                                            |
-| (NeoTree) H           | Show hidden files.                                                    |
+| (Neo-tree) ?          | Show help.                                                            |
+| (Neo-tree) H          | Show hidden files.                                                    |
+| (Neo-tree) O          | Open with system application.                                         |
 | ⌃ + ↑/↓/←/→           | Resize panel.                                                         |
 | ⌃ + f                 | Scroll forward floating box.                                          |
 | ⌃ + b                 | Scroll backward floatin box.                                          |
