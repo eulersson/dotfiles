@@ -17,6 +17,12 @@ Have a look at System Preferences > Keyboard > Shortcuts.
 | ⌘ + `                    | Cycle between windows of same application. |
 | ⌃ + ⌘ + Space            | Open symbols and emoji picker.             |
 
+## Finder
+
+| Keys          | Action                          |
+| ------------- | ------------------------------- |
+| ⌘ + ⇧ + Space | Toggle hidden files visibility. |
+
 ## Raycast
 
 Raycast doesn't read config files so those shortcuts have to be set after
