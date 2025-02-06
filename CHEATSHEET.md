@@ -1,6 +1,6 @@
 # Cheat Sheet
 
-`Hyper` key is `⌃ ⌥ ⇧ ⌘` configured in mac with Karabiner-Elements
+`✦` key is `⌃ ⌥ ⇧ ⌘` configured in mac with Karabiner-Elements
 
 ## System Wide
 
@@ -30,24 +30,30 @@ Raycast doesn't read config files so those shortcuts have to be set after
 installing Raycast under _Raycast settings > Extensions_: _Window Management_
 and _Applications_
 
-| Key             | Action                                          |
-| --------------- | ----------------------------------------------- |
-| Hyper + h/j/k/l | Move window to left/bottom/top/right of screen. |
-| Hyper + ←/→     | Move window to desktop (space) left-right.      |
-| Hyper + f       | Make window full centered.                      |
-| Hyper + o       | Make window medium size centered.               |
-| Hyper + u       | Make window medium large centered.              |
+> [!NOTE]
+>
+> `✦` is [Hyper Key](https://manual.raycast.com/hyperkey), in our case Caps Lock (⇪)
 
-| Key       | Open app             |
-| --------- | -------------------- |
-| Hyper + t | Terminal (Alacritty) |
-| Hyper + a | Arc                  |
-| Hyper + i | Finder               |
-| Hyper + p | KeePassX             |
-| Hyper + m | Mail                 |
-| Hyper + x | Obsidian             |
-| Hyper + r | Reminders            |
-| Hyper + s | Spotify              |
+| Key         | Action                                                |
+| ----------- | ----------------------------------------------------- |
+| ✦ + h/j/k/l | Move window to left/bottom/top/right of screen.       |
+| ✦ + ←/→     | Move window to desktop (space) left-right.            |
+| ✦ + f       | Make window full centered.                            |
+| ✦ + u       | Make window large size centered.                      |
+| ✦ + o       | Make window medium size centered.                     |
+| ✦ + c       | Center window.                                        |
+| ✦ + v       | Move and resize window to upper right scren quarter.  |
+| ✦ + b       | Move and resize window to bottom right scren quarter. |
+
+| Key   | Open app             |
+| ----- | -------------------- |
+| ✦ + t | Terminal (Alacritty) |
+| ✦ + a | Arc                  |
+| ✦ + i | Finder               |
+| ✦ + p | KeePassX             |
+| ✦ + m | Mail                 |
+| ✦ + x | Obsidian             |
+| ✦ + r | Reminders            |
 
 ## Alacritty
 

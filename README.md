@@ -120,10 +120,6 @@ Now run `tmux` and install all the tpm plugins within `tmux` with: `⌃ + b, I`.
 > this will create the file that tmux looks for when loading the theme. You
 > won't have to run it again.
 
-### Karabiner
-
-- [Change CAPS key to hyper key (⌃ + ⌥ + ⇧ + ⌘)](https://youtu.be/DBifQv9AYhc?si=H2R514t8adfO6ldy&t=232)
-
 ### Raycast
 
 - [Avoid Raycast key conflicts](https://manual.raycast.com/hotkey)
@@ -140,6 +136,10 @@ Now run `tmux` and install all the tpm plugins within `tmux` with: `⌃ + b, I`.
 - [Search Files](https://manual.raycast.com/troubleshooting/spotlight)
   - You can check that Raycast has access to your files and folders in _System
     Preferences > Security & Privacy > Privacy > Files and Folders_.
+- [Set Hyper Key](https://manual.raycast.com/hyperkey) to be Caps Lock (⇪).
+- Extensions:
+  - [Apple Reminders](https://www.raycast.com/raycast/apple-reminders)
+  - [Unicode Symbols Search](https://www.raycast.com/mmazzarolo/unicode-symbols)
 
 ### Zsh
 
