@@ -1,12 +1,11 @@
 alacritty: (Alacritty) GPU-accelerated terminal emulator
 anki: (Anki) Memory training application
 audacity: (Audacity) Multi-track audio editor and recorder
+balenaetcher: (Etcher) Tool to flash OS images to SD cards & USB drives
 calibre: (calibre) E-books management software
 drawio: (draw.io Desktop) Online diagram software
-foxit-pdf-editor: (Foxit PDF Editor) PDF Editor
 google-cloud-sdk: (Google Cloud SDK) Set of tools to manage resources and applications hosted on Google Cloud
 jdownloader: (JDownloader) Download manager
-karabiner-elements: (Karabiner Elements) Keyboard customiser
 keepassxc: (KeePassXC) Password manager app
 keycastr: (KeyCastr) Open-source keystroke visualiser
 macfuse: (macFUSE) File system integration
@@ -23,3 +22,4 @@ virtualbox: (Oracle VirtualBox) Virtualiser for x86 hardware
 visual-studio-code: (Microsoft Visual Studio Code, VS Code) Open-source code editor
 vlc: (VLC media player) Multimedia player
 wezterm: (WezTerm) GPU-accelerated cross-platform terminal emulator and multiplexer
+wine-stable: (WineHQ-stable) Compatibility layer to run Windows applications

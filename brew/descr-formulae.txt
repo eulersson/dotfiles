@@ -15,6 +15,7 @@ entr: Run arbitrary commands when files change
 fzf: Command-line fuzzy finder written in Go
 get_iplayer: Utility for downloading TV and radio programmes from BBC iPlayer
 gh: GitHub command-line tool
+git: Distributed revision control system
 git-delta: Syntax-highlighting pager for git and diff output
 glow: Render markdown on the CLI
 gnu-getopt: Command-line option parsing utility

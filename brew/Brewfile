@@ -36,6 +36,7 @@ brew "ffmpeg"
 brew "fzf"
 brew "get_iplayer"
 brew "gh"
+brew "git"
 brew "git-delta"
 brew "glow"
 brew "gnu-getopt"
@@ -103,12 +104,11 @@ brew "jesseduffield/horcrux/horcrux"
 cask "alacritty"
 cask "anki"
 cask "audacity"
+cask "balenaetcher"
 cask "calibre"
 cask "drawio"
-cask "foxit-pdf-editor"
 cask "google-cloud-sdk"
 cask "jdownloader"
-cask "karabiner-elements"
 cask "keepassxc"
 cask "keycastr"
 cask "macfuse"
@@ -125,21 +125,17 @@ cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
 cask "wezterm"
+cask "wine-stable"
 mas "Canva", id: 897446215
-mas "Disk Speed Test", id: 425264550
-mas "EtreCheck", id: 1423715984
 mas "FileZilla Pro", id: 1298486723
-mas "GLview Extensions Viewer", id: 444052073
-mas "GPX Editor", id: 924782627
 mas "iA Writer", id: 775737590
-mas "iCircuit", id: 454347770
 mas "Keynote", id: 409183694
 mas "NordVPN", id: 905953485
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "QR Capture", id: 1369524274
 mas "The Unarchiver", id: 425424353
 mas "Toggl Track", id: 1291898086
-mas "Wake Up Time", id: 495945638
 mas "Xcode", id: 497799835
 vscode "angular.ng-template"
 vscode "catppuccin.catppuccin-vsc"
