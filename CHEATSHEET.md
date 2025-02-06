@@ -16,6 +16,7 @@ Have a look at System Preferences > Keyboard > Shortcuts.
 | ⌘ + Space                | Open Raycast spotlight.                    |
 | ⌘ + `                    | Cycle between windows of same application. |
 | ⌃ + ⌘ + Space            | Open symbols and emoji picker.             |
+| ⌃ + ←/→                  | Change desktop (space) left-right.         |
 
 ## Finder
 
