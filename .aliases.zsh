@@ -23,7 +23,8 @@ alias vilastoxextcrash='vi $(lastoxextcrash)'
 alias sgptask='echo -n "> " && read question && sgpt "$(echo $question)"'
 
 # Misc
-alias dlytaudio='yt-dlp --ignore-errors --output "%(title)s.%(ext)s" --extract-audio --audio-format mp3'
+alias dlytaudio='yt-dlp --extract-audio --audio-quality 192k --audio-format mp3 '
+alias dlytpl='yt-dlp -extract-audio --audio-format mp3 --audio-quality 192k --output "%(playlist_index)s %(title)s.%(ext)s"'
 
 # We might need to build some tools against our version of Python, for that we need
 # to install the Python.framework which provides the header
