@@ -133,14 +133,16 @@ and _Applications_
 
 ### Editor
 
-| Keys       | Action                         |
-| ---------- | ------------------------------ |
-| x          | Delete character under cursor. |
-| (visual) U | Convert to uppercase.          |
-| (visual) u | Convert to lowercase.          |
-| ~          | Toggle case char under cursor. |
-| g u Space  | Lowercase char under cursor.   |
-| g U Space  | uppercase char under cursor.   |
+| Keys       | Action                                            |
+| ---------- | ------------------------------------------------- |
+| x          | Delete character under cursor.                    |
+| (visual) U | Convert to uppercase.                             |
+| (visual) u | Convert to lowercase.                             |
+| ~          | Toggle case char under cursor.                    |
+| g u Space  | Lowercase char under cursor.                      |
+| g U Space  | uppercase char under cursor.                      |
+| ya{char}   | Copy contents inside `{char}` including `{char}`. |
+| yi{char}   | Copy contents inside `{char}` excluding `{char}`. |
 
 ### LSP
 
@@ -300,7 +302,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 | Keys                    | Action                                           |
 | ----------------------- | ------------------------------------------------ |
-| ⌃ + ↑/↓/←/→             | Navigate panels.                                 |
+| ⌃ + ↑/↓/←/→             | Navigate panels without losing zoom state.       |
 | ⌃ + b, "                | Split vertically.                                |
 | ⌃ + b, %                | Split horizontally.                              |
 | ⌃ + b, z                | Toggle zoom on current panel.                    |
