@@ -57,6 +57,7 @@ Some of the tools included in the brew file:
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------- |
 | anki               | Memory training application.                                                                                            |
 | asciinema          | Record and share terminal sessions.                                                                                     |
+| cloudflared        | Cloudflare local tunnel proxy.                                                                                          |
 | dark-notify        | Watcher for macOS 10.14+ light/dark mode changes.                                                                       |
 | difftastic         | Diff that understands syntax.                                                                                           |
 | fzf                | Command-line fuzzy finder written in Go.                                                                                |

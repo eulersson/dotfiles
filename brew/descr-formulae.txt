@@ -3,6 +3,7 @@ ansible: Automate deployment, configuration, and upgrading
 antigen: Plugin manager for zsh, inspired by oh-my-zsh and vundle
 asciinema: Record and share terminal sessions
 awscli: Official Amazon AWS command-line interface
+cloudflared: Cloudflare Tunnel client (formerly Argo Tunnel)
 cmake: Cross-platform make
 cmatrix: Console Matrix
 dark-notify: Watcher for macOS 10.14+ light/dark mode changes
@@ -41,6 +42,7 @@ mat2: Metadata anonymization toolkit
 neovim: Ambitious Vim-fork focused on extensibility and agility
 nmap: Port scanning utility for large networks
 numpy: Package for scientific computing with Python
+pandoc: Swiss-army knife of markup format conversion
 podman: Tool for managing OCI containers and pods
 portaudio: Cross-platform library for audio I/O
 postgresql@16: Object-relational database system
