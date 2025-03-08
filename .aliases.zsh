@@ -9,16 +9,6 @@ alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}
 alias dkclean='docker rmi $(docker images -aq -f "dangling=true")'
 alias dkdigioc='docker-machine create --driver digitalocean --digitalocean-access-token `cat $HOME/.tokens/.do`'
 
-# Ox
-alias ox='$HOME/Shadow/Work/ox/bin/ox -c $HOME/.oxrc.tui'
-alias oxguibuildinstall='make app -j8 && sudo rm -rf /Applications/Ox.app && mv target/darwin_app/Ox.app /Applications/'
-alias lastsixcrash='ls -t ~/.six/six_crash_report_* | head -n 1'
-alias visixcrash='vi $(lastsixcrash)'
-alias lastoxcrash='ls -t ~/.ox/ox_crash_report_* | head -n 1'
-alias vioxcrash='vi $(lastoxcrash)'
-alias lastoxextcrash='ls -t ~/.ox/.extension/ox_crash_report_* | head -n 1'
-alias vilastoxextcrash='vi $(lastoxextcrash)'
-
 # Does not leave history trace. If you want to follow a conversation pass `--chat <id>`
 alias sgptask='echo -n "> " && read question && sgpt "$(echo $question)"'
 
