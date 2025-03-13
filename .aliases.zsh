@@ -14,8 +14,8 @@ alias dkdigioc='docker-machine create --driver digitalocean --digitalocean-acces
 alias sgptask='echo -n "> " && read question && sgpt "$(echo $question)"'
 
 # Misc
-alias dlytaudio='yt-dlp --extract-audio --audio-format mp3 '
-alias dlytpl='yt-dlp -extract-audio --audio-format mp3 --output "%(playlist_index)s %(title)s.%(ext)s"'
+alias yt-dlp-mp3='yt-dlp --extract-audio --audio-format mp3 '
+alias yt-dlp-mp3-pl='yt-dlp -extract-audio --audio-format mp3 --output "%(playlist_index)s %(title)s.%(ext)s"'
 
 # We might need to build some tools against our version of Python, for that we need
 # to install the Python.framework which provides the header
