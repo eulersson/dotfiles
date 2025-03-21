@@ -92,6 +92,10 @@ Symlink the configuration folders:
 
 ```sh
 cd ~
+
+touch .env.secrets
+chmod 600 .env.secrets
+
 ln -s $HOME/.dotfiles/.markdownlint-cli2.yaml .
 
 mkdir -p $HOME/.config
