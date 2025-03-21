@@ -107,6 +107,12 @@ cd $HOME
 ln -s .dotfiles/*.zsh* .
 ```
 
+Install an agent that detects changes on dark-light macOS preference and update Alacritty theme.
+
+```sh
+./config/alacritty/create-launch-agent.sh
+```
+
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm):
 
 ```sh

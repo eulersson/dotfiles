@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/themes/tokyonight.nvim/extras/alacritty/tokyonight_storm.toml"]
+import = ["~/.config/themes/tokyonight.nvim/extras/alacritty/tokyonight_storm.toml"] # theme
 
 # TODO: https://www.reddit.com/r/swaywm/comments/ojxikq/launching_tmux_with_a_new_window_in_alacritty/
 
