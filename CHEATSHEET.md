@@ -34,16 +34,16 @@ and _Applications_
 >
 > `✦` is [Hyper Key](https://manual.raycast.com/hyperkey), in our case Caps Lock (⇪)
 
-| Key         | Action                                                |
-| ----------- | ----------------------------------------------------- |
-| ✦ + h/j/k/l | Move window to left/bottom/top/right of screen.       |
-| ✦ + ←/→     | Move window to desktop (space) left-right.            |
-| ✦ + f       | Make window full centered.                            |
-| ✦ + u       | Make window large size centered.                      |
-| ✦ + o       | Make window medium size centered.                     |
-| ✦ + c       | Center window.                                        |
-| ✦ + v       | Move and resize window to upper right scren quarter.  |
-| ✦ + b       | Move and resize window to bottom right scren quarter. |
+| Key         | Action                                                               |
+| ----------- | -------------------------------------------------------------------- |
+| ✦ + h/j/k/l | Move window to left/bottom/top/right of screen.                      |
+| ✦ + ←/→     | Move window to desktop (space) left-right.                           |
+| ✦ + f       | Make window full centered.                                           |
+| ✦ + u       | Make window large size centered.                                     |
+| ✦ + o       | Make window medium size centered.                                    |
+| ✦ + c       | Center window.                                                       |
+| ✦ + v       | (v for video) Move and resize window to upper right screen quarter.  |
+| ✦ + b       | (b for below) Move and resize window to bottom right screen quarter. |
 
 | Key   | Open app             |
 | ----- | -------------------- |
@@ -54,6 +54,7 @@ and _Applications_
 | ✦ + m | Mail                 |
 | ✦ + x | Obsidian             |
 | ✦ + r | Reminders            |
+| ✦ + e | Calendar             |
 
 ## Alacritty
 

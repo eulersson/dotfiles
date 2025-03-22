@@ -152,6 +152,16 @@ Now run `tmux` and install all the tpm plugins within `tmux` with: `⌃ + b, I`.
   - [Apple Reminders](https://www.raycast.com/raycast/apple-reminders)
   - [Unicode Symbols Search](https://www.raycast.com/mmazzarolo/unicode-symbols)
 
+Configuration is backed up and kept in private iCloud. It does not allow
+keeping a configuration file that's safe for version tracking. Some of the
+options I set up is:
+
+- All the shortcuts in [CHEATSHEET.md](/CHEATSHEET.md#alacritty).
+- Extensions
+  - Apple Reminders
+  - Arc
+  - GitHub
+
 ### Zsh
 
 Now make `zsh` your default shell as explained [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default):
