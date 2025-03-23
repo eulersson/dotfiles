@@ -161,6 +161,7 @@ options I set up is:
   - Apple Reminders
   - Arc
   - GitHub
+  - Toggle Track
 
 ### Zsh
 
