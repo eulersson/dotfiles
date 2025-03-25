@@ -55,6 +55,7 @@ and _Applications_
 | ✦ + x | Obsidian             |
 | ✦ + r | Reminders            |
 | ✦ + e | Calendar             |
+| ✦ + w | Preview              |
 
 ## Alacritty
 
