@@ -202,17 +202,18 @@ and _Applications_
 
 Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`Tab`)
 
-| Keys      | Action                                                             |
-| --------- | ------------------------------------------------------------------ |
-| g ?       | Keymap overview.                                                   |
-| g, ⌃ + x  | Cycle layouts.                                                     |
-| Space, b  | Toggle sidebar.                                                    |
-| Space c o | (in conflict) Choose ours.                                         |
-| Space c t | (in conflict) Choose theirs.                                       |
-| ]x        | Jump to the next conflict.                                         |
-| [x        | Jump to the previous conflict.                                     |
-| g f       | Open the file in the previous tabpage.                             |
-| ⌃ + f/b   | Scroll code forward/backward (useful to do it from files sidebar). |
+| Keys        | Action                                                             |
+| ----------- | ------------------------------------------------------------------ |
+| g ?         | Keymap overview.                                                   |
+| g, ⌃ + x    | Cycle layouts.                                                     |
+| Space, b    | Toggle sidebar.                                                    |
+| Space c o   | (in conflict) Choose ours.                                         |
+| Space c t   | (in conflict) Choose theirs.                                       |
+| ]x          | Jump to the next conflict.                                         |
+| [x          | Jump to the previous conflict.                                     |
+| g f         | Open the file in the previous tabpage.                             |
+| ⌃ + f/b     | Scroll code forward/backward (useful to do it from files sidebar). |
+| Space Tab d | Close (basically because it opened into a tab).                    |
 
 ### LazyGit
 
@@ -259,7 +260,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | ⌃ + y   | Copy last answer.                                                          |
 | ⌃ + o   | Toggle settings window.                                                    |
 | ⌃ + h   | Toggle help window.                                                        |
-| ⌃ + TAB | Cycle over windows.                                                        |
+| ⌃ + Tab | Cycle over windows.                                                        |
 | ⌃ + f   | Cycle over modes (center, stick to right).                                 |
 | ⌃ + c   | Close chat window.                                                         |
 | ⌃ + p   | Toggle sessions list.                                                      |
@@ -336,7 +337,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file |
 | gh                                          | GitHub Copilot                                                       |
 | ⌃ + r                                       | Browse terminal history using fuzzy search fzf.                      |
-| cd \*\*TAB                                  | Use fzf to fuzzy search directory to jump to.                        |
+| cd \*\*Tab                                  | Use fzf to fuzzy search directory to jump to.                        |
 | fc -AI                                      | Save history of current Zsh session                                  |
 
 ### Shell GPT
@@ -392,7 +393,7 @@ sgpt <<< "What is the best way to learn shell redirects?"
 | e/E                   | Jump to previous and next error.    |
 | m                     | Mark log line.                      |
 | c                     | Copy marked log lines.              |
-| TAB                   | Move to files and filters sections. |
+| Tab                   | Move to files and filters sections. |
 | /                     | Search.                             |
 | :hide-fields log_time | Hide the time field.                |
 
