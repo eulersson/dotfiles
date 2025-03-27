@@ -140,6 +140,7 @@ and _Applications_
 | x                 | Delete character under cursor.                                                 |
 | (visual) U        | Convert to uppercase.                                                          |
 | (visual) u        | Convert to lowercase.                                                          |
+| ⌃ + '             | Open marks.                                                                    |
 | ~                 | Toggle case char under cursor.                                                 |
 | g u Space         | Lowercase char under cursor.                                                   |
 | g U Space         | uppercase char under cursor.                                                   |
