@@ -135,16 +135,17 @@ and _Applications_
 
 ### Editor
 
-| Keys       | Action                                            |
-| ---------- | ------------------------------------------------- |
-| x          | Delete character under cursor.                    |
-| (visual) U | Convert to uppercase.                             |
-| (visual) u | Convert to lowercase.                             |
-| ~          | Toggle case char under cursor.                    |
-| g u Space  | Lowercase char under cursor.                      |
-| g U Space  | uppercase char under cursor.                      |
-| ya{char}   | Copy contents inside `{char}` including `{char}`. |
-| yi{char}   | Copy contents inside `{char}` excluding `{char}`. |
+| Keys              | Action                                                                         |
+| ----------------- | ------------------------------------------------------------------------------ |
+| x                 | Delete character under cursor.                                                 |
+| (visual) U        | Convert to uppercase.                                                          |
+| (visual) u        | Convert to lowercase.                                                          |
+| ~                 | Toggle case char under cursor.                                                 |
+| g u Space         | Lowercase char under cursor.                                                   |
+| g U Space         | uppercase char under cursor.                                                   |
+| ya{char}          | Copy contents inside `{char}` including `{char}`.                              |
+| yi{char}          | Copy contents inside `{char}` excluding `{char}`.                              |
+| .,$s/this/that/gI | Replace occurrences of `this` with `that` from current line until end of file. |
 
 ### LSP
 
