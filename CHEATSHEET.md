@@ -208,6 +208,8 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | g ?         | Keymap overview.                                                   |
 | g, ⌃ + x    | Cycle layouts.                                                     |
 | Space, b    | Toggle sidebar.                                                    |
+| Tab         | Jumps to next file.                                                |
+| ⇧ Tab       | Jumps to previous file.                                            |
 | Space c o   | (in conflict) Choose ours.                                         |
 | Space c t   | (in conflict) Choose theirs.                                       |
 | ]x          | Jump to the next conflict.                                         |
