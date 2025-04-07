@@ -26,8 +26,11 @@ function list_files_installed_by_pkg() {
   fi
 }
 
-function who_provides() {
-  echo todo
+
+function compress_images() {
+  mkdir -p output && for file in *.(png|jpg|jpeg|tiff|heic)(N); do
+    convert "$file" -resize 700x700\> -quality 85 "output/${file%.*}.jpg"
+  done
 }
 
 # fkill - kill process
