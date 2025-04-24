@@ -27,6 +27,21 @@ function list_files_installed_by_pkg() {
 }
 
 
+function trim_audio() {
+  if [[ $# -ne 4 ]]; then
+    echo "Usage: trim_audio <input_file> <start_time> <end_time> <output_file>"
+    return 1
+  fi
+
+  local input_file="$1"
+  local start_time="$2"
+  local end_time="$3"
+  local output_file="$4"
+
+  ffmpeg -i "$input_file" -ss "$start_time" -to "$end_time" -b:a 192k "$output_file"
+}
+
+
 function compress_images() {
   mkdir -p output && for file in *.(png|jpg|jpeg|tiff|heic|HEIC)(N); do
     convert "$file" -resize 1200x1200\> -quality 65 "output/${file%.*}.jpg"
