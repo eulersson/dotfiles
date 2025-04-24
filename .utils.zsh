@@ -28,8 +28,8 @@ function list_files_installed_by_pkg() {
 
 
 function compress_images() {
-  mkdir -p output && for file in *.(png|jpg|jpeg|tiff|heic)(N); do
-    convert "$file" -resize 700x700\> -quality 85 "output/${file%.*}.jpg"
+  mkdir -p output && for file in *.(png|jpg|jpeg|tiff|heic|HEIC)(N); do
+    convert "$file" -resize 1200x1200\> -quality 65 "output/${file%.*}.jpg"
   done
 }
 
