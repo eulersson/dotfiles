@@ -82,6 +82,44 @@ processHorizontalVideoForInstagram() {
   eval $cmd
 }
 
+to_simple_mp3() {
+  if [ $# -lt 1 ]; then
+    echo "Usage: whatsapp_like_video_compress input.mov"
+    return 1
+  fi
+
+  local input="$1"
+  local basename="${input%.*}"
+
+  ffmpeg -i "$input" -b:a 192k -ac 1 "$basename.mp3"
+}
+
+whatsapp_like_video_compress() {
+  if [ $# -lt 1 ]; then
+    echo "Usage: whatsapp_like_video_compress input.mov"
+    return 1
+  fi
+
+  local input="$1"
+  local dir="${input:h}"                # Input file's directory
+  local filename="${input:t}"          # Input file's name
+  local basename="${filename%.*}"      # Strip extension
+  local extension="${filename##*.}"    # Just the extension
+
+  local output_dir="${dir}/compressed"
+  mkdir -p "$output_dir"
+
+  local output="${output_dir}/${basename}.${extension}"
+
+  ffmpeg -i "$input" \
+    -vf "scale='if(gt(iw,ih),-2,480)':'if(gt(iw,ih),480,-2)'" \
+    -metadata:s:v rotate=0 \
+    -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p -b:v 1200k \
+    -c:a aac -b:a 62k -ar 44100 -ac 2 \
+    -movflags +faststart \
+    "$output"
+}
+
 # Running tests upon file changes.
 watchRunTest() {
  cmd="ulimit -n 10240 && \
