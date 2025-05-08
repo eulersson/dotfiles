@@ -15,8 +15,41 @@ map(
   "n",
   "<leader>fl",
   "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-  { desc = "potato " }
+  { desc = "Live grep with args" }
 )
 
 -- Select all.
 map("n", "<C-a>", "gg<S-v>G")
+
+-- Function to copy file path with line number or range
+local function copy_file_path_with_line()
+  local path = vim.fn.expand("%")
+  local start_line, end_line
+
+  if vim.fn.mode() == "v" or vim.fn.mode() == "V" then
+    -- Get visual selection range
+    start_line = vim.fn.line("v")
+    end_line = vim.fn.line(".")
+    if start_line > end_line then
+      start_line, end_line = end_line, start_line
+    end
+  else
+    -- Just the current line
+    start_line = vim.fn.line(".")
+    end_line = start_line
+  end
+
+  local full = path .. ":" .. start_line
+  if start_line ~= end_line then
+    full = full .. "-" .. end_line
+  end
+
+  vim.fn.setreg("+", full)
+  print("Copied: " .. full)
+end
+
+-- Normal mode mapping
+map("n", "<leader>ci", copy_file_path_with_line, { desc = "Copy relative path with line number" })
+
+-- Visual mode mapping
+map("v", "<leader>ci", copy_file_path_with_line, { desc = "Copy relative path with line range" })
