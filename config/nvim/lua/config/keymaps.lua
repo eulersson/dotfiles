@@ -53,3 +53,19 @@ map("n", "<leader>ci", copy_file_path_with_line, { desc = "Copy relative path wi
 
 -- Visual mode mapping
 map("v", "<leader>ci", copy_file_path_with_line, { desc = "Copy relative path with line range" })
+
+-- Copy diagnostic
+map("n", "<leader>cd", function()
+  local diagnostics = vim.diagnostic.get()
+  local line = vim.api.nvim_win_get_cursor(0)[1] - 1
+
+  for _, diagnostic in ipairs(diagnostics) do
+    if diagnostic.lnum == line then
+      vim.fn.setreg("+", diagnostic.message)
+      print("Copied diagnostic to clipboard")
+      return
+    end
+  end
+
+  print("No diagnostic on this line")
+end, { desc = "Copy diagnostic message to clipboard" })
