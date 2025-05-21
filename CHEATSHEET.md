@@ -16,7 +16,6 @@ Have a look at System Preferences > Keyboard > Shortcuts.
 | ⌘ + Space                | Open Raycast spotlight                    |
 | ⌘ + `                    | Cycle between windows of same application |
 | ⌃ + ⌘ + Space            | Open symbols and emoji picker             |
-| ⌃ + ←/→                  | Change desktop (space) left-right         |
 
 ## Finder
 
@@ -78,7 +77,7 @@ and _Applications_
 | --------- | ----------------------------- |
 | ⌘ + ⇧ + . | Toggle show/hide hidden files |
 
-## Neovim (LazyVim)
+## LazyVim (Neovim)
 
 <https://www.lazyvim.org/keymaps>
 
@@ -105,7 +104,7 @@ and _Applications_
 | ⌃ + y                 | Scroll text buffer up                                               |
 | (symbols outline) h/l | Expand/collapse symbol child items                                  |
 | Space b l/r           | Delete buffers on the `l`eft or `r`ight                             |
-| Control /             | Toggle terminal                                                     |
+| ⌃ ⇧ \_                | Toggle terminal                                                     |
 | ]h                    | Jump to the next git hunk                                           |
 | [h                    | Jump to the previous git hunk                                       |
 | m{a-zA-Z}             | Set mark (uppercase is global) (see `:help mark-motions`)           |
