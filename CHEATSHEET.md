@@ -82,6 +82,7 @@ and _Applications_
 <https://www.lazyvim.org/keymaps>
 
 If you want to check all the maps you can use `:map` and search through it.
+uajsfo aifj afo
 
 ### Navigation
 
@@ -127,15 +128,11 @@ If you want to check all the maps you can use `:map` and search through it.
 
 ### Code Folding
 
-| Keys | Action                         |
-| ---- | ------------------------------ |
-| za   | Toggle open/close code fold    |
-| zc   | Close code fold                |
-| zo   | Open code fold                 |
-| zr   | Expand all outer folds         |
-| zR   | Expand all folds recursively   |
-| zm   | Collapse all outer folds       |
-| zM   | Collapse all folds recursively |
+| Keys | Action                                          |
+| ---- | ----------------------------------------------- |
+| za   | Toggle open/close code fold (recursively: `zA`) |
+| zr   | Expand all outer folds (recursively: `zR`)      |
+| zm   | Collapse all outer folds (recursively: `zM`)    |
 
 ### Help
 
