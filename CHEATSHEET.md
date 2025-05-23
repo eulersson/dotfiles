@@ -108,6 +108,8 @@ and _Applications_
 | ]h                    | Jump to the next git hunk                                           |
 | [h                    | Jump to the previous git hunk                                       |
 | m{a-zA-Z}             | Set mark (uppercase is global) (see `:help mark-motions`)           |
+| :delm m{a-zA-Z}       | Delete mark                                                         |
+| :delm !               | Delete all marks                                                    |
 | `{a-zA-Z}             | Navigate to mark (uppercase is global) (see `:help mark-motions`)   |
 | Space s m             | (telescope) Select jump mark where to jump to                       |
 | "                     | Show registers                                                      |
