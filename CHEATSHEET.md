@@ -81,6 +81,8 @@ and _Applications_
 
 <https://www.lazyvim.org/keymaps>
 
+If you want to check all the maps you can use `:map` and search through it.
+
 ### Navigation
 
 | Keys                  | Action                                                              |
