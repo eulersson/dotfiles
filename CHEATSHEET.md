@@ -121,6 +121,18 @@ and _Applications_
 | g f                   | Go to file under cursor                                             |
 | Space :               | (telescope) Show command history                                    |
 
+### Code Folding
+
+| Keys | Action                         |
+| ---- | ------------------------------ |
+| za   | Toggle open/close code fold    |
+| zc   | Close code fold                |
+| zo   | Open code fold                 |
+| zr   | Expand all outer folds         |
+| zR   | Expand all folds recursively   |
+| zm   | Collapse all outer folds       |
+| zM   | Collapse all folds recursively |
+
 ### Help
 
 | Keys      | Action                                                                  |
