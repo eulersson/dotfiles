@@ -273,30 +273,6 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | (insert mode) ⌃ + / | Show help                                         |
 | (insert mode) ⌃ + q | Send filtered selection to quickfix (lower panel) |
 
-### ChatGPT
-
-<https://github.com/jackMort/ChatGPT.nvim?tab=readme-ov-file#interactive-popup>
-
-| Keys    | Action                                                                    |
-| ------- | ------------------------------------------------------------------------- |
-| ⌃ + ⏎   | Submit                                                                    |
-| ⌃ + y   | Copy last answer                                                          |
-| ⌃ + o   | Toggle settings window                                                    |
-| ⌃ + h   | Toggle help window                                                        |
-| ⌃ + Tab | Cycle over windows                                                        |
-| ⌃ + f   | Cycle over modes (center, stick to right)                                 |
-| ⌃ + c   | Close chat window                                                         |
-| ⌃ + p   | Toggle sessions list                                                      |
-| ⌃ + u   | Scroll up chat window                                                     |
-| ⌃ + d   | Scroll down chat window                                                   |
-| ⌃ + k   | Copy code from last answer                                                |
-| ⌃ + n   | Start new session                                                         |
-| ⌃ + r   | Draft message (create message without submitting it to server)            |
-| ⌃ + r   | Switch role (switch between user and assistant role to define a workflow) |
-| ⌃ + s   | Toggle system message window                                              |
-| ⌃ + i   | Use response as input                                                     |
-| ⌃ + d   | View the diff between left and right panes and use diff-mode commands     |
-
 ### Commands
 
 | Command            | Action                                             |
