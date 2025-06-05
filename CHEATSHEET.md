@@ -231,6 +231,13 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | ⌃ + f/b     | Scroll code forward/backward (useful to do it from files sidebar) |
 | Space Tab d | Close (basically because it opened into a tab)                    |
 
+### CodeCompanion
+
+| Keys | Action        |
+| ---- | ------------- |
+| ga   | Accept change |
+| gr   | Cancel change |
+
 ### LazyGit
 
 | Keys                | Action                                                                                  |
