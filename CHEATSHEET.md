@@ -321,6 +321,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 | Keys                    | Action                                           |
 | ----------------------- | ------------------------------------------------ |
+| ⌃ + b, r                | Reload tmux config                     |
 | ⌃ + ↑/↓/←/→             | Navigate panels without losing zoom state        |
 | ⌃ + b, "                | Split vertically                                 |
 | ⌃ + b, %                | Split horizontally                               |
@@ -345,6 +346,10 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | ⌃ + b, U                | (tpm) Updates plugins                            |
 | ⌃ + b, ⌥ + u            | (tpm) Removes plugins not in the list            |
 | ⇧ + click + drag, ⌘ + C | Select and copy from tmux output buffer          |
+| ⌃ + b, ,                | Rename window                            |
+| ⌃ + b, .                | Move window                            |
+| ⌃ + b, \<                | Window management context menu                            |
+| ⌃ + b, \>                | Pane management context menu                            |
 
 ## zsh
 
