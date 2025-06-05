@@ -173,6 +173,7 @@ uajsfo aifj afo
 | K K       | Enter documentation box                  |
 | Space c s | Open symbols outline                     |
 | Space u f | Disable autoformat                       |
+| Space c f | Format current buffer                       |
 | Space x x | Show diagnostics in bottom pane          |
 | Space u w | Toggle word wrap                         |
 | Space u h | Toggle inline hints                      |
