@@ -278,6 +278,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | Command            | Action                                             |
 | ------------------ | -------------------------------------------------- |
 | `:.,$s/foo/bar/gc` | From the current line onwards replace foo with bar |
+| `:ReloadAll` | Reloads files from disk (useful when you change them from git) |
 
 ### Search
 

@@ -12,3 +12,8 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.shiftwidth = 4
   end,
 })
+
+--ReloadAll: Reloads all open buffers in Neovim.
+vim.api.nvim_create_user_command("ReloadAll", function()
+  vim.cmd("bufdo checktime")
+end, {})
