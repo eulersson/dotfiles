@@ -160,6 +160,13 @@ uajsfo aifj afo
 | yi{char}          | Copy contents inside `{char}` excluding `{char}`                              |
 | .,$s/this/that/gI | Replace occurrences of `this` with `that` from current line until end of file |
 
+#### Project-Wide Search and Replace
+
+`Space /` (live grep with args), type the regex, then open results as a quick
+list `⌃ + q`, then run `:cdo s/this/that/gIc` (which runs the search and
+replace for each entry in the quick fix list). Finally you can save all results
+with `:wa`.
+
 ### LSP
 
 | Keys      | Action                                   |
@@ -173,7 +180,7 @@ uajsfo aifj afo
 | K K       | Enter documentation box                  |
 | Space c s | Open symbols outline                     |
 | Space u f | Disable autoformat                       |
-| Space c f | Format current buffer                       |
+| Space c f | Format current buffer                    |
 | Space x x | Show diagnostics in bottom pane          |
 | Space u w | Toggle word wrap                         |
 | Space u h | Toggle inline hints                      |
@@ -276,10 +283,10 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 ### Commands
 
-| Command            | Action                                             |
-| ------------------ | -------------------------------------------------- |
-| `:.,$s/foo/bar/gc` | From the current line onwards replace foo with bar |
-| `:ReloadAll` | Reloads files from disk (useful when you change them from git) |
+| Command            | Action                                                         |
+| ------------------ | -------------------------------------------------------------- |
+| `:.,$s/foo/bar/gc` | From the current line onwards replace foo with bar             |
+| `:ReloadAll`       | Reloads files from disk (useful when you change them from git) |
 
 ### Search
 
@@ -306,7 +313,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 | Keys                    | Action                                           |
 | ----------------------- | ------------------------------------------------ |
-| ⌃ + b, r                | Reload tmux config                     |
+| ⌃ + b, r                | Reload tmux config                               |
 | ⌃ + ↑/↓/←/→             | Navigate panels without losing zoom state        |
 | ⌃ + b, "                | Split vertically                                 |
 | ⌃ + b, %                | Split horizontally                               |
@@ -331,10 +338,10 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | ⌃ + b, U                | (tpm) Updates plugins                            |
 | ⌃ + b, ⌥ + u            | (tpm) Removes plugins not in the list            |
 | ⇧ + click + drag, ⌘ + C | Select and copy from tmux output buffer          |
-| ⌃ + b, ,                | Rename window                            |
-| ⌃ + b, .                | Move window                            |
-| ⌃ + b, \<                | Window management context menu                            |
-| ⌃ + b, \>                | Pane management context menu                            |
+| ⌃ + b, ,                | Rename window                                    |
+| ⌃ + b, .                | Move window                                      |
+| ⌃ + b, \<               | Window management context menu                   |
+| ⌃ + b, \>               | Pane management context menu                     |
 
 ## zsh
 
