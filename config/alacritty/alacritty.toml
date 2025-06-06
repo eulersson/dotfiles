@@ -73,49 +73,46 @@ action = "ClearHistory"
 key = "Y"
 mods = "Super|Control|Shift|Alt"
 
-# Opacity 100%
 [[keyboard.bindings]]
 key = "1"
 mods = "Super|Control|Shift|Alt"
 command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=1"] }
 
-# Opacity 80%
 [[keyboard.bindings]]
 key = "2"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.9"] }
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.95"] }
 
-# Opacity 60%
 [[keyboard.bindings]]
 key = "3"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.7"] }
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.9"] }
 
-# Opacity 50%
 [[keyboard.bindings]]
 key = "4"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.6"] }
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.7"] }
 
-# Opacity 40%
 [[keyboard.bindings]]
 key = "5"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.4"] }
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.6"] }
 
-# Opacity 20%
 [[keyboard.bindings]]
 key = "6"
 mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.4"] }
+
+[[keyboard.bindings]]
+key = "7"
+mods = "Super|Control|Shift|Alt"
 command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.2"] }
 
-# Blur on
 [[keyboard.bindings]]
 key = "9"
 mods = "Super|Control|Shift|Alt"
 command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.blur=true"] }
 
-# Blur off
 [[keyboard.bindings]]
 key = "0"
 mods = "Super|Control|Shift|Alt"
