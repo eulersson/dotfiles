@@ -159,13 +159,7 @@ uajsfo aifj afo
 | ya{char}          | Copy contents inside `{char}` including `{char}`                              |
 | yi{char}          | Copy contents inside `{char}` excluding `{char}`                              |
 | .,$s/this/that/gI | Replace occurrences of `this` with `that` from current line until end of file |
-
-#### Project-Wide Search and Replace
-
-`Space /` (live grep with args), type the regex, then open results as a quick
-list `⌃ + q`, then run `:cdo s/this/that/gIc` (which runs the search and
-replace for each entry in the quick fix list). Finally you can save all results
-with `:wa`.
+| Space u h         | Toggle inlay hints                                                            |
 
 ### LSP
 
@@ -298,7 +292,9 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | Space /                 | Live grep with args (see [telescope-live-grep-args.nvim](https://github.com/nvim-telescope/telescope-live-grep-args.nvim)) |
 | Space Spacee            | Find files                                                                                                                 |
 
-### Search Replace Visual
+### Workflows
+
+#### Search Replace Visual
 
 1. Visually select the text with `v` and then movement commands.
 2. Yank the selected text with `y`. That puts it on register `"`.
@@ -308,6 +304,13 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 6. Type `/bar/gc` and press Enter.
 
 <https://vi.stackexchange.com/a/6694>
+
+#### Project-Wide Search and Replace
+
+`Space /` (live grep with args), type the regex, then open results as a quick
+list `⌃ + q`, then run `:cdo s/this/that/gIc` (which runs the search and
+replace for each entry in the quick fix list). Finally you can save all results
+with `:wa`.
 
 ## tmux
 
