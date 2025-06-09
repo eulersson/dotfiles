@@ -169,25 +169,27 @@ with `:wa`.
 
 ### LSP
 
-| Keys      | Action                                   |
-| --------- | ---------------------------------------- |
-| Space c s | Open symbols outline                     |
-| ⌃ + Space | Stimulate autocompletion for a candidate |
-| g d       | Go to definition                         |
-| g r       | Go to references                         |
-| g I       | Go to implementations                    |
-| K         | Show documentation                       |
-| K K       | Enter documentation box                  |
-| Space c s | Open symbols outline                     |
-| Space u f | Disable autoformat                       |
-| Space c f | Format current buffer                    |
-| Space x x | Show diagnostics in bottom pane          |
-| Space u w | Toggle word wrap                         |
-| Space u h | Toggle inline hints                      |
-| ]d        | Next diagnostic                          |
-| [d        | Previous diagnostic                      |
-| ]e        | Next error                               |
-| [e        | Previous error                           |
+| Keys         | Action                                   |
+| ------------ | ---------------------------------------- |
+| Space c s    | Open symbols outline                     |
+| ⌃ + Space    | Stimulate autocompletion for a candidate |
+| g d          | Go to definition                         |
+| g r          | Go to references                         |
+| g I          | Go to implementations                    |
+| K            | Show documentation                       |
+| K K          | Enter documentation box                  |
+| ⌥ + M        | Show function signature                  |
+| ⌥ + M, ⌥ + M | Enter function signature box             |
+| Space c s    | Open symbols outline                     |
+| Space u f    | Disable autoformat                       |
+| Space c f    | Format current buffer                    |
+| Space x x    | Show diagnostics in bottom pane          |
+| Space u w    | Toggle word wrap                         |
+| Space u h    | Toggle inline hints                      |
+| ]d           | Next diagnostic                          |
+| [d           | Previous diagnostic                      |
+| ]e           | Next error                               |
+| [e           | Previous error                           |
 
 ### Tests
 
