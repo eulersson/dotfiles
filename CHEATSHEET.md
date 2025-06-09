@@ -90,6 +90,8 @@ uajsfo aifj afo
 | --------------------- | ------------------------------------------------------------------- |
 | H                     | Go to left buffer                                                   |
 | L                     | Go to right buffer                                                  |
+| ⌥ + H                 | Move buffer leftwards in topbar                                     |
+| ⌥ + L                 | Move buffer rightwards in topbar                                    |
 | Space ,               | List open buffers                                                   |
 | Space b d             | Close buffer                                                        |
 | Space s s             | Navigate to open symbols in current buffer                          |

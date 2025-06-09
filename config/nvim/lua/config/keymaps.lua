@@ -21,6 +21,20 @@ map(
   { desc = "Live grep with args" }
 )
 
+-- Changes the buffer order in the top bar.
+map(
+  "n",
+  "<A-H>",
+  ":BufferLineMovePrev<CR>",
+  { desc = "Move Buffer Leftwards In Top Bar", noremap = true, silent = true }
+)
+map(
+  "n",
+  "<A-L>",
+  ":BufferLineMoveNext<CR>",
+  { desc = "Move Buffer Rightwards In Top Bar", noremap = true, silent = true }
+)
+
 -- Select all.
 map("n", "<C-a>", "gg<S-v>G")
 
