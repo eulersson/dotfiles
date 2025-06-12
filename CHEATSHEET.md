@@ -293,7 +293,8 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | \* cw newWord . n . n . | Search and replace the current word across the entire document                                                             |
 | Space /                 | Live grep with args (see [telescope-live-grep-args.nvim](https://github.com/nvim-telescope/telescope-live-grep-args.nvim)) |
-| Space Spacee            | Find files                                                                                                                 |
+| Space Space             | Find files                                                                                                                 |
+| Space s S               | Search symbols across workspace.                                                                                           |
 
 ### Workflows
 
