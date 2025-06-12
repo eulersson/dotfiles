@@ -127,6 +127,7 @@ uajsfo aifj afo
 | (Neo-tree) O          | Opens file or folder using Finder                                   |
 | g f                   | Go to file under cursor                                             |
 | Space :               | (telescope) Show command history                                    |
+| Space n               | Show notificatio history                                            |
 
 ### Code Folding
 
