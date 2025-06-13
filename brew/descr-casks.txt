@@ -6,6 +6,8 @@ calibre: (calibre) E-books management software
 cursor: (Cursor) Write, edit, and chat about your code with AI
 drawio: (draw.io Desktop) Online diagram software
 google-cloud-sdk: (Google Cloud SDK) Set of tools to manage resources and applications hosted on Google Cloud
+gstreamer-runtime: (GStreamer runtime package) Open Source Multimedia Framework
+iina: (IINA) Free and open-source media player
 jdownloader: (JDownloader) Download manager
 keepassxc: (KeePassXC) Password manager app
 keycastr: (KeyCastr) Open-source keystroke visualiser

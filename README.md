@@ -106,6 +106,7 @@ ln -s $HOME/.dotfiles/config/alacritty .
 ln -s $HOME/.dotfiles/config/tmux .
 ln -s $HOME/.dotfiles/config/lazygit .
 ln -s $HOME/.dotfiles/config/nvim .
+ln -s $HOME/.dotfiles/config/yazi .
 
 cd $HOME
 ln -s .dotfiles/*.zsh* .

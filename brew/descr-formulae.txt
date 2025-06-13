@@ -28,6 +28,7 @@ helm: Kubernetes package manager
 hstr: Bash and zsh history suggest box
 htop: Improved top (interactive process viewer)
 imagemagick: Tools and libraries to manipulate images in many formats
+img2pdf: Convert images to PDF via direct JPEG inclusion
 horcrux: A program for splitting your files into encrypted fragments
 jpeg: Image manipulation library
 jq: Lightweight and flexible command-line JSON processor
@@ -39,10 +40,12 @@ libdap: Framework for scientific data networking
 lnav: Curses-based tool for viewing and analyzing log files
 mas: Mac App Store command-line interface
 mat2: Metadata anonymization toolkit
+ncdu: NCurses Disk Usage
 neovim: Ambitious Vim-fork focused on extensibility and agility
 nmap: Port scanning utility for large networks
 numpy: Package for scientific computing with Python
 pandoc: Swiss-army knife of markup format conversion
+pnpm: Fast, disk space efficient package manager
 podman: Tool for managing OCI containers and pods
 portaudio: Cross-platform library for audio I/O
 postgresql@16: Object-relational database system
@@ -51,9 +54,9 @@ protobuf@21: Protocol buffers (Google's data interchange format)
 protoc-gen-go: Go support for Google's protocol buffers
 protoc-gen-go-grpc: Protoc plugin that generates code for gRPC-Go clients
 pulseaudio: Sound system for POSIX OSes
+pv: Monitor data's progress through a pipe
 pyenv-virtualenv: Pyenv plugin to manage virtualenv
 qemu: Generic machine emulator and virtualizer
-qpdf: Tools for and transforming and inspecting PDF files
 rbenv: Ruby version manager
 rcs: GNU revision control system
 redis: Persistent key-value database, with built-in net interface
@@ -66,5 +69,6 @@ starship: Cross-shell prompt for astronauts
 tmux: Terminal multiplexer
 tree: Display directories as trees (with optional color/HTML output)
 wget: Internet file retriever
+yazi: Blazing fast terminal file manager written in Rust, based on async I/O
 yt-dlp: Feature-rich command-line audio/video downloader
 zsh-syntax-highlighting: Fish shell like syntax highlighting for zsh
