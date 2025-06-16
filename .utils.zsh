@@ -96,7 +96,7 @@ to_simple_mp3() {
 
 whatsapp_like_video_compress() {
   if [ $# -lt 1 ]; then
-    echo "Usage: whatsapp_like_video_compress input.mov"
+    echo "Usage: whatsapp_like_video_compress input.mov [extension]"
     return 1
   fi
 
@@ -104,7 +104,7 @@ whatsapp_like_video_compress() {
   local dir="${input:h}"                # Input file's directory
   local filename="${input:t}"          # Input file's name
   local basename="${filename%.*}"      # Strip extension
-  local extension="${filename##*.}"    # Just the extension
+  local extension="${2:-${filename##*.}}"  # Use second arg or original extension
 
   local output_dir="${dir}/compressed"
   mkdir -p "$output_dir"
