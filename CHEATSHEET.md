@@ -216,6 +216,7 @@ uajsfo aifj afo
 | gh\_      | Apply current line (even if it's not a full hunk)           |
 | gH\_      | Reset current line (even if it's not a full hunk)           |
 | Space g g | Open up Lazy Git on the first folder upward that has a repo |
+| Space g s | Open in Telescope the git files that have been changed |
 | Space g G | Open up Lazy Git from the root where you run nvim from      |
 | Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim)  |
 
