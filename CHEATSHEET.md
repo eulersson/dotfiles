@@ -216,7 +216,7 @@ uajsfo aifj afo
 | gh\_      | Apply current line (even if it's not a full hunk)           |
 | gH\_      | Reset current line (even if it's not a full hunk)           |
 | Space g g | Open up Lazy Git on the first folder upward that has a repo |
-| Space g s | Open in Telescope the git files that have been changed |
+| Space g s | Open in Telescope the git files that have been changed      |
 | Space g G | Open up Lazy Git from the root where you run nvim from      |
 | Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim)  |
 
@@ -292,6 +292,7 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 | Command                 | Action                                                                                                                     |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Space s r               | Search and replace with ripgrep.                                                                                           |
 | \* cw newWord . n . n . | Search and replace the current word across the entire document                                                             |
 | Space /                 | Live grep with args (see [telescope-live-grep-args.nvim](https://github.com/nvim-telescope/telescope-live-grep-args.nvim)) |
 | Space Space             | Find files                                                                                                                 |
@@ -311,6 +312,8 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 <https://vi.stackexchange.com/a/6694>
 
 #### Project-Wide Search and Replace
+
+Use either LazyVim's `Space s r` or the option below.
 
 `Space /` (live grep with args), type the regex, then open results as a quick
 list `⌃ + q`, then run `:cdo s/this/that/gIc` (which runs the search and
