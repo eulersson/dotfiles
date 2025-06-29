@@ -54,7 +54,7 @@ and _Applications_
 | ✦ + r | Reminders            |
 | ✦ + e | Calendar             |
 | ✦ + w | Preview              |
-| ✦ + z | Zen (Browser)                  |
+| ✦ + a | Zen (Browser)                  |
 
 ## Alacritty
 
