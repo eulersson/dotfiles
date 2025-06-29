@@ -47,7 +47,6 @@ and _Applications_
 | Key   | Open app             |
 | ----- | -------------------- |
 | ✦ + t | Terminal (Alacritty) |
-| ✦ + a | Arc (Browser)                  |
 | ✦ + i | Finder               |
 | ✦ + p | KeePassX             |
 | ✦ + m | Mail                 |
