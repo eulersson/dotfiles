@@ -30,7 +30,7 @@ Install Homebrew (`brew`):
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Install brew packages (produce with `brew bundle dump --file=Brewfile`):
+Install brew packages (produce with `./bin/brew_dump.sh`):
 
 ```sh
 brew bundle --file=Brewfile
@@ -39,9 +39,7 @@ brew bundle --file=Brewfile
 Find a description of all the casks and packages installed in:
 
 - [brew/descr-formulae.txt](./brew/descr-formulae.txt)
-  - (generate with `brew leaves | xargs brew desc --eval-all | tee descr-formulae.txt`)
 - [brew/descr-casks.txt](./brew/descr-casks.txt)
-  - (generated with `brew ls --casks | xargs brew desc --eval-all | tee descr-casks.txt`)
 
 Install **JetBrainsMono Nerd Font** from [fonts/JetBrainsMono/fonts/ttf](fonts):
 

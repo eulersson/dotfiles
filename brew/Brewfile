@@ -137,10 +137,12 @@ cask "visual-studio-code"
 cask "vlc"
 cask "wezterm"
 cask "wine-stable"
+cask "zen"
 mas "Canva", id: 897446215
 mas "CapCut", id: 1500855883
 mas "DaisyDisk", id: 411643860
 mas "FileZilla Pro", id: 1298486723
+mas "HP Smart", id: 1474276998
 mas "iA Writer", id: 775737590
 mas "Keynote", id: 409183694
 mas "NordVPN", id: 905953485

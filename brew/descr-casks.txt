@@ -27,3 +27,4 @@ visual-studio-code: (Microsoft Visual Studio Code, VS Code) Open-source code edi
 vlc: (VLC media player) Multimedia player
 wezterm: (WezTerm) GPU-accelerated cross-platform terminal emulator and multiplexer
 wine-stable: (WineHQ-stable) Compatibility layer to run Windows applications
+zen: (Zen Browser) Gecko based web browser
