@@ -188,6 +188,8 @@ uajsfo aifj afo
 | [d           | Previous diagnostic                      |
 | ]e           | Next error                               |
 | [e           | Previous error                           |
+| [[           | Previous occurrence of this symbol in the file.                            |
+| ]]           | Next occurrence of this symbol in the file.                            |
 
 ### Tests
 
