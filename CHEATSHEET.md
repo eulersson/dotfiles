@@ -51,10 +51,10 @@ and _Applications_
 | ✦ + p | KeePassX             |
 | ✦ + m | Mail                 |
 | ✦ + x | Obsidian             |
-| ✦ + r | Reminders            |
+| ✦ + a | Reminders            |
 | ✦ + e | Calendar             |
 | ✦ + w | Preview              |
-| ✦ + a | Zen (Browser)                  |
+| ✦ + r | Zen (Browser)        |
 
 ## Alacritty
 
@@ -82,7 +82,6 @@ and _Applications_
 <https://www.lazyvim.org/keymaps>
 
 If you want to check all the maps you can use `:map` and search through it.
-uajsfo aifj afo
 
 ### Navigation
 
@@ -166,29 +165,29 @@ uajsfo aifj afo
 
 ### LSP
 
-| Keys         | Action                                   |
-| ------------ | ---------------------------------------- |
-| Space c s    | Open symbols outline                     |
-| ⌃ + Space    | Stimulate autocompletion for a candidate |
-| g d          | Go to definition                         |
-| g r          | Go to references                         |
-| g I          | Go to implementations                    |
-| K            | Show documentation                       |
-| K K          | Enter documentation box                  |
-| ⌥ + M        | Show function signature                  |
-| ⌥ + M, ⌥ + M | Enter function signature box             |
-| Space c s    | Open symbols outline                     |
-| Space u f    | Disable autoformat                       |
-| Space c f    | Format current buffer                    |
-| Space x x    | Show diagnostics in bottom pane          |
-| Space u w    | Toggle word wrap                         |
-| Space u h    | Toggle inline hints                      |
-| ]d           | Next diagnostic                          |
-| [d           | Previous diagnostic                      |
-| ]e           | Next error                               |
-| [e           | Previous error                           |
-| [[           | Previous occurrence of this symbol in the file.                            |
-| ]]           | Next occurrence of this symbol in the file.                            |
+| Keys         | Action                                          |
+| ------------ | ----------------------------------------------- |
+| Space c s    | Open symbols outline                            |
+| ⌃ + Space    | Stimulate autocompletion for a candidate        |
+| g d          | Go to definition                                |
+| g r          | Go to references                                |
+| g I          | Go to implementations                           |
+| K            | Show documentation                              |
+| K K          | Enter documentation box                         |
+| ⌥ + M        | Show function signature                         |
+| ⌥ + M, ⌥ + M | Enter function signature box                    |
+| Space c s    | Open symbols outline                            |
+| Space u f    | Disable autoformat                              |
+| Space c f    | Format current buffer                           |
+| Space x x    | Show diagnostics in bottom pane                 |
+| Space u w    | Toggle word wrap                                |
+| Space u h    | Toggle inline hints                             |
+| ]d           | Next diagnostic                                 |
+| [d           | Previous diagnostic                             |
+| ]e           | Next error                                      |
+| [e           | Previous error                                  |
+| [[           | Previous occurrence of this symbol in the file. |
+| ]]           | Next occurrence of this symbol in the file.     |
 
 ### Tests
 
