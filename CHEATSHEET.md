@@ -85,48 +85,48 @@ If you want to check all the maps you can use `:map` and search through it.
 
 ### Navigation
 
-| Keys                  | Action                                                              |
-| --------------------- | ------------------------------------------------------------------- |
-| H                     | Go to left buffer                                                   |
-| L                     | Go to right buffer                                                  |
-| ⌥ + H                 | Move buffer leftwards in topbar                                     |
-| ⌥ + L                 | Move buffer rightwards in topbar                                    |
-| Space ,               | List open buffers                                                   |
-| Space b d             | Close buffer                                                        |
-| Space s s             | Navigate to open symbols in current buffer                          |
-| ⌃ + i                 | Go to newer cursor position in jump list (see `:help jump-motions`) |
-| ⌃ + o                 | Go to older cursor position in jump list (see `:help jump-motions`) |
-| g c c                 | Comment current line                                                |
-| (visual) g c          | Comment block                                                       |
-| (Neo-tree) ?          | Show help                                                           |
-| (Neo-tree) H          | Show hidden files                                                   |
-| (Neo-tree) O          | Open with system application                                        |
-| ⌃ + ↑/↓/←/→           | Resize panel                                                        |
-| ⌃ + f                 | Scroll forward floating box                                         |
-| ⌃ + b                 | Scroll backward floatin box                                         |
-| ⌃ + e                 | Scroll text buffer down                                             |
-| ⌃ + y                 | Scroll text buffer up                                               |
-| (symbols outline) h/l | Expand/collapse symbol child items                                  |
-| Space b l/r           | Delete buffers on the `l`eft or `r`ight                             |
-| ⌃ ⇧ \_                | Toggle terminal                                                     |
-| ]h                    | Jump to the next git hunk                                           |
-| [h                    | Jump to the previous git hunk                                       |
-| m{a-zA-Z}             | Set mark (uppercase is global) (see `:help mark-motions`)           |
-| :delm m{a-zA-Z}       | Delete mark                                                         |
-| :delm !               | Delete all marks                                                    |
-| `{a-zA-Z}             | Navigate to mark (uppercase is global) (see `:help mark-motions`)   |
-| Space s m             | (telescope) Select jump mark where to jump to                       |
-| "                     | Show registers                                                      |
-| ⌃ + /                 | Toggle floating terminal                                            |
-| (normal) s            | Search                                                              |
-| Space Tab Tab         | Create a new tab                                                    |
-| Space Tab ]           | Move to right tab                                                   |
-| Space Tab [           | Move to left tab                                                    |
-| Space Tab d           | Close current tab                                                   |
-| (Neo-tree) O          | Opens file or folder using Finder                                   |
-| g f                   | Go to file under cursor                                             |
-| Space :               | (telescope) Show command history                                    |
-| Space n               | Show notificatio history                                            |
+| Keys                  | Action                                                                    |
+| --------------------- | ------------------------------------------------------------------------- |
+| H                     | Go to left buffer                                                         |
+| L                     | Go to right buffer                                                        |
+| ⌥ + H                 | Move buffer leftwards in topbar                                           |
+| ⌥ + L                 | Move buffer rightwards in topbar                                          |
+| Space ,               | List open buffers                                                         |
+| Space b d             | Close buffer                                                              |
+| Space s s             | Navigate to open symbols in current buffer                                |
+| ⌃ + i                 | Go to newer cursor position in jump list (see `:help jump-motions`)       |
+| ⌃ + o                 | Go to older cursor position in jump list (see `:help jump-motions`)       |
+| g c c                 | Comment current line                                                      |
+| (visual) g c          | Comment block                                                             |
+| (Neo-tree) ?          | Show help                                                                 |
+| (Neo-tree) H          | Show hidden files                                                         |
+| (Neo-tree) O          | Open with system application (useful for folders, since open with Finder) |
+| ⌃ + ↑/↓/←/→           | Resize panel                                                              |
+| ⌃ + f                 | Scroll forward floating box                                               |
+| ⌃ + b                 | Scroll backward floatin box                                               |
+| ⌃ + e                 | Scroll text buffer down                                                   |
+| ⌃ + y                 | Scroll text buffer up                                                     |
+| (symbols outline) h/l | Expand/collapse symbol child items                                        |
+| Space b l/r           | Delete buffers on the `l`eft or `r`ight                                   |
+| ⌃ ⇧ \_                | Toggle terminal                                                           |
+| ]h                    | Jump to the next git hunk                                                 |
+| [h                    | Jump to the previous git hunk                                             |
+| m{a-zA-Z}             | Set mark (uppercase is global) (see `:help mark-motions`)                 |
+| :delm m{a-zA-Z}       | Delete mark                                                               |
+| :delm !               | Delete all marks                                                          |
+| `{a-zA-Z}             | Navigate to mark (uppercase is global) (see `:help mark-motions`)         |
+| Space s m             | (telescope) Select jump mark where to jump to                             |
+| "                     | Show registers                                                            |
+| ⌃ + /                 | Toggle floating terminal                                                  |
+| (normal) s            | Search                                                                    |
+| Space Tab Tab         | Create a new tab                                                          |
+| Space Tab ]           | Move to right tab                                                         |
+| Space Tab [           | Move to left tab                                                          |
+| Space Tab d           | Close current tab                                                         |
+| (Neo-tree) O          | Opens file or folder using Finder                                         |
+| g f                   | Go to file under cursor                                                   |
+| Space :               | (telescope) Show command history                                          |
+| Space n               | Show notificatio history                                                  |
 
 ### Code Folding
 
