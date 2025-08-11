@@ -11,6 +11,22 @@ map("n", "<C-S-Down>", "<cmd>resize -1<cr>", { desc = "Decrease Window Height" }
 map("n", "<C-S-Left>", "<cmd>vertical resize -1<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-S-Right>", "<cmd>vertical resize +1<cr>", { desc = "Increase Window Width" })
 
+-- Window width commands (similar to <C-w>| for maximize)
+map("n", "<C-w>2", function()
+  local width = vim.o.columns
+  vim.cmd("vertical resize " .. math.floor(width / 2))
+end, { desc = "Set window to half width" })
+
+map("n", "<C-w>3", function()
+  local width = vim.o.columns
+  vim.cmd("vertical resize " .. math.floor(width / 3))
+end, { desc = "Set window to third width" })
+
+map("n", "<C-w>4", function()
+  local width = vim.o.columns
+  vim.cmd("vertical resize " .. math.floor(width / 4))
+end, { desc = "Set window to quarter width" })
+
 -- While writing the arguments of a function it's useful to show the signature again.
 map({ "i", "n" }, "<A-M>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 

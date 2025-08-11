@@ -102,6 +102,10 @@ If you want to check all the maps you can use `:map` and search through it.
 | (Neo-tree) H          | Show hidden files                                                         |
 | (Neo-tree) O          | Open with system application (useful for folders, since open with Finder) |
 | ⌃ + ⇧ + ↑/↓/←/→       | Resize panel                                                              |
+| ⌃ + w, \|             | Maximize window width                                                     |
+| ⌃ + w, 2              | Set window to half width                                                  |
+| ⌃ + w, 3              | Set window to third width                                                 |
+| ⌃ + w, 4              | Set window to quarter width                                               |
 | ⌃ + f                 | Scroll forward floating box                                               |
 | ⌃ + b                 | Scroll backward floatin box                                               |
 | ⌃ + e                 | Scroll text buffer down                                                   |
@@ -208,15 +212,16 @@ If you want to check all the maps you can use `:map` and search through it.
 
 ### Claude Code
 
-| Keys               | Action              |
-| ------------------ | ------------------- |
-| Space a c          | Toggle Claude       |
-| Space a f          | Focus Claude        |
-| Space a r          | Resume Claude       |
-| Space a C          | Continue Claude     |
-| Space a m          | Select Claude model |
-| Space a b          | Add current buffer  |
-| (visual) Space a s | Send to Claude      |
+| Keys               | Action                                                     |
+| ------------------ | ---------------------------------------------------------- |
+| Space a c          | Toggle Claude                                              |
+| Space a f          | Focus Claude                                                |
+| Space a r          | Resume Claude                                               |
+| Space a C          | Continue Claude                                             |
+| Space a m          | Select Claude model                                         |
+| Space a b          | Add current buffer                                          |
+| (visual) Space a s | Send to Claude                                              |
+| ⌃ + \\ then ⌃ + n  | Switch from TERMINAL mode to NORMAL mode to select text    |
 
 ### Git
 
