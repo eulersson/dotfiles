@@ -4,11 +4,12 @@
 
 local map = vim.keymap.set
 
--- Override resize window using <ctrl> arrow keys to be in steps of 1 instead of 2.
-map("n", "<C-Up>", "<cmd>resize +1<cr>", { desc = "Increase Window Height" })
-map("n", "<C-Down>", "<cmd>resize -1<cr>", { desc = "Decrease Window Height" })
-map("n", "<C-Left>", "<cmd>vertical resize -1<cr>", { desc = "Decrease Window Width" })
-map("n", "<C-Right>", "<cmd>vertical resize +1<cr>", { desc = "Increase Window Width" })
+-- Override resize window using <ctrl> <shift> arrow keys to be in steps of 1 instead of 2.
+-- Using Ctrl+Shift to avoid conflict with tmux navigation (Ctrl+arrows).
+map("n", "<C-S-Up>", "<cmd>resize +1<cr>", { desc = "Increase Window Height" })
+map("n", "<C-S-Down>", "<cmd>resize -1<cr>", { desc = "Decrease Window Height" })
+map("n", "<C-S-Left>", "<cmd>vertical resize -1<cr>", { desc = "Decrease Window Width" })
+map("n", "<C-S-Right>", "<cmd>vertical resize +1<cr>", { desc = "Increase Window Width" })
 
 -- While writing the arguments of a function it's useful to show the signature again.
 map({ "i", "n" }, "<A-M>", vim.lsp.buf.signature_help, { desc = "Signature Help" })

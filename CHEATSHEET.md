@@ -101,7 +101,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | (Neo-tree) ?          | Show help                                                                 |
 | (Neo-tree) H          | Show hidden files                                                         |
 | (Neo-tree) O          | Open with system application (useful for folders, since open with Finder) |
-| ⌃ + ↑/↓/←/→           | Resize panel                                                              |
+| ⌃ + ⇧ + ↑/↓/←/→       | Resize panel                                                              |
 | ⌃ + f                 | Scroll forward floating box                                               |
 | ⌃ + b                 | Scroll backward floatin box                                               |
 | ⌃ + e                 | Scroll text buffer down                                                   |
