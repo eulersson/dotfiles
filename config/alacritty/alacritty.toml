@@ -118,3 +118,5 @@ key = "0"
 mods = "Super|Control|Shift|Alt"
 command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.blur=false"] }
 
+[bell]
+command = { program = "afplay", args = ["/System/Library/Sounds/Pop.aiff"] }
