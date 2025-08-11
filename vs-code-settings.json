@@ -75,4 +75,5 @@
     "markdown": false,
     "scminput": false
   },
+  "terminal.integrated.defaultProfile.osx": "zsh",
 }
