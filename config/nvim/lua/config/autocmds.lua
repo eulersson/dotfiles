@@ -13,14 +13,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Automatically hard-wrap markdown.
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown*",
-  callback = function()
-    vim.opt_local.textwidth = 80
-    vim.opt_local.formatoptions:append("t")
-  end,
-})
 --ReloadAll: Reloads all open buffers in Neovim.
 vim.api.nvim_create_user_command("ReloadAll", function()
   vim.cmd("bufdo checktime")
