@@ -131,3 +131,77 @@ watchRunTest() {
   echo $cmd
   eval $cmd
 }
+
+# fkill-port - kill processes listening on specified ports (default: 3000-3005)
+# Usage: fkill-port [ports...]
+# Examples: fkill-port 3000 3001
+#           fkill-port 3000-3005
+#           fkill-port 3000-3002 8080 9000-9002
+fkill-port() {
+  local pids
+  local ports=()
+  
+  # Parse arguments to expand ranges
+  if [ $# -gt 0 ]; then
+    for arg in "$@"; do
+      if [[ "$arg" =~ ^([0-9]+)-([0-9]+)$ ]]; then
+        # It's a range like 3000-3005
+        local start="${match[1]}"
+        local end="${match[2]}"
+        for ((i=$start; i<=$end; i++)); do
+          ports+=($i)
+        done
+      else
+        # It's a single port
+        ports+=($arg)
+      fi
+    done
+  else
+    # Default range
+    ports=(3000 3001 3002 3003 3004 3005)
+  fi
+  
+  # Get all processes listening on specified ports
+  local processes=""
+  for port in "${ports[@]}"; do
+    local port_info=$(lsof -i :$port | grep LISTEN 2>/dev/null)
+    if [ -n "$port_info" ]; then
+      # Add port number to the beginning of each line for clarity
+      while IFS= read -r line; do
+        processes="${processes}[Port $port] $line\n"
+      done <<< "$port_info"
+    fi
+  done
+  
+  if [ -z "$processes" ]; then
+    echo "No processes found listening on ports: ${ports[@]}"
+    return 0
+  fi
+  
+  # Show processes and let user select with fzf
+  # The PID is in field 4 after adding [Port XXXX] prefix
+  local selected=$(echo -e "$processes" | \
+    fzf -m --header="Select process(es) to kill (TAB for multi-select, ENTER to confirm)" \
+    --preview='pid=$(echo {} | awk "{print \$4}"); echo "Process details:"; ps -p $pid -o pid,ppid,user,comm,args 2>/dev/null' \
+    --preview-window=down:3:wrap)
+  
+  if [ -n "$selected" ]; then
+    # Extract PIDs (field 4) and process names (field 3)
+    pids=$(echo "$selected" | awk '{print $4}' | sort -u)
+    
+    # Show what we're killing
+    echo "Killing the following processes:"
+    echo "$selected" | while IFS= read -r line; do
+      local pid=$(echo "$line" | awk '{print $4}')
+      local cmd=$(echo "$line" | awk '{print $3}')
+      local port=$(echo "$line" | awk -F'[][]' '{print $2}')
+      echo "  - PID $pid ($cmd) on $port"
+    done
+    
+    # Kill the processes
+    echo $pids | xargs kill -9
+    echo "Done!"
+  else
+    echo "No processes selected"
+  fi
+}
