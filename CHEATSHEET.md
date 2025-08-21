@@ -190,6 +190,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | [d           | Previous diagnostic                             |
 | ]e           | Next error                                      |
 | [e           | Previous error                                  |
+| Space cd     | Copy diagnostic                                 |
 | [[           | Previous occurrence of this symbol in the file. |
 | ]]           | Next occurrence of this symbol in the file.     |
 
