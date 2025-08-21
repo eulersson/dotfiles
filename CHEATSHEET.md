@@ -212,16 +212,16 @@ If you want to check all the maps you can use `:map` and search through it.
 
 ### Claude Code
 
-| Keys               | Action                                                     |
-| ------------------ | ---------------------------------------------------------- |
-| Space a c          | Toggle Claude                                              |
-| Space a f          | Focus Claude                                                |
-| Space a r          | Resume Claude                                               |
-| Space a C          | Continue Claude                                             |
-| Space a m          | Select Claude model                                         |
-| Space a b          | Add current buffer                                          |
-| (visual) Space a s | Send to Claude                                              |
-| ⌃ + \\ then ⌃ + n  | Switch from TERMINAL mode to NORMAL mode to select text    |
+| Keys               | Action                                                  |
+| ------------------ | ------------------------------------------------------- |
+| Space a c          | Toggle Claude                                           |
+| Space a f          | Focus Claude                                            |
+| Space a r          | Resume Claude                                           |
+| Space a C          | Continue Claude                                         |
+| Space a m          | Select Claude model                                     |
+| Space a b          | Add current buffer                                      |
+| (visual) Space a s | Send to Claude                                          |
+| ⌃ + \\ then ⌃ + n  | Switch from TERMINAL mode to NORMAL mode to select text |
 
 ### Git
 
