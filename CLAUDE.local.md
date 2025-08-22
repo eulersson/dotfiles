@@ -1,0 +1,1 @@
+- do not leave claude traces in the git commit messages

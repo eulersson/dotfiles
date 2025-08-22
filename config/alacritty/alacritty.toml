@@ -11,7 +11,7 @@ transparent_background_colors = true
 TERM = "xterm-256color"
 
 [font]
-size = 16
+size = 18
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -117,6 +117,11 @@ command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "wind
 key = "0"
 mods = "Super|Control|Shift|Alt"
 command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.blur=false"] }
+
+[[keyboard.bindings]]
+key = "Z"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/bin/sh", args = ["-c", "state_file=\"$HOME/.local/state/alacritty_font_size\"; mkdir -p \"$(dirname \"$state_file\")\"; if [ ! -f \"$state_file\" ] || [ \"$(cat \"$state_file\")\" != \"24\" ]; then echo 24 > \"$state_file\"; alacritty msg config font.size=24; else echo 18 > \"$state_file\"; alacritty msg config font.size=18; fi"] }
 
 [bell]
 command = { program = "afplay", args = ["/System/Library/Sounds/Pop.aiff"] }
