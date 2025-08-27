@@ -76,4 +76,5 @@
     "scminput": false
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
+  "python.analysis.typeCheckingMode": "standard",
 }
