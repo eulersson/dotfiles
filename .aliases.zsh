@@ -7,8 +7,8 @@ alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}
 alias chsheet='nvim ~/.dotfiles/CHEATSHEET.md'
 
 # Docker
-alias dkclean='docker rmi $(docker images -aq -f "dangling=true")'
-alias dkdigioc='docker-machine create --driver digitalocean --digitalocean-access-token `cat $HOME/.tokens/.do`'
+alias doco="docker compose"
+alias docl='docker rmi $(docker images -aq -f "dangling=true")'
 
 # Does not leave history trace. If you want to follow a conversation pass `--chat <id>`
 alias sgptask='echo -n "> " && read question && sgpt "$(echo $question)"'
