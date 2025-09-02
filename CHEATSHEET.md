@@ -356,8 +356,8 @@ with `:wa`.
 | ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout              |
 | ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits   |
 | ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page |
-| ⌃ + b, ⌃ + l            | Clear screen                                     |
-| ⌃ + b, y                | Clear output buffer                              |
+| ⌥ + c                   | Clear screen                                     |
+| ⌃ + b, ⌃ + y            | Clear output buffer                              |
 | ⌃ + b, w                | List windows visually                            |
 | ⌘ + v                   | Paste copied text                                |
 | (copy mode) v           | Start visual selection                           |
