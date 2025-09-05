@@ -356,9 +356,14 @@ with `:wa`.
 | ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout              |
 | ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits   |
 | ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page |
+| ⌃ + b, f                | Toggle status bar (focus mode)                   |
 | ⌥ + c                   | Clear screen                                     |
 | ⌃ + b, ⌃ + y            | Clear output buffer                              |
+| ⌃ + b, ⌃ + l            | Clear screen (alternate method)                  |
+| ⌥ + h                   | Move current window left                         |
+| ⌥ + l                   | Move current window right                        |
 | ⌃ + b, w                | List windows visually                            |
+| ⌃ + b, P                | Paste tmux buffer                                |
 | ⌘ + v                   | Paste copied text                                |
 | (copy mode) v           | Start visual selection                           |
 | (copy mode) y           | Copy                                             |
