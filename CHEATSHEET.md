@@ -25,9 +25,7 @@ Have a look at System Preferences > Keyboard > Shortcuts.
 
 ## Raycast
 
-Raycast doesn't read config files so those shortcuts have to be set after
-installing Raycast under _Raycast settings > Extensions_: _Window Management_
-and _Applications_
+Raycast doesn't read config files so those shortcuts have to be set after installing Raycast under _Raycast settings > Extensions_: _Window Management_ and _Applications_
 
 > [!NOTE]
 >
@@ -82,6 +80,8 @@ and _Applications_
 <https://www.lazyvim.org/keymaps>
 
 If you want to check all the maps you can use `:map` and search through it.
+
+> [!NOTE] If you use `uv` for managing your Python installation and packages, every time you need to install dependencies that rely on Python, use `uv run nvim` to open Neovim so it uses the correct environment.
 
 ### Navigation
 
@@ -166,6 +166,8 @@ If you want to check all the maps you can use `:map` and search through it.
 | yi{char}          | Copy contents inside `{char}` excluding `{char}`                              |
 | .,$s/this/that/gI | Replace occurrences of `this` with `that` from current line until end of file |
 | Space u h         | Toggle inlay hints                                                            |
+| gw                | Hard wrap text (format lines to textwidth)                                    |
+| J                 | Join lines (undo hard wrap by joining current line with next)                 |
 
 ### LSP
 
@@ -210,6 +212,16 @@ If you want to check all the maps you can use `:map` and search through it.
 | (in summary sidebar) o                       | See output                                 |
 | (in summary sidebar) 1                       | Watch test                                 |
 | (in summary sidebar) m                       | Mark test                                  |
+
+### DAP (Debug Adapter Protocol)
+
+| Keys      | Action      |
+| --------- | ----------- |
+| Space d o | Step Out    |
+| Space d O | Step Over   |
+| Space d P | Pause       |
+| Space d r | Toggle REPL |
+| Space d t | Terminate   |
 
 ### Claude Code
 
@@ -334,10 +346,13 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 Use either LazyVim's `Space s r` or the option below.
 
-`Space /` (live grep with args), type the regex, then open results as a quick
-list `⌃ + q`, then run `:cdo s/this/that/gIc` (which runs the search and
-replace for each entry in the quick fix list). Finally you can save all results
-with `:wa`.
+`Space /` (live grep with args), type the regex, then open results as a quick list `⌃ + q`, then run `:cdo s/this/that/gIc` (which runs the search and replace for each entry in the quick fix list). Finally you can save all results with `:wa`.
+
+### Troubleshooting
+
+#### Revisit Notifications
+
+When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to revisit them.
 
 ## tmux
 
