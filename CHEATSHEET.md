@@ -106,6 +106,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | ⌃ + w, 2              | Set window to half width                                                  |
 | ⌃ + w, 3              | Set window to third width                                                 |
 | ⌃ + w, 4              | Set window to quarter width                                               |
+| Space w m             | Toggle window zoom (maximize/restore current window)                      |
 | ⌃ + f                 | Scroll forward floating box                                               |
 | ⌃ + b                 | Scroll backward floatin box                                               |
 | ⌃ + e                 | Scroll text buffer down                                                   |
