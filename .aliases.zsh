@@ -8,7 +8,8 @@ alias chsheet='nvim ~/.dotfiles/CHEATSHEET.md'
 
 # Docker
 alias doco="docker compose"
-alias docl='docker rmi $(docker images -aq -f "dangling=true")'
+alias dordi='docker rmi $(docker images -aq -f "dangling=true")'
+alias docl='docker system prune --all --volumes'
 
 # Does not leave history trace. If you want to follow a conversation pass `--chat <id>`
 alias sgptask='echo -n "> " && read question && sgpt "$(echo $question)"'
