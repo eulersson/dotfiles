@@ -3,6 +3,7 @@ source $HOME/.utils.zsh
 source $HOME/.aliases.zsh
 
 [ -f "$HOME/.env.secrets" ] && source "$HOME/.env.secrets"
+[ -f "$HOME/.work.zsh" ] && source "$HOME/.work.zsh"
 
 # Unbind history commands bound by jeffreytse/zsh-vi-mode so fzf history can be
 # triggered with ^R.
