@@ -184,6 +184,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | ⌥ + M        | Show function signature                         |
 | ⌥ + M, ⌥ + M | Enter function signature box                    |
 | Space c s    | Open symbols outline                            |
+| Space c r    | Rename symbol under cursor                      |
 | Space u f    | Disable autoformat                              |
 | Space c f    | Format current buffer                           |
 | Space x x    | Show diagnostics in bottom pane                 |
