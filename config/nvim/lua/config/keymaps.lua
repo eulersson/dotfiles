@@ -4,8 +4,8 @@
 
 local map = vim.keymap.set
 
--- Override resize window using <ctrl> <shift> arrow keys to be in steps of 1 instead of 2.
--- Using Ctrl+Shift to avoid conflict with tmux navigation (Ctrl+arrows).
+-- Override resize window using <ctrl> <shift> arrow keys to be in steps of 1 instead of 2
+-- Using Ctrl+Shift to avoid conflict with tmux navigation (Ctrl+arrows)
 map("n", "<C-S-Up>", "<cmd>resize +1<cr>", { desc = "Increase Window Height" })
 map("n", "<C-S-Down>", "<cmd>resize -1<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-S-Left>", "<cmd>vertical resize -1<cr>", { desc = "Decrease Window Width" })
@@ -27,10 +27,10 @@ map("n", "<C-w>4", function()
   vim.cmd("vertical resize " .. math.floor(width / 4))
 end, { desc = "Set window to quarter width" })
 
--- While writing the arguments of a function it's useful to show the signature again.
+-- While writing the arguments of a function it's useful to show the signature again
 map({ "i", "n" }, "<A-M>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 
--- Live grep with args (so we can exclude or exclude patterns and files).
+-- Live grep with args (so we can exclude or exclude patterns and files)
 map(
   "n",
   "<leader>fl",
@@ -38,7 +38,7 @@ map(
   { desc = "Live grep with args" }
 )
 
--- Changes the buffer order in the top bar.
+-- Changes the buffer order in the top bar
 map(
   "n",
   "<A-H>",
@@ -52,7 +52,7 @@ map(
   { desc = "Move Buffer Rightwards In Top Bar", noremap = true, silent = true }
 )
 
--- Select all.
+-- Select all
 map("n", "<C-a>", "gg<S-v>G")
 
 -- Function to copy file path with line number or range
@@ -103,3 +103,8 @@ map("n", "<leader>cd", function()
 
   print("No diagnostic on this line")
 end, { desc = "Copy diagnostic message to clipboard" })
+
+-- Instead of opening terminal on root, open it in cwd
+map("n", "<c-/>", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
