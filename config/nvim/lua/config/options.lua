@@ -5,3 +5,4 @@ vim.g.snacks_animate = false
 vim.g.autoformat = false
 vim.o.exrc = true -- allow local .nvim.lua or .vimrc
 vim.o.secure = true -- secure mode: disables unsafe commands in local configs
+vim.g.root_spec = { "cwd" }
