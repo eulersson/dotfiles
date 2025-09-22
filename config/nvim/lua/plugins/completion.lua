@@ -26,9 +26,14 @@ return {
         timer:start(delay_ms or 1000, 0, function()
           timer:stop()
           vim.schedule(function()
-            -- Only run in insert mode.
+            -- Only run in insert mode and not in DAP REPL
             if vim.api.nvim_get_mode()["mode"] == "i" then
-              require("blink.cmp").show()
+              local buf_name = vim.api.nvim_buf_get_name(0)
+              local filetype = vim.bo.filetype
+              -- Skip for DAP REPL buffer (usually has 'dap-repl' filetype or '[dap-repl' in buffer name)
+              if filetype ~= "dap-repl" and not buf_name:match("%[dap%-repl") then
+                require("blink.cmp").show()
+              end
             end
           end)
         end)
