@@ -377,8 +377,8 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌥ + c                   | Clear screen                                     |
 | ⌃ + b, ⌃ + y            | Clear output buffer                              |
 | ⌃ + b, ⌃ + l            | Clear screen (alternate method)                  |
-| ⌥ + h                   | Move current window left                         |
-| ⌥ + l                   | Move current window right                        |
+| ⌥ + ←/→                 | Move to left/right window                        |
+| ⌥ + h/l                 | Move current window left/right                   |
 | ⌃ + b, w                | List windows visually                            |
 | ⌃ + b, P                | Paste tmux buffer                                |
 | ⌘ + v                   | Paste copied text                                |
