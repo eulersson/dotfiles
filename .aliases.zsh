@@ -4,7 +4,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
-alias chsheet='nvim ~/.dotfiles/CHEATSHEET.md'
+alias chsheet='cd ~/.dotfiles && nvim CHEATSHEET.md'
 
 # Docker
 alias doco="docker compose"
