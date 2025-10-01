@@ -94,6 +94,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space ,               | List open buffers                                                         |
 | Space b d             | Close buffer                                                              |
 | Space s s             | Navigate to open symbols in current buffer                                |
+| Space :               | Command history                                                           |
 | ⌃ + i                 | Go to newer cursor position in jump list (see `:help jump-motions`)       |
 | ⌃ + o                 | Go to older cursor position in jump list (see `:help jump-motions`)       |
 | g c c                 | Comment current line                                                      |
