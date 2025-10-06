@@ -374,6 +374,7 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout              |
 | ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits   |
 | ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page |
+| ESC ESC                 | Enter copy mode (not in vi/vim/nvim)             |
 | ⌃ + b, f                | Toggle status bar (focus mode)                   |
 | ⌥ + c                   | Clear screen                                     |
 | ⌃ + b, ⌃ + y            | Clear output buffer                              |
@@ -394,7 +395,6 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + b, ⌥ + u            | (tpm) Removes plugins not in the list            |
 | ⇧ + click + drag, ⌘ + C | Select and copy from tmux output buffer          |
 | ⌃ + b, ,                | Rename window                                    |
-| ⌃ + b, .                | Move window                                      |
 | ⌃ + b, \<               | Window management context menu                   |
 | ⌃ + b, \>               | Pane management context menu                     |
 
