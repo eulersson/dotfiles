@@ -100,8 +100,9 @@ If you want to check all the maps you can use `:map` and search through it.
 | g c c                 | Comment current line                                                      |
 | (visual) g c          | Comment block                                                             |
 | (Neo-tree) ?          | Show help                                                                 |
-| (Neo-tree) H          | Show hidden files                                                         |
-| (Neo-tree) O          | Open with system application (useful for folders, since open with Finder) |
+| (Neo-tree) h          | Show hidden files                                                         |
+| (Neo-tree) o          | Open with system application (useful for folders, since open with Finder) |
+| (Neo-tree) e          | Grow width of panel to include all file names                             |
 | ⌃ + ⇧ + ↑/↓/←/→       | Resize panel                                                              |
 | ⌃ + w, \|             | Maximize window width                                                     |
 | ⌃ + w, 2              | Set window to half width                                                  |
