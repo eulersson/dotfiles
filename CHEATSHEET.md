@@ -267,8 +267,8 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | ⇧ Tab       | Jumps to previous file                                            |
 | Space c o   | (in conflict) Choose ours                                         |
 | Space c t   | (in conflict) Choose theirs                                       |
-| ]x          | Jump to the next conflict                                         |
-| [x          | Jump to the previous conflict                                     |
+| ]x / [x     | Jump to the next/previous conflict                                |
+| ]c / [c     | Jump to the next/previous change                                  |
 | g f         | Open the file in the previous tabpage                             |
 | ⌃ + f/b     | Scroll code forward/backward (useful to do it from files sidebar) |
 | Space Tab d | Close (basically because it opened into a tab)                    |
