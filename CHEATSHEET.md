@@ -91,6 +91,8 @@ If you want to check all the maps you can use `:map` and search through it.
 | L                     | Go to right buffer                                                        |
 | ⌥ + H                 | Move buffer leftwards in topbar                                           |
 | ⌥ + L                 | Move buffer rightwards in topbar                                          |
+| ⌥ + H                 | Move buffer leftwards in topbar                                           |
+| ⌥ + ↑/↓               | Move line under cursor up/down                                            |
 | Space ,               | List open buffers                                                         |
 | Space b d             | Close buffer                                                              |
 | Space s s             | Navigate to open symbols in current buffer                                |
