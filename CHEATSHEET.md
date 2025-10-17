@@ -375,7 +375,7 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout              |
 | ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits   |
 | ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page |
-| ESC ESC                 | Enter copy mode (not in vi/vim/nvim)             |
+| ⌃ + i                   | Enter copy mode                                  |
 | ⌃ + b, f                | Toggle status bar (focus mode)                   |
 | ⌥ + c                   | Clear screen                                     |
 | ⌃ + b, ⌃ + y            | Clear output buffer                              |
