@@ -3,6 +3,9 @@ return {
 
   opts = function(_, opts)
     local delay_ms = 1000
+    -- Global variable to track completion state
+    vim.g.completions_enabled = true
+
     -- disable auto_show
     opts.completion = opts.completion or {}
     opts.completion.menu = opts.completion.menu or {}
@@ -27,7 +30,7 @@ return {
           timer:stop()
           vim.schedule(function()
             -- Only run in insert mode and not in DAP REPL
-            if vim.api.nvim_get_mode()["mode"] == "i" then
+            if vim.api.nvim_get_mode()["mode"] == "i" and vim.g.completions_enabled then
               local buf_name = vim.api.nvim_buf_get_name(0)
               local filetype = vim.bo.filetype
               -- Skip for DAP REPL buffer (usually has 'dap-repl' filetype or '[dap-repl' in buffer name)
@@ -39,5 +42,17 @@ return {
         end)
       end,
     })
+
+    -- Toggle completions keymap
+    vim.keymap.set("n", "<leader>ct", function()
+      vim.g.completions_enabled = not vim.g.completions_enabled
+      local status = vim.g.completions_enabled and "enabled" or "disabled"
+      vim.notify("Completions " .. status, vim.log.levels.INFO)
+
+      -- Hide completion menu if disabling
+      if not vim.g.completions_enabled then
+        require("blink.cmp").hide()
+      end
+    end, { desc = "Toggle completions" })
   end,
 }
