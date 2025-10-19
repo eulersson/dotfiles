@@ -194,6 +194,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space x x    | Show diagnostics in bottom pane                 |
 | Space u w    | Toggle word wrap                                |
 | Space u h    | Toggle inline hints                             |
+| Space c t    | Toggle completions                              |
 | ]d           | Next diagnostic                                 |
 | [d           | Previous diagnostic                             |
 | ]e           | Next error                                      |
