@@ -68,6 +68,7 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ⌃ + ⇧ + y | Clear history             |
 | ⌃ + ⇧ + o | Set window opacity to 0.5 |
 | ⌃ + ⇧ + p | Set window opacity to 1   |
+| Super + z | Cycle font sizes          |
 
 ## Finder
 
