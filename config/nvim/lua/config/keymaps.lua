@@ -108,3 +108,14 @@ end, { desc = "Copy diagnostic message to clipboard" })
 map("n", "<c-/>", function()
   Snacks.terminal()
 end, { desc = "Terminal (cwd)" })
+
+-- Toggle status bar
+map("n", "<leader>ue", function()
+  if vim.o.laststatus == 0 then
+    vim.o.laststatus = 3
+    print("Status bar enabled")
+  else
+    vim.o.laststatus = 0
+    print("Status bar disabled")
+  end
+end, { desc = "Toggle Status Bar" })

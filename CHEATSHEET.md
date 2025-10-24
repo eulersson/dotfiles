@@ -112,10 +112,9 @@ If you want to check all the maps you can use `:map` and search through it.
 | ⌃ + w, 3              | Set window to third width                                                 |
 | ⌃ + w, 4              | Set window to quarter width                                               |
 | Space w m             | Toggle window zoom (maximize/restore current window)                      |
-| ⌃ + f                 | Scroll forward floating box                                               |
-| ⌃ + b                 | Scroll backward floatin box                                               |
 | ⌃ + e                 | Scroll text buffer down                                                   |
 | ⌃ + y                 | Scroll text buffer up                                                     |
+| ⌃ + f                 | Scroll viewport forward by one full screen                                |
 | (symbols outline) h/l | Expand/collapse symbol child items                                        |
 | Space b l/r           | Delete buffers on the `l`eft or `r`ight                                   |
 | ⌃ ⇧ \_                | Toggle terminal                                                           |
@@ -195,6 +194,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space x x    | Show diagnostics in bottom pane                 |
 | Space u w    | Toggle word wrap                                |
 | Space u h    | Toggle inline hints                             |
+| Space u e    | Toggle status bar                               |
 | Space c t    | Toggle completions                              |
 | ]d           | Next diagnostic                                 |
 | [d           | Previous diagnostic                             |
@@ -368,6 +368,7 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 
 | Keys                    | Action                                           |
 | ----------------------- | ------------------------------------------------ |
+| ⌃ + b, ?                | Show key bindings                                |
 | ⌃ + b, r                | Reload tmux config                               |
 | ⌃ + ↑/↓/←/→             | Navigate panels without losing zoom state        |
 | ⌃ + b, "                | Split vertically                                 |
