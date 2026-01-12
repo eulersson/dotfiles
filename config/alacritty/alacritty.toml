@@ -121,7 +121,7 @@ command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "wind
 [[keyboard.bindings]]
 key = "Z"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/bin/sh", args = ["-c", "state_file=\"$HOME/.local/state/alacritty_font_size\"; mkdir -p \"$(dirname \"$state_file\")\"; current=$(cat \"$state_file\" 2>/dev/null || echo \"15\"); if [ \"$current\" = \"20\" ]; then echo 13 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=13; elif [ \"$current\" = \"13\" ]; then echo 15 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=15; else echo 20 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=20; fi"] }
+command = { program = "/bin/sh", args = ["-c", "state_file=\"$HOME/.local/state/alacritty_font_size\"; mkdir -p \"$(dirname \"$state_file\")\"; current=$(cat \"$state_file\" 2>/dev/null || echo \"16\"); if [ \"$current\" = \"20\" ]; then echo 13 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=13; elif [ \"$current\" = \"13\" ]; then echo 16 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=16; else echo 20 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=20; fi"] }
 
 [bell]
 command = { program = "afplay", args = ["/System/Library/Sounds/Pop.aiff"] }
