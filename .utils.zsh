@@ -48,6 +48,15 @@ function compress_images() {
   done
 }
 
+function compress_image() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: compress_image <file>"
+    return 1
+  fi
+  local temp_file="${1%.*}_temp.jpg"
+  convert "$1" -resize 1200x1200\> -quality 65 "$temp_file" && mv "$temp_file" "${1%.*}.jpg" && [[ "$1" != "${1%.*}.jpg" ]] && rm "$1"
+}
+
 # fkill - kill process
 fkill() {
   local pid
