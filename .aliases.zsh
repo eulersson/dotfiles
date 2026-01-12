@@ -31,6 +31,5 @@ if [[ $(uname) == "Darwin" ]]; then
   alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
   # Those prepend the GNU Unix common tools like 'date' before the Apple ones.
-  alias brewGnu='export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH'
-  alias brewGetOpt='export PATH=$(dirname $(brew ls gnu-getopt | grep bin)):$PATH'
+  alias brewGnu='export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-getopt/bin:/usr/local/opt/bash/bin:$PATH'
 fi
