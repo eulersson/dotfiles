@@ -11,6 +11,9 @@ alias doco="docker compose"
 alias dordi='docker rmi $(docker images -aq -f "dangling=true")'
 alias docl='docker system prune --all --volumes'
 
+# Kubernetes
+alias kub="kubectl"
+
 # Does not leave history trace. If you want to follow a conversation pass `--chat <id>`
 alias sgptask='echo -n "> " && read question && sgpt "$(echo $question)"'
 
