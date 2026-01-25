@@ -176,33 +176,33 @@ If you want to check all the maps you can use `:map` and search through it.
 
 ### LSP
 
-| Keys         | Action                                          |
-| ------------ | ----------------------------------------------- |
-| Space c s    | Open symbols outline                            |
-| ⌃ + Space    | Stimulate autocompletion for a candidate        |
-| g d          | Go to definition                                |
-| g r          | Go to references                                |
-| g I          | Go to implementations                           |
-| K            | Show documentation                              |
-| K K          | Enter documentation box                         |
-| ⌥ + M        | Show function signature                         |
-| ⌥ + M, ⌥ + M | Enter function signature box                    |
-| Space c s    | Open symbols outline                            |
-| Space c r    | Rename symbol under cursor                      |
-| Space u f    | Disable autoformat                              |
-| Space c f    | Format current buffer                           |
-| Space x x    | Show diagnostics in bottom pane                 |
-| Space u w    | Toggle word wrap                                |
-| Space u h    | Toggle inline hints                             |
-| Space u e    | Toggle status bar                               |
-| Space c t    | Toggle completions                              |
-| ]d           | Next diagnostic                                 |
-| [d           | Previous diagnostic                             |
-| ]e           | Next error                                      |
-| [e           | Previous error                                  |
-| Space cd     | Copy diagnostic                                 |
-| [[           | Previous occurrence of this symbol in the file. |
-| ]]           | Next occurrence of this symbol in the file.     |
+| Keys         | Action                                                                               |
+| ------------ | ------------------------------------------------------------------------------------ |
+| Space c s    | Open symbols outline                                                                 |
+| ⌃ + Space    | Stimulate autocompletion for a candidate                                             |
+| g d          | Go to definition                                                                     |
+| g r          | Go to references                                                                     |
+| g I          | Go to implementations                                                                |
+| K            | Show documentation                                                                   |
+| K K          | Enter documentation box                                                              |
+| ⌥ + M        | Show function signature                                                              |
+| ⌥ + M, ⌥ + M | Enter function signature box                                                         |
+| Space c s    | Open symbols outline                                                                 |
+| Space c r    | Rename symbol under cursor                                                           |
+| Space u f    | Disable autoformat                                                                   |
+| Space c f    | Format current buffer                                                                |
+| Space x x    | Show diagnostics in bottom pane                                                      |
+| Space u w    | Toggle word wrap                                                                     |
+| Space u h    | Toggle inline hints                                                                  |
+| Space u e    | Toggle status bar                                                                    |
+| Space c t    | Toggle completions                                                                   |
+| ]d           | Next diagnostic                                                                      |
+| [d           | Previous diagnostic                                                                  |
+| ]e           | Next error                                                                           |
+| [e           | Previous error                                                                       |
+| Space cd     | Copy diagnostic                                                                      |
+| [[           | Previous occurrence of this symbol in the file or next class if cursor not in symbol |
+| ]]           | Next occurrence of this symbol in the file or next class if cursor not in symbol     |
 
 ### Tests
 
