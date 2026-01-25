@@ -1,7 +1,10 @@
 return {
   {
-    "fzf-lua",
+    "ibhagwan/fzf-lua",
     opts = {
+      fzf_opts = {
+        ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-history",
+      },
       previewers = {
         git_diff = {
           -- ensure the default tool is used instead of the customized one (difft)
