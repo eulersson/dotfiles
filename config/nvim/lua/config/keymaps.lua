@@ -119,3 +119,11 @@ map("n", "<leader>ue", function()
     print("Status bar disabled")
   end
 end, { desc = "Toggle Status Bar" })
+
+vim.keymap.set({ "n", "x" }, "[j", function()
+  require("mini.indentscope").goto_top()
+end)
+
+vim.keymap.set({ "n", "x" }, "]j", function()
+  require("mini.indentscope").goto_bottom()
+end)
