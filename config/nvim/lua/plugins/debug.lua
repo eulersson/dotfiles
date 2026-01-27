@@ -12,18 +12,20 @@ return {
     dependencies = {
       "mfussenegger/nvim-dap",
       "jay-babu/mason-nvim-dap.nvim",
+      "mason-org/mason.nvim",
     },
     config = function()
       local dap = require("dap")
-      local debugpy_path = require("mason-registry").get_package("debugpy"):get_install_path()
+      local debugpy_python = require("lazyvim.util").get_pkg_path("debugpy", "/venv/bin/python")
 
-      -- Set up dap-python with defaults
-      require("dap-python").setup(debugpy_path .. "/venv/bin/python")
+      require("dap-python").setup(debugpy_python)
 
-      -- Docker attach to already running server
-      table.insert(dap.configurations.python, {
+      local configs = dap.configurations.python or {}
+
+      table.insert(configs, 1, {
         type = "python",
         request = "attach",
+
         name = "attach:remote:generic",
         connect = {
           host = "127.0.0.1",
@@ -37,6 +39,16 @@ return {
           },
         },
         justMyCode = false,
+      })
+
+      table.insert(configs, 1, {
+        type = "python",
+        request = "attach",
+        name = "attach:local",
+        connect = {
+          host = "127.0.0.1",
+          port = 5678,
+        },
       })
     end,
   },
