@@ -196,6 +196,8 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space u h    | Toggle inline hints                                                                  |
 | Space u e    | Toggle status bar                                                                    |
 | Space c t    | Toggle completions                                                                   |
+| ]h           | Jump to the next git hunk                                                            |
+| [h           | Jump to the previous git hunk                                                        |
 | ]d           | Next diagnostic                                                                      |
 | [d           | Previous diagnostic                                                                  |
 | ]e           | Next error                                                                           |
@@ -203,16 +205,16 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space cd     | Copy diagnostic                                                                      |
 | [[           | Previous occurrence of this symbol in the file or next class if cursor not in symbol |
 | ]]           | Next occurrence of this symbol in the file or next class if cursor not in symbol     |
-| ]f           | Jump to next function                                                                 |
-| ]c           | Jump to next class                                                                    |
-| ]m           | Jump to next method                                                                   |
-| %            | Jump to matching bracket/delimiter                                                    |
-| ]}           | Jump to next unmatched }                                                              |
-| ])           | Jump to next unmatched )                                                              |
-| ]i           | Jump to bottom edge of scope                                                          |
-| [i           | Jump to top edge of scope                                                             |
-| ]z           | Move to end of current fold/indent block                                              |
-| [z           | Move to start of current fold/indent block                                            |
+| ]f           | Jump to next function                                                                |
+| ]c           | Jump to next class                                                                   |
+| ]m           | Jump to next method                                                                  |
+| %            | Jump to matching bracket/delimiter                                                   |
+| ]}           | Jump to next unmatched }                                                             |
+| ])           | Jump to next unmatched )                                                             |
+| ]i           | Jump to bottom edge of scope                                                         |
+| [i           | Jump to top edge of scope                                                            |
+| ]z           | Move to end of current fold/indent block                                             |
+| [z           | Move to start of current fold/indent block                                           |
 
 ### Tests
 
