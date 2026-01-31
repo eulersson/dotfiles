@@ -145,6 +145,15 @@ If you want to check all the maps you can use `:map` and search through it.
 | zr   | Expand all outer folds (recursively: `zR`)      |
 | zm   | Collapse all outer folds (recursively: `zM`)    |
 
+### Session
+
+| Keys      | Action                                |
+| --------- | ------------------------------------- |
+| Space q s | Load session for current directory    |
+| Space q S | Select a session to load              |
+| Space q l | Load the last session                 |
+| Space q d | Stop Persistence (won't save on exit) |
+
 ### Help
 
 | Keys      | Action                                                                  |
