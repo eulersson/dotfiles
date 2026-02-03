@@ -511,3 +511,24 @@ sgpt <<< "What is the best way to learn shell redirects?"
 | ⇧ + ⌥ + F    | Format current file                              |
 | ⇧ + ⌘ + [    | Switch to previous terminal group                |
 | ⇧ + ⌘ + ]    | Switch to next terminal group                    |
+
+## find
+
+```
+
+  # Files modified in the last 30 minutes
+  find . -maxdepth 1 -type f -mmin -30
+
+  # Files modified in the last 2 days
+  find . -maxdepth 1 -type f -mtime -2
+
+  # Files modified after a specific date
+  find . -maxdepth 1 -type f -newermt "2024-01-15"
+
+  # After a specific time
+  find . -maxdepth 1 -type f -newermt "2024-01-15 14:30"
+
+  # Files newer than some_file.txt
+  find . -maxdepth 1 -type f -newer some_file.txt
+
+```
