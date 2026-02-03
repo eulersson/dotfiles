@@ -1,5 +1,7 @@
 [general]
-import = ["~/.config/themes/tokyonight.nvim/extras/alacritty/tokyonight_storm.toml"] # theme
+import = [
+  "~/.config/themes/tokyonight.nvim/extras/alacritty/tokyonight_storm.toml",
+] # theme
 
 # TODO: https://www.reddit.com/r/swaywm/comments/ojxikq/launching_tmux_with_a_new_window_in_alacritty/
 
@@ -76,52 +78,91 @@ mods = "Super|Control|Shift|Alt"
 [[keyboard.bindings]]
 key = "1"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=1"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.opacity=1",
+] }
 
 [[keyboard.bindings]]
 key = "2"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.95"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.opacity=0.95",
+] }
 
 [[keyboard.bindings]]
 key = "3"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.9"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.opacity=0.9",
+] }
 
 [[keyboard.bindings]]
 key = "4"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.7"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.opacity=0.7",
+] }
 
 [[keyboard.bindings]]
 key = "5"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.6"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.opacity=0.6",
+] }
 
 [[keyboard.bindings]]
 key = "6"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.4"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.opacity=0.4",
+] }
 
 [[keyboard.bindings]]
 key = "7"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.opacity=0.2"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.opacity=0.2",
+] }
 
 [[keyboard.bindings]]
 key = "9"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.blur=true"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.blur=true",
+] }
 
 [[keyboard.bindings]]
 key = "0"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/usr/local/bin/alacritty", args = ["msg", "config", "window.blur=false"] }
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.blur=false",
+] }
 
 [[keyboard.bindings]]
 key = "Z"
 mods = "Super|Control|Shift|Alt"
-command = { program = "/bin/sh", args = ["-c", "state_file=\"$HOME/.local/state/alacritty_font_size\"; mkdir -p \"$(dirname \"$state_file\")\"; current=$(cat \"$state_file\" 2>/dev/null || echo \"16\"); if [ \"$current\" = \"20\" ]; then echo 13 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=13; elif [ \"$current\" = \"13\" ]; then echo 16 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=16; else echo 20 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=20; fi"] }
+command = { program = "/bin/sh", args = [
+  "-c",
+  "state_file=\"$HOME/.local/state/alacritty_font_size\"; mkdir -p \"$(dirname \"$state_file\")\"; current=$(cat \"$state_file\" 2>/dev/null || echo \"16\"); if [ \"$current\" = \"20\" ]; then echo 14 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=14; elif [ \"$current\" = \"14\" ]; then echo 16 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=16; else echo 20 > \"$state_file\"; /usr/local/bin/alacritty msg config font.size=20; fi",
+] }
 
 [bell]
 command = { program = "afplay", args = ["/System/Library/Sounds/Pop.aiff"] }
