@@ -49,12 +49,25 @@ function compress_images() {
 }
 
 function compress_image() {
-  if [[ -z "$1" ]]; then
-    echo "Usage: compress_image <file>"
+  _compress_one() {
+    local file="$1"
+    local temp_file="${file%.*}_temp.jpg"
+    convert "$file" -resize 1200x1200\> -quality 65 "$temp_file" && mv "$temp_file" "${file%.*}.jpg" && [[ "$file" != "${file%.*}.jpg" ]] && rm "$file"
+  }
+
+  if [[ $# -gt 0 ]]; then
+    for file in "$@"; do
+      _compress_one "$file"
+    done
+  elif [[ ! -t 0 ]]; then
+    while IFS= read -r file; do
+      [[ -n "$file" ]] && _compress_one "$file"
+    done
+  else
+    echo "Usage: compress_image <file>..."
+    echo "       command | compress_image"
     return 1
   fi
-  local temp_file="${1%.*}_temp.jpg"
-  convert "$1" -resize 1200x1200\> -quality 65 "$temp_file" && mv "$temp_file" "${1%.*}.jpg" && [[ "$1" != "${1%.*}.jpg" ]] && rm "$1"
 }
 
 # fkill - kill process
