@@ -97,6 +97,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space ,               | List open buffers                                                         |
 | Space b d             | Close buffer                                                              |
 | Space s s             | Navigate to open symbols in current buffer                                |
+| Space s j             | Navigate around jumplist                                                  |
 | Space :               | Command history                                                           |
 | ⌃ + i                 | Go to newer cursor position in jump list (see `:help jump-motions`)       |
 | ⌃ + o                 | Go to older cursor position in jump list (see `:help jump-motions`)       |
@@ -132,7 +133,6 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space Tab ]           | Move to right tab                                                         |
 | Space Tab [           | Move to left tab                                                          |
 | Space Tab d           | Close current tab                                                         |
-| (Neo-tree) O          | Opens file or folder using Finder                                         |
 | g f                   | Go to file under cursor                                                   |
 | Space :               | (telescope) Show command history                                          |
 | Space n               | Show notificatio history                                                  |
