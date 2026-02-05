@@ -205,6 +205,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space u h    | Toggle inline hints                                                                  |
 | Space u e    | Toggle status bar                                                                    |
 | Space c t    | Toggle completions                                                                   |
+| Space c v    | (in Python file type) Select virtual env                                             |
 | ]h           | Jump to the next git hunk                                                            |
 | [h           | Jump to the previous git hunk                                                        |
 | ]d           | Next diagnostic                                                                      |
