@@ -52,7 +52,7 @@ return {
         mode = { "n", "x" },
       },
       {
-        "<leader>go",
+        "<leader>gp",
         function()
           require("git-link.main").open_line_url()
         end,
