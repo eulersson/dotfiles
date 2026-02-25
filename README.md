@@ -51,31 +51,34 @@ cp ./fonts/JetBrainsMono/fonts/ttf/*.ttf ~/Library/Fonts
 
 Some of the tools included in the brew file:
 
-| Tool               | Purpose                                                                                                                 |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| anki               | Memory training application.                                                                                            |
-| asciinema          | Record and share terminal sessions.                                                                                     |
-| cloudflared        | Cloudflare local tunnel proxy.                                                                                          |
-| dark-notify        | Watcher for macOS 10.14+ light/dark mode changes.                                                                       |
-| difftastic         | Diff that understands syntax.                                                                                           |
-| fzf                | Command-line fuzzy finder written in Go.                                                                                |
-| get_iplayer        | Utility for downloading TV and radio programmes from BBC iPlayer.                                                       |
-| glow               | Render markdown on the CLI.                                                                                             |
-| grip               | Preview GitHub README.md files locally before committing them.                                                          |
-| horcrux            | A program for splitting your files into encrypted fragments.                                                            |
-| keycastr           | Open-source keystroke visualiser.                                                                                       |
-| lazygit            | Simple terminal UI for git commands.                                                                                    |
-| mas                | Mac App Store command-line interface.                                                                                   |
-| mat2               | Metadata anonymization toolkit.                                                                                         |
-| obsidian           | Private flexible note‑taking app that adapts to the way you think.                                                      |
-| ocenaudio          | Audio editor.                                                                                                           |
-| rancher            | Open-source multi-cluster orchestration platform.                                                                       |
-| raycast            | Control your tools with a few keystrokes.                                                                               |
-| ripgrep            | Search tool like grep and The Silver Searcher.                                                                          |
-| virtualbox         | Virtualiser for x86 hardware.                                                                                           |
-| visual-studio-code | Open-source code editor                                                                                                 |
-| yt-dlp             | Feature-rich command-line audio/video downloader.                                                                       |
-| ...                | Check [brew/descr-formulae.txt](./brew/descr-formulae.txt) and [brew/descr-casks.txt](./brew/descr-casks.txt) for more. |
+| Tool               | Purpose                                                                                                                |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| anki               | Memory training application                                                                                            |
+| asciinema          | Record and share terminal sessions                                                                                     |
+| cloudflared        | Cloudflare local tunnel proxy                                                                                          |
+| dark-notify        | Watcher for macOS 10.14+ light/dark mode changes                                                                       |
+| difftastic         | Diff that understands syntax                                                                                           |
+| fzf                | Command-line fuzzy finder written in Go                                                                                |
+| get_iplayer        | Utility for downloading TV and radio programmes from BBC iPlayer                                                       |
+| glow               | Render markdown on the CLI                                                                                             |
+| grip               | Preview GitHub README.md files locally before committing them                                                          |
+| horcrux            | A program for splitting your files into encrypted fragments                                                            |
+| keycastr           | Open-source keystroke visualiser                                                                                       |
+| lazygit            | Simple terminal UI for git commands                                                                                    |
+| mas                | Mac App Store command-line interface                                                                                   |
+| mat2               | Metadata anonymization toolkit                                                                                         |
+| meld               | Visual diff and merge tool                                                                                             |
+| obsidian           | Private flexible note‑taking app that adapts to the way you think                                                      |
+| ocenaudio          | Audio editor                                                                                                           |
+| pearcleaner        | Utility to uninstall apps and remove leftover files from old/uninstalled apps                                          |
+| rancher            | Open-source multi-cluster orchestration platform                                                                       |
+| raycast            | Control your tools with a few keystrokes                                                                               |
+| ripgrep            | Search tool like grep and The Silver Searcher                                                                          |
+| virtualbox         | Virtualiser for x86 hardware                                                                                           |
+| visual-studio-code | Open-source code editor                                                                                                |
+| yt-dlp             | Feature-rich command-line audio/video downloader                                                                       |
+| zen                | Gecko based web browser                                                                                                |
+| ...                | Check [brew/descr-formulae.txt](./brew/descr-formulae.txt) and [brew/descr-casks.txt](./brew/descr-casks.txt) for more |
 
 ## Installation
 
