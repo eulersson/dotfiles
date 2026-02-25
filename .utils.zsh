@@ -159,7 +159,33 @@ watchRunTest() {
 # Examples: fkill-port 3000 3001
 #           fkill-port 3000-3005
 #           fkill-port 3000-3002 8080 9000-9002
-fkill-port() {
+md_to_pdf() {
+  if [ $# -lt 1 ]; then
+    echo "Usage: md_to_pdf <file.md> [output.pdf]"
+    return 1
+  fi
+
+  local input="$1"
+  local output="${2:-${input%.md}.pdf}"
+
+  if ! command -v pandoc &>/dev/null; then
+    echo "Error: pandoc is not installed. Run: brew install pandoc"
+    return 1
+  fi
+  if ! command -v mmdc &>/dev/null; then
+    echo "Error: mermaid-filter is not installed. Run: npm install -g mermaid-filter"
+    return 1
+  fi
+  if ! command -v weasyprint &>/dev/null; then
+    echo "Error: weasyprint is not installed. Run: brew install weasyprint"
+    return 1
+  fi
+
+  pandoc "$input" --filter mermaid-filter --pdf-engine=weasyprint -o "$output" && \
+    echo "Created: $output"
+}
+
+# fkill-port - kill processes listening on specified ports (default: 3000-3005)
   local pids
   local ports=()
   
