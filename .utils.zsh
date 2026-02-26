@@ -172,7 +172,7 @@ md_to_pdf() {
     echo "Error: pandoc is not installed. Run: brew install pandoc"
     return 1
   fi
-  if ! command -v mmdc &>/dev/null; then
+  if ! command -v mermaid-filter &>/dev/null; then
     echo "Error: mermaid-filter is not installed. Run: npm install -g mermaid-filter"
     return 1
   fi
