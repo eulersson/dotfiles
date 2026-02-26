@@ -132,6 +132,8 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space Tab Tab         | Create a new tab                                                          |
 | Space Tab ]           | Move to right tab                                                         |
 | Space Tab [           | Move to left tab                                                          |
+| ⌥ + n                 | Next tab (works in any mode)                                              |
+| ⌥ + b                 | Previous tab (works in any mode)                                          |
 | Space Tab d           | Close current tab                                                         |
 | g f                   | Go to file under cursor                                                   |
 | Space :               | (telescope) Show command history                                          |
