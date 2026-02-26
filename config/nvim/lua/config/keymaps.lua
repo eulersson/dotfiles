@@ -127,3 +127,7 @@ end)
 vim.keymap.set({ "n", "x" }, "]j", function()
   require("mini.indentscope").goto_bottom()
 end)
+
+-- Cycle tabs from any mode (Alt+n/p pass through tmux cleanly)
+map({ "n", "i", "t" }, "<A-n>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+map({ "n", "i", "t" }, "<A-b>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
