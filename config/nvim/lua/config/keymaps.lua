@@ -73,7 +73,7 @@ local function copy_file_path_with_line()
     end_line = start_line
   end
 
-  local full = path .. ":" .. start_line
+  local full = "@" .. path .. ":L" .. start_line
   if start_line ~= end_line then
     full = full .. "-" .. end_line
   end
