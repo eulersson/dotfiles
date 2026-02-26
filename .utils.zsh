@@ -186,6 +186,7 @@ md_to_pdf() {
 }
 
 # fkill-port - kill processes listening on specified ports (default: 3000-3005)
+fkill-port() {
   local pids
   local ports=()
   
