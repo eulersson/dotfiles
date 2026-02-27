@@ -17,6 +17,15 @@ Have a look at System Preferences > Keyboard > Shortcuts.
 | ⌘ + `                    | Cycle between windows of same application |
 | ⌃ + ⌘ + Space            | Open symbols and emoji picker             |
 
+### Typographic Quotes
+
+| Char | Name                 | macOS     | Windows  | HTML      |
+| ---- | -------------------- | --------- | -------- | --------- |
+| '    | Opening single quote | ⌥ + ]     | Alt 0145 | `&lsquo;` |
+| '    | Closing single quote | ⌥ + ⇧ + ] | Alt 0146 | `&rsquo;` |
+| "    | Opening double quote | ⌥ + [     | Alt 0147 | `&ldquo;` |
+| "    | Closing double quote | ⌥ + ⇧ + [ | Alt 0148 | `&rdquo;` |
+
 ## Finder
 
 | Keys          | Action                         |
