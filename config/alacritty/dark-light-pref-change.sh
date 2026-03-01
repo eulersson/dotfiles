@@ -10,8 +10,5 @@ else
   THEME_PATH=$(cat ~/.config/alacritty/theme-light.txt)
 fi
 
-# Escape any special characters for sed
-ESCAPED_THEME_PATH=$(printf '%s\n' "$THEME_PATH" | sed -e 's/[\/&]/\\&/g')
-
-# Replace the line containing `# theme` with the updated import line
-sed -i '' -E "s|^import = .*# theme|import = [\"$ESCAPED_THEME_PATH\"] # theme|" ~/.config/alacritty/alacritty.toml
+# Replace the import block (single or multi-line) ending with `# theme`
+/usr/local/bin/gsed -z -i "s|import = \[[^]]*\] # theme|import = [\n  \"$THEME_PATH\",\n] # theme|" ~/.config/alacritty/alacritty.toml

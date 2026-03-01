@@ -28,4 +28,10 @@ cat <<EOF >~/Library/LaunchAgents/com.ramn.dev.alacritty-dark-light.plist
 </dict>
 </plist>
 EOF
-launchctl load ~/Library/LaunchAgents/com.ramn.dev.alacritty-dark-light.plist
+DOMAIN="gui/$(id -u)"
+SERVICE="$DOMAIN/com.ramn.dev.alacritty-dark-light"
+PLIST="$HOME/Library/LaunchAgents/com.ramn.dev.alacritty-dark-light.plist"
+
+# Remove existing service if loaded
+launchctl bootout "$SERVICE" 2>/dev/null
+launchctl bootstrap "$DOMAIN" "$PLIST"
