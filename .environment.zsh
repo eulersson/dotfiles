@@ -8,7 +8,7 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/Scripts:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
-export PATH=$HOME/.poetry/bin:$PATH
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
 # TODO Is this needed?
 export PATH=$HOME/.pyenv/bin:$PATH
