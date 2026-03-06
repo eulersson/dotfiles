@@ -137,11 +137,12 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space s m             | (telescope) Select jump mark where to jump to                             |
 | "                     | Show registers                                                            |
 | ⌃ + /                 | Toggle floating terminal                                                  |
-| (normal) s            | Search                                                                    |
+| (normal) s            | Flash jump (search labels to jump to a match)                             |
+| (normal) f            | Flash treesitter (select treesitter node using labels)                    |
 | Space Tab Tab         | Create a new tab                                                          |
 | Space Tab ]           | Move to right tab                                                         |
 | Space Tab [           | Move to left tab                                                          |
-| ⌥ + n                 | Next tab (works in any mode)                                              |
+| ⌥ + f                 | Next tab (works in any mode)                                              |
 | ⌥ + b                 | Previous tab (works in any mode)                                          |
 | Space Tab d           | Close current tab                                                         |
 | g f                   | Go to file under cursor                                                   |
