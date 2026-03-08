@@ -415,6 +415,7 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout              |
 | ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits   |
 | ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page |
+| ⌥ + p                   | Switch to last session                           |
 | ⌥ + s                   | Enter copy mode                                  |
 | ⌃ + b, f                | Toggle status bar (focus mode)                   |
 | ⌥ + c                   | Clear screen                                     |
@@ -431,11 +432,17 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | (copy mode) ⇧ + k       | Scroll up                                        |
 | (copy mode) ⇧ + j       | Scroll down                                      |
 | (copy mode) \]          | Paste copied text                                |
+| ⌃ + b, ⌃ + s            | (resurrect) Save session                         |
+| ⌃ + b, ⌃ + r            | (resurrect) Restore session                      |
 | ⌃ + b, I                | (tpm) Installs new plugins                       |
 | ⌃ + b, U                | (tpm) Updates plugins                            |
 | ⌃ + b, ⌥ + u            | (tpm) Removes plugins not in the list            |
 | ⇧ + click + drag, ⌘ + C | Select and copy from tmux output buffer          |
 | ⌃ + b, ,                | Rename window                                    |
+| ⌃ + b, s                | List and select sessions interactively           |
+| ⌃ + b, (/)              | Switch to previous/next session                  |
+| ⌃ + b, L                | Switch to last (most recently used) session      |
+| ⌃ + b, $                | Rename current session                           |
 | ⌃ + b, \<               | Window management context menu                   |
 | ⌃ + b, \>               | Pane management context menu                     |
 
