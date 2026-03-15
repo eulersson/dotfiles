@@ -30,6 +30,7 @@ return {
           mappings = {
             i = {
               ["<CR>"] = actions.select_default + actions.center,
+              ["<C-l>"] = actions.preview_scrolling_up,
             },
             n = {
               ["<CR>"] = actions.select_default + actions.center,
