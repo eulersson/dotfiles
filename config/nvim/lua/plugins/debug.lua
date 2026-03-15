@@ -8,6 +8,12 @@ return {
     },
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    opts = {
+      automatic_installation = false,
+    },
+  },
+  {
     "mfussenegger/nvim-dap-python",
     dependencies = {
       "mfussenegger/nvim-dap",
@@ -16,9 +22,11 @@ return {
     },
     config = function()
       local dap = require("dap")
-      local debugpy_python = require("lazyvim.util").get_pkg_path("debugpy", "/venv/bin/python")
 
-      require("dap-python").setup(debugpy_python)
+      -- local debugpy_python = require("lazyvim.util").get_pkg_path("debugpy", "/venv/bin/python")
+      -- require("dap-python").setup(debugpy_python)
+
+      require("dap-python").setup("uv")
 
       local configs = dap.configurations.python or {}
 
