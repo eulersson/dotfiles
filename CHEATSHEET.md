@@ -147,7 +147,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space Tab d           | Close current tab                                                         |
 | g f                   | Go to file under cursor                                                   |
 | Space :               | (telescope) Show command history                                          |
-| Space n               | Show notificatio history                                                  |
+| Space n               | Show notification history                                                 |
 
 ### Code Folding
 
@@ -397,6 +397,11 @@ Use either LazyVim's `Space s r` or the option below.
 
 When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to revisit them.
 
+| Command     | Action                                                                       |
+| ----------- | ---------------------------------------------------------------------------- |
+| `:Noice`    | Show message history (Noice plugin UI for messages, errors, and search)      |
+| `:messages` | Show Vim's built-in message log (useful when messages flash by too quickly)  |
+
 ## tmux
 
 <https://tmuxcheatsheet.com/>
@@ -439,7 +444,7 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + b, ⌥ + u            | (tpm) Removes plugins not in the list            |
 | ⇧ + click + drag, ⌘ + C | Select and copy from tmux output buffer          |
 | ⌃ + b, ,                | Rename window                                    |
-| ⌃ + b, s                | List and select sessions interactively           |
+| ⌃ + b, s                | List and select sessions interactively (x to kill) |
 | ⌃ + b, (/)              | Switch to previous/next session                  |
 | ⌃ + b, L                | Switch to last (most recently used) session      |
 | ⌃ + b, $                | Rename current session                           |
