@@ -76,6 +76,11 @@ mods = "Alt|Shift"
 chars = "\u201D"
 
 [[keyboard.bindings]]
+key = "-"
+mods = "Alt|Shift"
+chars = "\u2014"
+
+[[keyboard.bindings]]
 action = "ToggleSimpleFullscreen"
 key = "M"
 mods = "Control|Shift"
