@@ -66,6 +66,16 @@ x = 15
 y = 35
 
 [[keyboard.bindings]]
+key = "["
+mods = "Alt"
+chars = "\u201C"
+
+[[keyboard.bindings]]
+key = "["
+mods = "Alt|Shift"
+chars = "\u201D"
+
+[[keyboard.bindings]]
 action = "ToggleSimpleFullscreen"
 key = "M"
 mods = "Control|Shift"
