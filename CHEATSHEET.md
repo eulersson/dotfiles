@@ -420,7 +420,7 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout              |
 | ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits   |
 | ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page |
-| ⌥ + p                   | Switch to last session                           |
+| ⌥ + p                   | Switch to last session (or create new if none)   |
 | ⌥ + s                   | Enter copy mode                                  |
 | ⌃ + b, f                | Toggle status bar (focus mode)                   |
 | ⌥ + c                   | Clear screen                                     |
