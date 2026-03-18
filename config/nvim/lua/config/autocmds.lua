@@ -13,6 +13,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Soft wrap markdown files.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "markdown.mdx" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})
+
 --ReloadAll: Reloads all open buffers in Neovim.
 vim.api.nvim_create_user_command("ReloadAll", function()
   vim.cmd("bufdo checktime")

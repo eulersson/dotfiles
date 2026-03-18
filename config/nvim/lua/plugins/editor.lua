@@ -23,4 +23,17 @@ return {
       },
     },
   },
+  {
+    "hedyhli/outline.nvim",
+    opts = {
+      providers = {
+        priority = { "mdx", "markdown", "lsp", "coc", "norg", "man" },
+      },
+      symbols = {
+        filter = {
+          ["markdown.mdx"] = false, -- show all symbol kinds (same as markdown)
+        },
+      },
+    },
+  },
 }
