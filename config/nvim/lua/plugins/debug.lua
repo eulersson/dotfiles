@@ -1,5 +1,19 @@
 return {
   {
+    "rcarriga/nvim-dap-ui",
+    config = function(_, opts)
+      local dap = require("dap")
+      local dapui = require("dapui")
+      dapui.setup(opts)
+      -- Remove auto-open/close listeners set by LazyVim or defaults
+      dap.listeners.after.event_initialized["dapui_config"] = nil
+      dap.listeners.before.attach.dapui_config = nil
+      dap.listeners.before.launch.dapui_config = nil
+      dap.listeners.before.event_terminated.dapui_config = nil
+      dap.listeners.before.event_exited.dapui_config = nil
+    end,
+  },
+  {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
