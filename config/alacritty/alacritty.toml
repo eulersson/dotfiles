@@ -154,6 +154,15 @@ command = { program = "/usr/local/bin/alacritty", args = [
 ] }
 
 [[keyboard.bindings]]
+key = "8"
+mods = "Super|Control|Shift|Alt"
+command = { program = "/usr/local/bin/alacritty", args = [
+  "msg",
+  "config",
+  "window.opacity=0",
+] }
+
+[[keyboard.bindings]]
 key = "9"
 mods = "Super|Control|Shift|Alt"
 command = { program = "/usr/local/bin/alacritty", args = [
