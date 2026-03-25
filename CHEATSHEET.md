@@ -193,7 +193,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | .,$s/this/that/gI | Replace occurrences of `this` with `that` from current line until end of file |
 | Space u h         | Toggle inlay hints                                                            |
 | gw                | Hard wrap text (format lines to textwidth)                                    |
-| J                 | Join lines (undo hard wrap by joining current line with next)                 |
+| (visual) J        | Join lines into one, removing comment leaders (`# `, `* `, etc.)             |
 
 ### LSP
 
