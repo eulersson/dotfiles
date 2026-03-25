@@ -4,3 +4,8 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --side-by-side --line-numbers-left-format="" --line-numbers-right-format="| " --paging=never
+customCommands:
+  - key: "T"
+    context: "commits"
+    command: "GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --date=\"now\" --no-edit"
+    description: "Reset commit date to now"
