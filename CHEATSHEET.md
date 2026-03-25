@@ -346,6 +346,8 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 | (on branch) Space   | Check out branch                                                                        |
 | (on branch) r       | Rebase selected branch into checked out branch                                          |
 | (on branch) ugh     | Hard reset to upstream (when someone rebased the branch and pushed)                     |
+| (on commit) C       | Cherry-pick (copy) commit                                                               |
+| (on branch) V       | Paste (apply) cherry-picked commits                                                     |
 
 ### Telescope
 
