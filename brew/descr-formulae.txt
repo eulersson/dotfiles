@@ -22,6 +22,7 @@ get_iplayer: Utility for downloading TV and radio programmes from BBC iPlayer
 gh: GitHub command-line tool
 git: Distributed revision control system
 git-delta: Syntax-highlighting pager for git and diff output
+glab: Open-source GitLab command-line tool
 glow: Render markdown on the CLI
 gnu-getopt: Command-line option parsing utility
 gnu-sed: GNU implementation of the famous stream editor
@@ -59,7 +60,7 @@ pandoc: Swiss-army knife of markup format conversion
 pnpm: Fast, disk space efficient package manager
 podman: Tool for managing OCI containers and pods
 portaudio: Cross-platform library for audio I/O
-postgresql@16: Object-relational database system
+postgresql@18: Object-relational database system
 pre-commit: Framework for managing multi-language pre-commit hooks
 protobuf@21: Protocol buffers (Google's data interchange format)
 protoc-gen-go: Go support for Google's protocol buffers
@@ -79,6 +80,7 @@ sfcgal: C++ wrapper library around CGAL
 skaffold: Easy and Repeatable Kubernetes Development
 starship: Cross-shell prompt for astronauts
 telnet: User interface to the TELNET protocol
+termscp: Feature rich terminal file transfer and explorer
 tmux: Terminal multiplexer
 tree: Display directories as trees (with optional color/HTML output)
 uv: Extremely fast Python package installer and resolver, written in Rust
