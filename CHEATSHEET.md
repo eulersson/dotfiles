@@ -293,6 +293,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space g G | Open up Lazy Git from the root where you run nvim from      |
 | Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim)  |
 | Space g u | Copy remote git repository link to code                     |
+| Space g E | Git Explorer using current file's git root (useful for submodules) |
 
 ### Diffview
 
