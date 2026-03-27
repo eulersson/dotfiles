@@ -24,7 +24,7 @@ alias yt-dlp-sub='yt-dlp --write-subs --sub-lang "en-GB" --skip-download'
 alias dns-flush-cache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug'
+alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=$HOME/.chrome-debug'
 
 # We might need to build some tools against our version of Python, for that we need
 # to install the Python.framework which provides the header
