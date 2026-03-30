@@ -181,6 +181,8 @@ If you want to check all the maps you can use `:map` and search through it.
 
 | Keys              | Action                                                                        |
 | ----------------- | ----------------------------------------------------------------------------- |
+| viw               | Visually select the inner word under cursor                                   |
+| viW               | Visually select the inner WORD under cursor (stops at whitespace only)        |
 | x                 | Delete character under cursor                                                 |
 | (visual) U        | Convert to uppercase                                                          |
 | (visual) u        | Convert to lowercase                                                          |
