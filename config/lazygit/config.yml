@@ -7,5 +7,5 @@ git:
 customCommands:
   - key: "T"
     context: "commits"
-    command: "GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --date=\"now\" --no-edit"
-    description: "Reset commit date to now"
+    command: "GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --date=\"now\" --reset-author --no-edit"
+    description: "Reset commit date and author to current user"
