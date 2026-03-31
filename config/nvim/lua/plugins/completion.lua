@@ -34,7 +34,8 @@ return {
               local buf_name = vim.api.nvim_buf_get_name(0)
               local filetype = vim.bo.filetype
               -- Skip for DAP REPL buffer (usually has 'dap-repl' filetype or '[dap-repl' in buffer name)
-              if filetype ~= "dap-repl" and not buf_name:match("%[dap%-repl") then
+              local excluded_fts = { ["dap-repl"] = true, ["markdown"] = true, ["mdx"] = true, ["text"] = true, ["asciidoc"] = true }
+              if not excluded_fts[filetype] and not buf_name:match("%[dap%-repl") then
                 require("blink.cmp").show()
               end
             end
