@@ -50,6 +50,8 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ✦ + c       | Center window.                                                       |
 | ✦ + v       | (v for video) Move and resize window to upper right screen quarter.  |
 | ✦ + b       | (b for below) Move and resize window to bottom right screen quarter. |
+| ✦ + z       | Move and resize window to bottom left screen quarter.                |
+| ✦ + d       | Move and resize window to top left screen quarter.                   |
 
 | Key   | Open app             |
 | ----- | -------------------- |
@@ -195,7 +197,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | .,$s/this/that/gI | Replace occurrences of `this` with `that` from current line until end of file |
 | Space u h         | Toggle inlay hints                                                            |
 | gw                | Hard wrap text (format lines to textwidth)                                    |
-| (visual) J        | Join lines into one, removing comment leaders (`# `, `* `, etc.)             |
+| (visual) J        | Join lines into one, removing comment leaders (`# `, `* `, etc.)              |
 
 ### LSP
 
@@ -282,19 +284,20 @@ If you want to check all the maps you can use `:map` and search through it.
 
 ### Git
 
-| Keys      | Action                                                      |
-| --------- | ----------------------------------------------------------- |
-| ]h        | Jump to the next git hunk                                   |
-| [h        | Jump to the previous git hunk                               |
-| ghgh      | Applies hunk range under cursor                             |
-| gHgh      | Reset hunk range under cursor                               |
-| gh\_      | Apply current line (even if it's not a full hunk)           |
-| gH\_      | Reset current line (even if it's not a full hunk)           |
-| Space g g | Open up Lazy Git on the first folder upward that has a repo |
-| Space g s | Open in Telescope the git files that have been changed      |
-| Space g G | Open up Lazy Git from the root where you run nvim from      |
-| Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim)  |
-| Space g u | Copy remote git repository link to code                     |
+| Keys      | Action                                                             |
+| --------- | ------------------------------------------------------------------ |
+| ]h        | Jump to the next git hunk                                          |
+| [h        | Jump to the previous git hunk                                      |
+| ghgh      | Applies hunk range under cursor                                    |
+| gHgh      | Reset hunk range under cursor                                      |
+| gh\_      | Apply current line (even if it's not a full hunk)                  |
+| gH\_      | Reset current line (even if it's not a full hunk)                  |
+| Space g g | Open up Lazy Git on the first folder upward that has a repo        |
+| Space g s | Open in Telescope the git files that have been changed             |
+| Space g G | Open up Lazy Git from the root where you run nvim from             |
+| Space g v | Open [Diffview](https://github.com/sindrets/diffview.nvim)         |
+| Space g u | Copy remote git repository link to code                            |
+| Space g b | Show git blame for current line (committer, date, message)         |
 | Space g E | Git Explorer using current file's git root (useful for submodules) |
 
 ### Diffview
@@ -402,59 +405,59 @@ Use either LazyVim's `Space s r` or the option below.
 
 When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to revisit them.
 
-| Command     | Action                                                                       |
-| ----------- | ---------------------------------------------------------------------------- |
-| `:Noice`    | Show message history (Noice plugin UI for messages, errors, and search)      |
-| `:messages` | Show Vim's built-in message log (useful when messages flash by too quickly)  |
+| Command     | Action                                                                      |
+| ----------- | --------------------------------------------------------------------------- |
+| `:Noice`    | Show message history (Noice plugin UI for messages, errors, and search)     |
+| `:messages` | Show Vim's built-in message log (useful when messages flash by too quickly) |
 
 ## tmux
 
 <https://tmuxcheatsheet.com/>
 
-| Keys                    | Action                                           |
-| ----------------------- | ------------------------------------------------ |
-| ⌃ + b, ?                | Show key bindings                                |
-| ⌃ + b, r                | Reload tmux config                               |
-| ⌃ + ↑/↓/←/→             | Navigate panels without losing zoom state        |
-| ⌃ + b, "                | Split vertically                                 |
-| ⌃ + b, %                | Split horizontally                               |
-| ⌃ + b, z                | Toggle zoom on current panel                     |
-| ⌃ + b, {/}              | Swap panels                                      |
-| ⌃ + b, q                | See panel numbers                                |
-| ⌃ + b ↑/↓/←/→           | Resize panel                                     |
-| ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout              |
-| ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits   |
-| ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page |
-| ⌥ + p                   | Switch to last session (or create new if none)   |
-| ⌥ + s                   | Enter copy mode                                  |
-| ⌃ + b, f                | Toggle status bar (focus mode)                   |
-| ⌥ + c                   | Clear screen                                     |
-| ⌃ + b, ⌃ + y            | Clear output buffer                              |
-| ⌃ + b, ⌃ + l            | Clear screen (alternate method)                  |
-| ⌥ + ←/→                 | Move to left/right window                        |
-| ⌥ + h/l                 | Move current window left/right                   |
-| ⌃ + b, w                | List windows visually                            |
-| ⌃ + b, P                | Paste tmux buffer                                |
-| ⌘ + v                   | Paste copied text                                |
-| (copy mode) v           | Start visual selection                           |
-| (copy mode) y           | Copy                                             |
-| (copy mode) q           | Exit copy mode                                   |
-| (copy mode) ⇧ + k       | Scroll up                                        |
-| (copy mode) ⇧ + j       | Scroll down                                      |
-| (copy mode) \]          | Paste copied text                                |
-| ⌃ + b, ⌃ + s            | (resurrect) Save session                         |
-| ⌃ + b, ⌃ + r            | (resurrect) Restore session                      |
-| ⌃ + b, I                | (tpm) Installs new plugins                       |
-| ⌃ + b, U                | (tpm) Updates plugins                            |
-| ⌃ + b, ⌥ + u            | (tpm) Removes plugins not in the list            |
-| ⇧ + click + drag, ⌘ + C | Select and copy from tmux output buffer          |
-| ⌃ + b, ,                | Rename window                                    |
+| Keys                    | Action                                             |
+| ----------------------- | -------------------------------------------------- |
+| ⌃ + b, ?                | Show key bindings                                  |
+| ⌃ + b, r                | Reload tmux config                                 |
+| ⌃ + ↑/↓/←/→             | Navigate panels without losing zoom state          |
+| ⌃ + b, "                | Split vertically                                   |
+| ⌃ + b, %                | Split horizontally                                 |
+| ⌃ + b, z                | Toggle zoom on current panel                       |
+| ⌃ + b, {/}              | Swap panels                                        |
+| ⌃ + b, q                | See panel numbers                                  |
+| ⌃ + b ↑/↓/←/→           | Resize panel                                       |
+| ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout                |
+| ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits     |
+| ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page   |
+| ⌥ + p                   | Switch to last session (or create new if none)     |
+| ⌥ + s                   | Enter copy mode                                    |
+| ⌃ + b, f                | Toggle status bar (focus mode)                     |
+| ⌥ + c                   | Clear screen                                       |
+| ⌃ + b, ⌃ + y            | Clear output buffer                                |
+| ⌃ + b, ⌃ + l            | Clear screen (alternate method)                    |
+| ⌥ + ←/→                 | Move to left/right window                          |
+| ⌥ + h/l                 | Move current window left/right                     |
+| ⌃ + b, w                | List windows visually                              |
+| ⌃ + b, P                | Paste tmux buffer                                  |
+| ⌘ + v                   | Paste copied text                                  |
+| (copy mode) v           | Start visual selection                             |
+| (copy mode) y           | Copy                                               |
+| (copy mode) q           | Exit copy mode                                     |
+| (copy mode) ⇧ + k       | Scroll up                                          |
+| (copy mode) ⇧ + j       | Scroll down                                        |
+| (copy mode) \]          | Paste copied text                                  |
+| ⌃ + b, ⌃ + s            | (resurrect) Save session                           |
+| ⌃ + b, ⌃ + r            | (resurrect) Restore session                        |
+| ⌃ + b, I                | (tpm) Installs new plugins                         |
+| ⌃ + b, U                | (tpm) Updates plugins                              |
+| ⌃ + b, ⌥ + u            | (tpm) Removes plugins not in the list              |
+| ⇧ + click + drag, ⌘ + C | Select and copy from tmux output buffer            |
+| ⌃ + b, ,                | Rename window                                      |
 | ⌃ + b, s                | List and select sessions interactively (x to kill) |
-| ⌃ + b, (/)              | Switch to previous/next session                  |
-| ⌃ + b, L                | Switch to last (most recently used) session      |
-| ⌃ + b, $                | Rename current session                           |
-| ⌃ + b, \<               | Window management context menu                   |
-| ⌃ + b, \>               | Pane management context menu                     |
+| ⌃ + b, (/)              | Switch to previous/next session                    |
+| ⌃ + b, L                | Switch to last (most recently used) session        |
+| ⌃ + b, $                | Rename current session                             |
+| ⌃ + b, \<               | Window management context menu                     |
+| ⌃ + b, \>               | Pane management context menu                       |
 
 ## zsh
 
