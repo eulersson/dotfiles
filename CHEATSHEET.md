@@ -50,7 +50,7 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ✦ + c       | Center window.                                                       |
 | ✦ + v       | (v for video) Move and resize window to upper right screen quarter.  |
 | ✦ + b       | (b for below) Move and resize window to bottom right screen quarter. |
-| ✦ + z       | Move and resize window to bottom left screen quarter.                |
+| ✦ + n       | Move and resize window to bottom left screen quarter.                |
 | ✦ + d       | Move and resize window to top left screen quarter.                   |
 
 | Key   | Open app             |
