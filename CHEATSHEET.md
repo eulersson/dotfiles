@@ -65,6 +65,13 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ✦ + w | Preview              |
 | ✦ + r | Zen (Browser)        |
 
+## Zen (Browser)
+
+| Keys      | Action       |
+| --------- | ------------ |
+| ⌘ + w     | Close tab    |
+| ⌘ + ⇧ + w | Close window |
+
 ## Alacritty
 
 - [Default bindings](https://alacritty.org/config-alacritty-bindings.html)
