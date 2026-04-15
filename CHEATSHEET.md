@@ -266,6 +266,14 @@ If you want to check all the maps you can use `:map` and search through it.
 | (in summary sidebar) 1                       | Watch test                                 |
 | (in summary sidebar) m                       | Mark test                                  |
 
+### Coverage
+
+| Keys      | Action           |
+| --------- | ---------------- |
+| Space t C | Load coverage    |
+| Space u C | Toggle coverage  |
+| Space t s | Coverage summary |
+
 ### DAP (Debug Adapter Protocol)
 
 | Keys      | Action      |

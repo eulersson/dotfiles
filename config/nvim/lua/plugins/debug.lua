@@ -1,5 +1,28 @@
 return {
   {
+    "andythigpen/nvim-coverage",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "Coverage", "CoverageLoad", "CoverageToggle", "CoverageSummary", "CoverageClear" },
+    opts = function()
+      local base = {
+        auto_reload = true,
+        lang = {
+          python = { coverage_command = "uv run coverage json --fail-under=0 -q -o -" },
+        },
+      }
+      local override = vim.g.coverage_override
+      if override then
+        base = vim.tbl_deep_extend("force", base, override)
+      end
+      return base
+    end,
+    keys = {
+      { "<leader>uC", "<cmd>CoverageToggle<cr>", desc = "Toggle Coverage" },
+      { "<leader>tC", "<cmd>CoverageLoad<cr>", desc = "Load Coverage" },
+      { "<leader>ts", "<cmd>CoverageSummary<cr>", desc = "Coverage Summary" },
+    },
+  },
+  {
     "rcarriga/nvim-dap-ui",
     config = function(_, opts)
       local dap = require("dap")
