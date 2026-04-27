@@ -28,9 +28,9 @@ Have a look at System Preferences > Keyboard > Shortcuts.
 
 ## Finder
 
-| Keys          | Action                         |
-| ------------- | ------------------------------ |
-| ⌘ + ⇧ + Space | Toggle hidden files visibility |
+| Keys      | Action                        |
+| --------- | ----------------------------- |
+| ⌘ + ⇧ + . | Toggle show/hide hidden files |
 
 ## Raycast
 
