@@ -88,8 +88,3 @@ fi
 
 # LazyGit: base config + theme (swapped by dark-notify via dark-light-pref-change.sh).
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/theme.yml"
-
-# If there's a `.environment.work.zsh` source it too.
-if [[ -f ~/.environment.work.zsh ]]; then
-  source ~/.environment.work.zsh
-fi
