@@ -154,11 +154,13 @@ watchRunTest() {
   eval $cmd
 }
 
-# fkill-port - kill processes listening on specified ports (default: 3000-3005)
-# Usage: fkill-port [ports...]
-# Examples: fkill-port 3000 3001
-#           fkill-port 3000-3005
-#           fkill-port 3000-3002 8080 9000-9002
+# md_to_pdf - render a Markdown file to PDF via pandoc + WeasyPrint
+# Mermaid code blocks are rendered as images by mermaid-filter.
+# Usage: md_to_pdf <file.md> [output.pdf]
+# Example: md_to_pdf docs/client/FLUX_DE_METADADES.md
+# Deps:
+#   brew install pandoc weasyprint
+#   npm install -g mermaid-filter
 md_to_pdf() {
   if [ $# -lt 1 ]; then
     echo "Usage: md_to_pdf <file.md> [output.pdf]"
@@ -186,6 +188,10 @@ md_to_pdf() {
 }
 
 # fkill-port - kill processes listening on specified ports (default: 3000-3005)
+# Usage: fkill-port [ports...]
+# Examples: fkill-port 3000 3001
+#           fkill-port 3000-3005
+#           fkill-port 3000-3002 8080 9000-9002
 fkill-port() {
   local pids
   local ports=()

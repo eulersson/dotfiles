@@ -483,7 +483,7 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + r                                       | Browse terminal history using fuzzy search fzf                       |
 | cd \*\*Tab                                  | Use fzf to fuzzy search directory to jump to                         |
 | fc -AI                                      | Save history of current Zsh session                                  |
-| `md_to_pdf <file.md> [output.pdf]`          | Convert Markdown with Mermaid diagrams to PDF                        |
+| `md_to_pdf <file.md> [output.pdf]`          | Render Markdown to PDF via pandoc + WeasyPrint, with Mermaid blocks rendered by `mermaid-filter`. Deps: `brew install pandoc weasyprint && npm i -g mermaid-filter` |
 
 ### Shell GPT
 
