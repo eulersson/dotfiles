@@ -255,7 +255,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | -------------------------------------------- | ------------------------------------------ |
 | Space t r                                    | Run nearest test                           |
 | Space t d                                    | Debug nearest test                         |
-| Space t s                                    | Toggle summary sidebar                     |
+| Space t u                                    | Toggle summary sidebar                     |
 | Space t O                                    | Show test results in permanent split below |
 | Space t o (after floating test result shows) | Jumps to floating test result window       |
 | (in summary sidebar) ?                       | Show help                                  |
