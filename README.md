@@ -108,6 +108,7 @@ ln -s $HOME/.dotfiles/config/tmux .
 ln -s $HOME/.dotfiles/config/lazygit .
 ln -s $HOME/.dotfiles/config/nvim .
 ln -s $HOME/.dotfiles/config/yazi .
+ln -s $HOME/.dotfiles/config/starship.toml .
 
 mkdir -p $HOME/.local/bin
 for f in $HOME/.dotfiles/bin/*; do ln -s "$f" $HOME/.local/bin/; done

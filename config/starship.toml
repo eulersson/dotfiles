@@ -1,0 +1,9 @@
+# pyenv shims add ~240ms to `python --version`; bump from the 500ms default
+# so the python module doesn't intermittently time out under load.
+command_timeout = 1000
+
+[gcloud]
+disabled = true
+
+[aws]
+disabled = true
