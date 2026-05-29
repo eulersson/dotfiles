@@ -260,3 +260,35 @@ fkill-port() {
     echo "No processes selected"
   fi
 }
+
+# adoc_to_html - render an AsciiDoc file (with Mermaid) to HTML and open it in the browser
+# Mermaid blocks are rendered by asciidoctor-kroki (uses the public kroki.io server).
+# Usage: adoc_to_html <file.adoc> [output.html]
+# Example: adoc_to_html internal/documentation-infrastructure/README.adoc
+# Deps:
+#   gem install --user-install asciidoctor asciidoctor-kroki
+adoc_to_html() {
+  if [ $# -lt 1 ]; then
+    echo "Usage: adoc_to_html <file.adoc> [output.html]"
+    return 1
+  fi
+
+  local input="$1"
+  local output="${2:-${input%.adoc}.html}"
+
+  # asciidoctor from --user-install may not be on PATH; fall back to the user gem bin
+  local asciidoctor_bin="asciidoctor"
+  if ! command -v asciidoctor &>/dev/null; then
+    local gem_bin="$(ruby -e 'require "rubygems"; print Gem.user_dir' 2>/dev/null)/bin"
+    if [ -x "$gem_bin/asciidoctor" ]; then
+      asciidoctor_bin="$gem_bin/asciidoctor"
+    else
+      echo "Error: asciidoctor is not installed. Run: gem install --user-install asciidoctor asciidoctor-kroki"
+      return 1
+    fi
+  fi
+
+  "$asciidoctor_bin" -r asciidoctor-kroki "$input" -o "$output" && \
+    echo "Created: $output" && \
+    open "$output"
+}

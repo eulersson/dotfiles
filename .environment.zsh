@@ -8,6 +8,8 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/Scripts:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
+# Ruby user-install gem binaries (version-agnostic).
+for d in "$HOME"/.gem/ruby/*/bin(N); do PATH="$d:$PATH"; done
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
 # TODO Is this needed?
