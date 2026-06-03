@@ -53,10 +53,10 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ✦ + n       | Move and resize window to bottom left screen quarter.                |
 | ✦ + d       | Move and resize window to top left screen quarter.                   |
 
-| Key   | Open app             |
-| ----- | -------------------- |
-| ✦ + t | Terminal (Alacritty) |
-| ✦ + i | Finder               |
+| Key   | Open app         |
+| ----- | ---------------- |
+| ✦ + t | Terminal (kitty) |
+| ✦ + i | Finder           |
 | ✦ + p | KeePassX             |
 | ✦ + m | Mail                 |
 | ✦ + x | Obsidian             |
@@ -72,21 +72,22 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ⌘ + w     | Close tab    |
 | ⌘ + ⇧ + w | Close window |
 
-## Alacritty
+## kitty
 
-- [Default bindings](https://alacritty.org/config-alacritty-bindings.html)
-- Custom bindings: [.config/alacritty/alacritty.toml](.config/alacritty/alacritty.toml)
-- Alacritty does not have splits nor tabs so in this setup it's paired with these [tmux configuration](#tmux).
+- [Default shortcuts](https://sw.kovidgoyal.net/kitty/overview/#keyboard-control).
+- Custom bindings: [config/kitty/kitty.conf](config/kitty/kitty.conf).
+- kitty does not have splits in this setup so it's paired with [tmux](#tmux) for that.
 
-| Keys      | Action                    |
-| --------- | ------------------------- |
-| ⌃ + ⇧ + m | Toggle simple full sreen  |
-| ⌃ + ⇧ + n | Create new window         |
-| ⌃ + ⇧ + h | Minimize window           |
-| ⌃ + ⇧ + y | Clear history             |
-| ⌃ + ⇧ + o | Set window opacity to 0.5 |
-| ⌃ + ⇧ + p | Set window opacity to 1   |
-| Super + z | Cycle font sizes          |
+| Keys                  | Action                                  |
+| --------------------- | --------------------------------------- |
+| ⌃ + ⇧ + m             | Toggle fullscreen.                      |
+| ✦ + y                 | Clear terminal scrollback.              |
+| ✦ + 1 … ✦ + 7         | Cycle background opacity (1.0 → 0.0).   |
+| ✦ + 8 / ✦ + 9 / ✦ + 0 | Background blur: 64 / 32 / off.         |
+| ✦ + z                 | Cycle font sizes (18 → 20 → 14 → 16).   |
+| ⌥ + [                 | Send `“` (curly opening double quote).  |
+| ⌥ + ⇧ + [             | Send `”` (curly closing double quote).  |
+| ⌥ + ⇧ + -             | Send `—` (em dash).                     |
 
 ## Finder
 

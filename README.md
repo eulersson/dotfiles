@@ -4,7 +4,7 @@ Collection of configuration files.
 
 | Tool                                      | Purpose                                                   |
 | ----------------------------------------- | --------------------------------------------------------- |
-| [Alacritty](https://alacritty.org/)       | Cross-platform terminal emulator.                         |
+| [kitty](https://sw.kovidgoyal.net/kitty/) | GPU-based terminal emulator.                              |
 | [tmux](https://github.com/tmux/tmux/wiki) | Terminal multiplexer.                                     |
 | [Zsh](https://zsh.org/)                   | Unix shell.                                               |
 | [Starship](https://starship.rs/)          | Cross-shell prompt.                                       |
@@ -103,7 +103,7 @@ mkdir -p $HOME/.config
 cd $HOME/.config
 
 ln -s $HOME/.dotfiles/themes .
-ln -s $HOME/.dotfiles/config/alacritty .
+ln -s $HOME/.dotfiles/config/kitty .
 ln -s $HOME/.dotfiles/config/tmux .
 ln -s $HOME/.dotfiles/config/lazygit .
 ln -s $HOME/.dotfiles/config/nvim .
@@ -117,10 +117,10 @@ cd $HOME
 ln -s .dotfiles/*.zsh* .
 ```
 
-Install an agent that detects changes on dark-light macOS preference and update Alacritty theme.
+Install an agent that detects changes on dark-light macOS preference and updates the kitty theme (plus lazygit and Claude Code themes).
 
 ```sh
-./config/alacritty/create-launch-agent.sh
+./config/kitty/create-launch-agent.sh
 ```
 
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm):
@@ -162,7 +162,7 @@ Configuration is backed up and kept in private iCloud. It does not allow
 keeping a configuration file that's safe for version tracking. Some of the
 options I set up is:
 
-- All the shortcuts in [CHEATSHEET.md](/CHEATSHEET.md#alacritty).
+- All the shortcuts in [CHEATSHEET.md](/CHEATSHEET.md#kitty).
 - Extensions
   - Apple Reminders
   - Arc

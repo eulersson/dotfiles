@@ -3,19 +3,40 @@
 ## Brew Dependencies
 
 ```
-kitty
+alacritty
 ```
 
 ## Installation
 
 ```
 # Terminal emulators
-ln -s $HOME/.dotfiles/.config/alacritty .
-ln -s $HOME/.dotfiles/.config/ghostty .
-ln -s $HOME/.dotfiles/.config/kitty .
+ln -s $HOME/.dotfiles/.abandoned/alacritty $HOME/.config/alacritty
+ln -s $HOME/.dotfiles/.abandoned/ghostty   $HOME/.config/ghostty
+```
+
+If you want to reuse Alacritty's dark/light launch agent, run:
+
+```
+./alacritty/create-launch-agent.sh
 ```
 
 ## Cheat Sheet
+
+### Alacritty
+
+- [Default bindings](https://alacritty.org/config-alacritty-bindings.html)
+- Custom bindings: [alacritty/alacritty.toml](alacritty/alacritty.toml)
+- Alacritty does not have splits nor tabs so in this setup it's paired with tmux.
+
+| Keys      | Action                    |
+| --------- | ------------------------- |
+| ⌃ + ⇧ + m | Toggle simple full sreen  |
+| ⌃ + ⇧ + n | Create new window         |
+| ⌃ + ⇧ + h | Minimize window           |
+| ⌃ + ⇧ + y | Clear history             |
+| ⌃ + ⇧ + o | Set window opacity to 0.5 |
+| ⌃ + ⇧ + p | Set window opacity to 1   |
+| Super + z | Cycle font sizes          |
 
 ### Ghostty
 
@@ -39,38 +60,6 @@ ln -s $HOME/.dotfiles/.config/kitty .
 | ⌃ + ⌘ + =       | Equalize splits.           |
 | ⇧ + ⌘ + ⏎       | Zoom split.                |
 | ⌘ + \[/\]       | Select previos/next split. |
-
-### Kitty
-
-From [kitty's keys](https://sw.kovidgoyal.net/kitty/overview/) as base and
-expanding in [kitty config](.config/kitty/kitty.conf):
-
-| Keys            | Action                              |
-| --------------- | ----------------------------------- |
-| ⌃ + ⌘ + ,       | Reload config.                      |
-| ⌃ + ⌥ + ←/↓/↑/→ | Move window in the given direction. |
-| ⌘ + ⌥ + q       | Reset window resizings.             |
-| ⌃ + ⇧ + ./,     | Move tab forward/backward.          |
-| ⌃ + ⇧ + z       | Toggle current panel maximize.      |
-| ⌘ + r           | Enter window resizing mode.         |
-| ⇧ + ⌘ + i       | Set tab title.                      |
-
-| Keys            | Action          |
-| --------------- | --------------- |
-| ⌘ + t           | New tab.        |
-| ⇧ + ⌃ + ←/→     | Navigate tabs.  |
-| ⌘ + w           | Close tab.      |
-| ⌘ + ↩          | Split.          |
-| ⌘ + ⌥ + u       | Split right.    |
-| ⌘ + ⌥ + i       | Split down.     |
-| ⌃ + h/j/k/l     | Navigate split. |
-| ⌘ + ⌥ + ←/↓/↑/→ | Resize split.   |
-| ⌘ + ⇧ + d       | Close split.    |
-
-| Keys      | Action                              |
-| --------- | ----------------------------------- |
-| ⌃ + ⇧ + u | Special character and emoji picker. |
-| ⌥ + ⌘ + l | Clear contents of the terminal.     |
 
 ### iTerm
 

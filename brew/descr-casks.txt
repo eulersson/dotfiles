@@ -1,4 +1,3 @@
-alacritty: (Alacritty) GPU-accelerated terminal emulator
 anki: (Anki) Memory training application
 audacity: (Audacity) Multi-track audio editor and recorder
 balenaetcher: (Etcher) Tool to flash OS images to SD cards & USB drives
