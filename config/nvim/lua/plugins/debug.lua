@@ -62,7 +62,7 @@ return {
     keys = {
       { "<leader>uC", "<cmd>CoverageToggle<cr>", desc = "Toggle Coverage" },
       { "<leader>tC", "<cmd>CoverageLoad<cr>", desc = "Load Coverage" },
-      { "<leader>ts", "<cmd>CoverageSummary<cr>", desc = "Coverage Summary" },
+      { "<leader>tS", "<cmd>CoverageSummary<cr>", desc = "Coverage Summary" },
     },
   },
   {

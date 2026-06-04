@@ -273,7 +273,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | --------- | ---------------- |
 | Space t C | Load coverage    |
 | Space u C | Toggle coverage  |
-| Space t s | Coverage summary |
+| Space t S | Coverage summary |
 
 ### DAP (Debug Adapter Protocol)
 
