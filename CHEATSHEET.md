@@ -373,11 +373,21 @@ Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`
 
 ### Telescope
 
-| Keys                | Action                                            |
-| ------------------- | ------------------------------------------------- |
-| (normal mode) ?     | Show help                                         |
-| (insert mode) ⌃ + / | Show help                                         |
-| (insert mode) ⌃ + q | Send filtered selection to quickfix (lower panel) |
+| Keys                       | Action                                            |
+| -------------------------- | ------------------------------------------------- |
+| Esc                        | Enter normal mode in picker (`i`/`a` to go back)  |
+| (normal mode) ?            | Show help                                         |
+| (insert mode) ⌃ + /        | Show help                                         |
+| (insert mode) ⌃ + q        | Send filtered selection to quickfix (lower panel) |
+| ⌃ + y / ⌃ + e              | Scroll preview up / down                          |
+| ⌃ + f / ⌃ + b              | Page scroll preview down / up                     |
+| (insert mode) ⌥ + i        | Find files (no ignore)                            |
+| (insert mode) ⌃ + t        | Open results with Trouble                         |
+| (normal mode) q            | Close picker                                      |
+| (normal mode) s            | Flash jump-by-label inside picker                 |
+| (live grep args) ⌃ + k     | Quote prompt (treat as literal arg)               |
+| (live grep args) ⌃ + i     | Quote prompt and append `--iglob ` for filter     |
+| (live grep args) ⌃ + n / p | Cycle through search history                      |
 
 ### Commands
 

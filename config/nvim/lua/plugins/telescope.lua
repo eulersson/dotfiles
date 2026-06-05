@@ -20,37 +20,41 @@ return {
         desc = "Grep Live Args (root dir)",
       },
     },
-    config = function()
-      local telescope = require("telescope")
+    opts = function(_, opts)
       local actions = require("telescope.actions")
       local lga_actions = require("telescope-live-grep-args.actions")
 
-      telescope.setup({
-        defaults = {
-          mappings = {
-            i = {
-              ["<CR>"] = actions.select_default + actions.center,
-              ["<C-l>"] = actions.preview_scrolling_up,
-            },
-            n = {
-              ["<CR>"] = actions.select_default + actions.center,
-            },
+      opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
+        mappings = {
+          i = {
+            ["<CR>"] = actions.select_default + actions.center,
+            ["<C-y>"] = actions.preview_scrolling_up,
+            ["<C-e>"] = actions.preview_scrolling_down,
           },
-        },
-        extensions = {
-          live_grep_args = {
-            mappings = {
-              i = {
-                ["<C-k>"] = lga_actions.quote_prompt(),
-                ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-                ["<C-n>"] = actions.cycle_history_next,
-                ["<C-p>"] = actions.cycle_history_prev,
-              },
-            },
+          n = {
+            ["<CR>"] = actions.select_default + actions.center,
+            ["<C-y>"] = actions.preview_scrolling_up,
+            ["<C-e>"] = actions.preview_scrolling_down,
           },
         },
       })
 
+      opts.extensions = vim.tbl_deep_extend("force", opts.extensions or {}, {
+        live_grep_args = {
+          mappings = {
+            i = {
+              ["<C-k>"] = lga_actions.quote_prompt(),
+              ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+              ["<C-n>"] = actions.cycle_history_next,
+              ["<C-p>"] = actions.cycle_history_prev,
+            },
+          },
+        },
+      })
+    end,
+    config = function(_, opts)
+      local telescope = require("telescope")
+      telescope.setup(opts)
       telescope.load_extension("live_grep_args")
       telescope.load_extension("fzf")
     end,
