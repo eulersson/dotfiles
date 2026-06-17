@@ -544,14 +544,58 @@ sgpt <<< "What is the best way to learn shell redirects?"
 
 ## lnav
 
-| Keys                  | Action                             |
-| --------------------- | ---------------------------------- |
-| e/E                   | Jump to previous and next error    |
-| m                     | Mark log line                      |
-| c                     | Copy marked log lines              |
-| Tab                   | Move to files and filters sections |
-| /                     | Search                             |
-| :hide-fields log_time | Hide the time field                |
+Multiple files/sources are merged automatically by timestamp into a single chronological view (each source gets a colored bar on the left margin). Just open them together:
+
+```sh
+lnav source1.log source2.log         # merge two files by time
+lnav /var/log/app1/ /var/log/app2/   # whole directories / globs
+journalctl -f | lnav access.log      # stdin stream merged with a file
+```
+
+### Navigation
+
+| Keys      | Action                                              |
+| --------- | --------------------------------------------------- |
+| Space / b | Page forward / back one screen                      |
+| j/k (↓/↑) | Move down / up one line (scroll up with `k`/↑ to pause auto-scroll on a growing file) |
+| g / G     | Jump to top / bottom                                |
+| /         | Search                                              |
+| Tab       | Move to files and filters sections                  |
+| e/E       | Jump to previous and next error                     |
+| w/W       | Jump to previous and next warning                   |
+| o/O       | Next / previous line with same opid (if format has one) |
+| ⌃ + w     | Toggle word wrap (long lines reflow instead of being truncated) |
+
+### Marking
+
+| Keys | Action                                               |
+| ---- | ---------------------------------------------------- |
+| m    | Toggle bookmark on current line                      |
+| M    | Mark range from the last marked line to current      |
+| u/U  | Jump to next / previous user bookmark                |
+| c    | Copy marked log lines (or current line if none)      |
+
+### Time filtering & windows
+
+| Command                          | Action                                                      |
+| -------------------------------- | ----------------------------------------------------------- |
+| `:goto 2026-06-17 14:30:00`      | Jump cursor to that time (accepts `-30m`, `8:00`, etc.)     |
+| `:hide-lines-before -2m`         | Hide everything older than the bound (relative resolved once → fixed) |
+| `:hide-lines-after now`          | Hide everything newer than the bound                        |
+| `:show-lines-before-and-after`   | Clear both time bounds                                       |
+
+> [!TIP]
+> To freeze a static "last 2 minutes" window (no sliding): `:hide-lines-before -2m` + `:hide-lines-after now`, then scroll up with `k`/↑ to stop auto-scrolling. Relative times are resolved once, so the bounds don't advance.
+
+### Filtering & fields
+
+| Command                  | Action                                |
+| ------------------------ | ------------------------------------- |
+| `:filter-in <regex>`     | Keep only matching lines              |
+| `:filter-out <regex>`    | Drop matching lines                   |
+| `:clear-filters`         | Remove all regex filters              |
+| `:hide-fields log_time`  | Hide the time field                   |
+| `:hide-file <path>`      | Temporarily drop a source from the merge (`:show-file` to restore) |
 
 ## Visual Studio Code
 
