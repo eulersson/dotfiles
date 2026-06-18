@@ -21,6 +21,10 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
+# zsh-syntax-highlighting defaults comments to fg=black,bold which is
+# unreadable on a dark background — make them a visible gray.
+ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
+
 # No need to switch to vi keybindings if using jeffreytse/zsh-vi-mode
 # bindkey -v
 
