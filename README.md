@@ -10,6 +10,7 @@ Collection of configuration files.
 | [Starship](https://starship.rs/)          | Cross-shell prompt.                                       |
 | [LazyVim](https://www.lazyvim.org/)       | Customizable Neovim setup.                                |
 | [Raycast](https://www.raycast.com/)       | Productivity app (among best features is window manager). |
+| [IPython](https://ipython.org/)           | Enhanced interactive Python shell.                        |
 
 | Manager                                 | Purpose                     |
 | --------------------------------------- | --------------------------- |
@@ -115,6 +116,13 @@ for f in $HOME/.dotfiles/bin/*; do ln -s "$f" $HOME/.local/bin/; done
 
 cd $HOME
 ln -s .dotfiles/*.zsh* .
+```
+
+IPython keeps runtime state (history, db, security) in `~/.ipython`, so only the config file is symlinked rather than the whole directory:
+
+```sh
+mkdir -p $HOME/.ipython/profile_default
+ln -s $HOME/.dotfiles/config/ipython/profile_default/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
 ```
 
 Install an agent that detects changes on dark-light macOS preference and updates the kitty theme (plus lazygit and Claude Code themes).
