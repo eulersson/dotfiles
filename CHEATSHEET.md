@@ -57,13 +57,13 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ----- | ---------------- |
 | ✦ + t | Terminal (kitty) |
 | ✦ + i | Finder           |
-| ✦ + p | KeePassX             |
-| ✦ + m | Mail                 |
-| ✦ + x | Obsidian             |
-| ✦ + a | Reminders            |
-| ✦ + e | Calendar             |
-| ✦ + w | Preview              |
-| ✦ + r | Zen (Browser)        |
+| ✦ + p | KeePassX         |
+| ✦ + m | Mail             |
+| ✦ + x | Obsidian         |
+| ✦ + a | Reminders        |
+| ✦ + e | Calendar         |
+| ✦ + w | Preview          |
+| ✦ + r | Zen (Browser)    |
 
 ## Zen (Browser)
 
@@ -78,16 +78,16 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 - Custom bindings: [config/kitty/kitty.conf](config/kitty/kitty.conf).
 - kitty does not have splits in this setup so it's paired with [tmux](#tmux) for that.
 
-| Keys                  | Action                                  |
-| --------------------- | --------------------------------------- |
-| ⌃ + ⇧ + m             | Toggle fullscreen.                      |
-| ✦ + y                 | Clear terminal scrollback.              |
-| ✦ + 1 … ✦ + 7         | Cycle background opacity (1.0 → 0.0).   |
-| ✦ + 8 / ✦ + 9 / ✦ + 0 | Background blur: 64 / 32 / off.         |
-| ✦ + z                 | Cycle font sizes (18 → 20 → 14 → 16).   |
-| ⌥ + [                 | Send `“` (curly opening double quote).  |
-| ⌥ + ⇧ + [             | Send `”` (curly closing double quote).  |
-| ⌥ + ⇧ + -             | Send `—` (em dash).                     |
+| Keys                  | Action                                 |
+| --------------------- | -------------------------------------- |
+| ⌃ + ⇧ + m             | Toggle fullscreen.                     |
+| ✦ + y                 | Clear terminal scrollback.             |
+| ✦ + 1 … ✦ + 7         | Cycle background opacity (1.0 → 0.0).  |
+| ✦ + 8 / ✦ + 9 / ✦ + 0 | Background blur: 64 / 32 / off.        |
+| ✦ + z                 | Cycle font sizes (18 → 20 → 14 → 16).  |
+| ⌥ + [                 | Send `“` (curly opening double quote). |
+| ⌥ + ⇧ + [             | Send `”` (curly closing double quote). |
+| ⌥ + ⇧ + -             | Send `—` (em dash).                    |
 
 ## Finder
 
@@ -175,6 +175,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space q S | Select a session to load              |
 | Space q l | Load the last session                 |
 | Space q d | Stop Persistence (won't save on exit) |
+| Space ;   | Reopen the Snacks dashboard           |
 
 ### Help
 
@@ -487,13 +488,13 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 
 ## zsh
 
-| Alias                                       | Action                                                               |
-| ------------------------------------------- | -------------------------------------------------------------------- |
-| installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file |
-| gh                                          | GitHub Copilot                                                       |
-| ⌃ + r                                       | Browse terminal history using fuzzy search fzf                       |
-| cd \*\*Tab                                  | Use fzf to fuzzy search directory to jump to                         |
-| fc -AI                                      | Save history of current Zsh session                                  |
+| Alias                                       | Action                                                                                                                                                              |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file                                                                                                |
+| gh                                          | GitHub Copilot                                                                                                                                                      |
+| ⌃ + r                                       | Browse terminal history using fuzzy search fzf                                                                                                                      |
+| cd \*\*Tab                                  | Use fzf to fuzzy search directory to jump to                                                                                                                        |
+| fc -AI                                      | Save history of current Zsh session                                                                                                                                 |
 | `md_to_pdf <file.md> [output.pdf]`          | Render Markdown to PDF via pandoc + WeasyPrint, with Mermaid blocks rendered by `mermaid-filter`. Deps: `brew install pandoc weasyprint && npm i -g mermaid-filter` |
 
 ### Shell GPT
@@ -554,48 +555,48 @@ journalctl -f | lnav access.log      # stdin stream merged with a file
 
 ### Navigation
 
-| Keys      | Action                                              |
-| --------- | --------------------------------------------------- |
-| Space / b | Page forward / back one screen                      |
+| Keys      | Action                                                                                |
+| --------- | ------------------------------------------------------------------------------------- |
+| Space / b | Page forward / back one screen                                                        |
 | j/k (↓/↑) | Move down / up one line (scroll up with `k`/↑ to pause auto-scroll on a growing file) |
-| g / G     | Jump to top / bottom                                |
-| /         | Search                                              |
-| Tab       | Move to files and filters sections                  |
-| e/E       | Jump to previous and next error                     |
-| w/W       | Jump to previous and next warning                   |
-| o/O       | Next / previous line with same opid (if format has one) |
-| ⌃ + w     | Toggle word wrap (long lines reflow instead of being truncated) |
+| g / G     | Jump to top / bottom                                                                  |
+| /         | Search                                                                                |
+| Tab       | Move to files and filters sections                                                    |
+| e/E       | Jump to previous and next error                                                       |
+| w/W       | Jump to previous and next warning                                                     |
+| o/O       | Next / previous line with same opid (if format has one)                               |
+| ⌃ + w     | Toggle word wrap (long lines reflow instead of being truncated)                       |
 
 ### Marking
 
-| Keys | Action                                               |
-| ---- | ---------------------------------------------------- |
-| m    | Toggle bookmark on current line                      |
-| M    | Mark range from the last marked line to current      |
-| u/U  | Jump to next / previous user bookmark                |
-| c    | Copy marked log lines (or current line if none)      |
+| Keys | Action                                          |
+| ---- | ----------------------------------------------- |
+| m    | Toggle bookmark on current line                 |
+| M    | Mark range from the last marked line to current |
+| u/U  | Jump to next / previous user bookmark           |
+| c    | Copy marked log lines (or current line if none) |
 
 ### Time filtering & windows
 
-| Command                          | Action                                                      |
-| -------------------------------- | ----------------------------------------------------------- |
-| `:goto 2026-06-17 14:30:00`      | Jump cursor to that time (accepts `-30m`, `8:00`, etc.)     |
-| `:hide-lines-before -2m`         | Hide everything older than the bound (relative resolved once → fixed) |
-| `:hide-lines-after now`          | Hide everything newer than the bound                        |
-| `:show-lines-before-and-after`   | Clear both time bounds                                       |
+| Command                        | Action                                                                |
+| ------------------------------ | --------------------------------------------------------------------- |
+| `:goto 2026-06-17 14:30:00`    | Jump cursor to that time (accepts `-30m`, `8:00`, etc.)               |
+| `:hide-lines-before -2m`       | Hide everything older than the bound (relative resolved once → fixed) |
+| `:hide-lines-after now`        | Hide everything newer than the bound                                  |
+| `:show-lines-before-and-after` | Clear both time bounds                                                |
 
 > [!TIP]
 > To freeze a static "last 2 minutes" window (no sliding): `:hide-lines-before -2m` + `:hide-lines-after now`, then scroll up with `k`/↑ to stop auto-scrolling. Relative times are resolved once, so the bounds don't advance.
 
 ### Filtering & fields
 
-| Command                  | Action                                |
-| ------------------------ | ------------------------------------- |
-| `:filter-in <regex>`     | Keep only matching lines              |
-| `:filter-out <regex>`    | Drop matching lines                   |
-| `:clear-filters`         | Remove all regex filters              |
-| `:hide-fields log_time`  | Hide the time field                   |
-| `:hide-file <path>`      | Temporarily drop a source from the merge (`:show-file` to restore) |
+| Command                 | Action                                                             |
+| ----------------------- | ------------------------------------------------------------------ |
+| `:filter-in <regex>`    | Keep only matching lines                                           |
+| `:filter-out <regex>`   | Drop matching lines                                                |
+| `:clear-filters`        | Remove all regex filters                                           |
+| `:hide-fields log_time` | Hide the time field                                                |
+| `:hide-file <path>`     | Temporarily drop a source from the merge (`:show-file` to restore) |
 
 ## Visual Studio Code
 

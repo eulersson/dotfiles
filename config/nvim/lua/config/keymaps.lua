@@ -109,6 +109,11 @@ map("n", "<c-/>", function()
   Snacks.terminal()
 end, { desc = "Terminal (cwd)" })
 
+-- Reopen the Snacks dashboard (only shown automatically on empty startup)
+map("n", "<leader>;", function()
+  Snacks.dashboard()
+end, { desc = "Dashboard" })
+
 -- Toggle status bar
 map("n", "<leader>ue", function()
   if vim.o.laststatus == 0 then
