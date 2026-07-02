@@ -274,7 +274,7 @@ If you want to check all the maps you can use `:map` and search through it.
 | --------- | ---------------- |
 | Space t C | Load coverage    |
 | Space u C | Toggle coverage  |
-| Space t S | Coverage summary |
+| Space t c s | Coverage summary |
 
 ### DAP (Debug Adapter Protocol)
 
