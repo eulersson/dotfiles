@@ -317,6 +317,10 @@ If you want to check all the maps you can use `:map` and search through it.
 | Space g b | Show git blame for current line (committer, date, message)         |
 | Space g E | Git Explorer using current file's git root (useful for submodules) |
 
+> `gh`/`gh_` also work on **new/untracked** files — a custom mini.diff source
+> gives them an empty reference so their lines can be staged (see
+> `lua/plugins/git.lua`).
+
 ### Diffview
 
 Diffview opens into a tab, see the tab navigation (`Space`, `Tab`, `]`/`[`/`d`/`Tab`)
@@ -495,6 +499,7 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + r                                       | Browse terminal history using fuzzy search fzf                                                                                                                      |
 | cd \*\*Tab                                  | Use fzf to fuzzy search directory to jump to                                                                                                                        |
 | fc -AI                                      | Save history of current Zsh session                                                                                                                                 |
+| fc -RI                                      | Load history saved by another Zsh session into the current shell                                                                                                    |
 | `md_to_pdf <file.md> [output.pdf]`          | Render Markdown to PDF via pandoc + WeasyPrint, with Mermaid blocks rendered by `mermaid-filter`. Deps: `brew install pandoc weasyprint && npm i -g mermaid-filter` |
 
 ### Shell GPT
