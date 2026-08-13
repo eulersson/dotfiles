@@ -20,6 +20,10 @@ alias sgptask='echo -n "> " && read question && sgpt "$(echo $question)"'
 # Misc
 alias yt-dlp-mp3='yt-dlp --extract-audio --audio-format mp3 '
 alias yt-dlp-mp3-pl='yt-dlp --extract-audio --audio-format mp3 --output "%(playlist_index)s %(title)s.%(ext)s"'
+
+# usage: yt-dlp-mp3-pl-n 5 "<playlist-url>"  (download only the first N items)
+yt-dlp-mp3-pl-n() { yt-dlp --extract-audio --audio-format mp3 --playlist-end "$1" --output "%(playlist_index)s %(title)s.%(ext)s" "${@:2}" }
+
 alias yt-dlp-sub='yt-dlp --write-subs --sub-lang "en-GB" --skip-download'
 alias dns-flush-cache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
