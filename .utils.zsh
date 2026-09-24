@@ -292,3 +292,115 @@ adoc_to_html() {
     echo "Created: $output" && \
     open "$output"
 }
+
+# compress_pdf - shrink a scanned PDF by re-encoding its pages as JPEG
+#
+# Meant for scans (one big image per page). It rasterises the document, so an
+# embedded text layer is flattened into pixels - it warns before doing that.
+# By default it also lifts the paper white point, which drops scanner grain and
+# the bleed-through from the reverse side, so pages look cleaner *and* compress
+# better. Use -n to keep the background untouched (photo books, artwork).
+#
+# Usage: compress_pdf [-p screen|ebook|print] [-d dpi] [-q quality] [-n] <input.pdf> [output.pdf]
+#   -p  preset: screen = 150dpi/q70, ebook = 200dpi/q72 (default), print = 300dpi/q80
+#   -d  override the dpi
+#   -q  override the JPEG quality (1-100)
+#   -n  no paper cleanup
+#
+# Example: compress_pdf book.pdf                 # 436M -> 46M on a 112-page scan
+#          compress_pdf -p screen book.pdf small.pdf
+#
+# Deps: brew install poppler imagemagick qpdf
+compress_pdf() {
+  local preset="ebook" dpi="" quality="" cleanup=1
+  local OPTIND opt
+  local usage="Usage: compress_pdf [-p screen|ebook|print] [-d dpi] [-q quality] [-n] <input.pdf> [output.pdf]"
+
+  while getopts "p:d:q:nh" opt; do
+    case $opt in
+      p) preset="$OPTARG" ;;
+      d) dpi="$OPTARG" ;;
+      q) quality="$OPTARG" ;;
+      n) cleanup=0 ;;
+      *) echo "$usage"; return 1 ;;
+    esac
+  done
+  shift $((OPTIND - 1))
+
+  if [ $# -lt 1 ]; then
+    echo "$usage"
+    return 1
+  fi
+
+  local dep
+  for dep in pdfinfo pdftoppm magick qpdf; do
+    if ! command -v "$dep" &>/dev/null; then
+      echo "Error: $dep is not installed. Run: brew install poppler imagemagick qpdf"
+      return 1
+    fi
+  done
+
+  case "$preset" in
+    screen) : "${dpi:=150}"; : "${quality:=70}" ;;
+    ebook)  : "${dpi:=200}"; : "${quality:=72}" ;;
+    print)  : "${dpi:=300}"; : "${quality:=80}" ;;
+    *) echo "Error: unknown preset '$preset' (use screen, ebook or print)"; return 1 ;;
+  esac
+
+  local input="$1"
+  if [ ! -f "$input" ]; then
+    echo "Error: no such file: $input"
+    return 1
+  fi
+  local output="${2:-${input%.pdf} (compressed).pdf}"
+
+  local pages
+  pages=$(pdfinfo "$input" 2>/dev/null | awk '/^Pages:/{print $2}')
+  if [ -z "$pages" ]; then
+    echo "Error: could not read $input - is it a valid PDF?"
+    return 1
+  fi
+
+  if command -v pdffonts &>/dev/null && pdffonts "$input" 2>/dev/null | tail -n +3 | grep -q .; then
+    echo "Note: this PDF carries a text layer; rasterising drops text selection and search."
+  fi
+
+  local tmp
+  tmp=$(mktemp -d) || return 1
+
+  # Paper cleanup: anything above 88% luminance becomes pure white.
+  local clean=""
+  [ "$cleanup" -eq 1 ] && clean="-level 0%,88%"
+
+  echo "Compressing $pages pages at ${dpi}dpi, quality ${quality}..."
+  local i n
+  for i in $(seq -w 1 "$pages"); do
+    n=$((10#$i))
+    printf "\r  page %d/%d" "$n" "$pages"
+    if ! pdftoppm -r "$dpi" -f "$n" -l "$n" -png -singlefile "$input" "$tmp/raw" 2>/dev/null \
+       || ! magick "$tmp/raw.png" ${=clean} -quality "$quality" \
+              -sampling-factor 4:2:0 -interlace none -strip "$tmp/pg-$i.jpg" 2>/dev/null; then
+      printf "\n"
+      echo "Error: failed on page $n"
+      rm -rf "$tmp"
+      return 1
+    fi
+  done
+  printf "\r  %d pages rendered\n" "$pages"
+  rm -f "$tmp/raw.png"
+
+  # -density on read gives each JPEG its physical size, so the page box comes out
+  # right; ImageMagick embeds the JPEGs as-is rather than re-encoding them.
+  if ! magick -units PixelsPerInch -density "$dpi" "$tmp"/pg-*.jpg "$tmp/joined.pdf" 2>/dev/null; then
+    echo "Error: could not assemble the PDF"
+    rm -rf "$tmp"
+    return 1
+  fi
+
+  if ! qpdf --linearize --object-streams=generate "$tmp/joined.pdf" "$output" 2>/dev/null; then
+    cp "$tmp/joined.pdf" "$output"
+  fi
+
+  rm -rf "$tmp"
+  echo "Created: $output ($(du -h "$input" | cut -f1) -> $(du -h "$output" | cut -f1))"
+}
