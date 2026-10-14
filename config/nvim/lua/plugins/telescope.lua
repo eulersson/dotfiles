@@ -24,7 +24,14 @@ return {
       local actions = require("telescope.actions")
       local lga_actions = require("telescope-live-grep-args.actions")
 
+      -- Follow symlinks: some projects are just a folder full of symlinks to the
+      -- real repos (e.g. ~/Watchity/topic/*/wct_backend), and both `rg` and `fd`
+      -- skip symlinked directories unless told otherwise.
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
+        vimgrep_arguments = vim.list_extend(
+          vim.deepcopy(require("telescope.config").values.vimgrep_arguments),
+          { "--follow" }
+        ),
         mappings = {
           i = {
             ["<CR>"] = actions.select_default + actions.center,
@@ -37,6 +44,11 @@ return {
             ["<C-e>"] = actions.preview_scrolling_down,
           },
         },
+      })
+
+      -- `follow` is understood by telescope for both the `fd` and `rg` backends.
+      opts.pickers = vim.tbl_deep_extend("force", opts.pickers or {}, {
+        find_files = { follow = true },
       })
 
       opts.extensions = vim.tbl_deep_extend("force", opts.extensions or {}, {
