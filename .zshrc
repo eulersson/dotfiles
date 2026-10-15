@@ -36,6 +36,10 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 # Interactive way of moving through selectable choices given by completions.
 zstyle ':completion:*' menu select
 
+# Shift+Tab cycles backwards through the completion menu.
+zmodload zsh/complist
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
 # -- HSTR ------------------------------------------------------------------------------
 #
 #   Project:
