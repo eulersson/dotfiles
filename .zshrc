@@ -21,6 +21,9 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
+# Allow `# comments` on the interactive command line (scripts allow them anyway).
+setopt interactivecomments
+
 # zsh-syntax-highlighting defaults comments to fg=black,bold which is
 # unreadable on a dark background — make them a visible gray.
 ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
