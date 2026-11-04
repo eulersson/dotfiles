@@ -1,6 +1,6 @@
 # Cheat Sheet
 
-`✦` key is `⌃ ⌥ ⇧ ⌘` configured in mac with Karabiner-Elements
+`✦` key is `⌃ ⌥ ⇧ ⌘`, mapped to Caps Lock (⇪) with Raycast's [Hyper Key](https://manual.raycast.com/hyperkey)
 
 ## System Wide
 
