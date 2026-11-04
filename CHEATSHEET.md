@@ -457,6 +457,9 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 | ⌃ + b, q                | See panel numbers                                  |
 | ⌃ + b ↑/↓/←/→           | Resize panel                                       |
 | ⌃ + b, ⌥ + 1/2          | Even out horizontal/vertical layout                |
+| ⌃ + b, ⌥ + 3/4/5        | Main-horizontal / main-vertical / tiled layout     |
+| ⌃ + b, Space            | Cycle to the next pane layout                      |
+| ⌃ + b, E                | Make all panes the same size                       |
 | ⌃ + b, \[               | Navigate (vi-style) scroll buffer to copy bits     |
 | ⌃ + b, fn + ↑           | Same as `⌃ + b, [` but scrolling buffer one page   |
 | ⌥ + p                   | Switch to last session (or create new if none)     |
