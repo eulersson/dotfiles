@@ -33,16 +33,7 @@ alias chrome-debug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chro
 
 alias gensecret='python -c "import secrets; print(secrets.token_urlsafe(48))"'
 
-# We might need to build some tools against our version of Python, for that we need
-# to install the Python.framework which provides the header
 if [[ $(uname) == "Darwin" ]]; then
-  # Fixes: pyenv not playing nice with brew "config".
-  #
-  #   https://github.com/pyenv/pyenv/issues/106
-  #   https://github.com/pyenv/pyenv#homebrew-in-macos
-  #
-  alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-
   # Those prepend the GNU Unix common tools like 'date' before the Apple ones.
   alias brewGnu='export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-getopt/bin:/usr/local/opt/bash/bin:$PATH'
 fi

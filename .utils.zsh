@@ -1,17 +1,3 @@
-#
-# Some On OSX, two different types of Python builds exist: a regular build and a
-# framework build. In order to interact correctly with OSX through the native GUI
-# frameworks, you need a framework build of Python.
-#
-#   https://matplotlib.org/3.1.0/faq/osx_framework.html
-#
-
-if [[ $(uname) == "Darwin" ]]; then
-  function installPythonWithFramework() {
-    env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install $1
-  }
-fi
-
 function list_files_installed_by_pkg() {
   if [ $# -ne 1 ]; then
     echo "Usage:"

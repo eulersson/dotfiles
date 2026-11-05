@@ -16,7 +16,7 @@ Collection of configuration files.
 | --------------------------------------- | --------------------------- |
 | [Antigen](https://antigen.sharats.me)   | Package manager for zsh.    |
 | [tpm](https://antigen.sharats.me)       | Tmux plugin manager.        |
-| [pyenv](https://github.com/pyenv/pyenv) | Python version management.  |
+| [uv](https://docs.astral.sh/uv/)        | Python version management.  |
 | [nvm](https://github.com/nvm-sh/nvm)    | Node.js version management. |
 
 ## Cheat Sheet
@@ -191,23 +191,21 @@ chsh -s $(which zsh)
 - Using `gpg --encrypt` and `gpg --decrypt` on files that contain tokens
   - For `ChatGPT.nvim` to work it needs a `openai-api-token.txt.gpg` encrypted file in your home.
 
-### pyenv
+### uv
 
-<https://github.com/pyenv/pyenv#installation>
+<https://docs.astral.sh/uv/getting-started/installation/>
 
-Install the latest Python version and set it as default system-wide:
+Install the latest Python version and set it as default system-wide (adds `python` and `python3` to `~/.local/bin`):
 
 ```sh
-env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.12.2
-pyenv global 3.12.2
-pyenv virtualenv shell
-pyenv global shell
+brew install uv
+uv python install --default
 ```
 
-Some tools I use with my shell have to be installed with pip:
+Some tools I use with my shell are Python CLIs, install them as isolated tools:
 
 ```sh
-pip install shell-gpt
+uv tool install shell-gpt
 ```
 
 ### nvm
@@ -224,8 +222,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 ## Python Development
 
-I usually install poetry on all `pyenv` distributions I have, otherwise if you install
-poetry using the bash script they offer it will be tied to a particular python version.
+Install poetry as a uv tool so it isn't tied to a particular Python version:
+
+```sh
+uv tool install poetry
+```
 
 It's useful to have the zsh completions:
 

@@ -12,20 +12,8 @@ export PATH=$HOME/go/bin:$PATH
 for d in "$HOME"/.gem/ruby/*/bin(N); do PATH="$d:$PATH"; done
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 
-# TODO Is this needed?
-export PATH=$HOME/.pyenv/bin:$PATH
-
-# TODO: Review.
-# Consider using pyenv-lazy (zsh plugin) if things get slow.
-# export ZSH_PYENV_LAZY_VIRTUALENV=true
-
-# Initialize pyenv.
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# Google Cloud SDK (gcloud).
-# export CLOUDSDK_PYTHON="$HOME/.pyenv/versions/3.11.9/bin/python3.11"
+# Python is managed by uv (`uv python install --default`), which puts
+# `python` and `python3` in ~/.local/bin.
 
 # TODO: Review.
 # Initialize rbenv.

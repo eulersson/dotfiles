@@ -497,7 +497,6 @@ When errors show as toasts you can run `:lua Snacks.notifier.show_history()` to 
 
 | Alias                                       | Action                                                                                                                                                              |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| installPythonWithFramework <python-version> | Uses pyenv to install Python alongside its `.framework` package file                                                                                                |
 | gh                                          | GitHub Copilot                                                                                                                                                      |
 | ⌃ + r                                       | Browse terminal history using fuzzy search fzf                                                                                                                      |
 | cd \*\*Tab                                  | Use fzf to fuzzy search directory to jump to                                                                                                                        |
