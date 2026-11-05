@@ -55,9 +55,14 @@ map(
 -- Select all
 map("n", "<C-a>", "gg<S-v>G")
 
+-- Directory nvim was launched from, so relative paths stay stable after a :cd
+local startup_cwd = vim.fn.getcwd()
+
 -- Function to copy file path with line number or range
-local function copy_file_path_with_line()
-  local path = vim.fn.expand("%")
+-- Relative paths fall back to absolute when the file is outside the startup directory
+local function copy_file_path_with_line(absolute)
+  local file = vim.fn.expand("%:p")
+  local path = absolute and file or vim.fs.relpath(startup_cwd, file) or file
   local start_line, end_line
 
   if vim.fn.mode() == "v" or vim.fn.mode() == "V" then
@@ -82,11 +87,21 @@ local function copy_file_path_with_line()
   print("Copied: " .. full)
 end
 
--- Normal mode mapping
-map("n", "<leader>ci", copy_file_path_with_line, { desc = "Copy relative path with line number" })
+-- Normal mode mappings
+map("n", "<leader>ci", function()
+  copy_file_path_with_line(false)
+end, { desc = "Copy relative path with line number" })
+map("n", "<leader>cI", function()
+  copy_file_path_with_line(true)
+end, { desc = "Copy absolute path with line number" })
 
--- Visual mode mapping
-map("v", "<leader>ci", copy_file_path_with_line, { desc = "Copy relative path with line range" })
+-- Visual mode mappings
+map("v", "<leader>ci", function()
+  copy_file_path_with_line(false)
+end, { desc = "Copy relative path with line range" })
+map("v", "<leader>cI", function()
+  copy_file_path_with_line(true)
+end, { desc = "Copy absolute path with line range" })
 
 -- Copy diagnostic
 map("n", "<leader>cd", function()
