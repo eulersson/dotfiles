@@ -3,6 +3,12 @@ return {
     "folke/tokyonight.nvim",
     opts = {
       transparent = true,
+      -- Bold and italic are hard to tell apart from plain text in the
+      -- terminal, so give them a color as well.
+      on_highlights = function(hl, c)
+        hl["@markup.strong"] = { fg = c.magenta, bold = true }
+        hl["@markup.italic"] = { fg = c.blue, italic = true }
+      end,
     },
   },
   {
