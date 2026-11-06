@@ -63,7 +63,7 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ✦ + a | Reminders        |
 | ✦ + e | Calendar         |
 | ✦ + w | Preview          |
-| ✦ + r | Zen (Browser)    |
+| ✦ + r | Claude           |
 
 ## Zen (Browser)
 
