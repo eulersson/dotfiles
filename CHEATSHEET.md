@@ -64,6 +64,7 @@ Raycast doesn't read config files so those shortcuts have to be set after instal
 | ✦ + e | Calendar         |
 | ✦ + w | Preview          |
 | ✦ + r | Claude           |
+| ✦ + z | Spotify           |
 
 ## Zen (Browser)
 
