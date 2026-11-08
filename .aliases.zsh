@@ -6,6 +6,9 @@ alias l='ls -CF'
 alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias chsheet='cd ~/.dotfiles && nvim CHEATSHEET.md'
 
+# Anki (provisional until https://github.com/ankitects/anki/issues/5676 gets fixed).
+alias anki="open -a Anki --env QT_SCALE_FACTOR=1.75"
+
 # Docker
 alias doco="docker compose"
 alias dordi='docker rmi $(docker images -aq -f "dangling=true")'
