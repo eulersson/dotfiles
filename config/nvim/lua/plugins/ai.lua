@@ -24,7 +24,15 @@ local function on_claude_buf(win)
   end, { buf = true })
 end
 
-local snacks_win_opts = { on_buf = on_claude_buf }
+-- A terminal window always tails its cursor while in terminal mode, so scroll
+-- by leaving it. Further <C-e>/<C-y> scroll in normal mode; i returns to Claude.
+local snacks_win_opts = {
+  on_buf = on_claude_buf,
+  keys = {
+    scroll_down = { "<C-e>", "<C-\\><C-n><C-e>", desc = "Scroll Down", expr = true, mode = "t" },
+    scroll_up = { "<C-y>", "<C-\\><C-n><C-y>", desc = "Scroll Up", expr = true, mode = "t" },
+  },
+}
 
 -- Show Claude in a first tab, filling it from the start so its output wraps at
 -- full width. From the Claude tab, jump back to the previous one.
